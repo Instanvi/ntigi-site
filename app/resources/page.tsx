@@ -240,35 +240,6 @@ export default function Resources() {
             </div>
           </div>
         </section>
-
-        {/* Support CTA Section */}
-        <section className="py-16 reveal-on-scroll">
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
-
-            {/* Support CTA */}
-            <div className="mt-16 p-8 bg-[var(--console-bg)] border border-border-custom rounded-none text-center">
-              <EnvelopeSimple className="h-8 w-8 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold font-sans uppercase tracking-tight mb-2">Need More Help?</h3>
-              <p className="text-sm text-foreground/70 font-sans mb-6 max-w-xl mx-auto">
-                Our support team and integration specialists are available 24/7 to assist with setup, custom configurations, and technical questions.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="/demo" 
-                  className="px-6 py-2 bg-blue-500 text-white text-sm font-bold uppercase tracking-wider rounded-none hover:bg-blue-600 transition-colors"
-                >
-                  Request Demo
-                </a>
-                <a 
-                  href="mailto:support@ntigi.com" 
-                  className="px-6 py-2 bg-[var(--console-header)] border border-border-custom text-foreground text-sm font-bold uppercase tracking-wider rounded-none hover:border-blue-500/50 transition-colors"
-                >
-                  Contact Support
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
