@@ -51,7 +51,7 @@ export default function TermsOfUsePage() {
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     NTIGI provides a global platform for logistics, shipping, cargo insurance, and financial services through our family of brands. Our Services include, but are not limited to:
                                 </p>
-                                <div className="rounded-lg mb-4">
+                                <div className="rounded-none mb-4">
                                     <ul className="space-y-2 text-gray-700 text-sm p-5">
                                         <li>Freight forwarding, shipment tracking, and logistics management via Ntigi</li>
                                         <li>Cargo insurance, risk assessment, and claims processing via Kovasure</li>
@@ -73,7 +73,7 @@ export default function TermsOfUsePage() {
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     You agree not to:
                                 </p>
-                                <div className="rounded-lg mb-4">
+                                <div className="rounded-none mb-4">
                                     <ul className="space-y-2 text-gray-700 text-sm p-5">
                                         <li>Use the Services for any illegal, fraudulent, or unauthorized purpose</li>
                                         <li>Submit false, misleading, or inaccurate shipment, insurance, or payment information</li>
@@ -151,7 +151,7 @@ export default function TermsOfUsePage() {
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     You agree to defend, indemnify, and hold harmless NTIGI and our officers, directors, employees, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys&rsquo; fees) arising out of or in any way connected with:
                                 </p>
-                                <div className="rounded-lg mb-4">
+                                <div className="rounded-none mb-4">
                                     <ul className="space-y-2 text-gray-700 text-sm p-5">
                                         <li>Your access to or use of the Services</li>
                                         <li>Your violation of these Terms or any applicable law or regulation</li>
@@ -223,19 +223,19 @@ export default function TermsOfUsePage() {
                                 </p>
                             </section>
 
-                            <section className="rounded-lg p-6 bg-gray-50">
+                            <section className="rounded-none p-6 bg-gray-50">
                                 <h2 className="text-2xl font-bold mb-3 text-primary">Contact Us</h2>
                                 <p className="text-gray-700 text-sm mb-4">
                                     If you have any questions, concerns, or disputes regarding these Terms, please contact the legal team for the brand you use:
                                 </p>
                                 <div className="space-y-3 text-sm">
-                                    <div className="flex items-center justify-between p-3 rounded-lg bg-white">
+                                    <div className="flex items-center justify-between p-3 rounded-none bg-white">
                                         <span className="font-semibold text-gray-700">Ntigi</span>
                                         <Link href="mailto:legal@ntigi.com" className="font-bold text-blue-600 hover:text-blue-700">
                                             legal@ntigi.com
                                         </Link>
                                     </div>
-                                    <div className="flex items-center justify-between p-3 rounded-lg bg-white">
+                                    <div className="flex items-center justify-between p-3 rounded-none bg-white">
                                         <span className="font-semibold text-gray-700">Kovasure</span>
                                         <Link href="mailto:legal@kovasure.com" className="font-bold text-blue-600 hover:text-blue-700">
                                             legal@kovasure.com

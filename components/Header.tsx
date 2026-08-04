@@ -179,7 +179,7 @@ export default function Header({ transparent = false }: HeaderProps) {
           
           <Button 
             variant="outline"
-            href="/company"
+            href="https://new.ntigi.cm/login"
             className="px-4 py-1.5 text-[11px]"
           >
             My Account

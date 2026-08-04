@@ -1,71 +1,129 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Globe, Shield, Heart, Envelope, MapPin, Phone, ArrowLeft } from "@phosphor-icons/react";
+import { Globe, Shield, Heart, ArrowLeft, Users, Target, ChartLine } from "@phosphor-icons/react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Company() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const visionRef = useRef<HTMLDivElement>(null);
+  const valuesRef = useRef<HTMLDivElement>(null);
+  const milestonesRef = useRef<HTMLDivElement>(null);
+  const teamRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggers = [heroRef.current, visionRef.current, valuesRef.current, milestonesRef.current, teamRef.current];
+      triggers.forEach((trigger) => {
+        if (!trigger) return;
+        const rect = trigger.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          trigger.classList.add("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const milestones = [
+    { year: "2024", title: "API Foundation", desc: "Launched Ntigi Shipping Engine beta to coordinate West African freight routes." },
+    { year: "2025", title: "Offline-First Engine", desc: "Deployed local-database tracking systems for agents working in low-connectivity areas." },
+    { year: "2026", title: "Global Expansion", desc: "Integrated global custom clearance filing systems and established Chicago headquarters." },
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
 
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-16 font-mono">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#263070] to-[#151b42] text-white py-20">
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <Link href="/" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Home
-            </Link>
-            <div className="max-w-3xl space-y-6">
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-300">About NTIGI</span>
-              <h1 className="text-4xl md:text-5xl font-bold">Connecting Global Operations</h1>
-              <p className="text-xl text-gray-300">
+        <section 
+          ref={heroRef}
+          className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
+            <div className="max-w-3xl space-y-4">
+              <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
+                Connecting Global
+                <br />
+                <span className="text-blue-500">Logistics Networks</span>
+              </h1>
+              <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
                 Building offline-first cargo software to secure borderless supply chain operations for freight forwarders and courier agents globally.
+              </p>
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
+        </section>
+
+        <section 
+          ref={visionRef}
+          className="py-16 border-b border-border-custom reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
+            <div className="p-6 bg-[var(--console-bg)] border border-border-custom rounded-md space-y-3">
+              <div className="flex items-center gap-2 text-blue-500">
+                <Target className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">OUR MISSION</h3>
+              </div>
+              <p className="text-sm text-foreground/80 font-sans leading-relaxed font-medium">
+                To simplify international commerce by engineering robust, zero-downtime shipping systems. We resolve local infrastructure challenges with cloud-native reliability so logistics agencies can process shipments continuously.
+              </p>
+            </div>
+
+            <div className="p-6 bg-[var(--console-bg)] border border-border-custom rounded-md space-y-3">
+              <div className="flex items-center gap-2 text-blue-500">
+                <Users className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">OUR VISION</h3>
+              </div>
+              <p className="text-sm text-foreground/80 font-sans leading-relaxed font-medium">
+                To build the foundational operating system for African and global shipping channels, bringing complete transparency, automated customs clearance, and instant label distribution to every courier branch.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Company Values */}
-        <section className="py-20">
+        <section 
+          ref={valuesRef}
+          className="py-16 border-b border-border-custom reveal-on-scroll"
+        >
           <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
-              <h2 className="text-3xl font-bold text-gray-900">Our Core Principles</h2>
-              <p className="text-gray-600">
-                We design logistics solutions around stability, speed, and real-world network challenges.
-              </p>
+            <div className="text-left mb-12 max-w-2xl">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Our Core Principles</h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 bg-gray-50 rounded-2xl text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070]">
-                  <Globe className="h-6 w-6" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-l border-border-custom bg-primary/[0.01]">
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Globe className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-xl font-bold">Global Scalability</h3>
-                <p className="text-gray-600">
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Global Scalability</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
                   Adaptable multi-language and multi-branch systems to manage shipping networks of any size across borders.
                 </p>
               </div>
 
-              <div className="p-8 bg-gray-50 rounded-2xl text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070]">
-                  <Shield className="h-6 w-6" />
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Shield className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-xl font-bold">Data Sovereignty</h3>
-                <p className="text-gray-600">
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Data Sovereignty</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
                   Offline-first database architectures protecting transactional records and keeping agency tracking secure.
                 </p>
               </div>
 
-              <div className="p-8 bg-gray-50 rounded-2xl text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070]">
-                  <Heart className="h-6 w-6" />
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Heart className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-xl font-bold">Operational Stability</h3>
-                <p className="text-gray-600">
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Operational Stability</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
                   Engineered to work continuously during local network disruptions, preventing data entry duplication.
                 </p>
               </div>
@@ -73,66 +131,51 @@ export default function Company() {
           </div>
         </section>
 
-        {/* Contact Info */}
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-900">Get in Touch</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Connect with our team to inquire about pricing, API access, customized branch installations, and support plans.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center text-[#263070] shadow-sm">
-                    <Envelope className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">Email Us</div>
-                    <a href="mailto:info@ntigi.com" className="font-semibold text-gray-900 hover:text-primary">info@ntigi.com</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center text-[#263070] shadow-sm">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">Call Support</div>
-                    <a href="tel:+18005556789" className="font-semibold text-gray-900 hover:text-primary">+1 (800) 555-6789</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center text-[#263070] shadow-sm">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500">Global Hub</div>
-                    <div className="font-semibold text-gray-900">Chicago, IL, United States</div>
-                  </div>
-                </div>
-              </div>
+        {/* Operational Timeline */}
+        <section 
+          ref={milestonesRef}
+          className="py-16 border-b border-border-custom reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="text-left mb-12">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Milestones & History</h2>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl space-y-6">
-              <h3 className="text-xl font-bold text-gray-900">Request Information</h3>
-              <p className="text-sm text-gray-600">Fill out this quick form and our specialists will respond within 24 hours.</p>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                  <input type="text" className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:border-[#263070]" placeholder="Logistics Ltd." />
+            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
+              {milestones.map((item, index) => (
+                <div key={index} className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
+                  <div className="text-lg font-bold text-blue-500 mb-2 font-mono">{item.year}</div>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">{item.title}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership Section */}
+        <section 
+          ref={teamRef}
+          className="py-16 bg-primary/[0.01] reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="text-left mb-12 flex items-center">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Executive Team</h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="p-6 bg-[var(--console-bg)] border border-border-custom rounded-md flex flex-col items-center text-center space-y-3 hover:border-blue-500/50 transition-colors shadow-glow">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden border border-border-custom bg-foreground/5 mb-2">
+                  <div className="absolute inset-0 bg-blue-500/5 flex items-center justify-center text-blue-500 font-bold uppercase tracking-widest text-xs">ASJ</div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Contact Email</label>
-                  <input type="email" className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:border-[#263070]" placeholder="name@company.com" />
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">Amahnui ST James</h3>
+                  <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mt-0.5">Chief Executive Officer</div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Inquiry Details</label>
-                  <textarea className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:border-[#263070] h-24" placeholder="How can we help optimize your operations?"></textarea>
-                </div>
-                <Button variant="secondary" className="w-full">Submit Inquiry</Button>
-              </form>
+                <p className="text-xs text-foreground/70 font-sans leading-relaxed font-medium">
+                  Leading strategic expansion and engineering paradigms across the Ntigi logistics network.
+                </p>
+              </div>
             </div>
           </div>
         </section>

@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
                   We collect information in three general ways:
                 </p>
 
-                <div className="rounded-lg mb-4">
+                <div className="rounded-none mb-4">
                   <h3 className="font-bold text-primary mb-3">Personal Information We Collect</h3>
                   <ul className="space-y-2 text-gray-700 text-sm p-5">
                     <li><strong>You give it to us</strong> — account details, billing information, shipment and policy information, and anything you share with support.</li>
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
                   We use the information we collect to:
                 </p>
 
-                <div className="rounded-lg mb-4">
+                <div className="rounded-none mb-4">
                   <ul className="space-y-2 text-gray-700 text-sm">
                     <li>Set up and administer your account across Ntigi and Kovasure</li>
                     <li>Process shipments, quotes, claims, and payments</li>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                   We don&rsquo;t sell your personal information for cash. We do share it, in limited ways, with:
                 </p>
 
-                <div className="rounded-lg mb-4">
+                <div className="rounded-none mb-4">
                   <ul className="space-y-2 text-gray-700 text-sm">
                     <li>Carriers and delivery partners needed to fulfill a shipment</li>
                     <li>Payment processors and insurers who support Potta Finance and Kovasure transactions</li>
@@ -187,19 +187,19 @@ export default function PrivacyPolicyPage() {
                 </p>
               </section>
 
-              <section className="rounded-lg p-6 bg-gray-50">
+              <section className="rounded-none p-6 bg-gray-50">
                 <h2 className="text-2xl font-bold mb-3 text-primary">Contact Us About Privacy</h2>
                 <p className="text-gray-700 text-sm mb-4">
                   To exercise your rights or ask a question about this Policy, reach the privacy team for the brand you use:
                 </p>
                 <div className="space-y-3 text-sm">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white">
+                  <div className="flex items-center justify-between p-3 rounded-none bg-white">
                     <span className="font-semibold text-gray-700">Ntigi</span>
                     <Link href="mailto:privacy@ntigi.com" className="font-bold text-blue-600 hover:text-blue-700">
                       privacy@ntigi.com
                     </Link>
                   </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white">
+                  <div className="flex items-center justify-between p-3 rounded-none bg-white">
                     <span className="font-semibold text-gray-700">Kovasure</span>
                     <Link href="mailto:privacy@kovasure.com" className="font-bold text-blue-600 hover:text-blue-700">
                       privacy@kovasure.com

@@ -56,7 +56,7 @@ export default function Footer() {
               <li><Link href="/resources" className="hover:text-blue-500 transition-colors">NTIGI Partners</Link></li>
               <li><Link href="/resources" className="hover:text-blue-500 transition-colors">Support</Link></li>
               <li><Link href="/resources" className="hover:text-blue-500 transition-colors">Customer stories</Link></li>
-              <li><Link href="/company" className="hover:text-blue-500 transition-colors">Contact</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-500 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
             NTIGI Global
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/company" className="hover:text-blue-500 transition-colors">Careers</Link></li>
+              <li><Link href="/careers" className="hover:text-blue-500 transition-colors">Careers</Link></li>
               <li><Link href="/company" className="hover:text-blue-500 transition-colors">About Us</Link></li>
             </ul>
           </div>

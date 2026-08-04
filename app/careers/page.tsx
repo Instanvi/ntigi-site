@@ -10,8 +10,8 @@ import {
   Clock,
   Heart,
   Globe,
-  Award,
-  Zap,
+  HardDrive,
+  Laptop,
   ArrowRight
 } from "@phosphor-icons/react";
 
@@ -51,12 +51,12 @@ export default function CareersPage() {
     {
       title: "Growth & Learning",
       description: "An annual learning stipend for courses, conferences, or books to help you stay ahead in engineering and supply chain tech.",
-      icon: <Award className="w-5 h-5 text-blue-500" />,
+      icon: <HardDrive className="w-5 h-5 text-blue-500" />,
     },
     {
       title: "Modern Work Setup",
       description: "A hardware budget to set up your home office with top-tier laptops, screens, and accessories to work efficiently.",
-      icon: <Zap className="w-5 h-5 text-blue-500" />,
+      icon: <Laptop className="w-5 h-5 text-blue-500" />,
     },
   ];
 
@@ -64,7 +64,7 @@ export default function CareersPage() {
     {
       title: "Senior Full-Stack Engineer (React / Next.js / Go)",
       department: "Engineering",
-      location: "Chicago, IL (Hybrid) / Remote",
+      location: "Douala, Cameroon (Hybrid) / Remote",
       type: "Full-Time",
       description: "Architect and develop core components for Ntigi Shipping Tech APIs and high-performance carrier integration backends.",
     },
@@ -78,14 +78,14 @@ export default function CareersPage() {
     {
       title: "Supply Chain Product Manager",
       department: "Product",
-      location: "Chicago, IL / Hybrid",
+      location: "Douala, Cameroon / Hybrid",
       type: "Full-Time",
       description: "Define product requirements for our automated customs clearance systems and coordinate integrations with international freight carriers.",
     },
     {
       title: "Logistics Integration Specialist",
       department: "Operations",
-      location: "London, UK / Hybrid",
+      location: "Yaounde, Cameroon / Hybrid",
       type: "Full-Time",
       description: "Help enterprise clients integrate Ntigi APIs into their warehouse systems and orchestrate carrier dispatch channels.",
     },
@@ -116,9 +116,6 @@ export default function CareersPage() {
         >
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-[4px]">
-                JOIN THE TEAM
-              </span>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight">
                 Build the future of borderless trade
               </h1>
@@ -127,20 +124,15 @@ export default function CareersPage() {
               </p>
             </div>
           </div>
-          {/* Subtle grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
-        {/* Benefits Section */}
         <section 
           ref={benefitsRef}
           className="py-16 border-b border-border-custom reveal-on-scroll"
         >
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-[4px]">
-                PERKS & BENEFITS
-              </span>
               <h2 className="text-2xl font-bold font-sans uppercase mt-3">Why work with us?</h2>
             </div>
 
@@ -151,12 +143,12 @@ export default function CareersPage() {
                   className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-[4px] bg-[var(--console-bg)] border border-border-custom">
+                    <div className="p-2 rounded-none bg-[var(--console-bg)] border border-border-custom">
                       {benefit.icon}
                     </div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">{benefit.title}</h3>
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">{benefit.title}</h3>
                   </div>
-                  <p className="text-[11px] text-foreground/70 font-sans leading-relaxed font-medium">{benefit.description}</p>
+                  <p className="text-xs text-foreground/70 font-sans leading-relaxed font-medium">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -171,9 +163,6 @@ export default function CareersPage() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-[4px]">
-                  OPEN POSITIONS
-                </span>
                 <h2 className="text-2xl font-bold font-sans uppercase mt-3">Find your role</h2>
               </div>
 
@@ -183,7 +172,7 @@ export default function CareersPage() {
                   <button
                     key={dept}
                     onClick={() => setSelectedDept(dept)}
-                    className={`px-3 py-1.5 border rounded-[4px] text-[10px] uppercase font-bold tracking-wider transition-all cursor-pointer ${
+                    className={`px-3 py-1.5 border rounded-none text-[10px] uppercase font-bold tracking-wider transition-all cursor-pointer ${
                       selectedDept === dept
                         ? "bg-[#263071] border-[#263071] text-white"
                         : "bg-background border-border-custom text-foreground hover:bg-primary/5"
@@ -198,18 +187,18 @@ export default function CareersPage() {
             {/* Jobs List Grid */}
             <div className="grid grid-cols-1 gap-4">
               {filteredJobs.length === 0 ? (
-                <div className="text-center py-12 border border-border-custom rounded-md text-xs text-foreground/50">
+                <div className="text-center py-12 border border-border-custom rounded-none text-xs text-foreground/50">
                   &gt;&gt; NO OPENINGS CURRENTLY ACTIVE IN THIS SECTION
                 </div>
               ) : (
                 filteredJobs.map((job, index) => (
                   <div 
                     key={index} 
-                    className="p-6 border border-border-custom bg-[var(--console-bg)] rounded-[4px] hover:border-blue-500/50 shadow-glow transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+                    className="p-6 border border-border-custom bg-[var(--console-bg)] rounded-none hover:border-blue-500/50 shadow-glow transition-all duration-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
                   >
                     <div className="space-y-2">
-                      <div className="flex flex-wrap items-center gap-2 text-[9px] font-bold">
-                        <span className="bg-primary/5 px-2 py-0.5 border border-border-custom text-blue-500 rounded-[3px]">
+                      <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
+                        <span className="bg-primary/5 px-2 py-0.5 border border-border-custom text-blue-500 rounded-none">
                           {job.department.toUpperCase()}
                         </span>
                         <span className="flex items-center gap-1 text-foreground/50">
@@ -221,10 +210,10 @@ export default function CareersPage() {
                           {job.type}
                         </span>
                       </div>
-                      <h3 className="text-sm font-bold text-foreground font-sans uppercase tracking-tight">{job.title}</h3>
-                      <p className="text-[11px] text-foreground/75 font-sans leading-relaxed font-medium max-w-2xl">{job.description}</p>
+                      <h3 className="text-md font-bold text-foreground font-sans uppercase tracking-tight">{job.title}</h3>
+                      <p className="text-xs text-foreground/75 font-sans leading-relaxed font-medium max-w-2xl">{job.description}</p>
                     </div>
-                    <Button variant="outline" size="sm" className="w-full md:w-auto text-[10px]">
+                    <Button variant="outline" size="sm" className="w-full md:w-auto text-xs">
                       Apply
                       <ArrowRight className="ml-1.5 w-3.5 h-3.5" />
                     </Button>

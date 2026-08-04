@@ -58,7 +58,7 @@ export default function BlogSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-[4px]">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-none">
               NEWS & GUIDES
             </span>
             <h2 className="text-2xl md:text-3.5xl font-extrabold text-foreground leading-tight uppercase font-sans">
@@ -73,7 +73,7 @@ export default function BlogSection() {
           <div>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 px-4 py-2 border border-border-custom text-foreground/80 hover:border-foreground hover:text-foreground rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-2 border border-border-custom text-foreground/80 hover:border-foreground hover:text-foreground rounded-none text-xs font-bold uppercase tracking-wider transition-all"
             >
               See all articles
               <ArrowRight className="h-3.5 w-3.5" />
@@ -98,7 +98,7 @@ export default function BlogSection() {
                   <div>
                     {/* Top bar with index */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="bg-primary/5 border border-border-custom text-[#3b82f6] text-[9px] font-bold px-2 py-0.5 rounded-[4px] uppercase tracking-wider">
+                      <span className="bg-primary/5 border border-border-custom text-[#3b82f6] text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider">
                         {post.category}
                       </span>
                       <span className="font-mono text-[10px] font-bold text-foreground/45 group-hover:text-blue-500">
@@ -107,7 +107,7 @@ export default function BlogSection() {
                     </div>
 
                     {/* Thumbnail container */}
-                    <div className="relative aspect-[16/10] w-full bg-[var(--console-bg)] overflow-hidden rounded-[4px] border border-border-custom mb-4">
+                    <div className="relative aspect-[16/10] w-full bg-[var(--console-bg)] overflow-hidden rounded-none border border-border-custom mb-4">
                       <Image
                         src={post.image}
                         alt={post.title}

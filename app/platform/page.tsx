@@ -1,144 +1,258 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Laptop, DeviceMobile, WifiHigh, ShieldCheck, ArrowLeft } from "@phosphor-icons/react";
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { 
+  Laptop, 
+  DeviceMobile, 
+  Desktop,
+  Database,
+  CloudArrowUp,
+  ArrowsClockwise,
+  ShieldCheck,
+  Lightning,
+  LockKey,
+  Gear
+} from "@phosphor-icons/react";
 
 export default function Platform() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const platformsRef = useRef<HTMLDivElement>(null);
+  const offlineRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggers = [heroRef.current, platformsRef.current, offlineRef.current, featuresRef.current];
+      triggers.forEach((trigger) => {
+        if (!trigger) return;
+        const rect = trigger.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          trigger.classList.add("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
 
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-16 font-mono">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#263070] to-[#151b42] text-white py-20">
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <Link href="/" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Home
-            </Link>
-            <div className="max-w-3xl space-y-6">
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-300">The NTIGI Platform</span>
-              <h1 className="text-4xl md:text-5xl font-bold">Cloud-Native Logistics Ecosystem</h1>
-              <p className="text-xl text-gray-300">
-                A single unified database serving web and mobile Progressive Web Applications (PWA) with intelligent offline-first synchronization.
+        <section 
+          ref={heroRef}
+          className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
+            <div className="max-w-3xl space-y-4">
+              <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
+                One Platform
+                <br />
+                <span className="text-blue-500">Three Ways to Work</span>
+              </h1>
+              <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
+                Access your logistics operations from anywhere. Web dashboard for managers, desktop app for stations, mobile app for drivers—all synchronized in real-time.
               </p>
             </div>
           </div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
-        {/* Channels */}
-        <section className="py-20">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 space-y-24">
-            {/* Web Application */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-                  <Laptop className="h-4 w-4" />
-                  Web Dashboard
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900">Comprehensive Web Console</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  The primary control center for managers, dispatch coordinators, and administrators. Accessible securely from any modern web browser without installations.
-                </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Real-time operational dashboards & reports
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Centralized routes, stops, and branch configurations
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Financial auditing and corporate invoice management
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-gray-100 rounded-2xl p-8 aspect-video flex items-center justify-center border border-gray-200">
-                <span className="text-gray-400 font-medium">Interactive Web Portal Preview</span>
-              </div>
+        {/* Platform Channels */}
+        <section 
+          ref={platformsRef}
+          className="py-16 border-b border-border-custom reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="text-left mb-12 max-w-2xl">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Access From Anywhere</h2>
             </div>
 
-            {/* Mobile PWA */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="bg-gray-100 rounded-2xl p-8 aspect-video flex items-center justify-center border border-gray-200 order-2 md:order-1">
-                <span className="text-gray-400 font-medium">Mobile PWA Application Preview</span>
-              </div>
-              <div className="space-y-6 order-1 md:order-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">
-                  <DeviceMobile className="h-4 w-4" />
-                  Progressive Web App
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-l border-border-custom bg-primary/[0.01]">
+              {/* Web Dashboard */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Laptop className="h-4.5 w-4.5" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Mobile and Driver Operations</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  A high-performance Progressive Web Application (PWA) optimized for tablets and mobile devices. Equips field agents and delivery drivers with scanning and navigation tools.
-                </p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Fast camera-based barcode scanning
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Real-time GPS status coordinates upload
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#263070]" />
-                    Signature & Photo Proof of Delivery (POD)
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Offline-first capabilities */}
-            <div className="grid md:grid-cols-3 gap-8 pt-12 border-t border-gray-100">
-              <div className="p-6">
-                <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-700 mb-4">
-                  <WifiHigh className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Offline Architecture</h3>
-                <p className="text-gray-600 text-sm">
-                  Leverages Dexie & IndexedDB on browsers to store data locally. Keep working without internet connection.
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Web Dashboard</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Complete command center accessible from any browser. Track shipments, manage teams, generate reports, and oversee your entire network in real-time.
                 </p>
               </div>
 
-              <div className="p-6">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-700 mb-4">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.2" />
-                  </svg>
+              {/* Desktop Application */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Desktop className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Background Sync</h3>
-                <p className="text-gray-600 text-sm">
-                  Automatically syncs changes when internet is restored with smart conflict-resolution and retry queues.
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Desktop Application</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Fast Windows app for courier stations. Create shipments in seconds, print labels instantly, and work completely offline with automatic background sync.
                 </p>
               </div>
 
-              <div className="p-6">
-                <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-700 mb-4">
-                  <ShieldCheck className="h-6 w-6" />
+              {/* Mobile App */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <DeviceMobile className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Security & Identity</h3>
-                <p className="text-gray-600 text-sm">
-                  JWT-based sessions, OTP-based secure logins, and advanced RBAC settings to secure branch data.
+                <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Mobile App</h3>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Field tools for drivers and agents. Scan barcodes, update delivery status, capture proof of delivery, and navigate routes—all from your phone.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA section */}
-        <section className="bg-gray-50 py-16 border-t border-gray-100">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 text-center space-y-6">
-            <h2 className="text-3xl font-bold text-gray-900">Transform your logistics channels</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Adopt NTIGI's web & mobile solution to centralize global logistics.
-            </p>
-            <Button size="lg" href="/demo" variant="secondary">Request a Demo</Button>
+        {/* Offline-First Features */}
+        <section 
+          ref={offlineRef}
+          className="py-16 border-b border-border-custom reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="text-left mb-12">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Works Without Internet</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 border-t border-l border-border-custom">
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center mb-3">
+                  <Database className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">Local Storage</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Create shipments, manage clients, process payments—all without internet. Data stored safely on your device.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center mb-3">
+                  <ArrowsClockwise className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">Auto Sync</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Changes sync automatically in the background when you reconnect. Never worry about manual uploads or data loss.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center mb-3">
+                  <CloudArrowUp className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">Fast Updates</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Only new changes are uploaded, saving bandwidth. Process hundreds of shipments, sync in seconds.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center mb-3">
+                  <ShieldCheck className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">Data Safety</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Multiple backup layers ensure nothing is ever lost, even during power outages or network failures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enterprise Features */}
+        <section 
+          ref={featuresRef}
+          className="py-16 bg-primary/[0.01] reveal-on-scroll"
+        >
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <div className="text-left mb-12">
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Enterprise-Grade Capabilities</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
+              {/* Speed */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02] space-y-4">
+                <div className="flex items-center gap-2 text-blue-500">
+                  <Lightning className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Speed</h3>
+                </div>
+                <ul className="space-y-2">
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Pages load in under 2 seconds
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Process 100,000+ shipments daily
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Real-time status updates
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Instant search across all data
+                  </li>
+                </ul>
+              </div>
+
+              {/* Security */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02] space-y-4">
+                <div className="flex items-center gap-2 text-blue-500">
+                  <LockKey className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Security</h3>
+                </div>
+                <ul className="space-y-2">
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Bank-level encryption
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Secure login with 2FA support
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Complete activity audit trails
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Role-based access control
+                  </li>
+                </ul>
+              </div>
+
+              {/* Integration */}
+              <div className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02] space-y-4">
+                <div className="flex items-center gap-2 text-blue-500">
+                  <Gear className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Integration</h3>
+                </div>
+                <ul className="space-y-2">
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Connect to existing systems
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Import/export via Excel/CSV
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    Print labels and receipts
+                  </li>
+                  <li className="text-sm text-foreground/70 font-sans leading-relaxed font-medium flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    WhatsApp & SMS notifications
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </main>

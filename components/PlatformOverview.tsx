@@ -89,7 +89,7 @@ export default function PlatformOverview() {
           </div>
 
           <div className="relative">
-            <div className="relative aspect-[4/3] rounded-md overflow-hidden border border-border-custom shadow-glow bg-[var(--console-bg)]">
+            <div className="relative aspect-[4/3] rounded-none overflow-hidden border border-border-custom shadow-glow bg-[var(--console-bg)]">
               <Image
                 src="/ship.jpeg"
                 alt="NTIGI Platform Overview"
@@ -97,7 +97,7 @@ export default function PlatformOverview() {
                 className="object-cover opacity-90 dark:opacity-85"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-background/70 to-transparent" />
-              <div className="absolute bottom-3 left-3 bg-background border border-border-custom px-2.5 py-1 text-[9px] text-[#3b82f6] rounded-[3px] font-bold">
+              <div className="absolute bottom-3 left-3 bg-background border border-border-custom px-2.5 py-1 text-[9px] text-[#3b82f6] rounded-none font-bold">
                 VESSEL_LOC_MONITOR: ON
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function PlatformOverview() {
           ref={section2Ref}
           className="grid md:grid-cols-2 gap-12 items-center reveal-on-scroll">
           <div className="order-2 md:order-1 relative">
-            <div className="relative aspect-[4/3] rounded-md overflow-hidden border border-border-custom bg-[var(--console-bg)] p-4 flex flex-col justify-between shadow-glow">
+            <div className="relative aspect-[4/3] rounded-none overflow-hidden border border-border-custom bg-[var(--console-bg)] p-4 flex flex-col justify-between shadow-glow">
               <div className="flex items-center justify-between border-b border-border-custom pb-2 text-[9px] text-foreground/60">
                 <div className="flex items-center gap-1.5 font-bold">
                   <HardDrive className="h-3.5 w-3.5 text-blue-500" />
@@ -118,7 +118,7 @@ export default function PlatformOverview() {
               </div>
 
               <div className="my-6 text-center space-y-3">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-[4px] bg-[var(--console-header)] border border-border-custom text-blue-500">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-none bg-[var(--console-header)] border border-border-custom text-blue-500">
                   <WifiHigh className="w-7 h-7 animate-pulse text-blue-500" />
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export default function PlatformOverview() {
               <div className="border-t border-border-custom pt-2 flex items-center justify-between text-[8px] text-foreground/50">
                 <span>QUEUE SIZE: 0 pending</span>
                 <span className="flex items-center gap-1 text-green-600 dark:text-green-400 font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
+                  <span className="w-1.5 h-1.5 rounded-none bg-green-500 animate-ping" />
                   SYNC PROTOCOL STANDBY
                 </span>
               </div>

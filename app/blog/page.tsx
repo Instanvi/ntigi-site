@@ -49,7 +49,7 @@ export default async function BlogListing() {
         <section className="relative py-16 bg-[var(--console-header)] border-b border-border-custom overflow-hidden font-mono">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-[4px]">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-none">
                 INSIGHTS & RESOURCES
               </span>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight">
@@ -78,7 +78,7 @@ export default async function BlogListing() {
                     <div>
                       {/* Thumbnail */}
                       <div className="flex items-center justify-between mb-4">
-                        <span className="bg-primary/5 border border-border-custom text-blue-500 text-[9px] font-bold px-2 py-0.5 rounded-[4px] uppercase tracking-wider">
+                        <span className="bg-primary/5 border border-border-custom text-blue-500 text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider">
                           {post.category}
                         </span>
                         <span className="text-[10px] font-bold text-foreground/45 group-hover:text-blue-500">
@@ -86,7 +86,7 @@ export default async function BlogListing() {
                         </span>
                       </div>
 
-                      <div className="relative aspect-[16/10] w-full bg-[var(--console-bg)] overflow-hidden rounded-[4px] border border-border-custom mb-4">
+                      <div className="relative aspect-[16/10] w-full bg-[var(--console-bg)] overflow-hidden rounded-none border border-border-custom mb-4">
                         <Image
                           src={post.image}
                           alt={post.title}

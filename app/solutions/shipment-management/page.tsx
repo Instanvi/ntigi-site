@@ -20,7 +20,7 @@ export default function ShipmentManagement() {
               Back to Home
             </Link>
             <div className="max-w-3xl space-y-6">
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-300">Solutions</span>
+              <span className="px-3 py-1 bg-white/10 rounded-none text-sm font-medium text-blue-300">Solutions</span>
               <h1 className="text-4xl md:text-5xl font-bold">Shipment Management</h1>
               <p className="text-xl text-gray-300">
                 End-to-end shipment control and cargo tracking from order booking to final delivery. Optimize logistics operations and ensure package handling safety.
@@ -34,8 +34,8 @@ export default function ShipmentManagement() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Feature 1 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <Package className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Multi-Package Cargo Tracking</h3>
@@ -45,8 +45,8 @@ export default function ShipmentManagement() {
               </div>
 
               {/* Feature 2 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <QrCode className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Barcode & QR Identification</h3>
@@ -56,8 +56,8 @@ export default function ShipmentManagement() {
               </div>
 
               {/* Feature 3 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <ClipboardText className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">22+ Cargo Handling Methods</h3>
@@ -67,8 +67,8 @@ export default function ShipmentManagement() {
               </div>
 
               {/* Feature 4 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Transit Insurance Details</h3>
@@ -78,8 +78,8 @@ export default function ShipmentManagement() {
               </div>
 
               {/* Feature 5 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <svg className="h-6 w-6 text-[#263070]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                   </svg>

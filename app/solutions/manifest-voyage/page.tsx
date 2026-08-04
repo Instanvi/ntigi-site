@@ -20,7 +20,7 @@ export default function ManifestVoyage() {
               Back to Home
             </Link>
             <div className="max-w-3xl space-y-6">
-              <span className="px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-blue-300">Solutions</span>
+              <span className="px-3 py-1 bg-white/10 rounded-none text-sm font-medium text-blue-300">Solutions</span>
               <h1 className="text-4xl md:text-5xl font-bold">Manifest & Voyage Management</h1>
               <p className="text-xl text-gray-300">
                 Consolidate cargo shipments, manage voyages, containers, pallets, and generate manifest reports for efficient logistics.
@@ -34,8 +34,8 @@ export default function ManifestVoyage() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Feature 1 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <Anchor className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Voyage Planning</h3>
@@ -45,8 +45,8 @@ export default function ManifestVoyage() {
               </div>
 
               {/* Feature 2 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <Funnel className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Cargo Consolidation</h3>
@@ -56,8 +56,8 @@ export default function ManifestVoyage() {
               </div>
 
               {/* Feature 3 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <Article className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Manifest Generation</h3>
@@ -67,8 +67,8 @@ export default function ManifestVoyage() {
               </div>
 
               {/* Feature 4 */}
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#263070]/30 transition-all">
-                <div className="w-12 h-12 bg-[#263070]/10 rounded-xl flex items-center justify-center text-[#263070] mb-6">
+              <div className="p-8 bg-gray-50 rounded-none border border-gray-100 hover:border-[#263070]/30 transition-all">
+                <div className="w-12 h-12 bg-[#263070]/10 rounded-none flex items-center justify-center text-[#263070] mb-6">
                   <ClipboardText className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Customs Documents</h3>
