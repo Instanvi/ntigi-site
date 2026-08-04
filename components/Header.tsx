@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import { MagnifyingGlass, Globe, CaretDown, List, X, Sun, Moon } from "@phosphor-icons/react";
+import { Globe, CaretDown, List, X, Sun, Moon } from "@phosphor-icons/react";
 import { Button } from "./ui/Button";
 
 interface HeaderProps {
@@ -164,9 +164,6 @@ export default function Header({ transparent = false }: HeaderProps) {
 
         {/* Right side: Search, Theme, My Account, Demo, Lang selector */}
         <div className="hidden lg:flex items-center gap-5">
-          <button className="text-foreground/70 hover:text-foreground transition-colors cursor-pointer" aria-label="Search">
-            <MagnifyingGlass className="h-4 w-4" />
-          </button>
 
           {/* Theme Toggle Button */}
           <button 
