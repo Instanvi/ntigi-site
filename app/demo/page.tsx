@@ -19,15 +19,11 @@ export default function RequestDemo() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
 
-      <main className="flex-grow pt-16 font-mono">
+      <main className="flex-grow pt-16">
         {/* Hero Section */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <Link href="/" className="inline-flex items-center gap-2 text-foreground/60 hover:text-blue-500 mb-4 transition-colors">
-                <ArrowLeft className="h-4 w-4" />
-                <span className="text-sm uppercase font-bold tracking-wider">Back to Home</span>
-              </Link>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
                 Request a
                 <br />

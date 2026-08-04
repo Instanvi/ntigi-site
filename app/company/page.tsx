@@ -40,7 +40,7 @@ export default function Company() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
 
-      <main className="flex-grow pt-16 font-mono">
+      <main className="flex-grow pt-16">
         {/* Hero Section */}
         <section 
           ref={heroRef}
@@ -144,7 +144,7 @@ export default function Company() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {milestones.map((item, index) => (
                 <div key={index} className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02]">
-                  <div className="text-lg font-bold text-blue-500 mb-2 font-mono">{item.year}</div>
+                  <div className="text-lg font-bold text-blue-500 mb-2">{item.year}</div>
                   <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-1">{item.title}</h4>
                   <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{item.desc}</p>
                 </div>
