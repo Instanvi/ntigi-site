@@ -362,7 +362,7 @@ export default function MultiBranch() {
                 {
                   title: "Finance & Billing",
                   desc: "Track inter-branch settlements, agent commissions, and branch-level financial performance in one place.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
                 {
                   title: "Consolidation & Manifests",

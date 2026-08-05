@@ -346,7 +346,7 @@ export default function InternationalForwarding() {
                 {
                   title: "Finance & Billing",
                   desc: "Process payments in multiple currencies, generate invoices, and manage agent commissions.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
               ].map((sol, i) => (
                 <Link

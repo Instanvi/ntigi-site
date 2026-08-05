@@ -416,7 +416,7 @@ export default function Pricing() {
                 {
                   title: "Finance and Billing",
                   desc: "Manage invoices, payment collection, COD reconciliation, agent commissions, and financial reporting across all branches.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
                 {
                   title: "Route Optimization",

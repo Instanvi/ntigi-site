@@ -370,7 +370,7 @@ export default function ProofOfDelivery() {
                 {
                   title: "Finance & Billing",
                   desc: "Collect COD payments at delivery, reconcile collections per driver, and auto-generate delivery receipts.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
               ].map((sol, i) => (
                 <Link

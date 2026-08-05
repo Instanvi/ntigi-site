@@ -368,7 +368,7 @@ export default function CustomerPortal() {
                 {
                   title: "Finance and Billing",
                   desc: "Invoices generated at booking are immediately available for customer download in the portal.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
                 {
                   title: "International Forwarding",

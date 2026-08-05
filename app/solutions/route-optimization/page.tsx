@@ -390,7 +390,7 @@ export default function RouteOptimization() {
                 {
                   title: "Finance and Billing",
                   desc: "Apply the route pricing rules directly to invoices. Every charge calculated from the route rate card at booking time.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
               ].map((sol, i) => (
                 <Link

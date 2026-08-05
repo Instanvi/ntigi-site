@@ -351,7 +351,7 @@ export default function CustomsCompliance() {
                 {
                   title: "Finance & Billing",
                   desc: "Issue multi-currency invoices with duties and taxes automatically calculated per jurisdiction.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
               ].map((sol, i) => (
                 <Link

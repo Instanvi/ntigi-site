@@ -372,7 +372,7 @@ export default function Returns() {
                 {
                   title: "Finance and Billing",
                   desc: "Return invoices, credit notes, and refund processing are handled automatically and linked to the original transaction.",
-                  href: "/solutions/finance",
+                  href: "/solutions/finance-billing",
                 },
               ].map((sol, i) => (
                 <Link
