@@ -7,128 +7,131 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
-  FileText,
-  Bell,
-  CheckCircle,
   Buildings,
   UsersThree,
-  Coins,
-  BookOpenText,
+  ShieldCheck,
+  ArrowsLeftRight,
+  ChartLine,
+  Globe,
+  Lock,
+  Bell,
+  CheckCircle,
+  CurrencyDollar,
+  Eye,
+  Sliders,
+  TreeStructure,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: Buildings,
+    title: "Multi-Branch Operations",
+    desc: "Run any number of branches from a single NTIGI account. Each branch operates independently with its own shipments, staff, clients, and financial records.",
   },
   {
-    icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
+    icon: Lock,
+    title: "Branch-Level Data Isolation",
+    desc: "Agents at Branch A cannot see Branch B data unless explicitly granted. Every record is scoped to its branch. No data leakage across your network.",
+  },
+  {
+    icon: ArrowsLeftRight,
+    title: "Inter-Branch Transfers",
+    desc: "Transfer shipments between branches when routes change or consolidation is needed. Every transfer is logged with origin, destination, reason, and timestamp.",
   },
   {
     icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
-  },
-  {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
-  },
-  {
-    icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
+    title: "Inter-Branch Settlements",
+    desc: "Track financial obligations between branches. When Branch A hands off a shipment to Branch B, the settlement amount is calculated and recorded automatically.",
   },
   {
     icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
+    title: "Partner Agency Network",
+    desc: "Onboard external partner agencies as part of your network. Assign them routes, set commission structures, and track their performance from head office.",
   },
   {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
+    icon: Sliders,
+    title: "200+ Permission Controls",
+    desc: "Assign granular permissions at the user level across 200+ control points. Restrict who can create shipments, view finances, generate reports, or modify settings per branch.",
   },
   {
-    icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    icon: TreeStructure,
+    title: "Custom Role Creation",
+    desc: "Create custom roles beyond Admin, Manager, Agent, and Driver. Define exactly what each role can see and do across features, branches, and data types.",
+  },
+  {
+    icon: ChartLine,
+    title: "Consolidated Reporting",
+    desc: "View performance across all branches from a single dashboard. Compare revenue, shipment volumes, delivery success rates, and agent productivity network-wide.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Create Branches",
+    desc: "Add each branch with its own name, location, contact details, business hours, and currency settings. Each branch is fully independent from day one.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Assign Staff & Roles",
+    desc: "Add staff to each branch and assign roles with specific permissions. A manager at one branch cannot access another unless explicitly configured.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Configure Permissions",
+    desc: "Set granular permissions per role across 200+ control points. Financial access, shipment editing, report generation: every action is configurable.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Connect Partners",
+    desc: "Onboard partner agencies for specific routes or regions. Configure commission rates, service agreements, and data visibility between your network and theirs.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Monitor from Head Office",
+    desc: "Access consolidated reporting across all branches and partners. See where volume is growing, where settlements are outstanding, and where performance needs attention.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const rbacRoles = [
+  { role: "Admin", desc: "Full access to all branches, settings, financials, and user management" },
+  { role: "Manager", desc: "Branch-level management with limited financial and config access" },
+  { role: "Agent", desc: "Shipment creation, client management, and own branch operations only" },
+  { role: "Driver", desc: "Delivery queue, route navigation, POD capture, and status updates" },
+  { role: "Customer", desc: "Own shipments, invoice downloads, tracking, and payment history" },
+  { role: "Custom Role", desc: "Any combination of the 200+ permissions, built to your workflow" },
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
+const permissionCategories = [
+  "Shipment create, view, edit, delete",
+  "Client management and credit control",
+  "Financial access and report generation",
+  "System configuration and settings",
+  "User and role management",
+  "Manifest and voyage operations",
+  "Warehouse and inventory access",
+  "Branch transfer authorization",
+  "Partner agency management",
+  "Audit log access and export",
 ];
 
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const settlementItems = [
+  { label: "Transfer Recording", desc: "Every inter-branch shipment handoff is logged automatically" },
+  { label: "Amount Calculation", desc: "Settlement amounts computed from agreed inter-branch rates" },
+  { label: "Outstanding Tracking", desc: "View all unsettled inter-branch obligations at any time" },
+  { label: "Settlement Reports", desc: "Export settlement history by branch, period, or partner" },
+  { label: "Commission Tracking", desc: "Agent and partner commissions calculated and tracked per shipment" },
+  { label: "Reconciliation Tools", desc: "Match payments to settlements and mark obligations as cleared" },
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "200+", label: "Permission control points" },
+  { value: "Unlimited", label: "Branches supported" },
+  { value: "100%", label: "Data isolation" },
+  { value: "Real-Time", label: "Network reporting" },
 ];
 
-export default function Finance() {
+export default function MultiBranch() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -140,12 +143,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                Multi-Branch
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Network</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Operate unlimited branches and partner agencies from a single platform. Full data isolation between branches, 200 permission control points, inter-branch transfers, settlements, and consolidated network-wide reporting.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -179,10 +182,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Run Your Entire Network from One Platform
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                Every branch, every partner, every agent. Fully connected, fully isolated, fully visible from head office.
               </p>
             </div>
 
@@ -203,15 +206,15 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Workflow */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Single Branch to Full Network
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                Start with one branch and expand to a full multi-country network without changing platforms or migrating data.
               </p>
             </div>
 
@@ -230,41 +233,44 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* RBAC + Permissions - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* RBAC Roles */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <UsersThree className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">Role-Based Access Control</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                Every user in your network operates within their assigned role. Predefined roles cover all standard operations. Custom roles let you define exactly what each person can do.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
+              <div className="space-y-3 pt-1">
+                {rbacRoles.map((item, i) => (
                   <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.role}</span>
+                    </div>
+                    <p className="text-sm text-foreground/60 font-sans font-medium pl-5">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Permission Categories + Settlements */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Eye className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Permission Categories</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  200+ individual permission points span every area of the platform. Grant or restrict access at the finest level of detail.
                 </p>
                 <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
+                  {permissionCategories.map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
@@ -275,20 +281,20 @@ export default function Finance() {
 
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <CurrencyDollar className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Inter-Branch Settlements</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Every handoff between branches creates a traceable financial obligation. Settlements are tracked, reconciled, and reportable at any time.
                 </p>
                 <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
+                  {settlementItems.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.label}:</span>
+                        <span className="text-sm text-foreground/60 font-sans font-medium"> {item.desc}</span>
                       </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -301,9 +307,6 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10 max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
-                Use Cases
-              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
                 Who This Is Built For
               </h2>
@@ -312,21 +315,21 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Buildings className="h-4.5 w-4.5" />
+                  <Globe className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">International Freight Forwarders</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Run branches across multiple countries with full data isolation. Head office sees everything. Each branch only sees its own. Commission settlements happen automatically.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
+                  <Buildings className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Regional Courier Networks</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
+                  Manage city and town branches from one account. Agents at each location process their own shipments while operations managers see the full regional picture.
                 </p>
               </div>
 
@@ -334,9 +337,9 @@ export default function Finance() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Bell className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Agency Partnerships</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Onboard third-party agencies as partners in your network. Assign them specific routes, set commission rates, and track shipment handoffs with full financial audit trail.
                 </p>
               </div>
             </div>
@@ -353,18 +356,18 @@ export default function Finance() {
               {[
                 {
                   title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
+                  desc: "Manage cross-border shipments across your multi-branch network with multi-leg routing and partner agency coordination.",
                   href: "/solutions/international-forwarding",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Finance & Billing",
+                  desc: "Track inter-branch settlements, agent commissions, and branch-level financial performance in one place.",
+                  href: "/solutions/finance",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Consolidation & Manifests",
+                  desc: "Group and transfer shipments between branches for consolidation with full manifest and voyage tracking.",
+                  href: "/solutions/consolidation",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +394,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Scale Your
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">Logistics Network?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI manages multi-branch operations, permissions, and inter-agency settlements for your specific network structure in a live walkthrough.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

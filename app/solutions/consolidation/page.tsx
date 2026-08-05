@@ -7,128 +7,119 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
+  Package,
+  Cube,
+  ClipboardText,
+  Boat,
+  Barcode,
+  ArrowsLeftRight,
+  Stack,
   ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
-  FileText,
-  Bell,
   CheckCircle,
+  Truck,
   Buildings,
-  UsersThree,
-  Coins,
-  BookOpenText,
+  ListChecks,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: Stack,
+    title: "Shipment Grouping",
+    desc: "Group multiple individual shipments into a single consolidated load. Reduce per-unit shipping costs and optimize container utilization across routes.",
   },
   {
-    icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
+    icon: Cube,
+    title: "Container Management",
+    desc: "Track and manage containers by type, capacity, and assigned voyage. Monitor fill levels and assign shipments to containers with load optimization.",
   },
   {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
+    icon: Package,
+    title: "Pallet Tracking",
+    desc: "Assign shipments to pallets, track pallet weights, dimensions, and positions within containers. Full visibility from warehouse to port.",
   },
   {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
+    icon: ClipboardText,
+    title: "Manifest Generation",
+    desc: "Create voyage manifests automatically from consolidated shipment data. Print or export manifests for carriers, customs, and port authorities.",
+  },
+  {
+    icon: Boat,
+    title: "Voyage Management",
+    desc: "Schedule and manage voyages with vessel details, departure and arrival ports, and estimated transit times. Assign manifests to voyages in one step.",
+  },
+  {
+    icon: ArrowsLeftRight,
+    title: "Load Optimization",
+    desc: "Maximize container utilization with load planning tools. Visualize how packages fit together by weight and volume before finalizing the load.",
+  },
+  {
+    icon: Barcode,
+    title: "Barcode Scanning",
+    desc: "Scan package barcodes at receiving and dispatch to verify every item in a consolidation. Reduce manual entry errors and speed up cargo processing.",
   },
   {
     icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
-  },
-  {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
-  },
-  {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
-  },
-  {
-    icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    title: "Manifest Status Tracking",
+    desc: "Track manifests through every stage: open, in-progress, submitted, closed. Close and finalize manifests with a single action when the voyage departs.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Receive Shipments",
+    desc: "Incoming shipments are received at the warehouse and scanned into the system. Each package is logged with weight, dimensions, and handling requirements.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Group for Consolidation",
+    desc: "Select shipments heading to the same destination or via the same route. Group them into a consolidation batch for a specific voyage.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Assign to Container",
+    desc: "Assign the consolidated batch to a container or pallet. Load optimization shows available capacity and suggests the most efficient arrangement.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Generate Manifest",
+    desc: "NTIGI auto-produces the voyage manifest with all shipment details, weights, package counts, and customs information ready for the carrier.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Close & Dispatch",
+    desc: "Close the manifest when loading is complete. The voyage status updates, customers are notified, and all records are archived with a full audit trail.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const manifestFeatures = [
+  "Auto-generated from shipment data",
+  "Includes all package and weight details",
+  "Customs-ready documentation",
+  "PDF export for carriers and authorities",
+  "Batch printing support",
+  "Manifest versioning and history",
+  "Status tracking: open, submitted, closed",
+  "Finalize with single action",
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const voyageDetails = [
+  { label: "Vessel Name", desc: "Assign a vessel or transport identifier to each voyage" },
+  { label: "Departure Port", desc: "Origin port with GPS coordinates and location details" },
+  { label: "Arrival Port", desc: "Destination port with expected delivery window" },
+  { label: "Transit Time", desc: "Estimated transit duration per route configuration" },
+  { label: "Manifest Count", desc: "Number of manifests assigned to the voyage" },
+  { label: "Shipment Count", desc: "Total packages across all manifests in the voyage" },
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "100K+", label: "Shipments per day" },
+  { value: "22+", label: "Cargo handling tags" },
+  { value: "30+", label: "API modules" },
+  { value: "100%", label: "Offline capable" },
 ];
 
-export default function Finance() {
+export default function Consolidation() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -140,12 +131,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                Consolidation
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">& Manifests</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Group shipments, manage containers, generate voyage manifests, and track every load from warehouse floor to port departure all in one offline-first system.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -179,10 +170,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Everything from Grouping to Departure
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                Full consolidation operations in one system from receiving individual packages through to closing the voyage manifest.
               </p>
             </div>
 
@@ -208,10 +199,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Receiving to Voyage Departure
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                A clear five-step consolidation process every action tracked, every document generated automatically.
               </p>
             </div>
 
@@ -230,65 +221,44 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* Manifest + Voyage Details - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* Manifest Features */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <ListChecks className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">Manifest Management</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                Manifests are generated automatically from the shipments in your consolidation. No manual data entry the system builds the document from the booking record.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
-                  <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+              <div className="space-y-2 pt-2">
+                {manifestFeatures.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Voyage Details */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Boat className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Voyage Record Details</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
-                </p>
-                <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
-                <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
-                </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Each voyage captures the full operational picture vessel, ports, timelines, and all associated manifests and shipments.
                 </p>
                 <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
+                  {voyageDetails.map((item, i) => (
                     <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
+                      <div className="text-sm font-bold uppercase tracking-wider text-foreground mb-0.5">{item.label}</div>
+                      <div className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</div>
                     </div>
                   ))}
                 </div>
@@ -301,9 +271,6 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10 max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
-                Use Cases
-              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
                 Who This Is Built For
               </h2>
@@ -312,31 +279,31 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Boat className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Ocean Freight Operators</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Consolidate LCL (less than container load) shipments into full containers. Generate Bills of Lading and port manifests directly from NTIGI.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Buildings className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Warehouse Operators</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Manage goods-in with barcode scanning, assign to consolidation batches by destination, and track every pallet from shelf to dispatch dock.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
+                  <Truck className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Consolidators</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
-                </p>
-              </div>
-
-              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
-                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
-                </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Bundle last-mile courier packages into route-based consolidations for dispatch vehicles. Reduce trips, increase delivery density per run.
                 </p>
               </div>
             </div>
@@ -353,18 +320,18 @@ export default function Finance() {
               {[
                 {
                   title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
+                  desc: "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.",
                   href: "/solutions/international-forwarding",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Customs & Compliance",
+                  desc: "Auto-generate customs documentation and run compliance screening on every consolidated shipment.",
+                  href: "/solutions/customs-compliance",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Warehouse Management",
+                  desc: "Manage shelf locations, stock levels, receiving, and dispatch within your warehouse operations.",
+                  href: "/solutions/warehouse",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +358,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Streamline Your
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">Consolidation Operations?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI manages your consolidation workflow from warehouse receiving to voyage departure in a live walkthrough with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

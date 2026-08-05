@@ -7,128 +7,120 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
   FileText,
-  Bell,
+  Shield,
+  Scales,
+  Globe,
+  ClipboardText,
+  Warning,
+  MagnifyingGlass,
   CheckCircle,
+  Lock,
+  Receipt,
+  Barcode,
   Buildings,
-  UsersThree,
-  Coins,
-  BookOpenText,
+  ChartLine,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
-  },
-  {
-    icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
-  },
-  {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
-  },
-  {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
-  },
-  {
-    icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
-  },
-  {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
-  },
-  {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
-  },
-  {
     icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    title: "Commercial Invoice Generation",
+    desc: "Auto-generate compliant commercial invoices for every international shipment. Pre-filled with shipper, receiver, commodity details, HS codes, and declared values.",
+  },
+  {
+    icon: ClipboardText,
+    title: "Packing List & Certificate of Origin",
+    desc: "Produce packing lists and certificates of origin directly from shipment data. No re-entering information documents pull from the booking record.",
+  },
+  {
+    icon: Scales,
+    title: "HS Code Management",
+    desc: "Search and assign Harmonized System (HS) codes to packages. System validates codes and calculates applicable duties and taxes per destination country.",
+  },
+  {
+    icon: Globe,
+    title: "Duty & Tax Calculation",
+    desc: "Automatically compute customs duties, VAT, and applicable import taxes based on HS codes, declared values, and destination regulations.",
+  },
+  {
+    icon: Warning,
+    title: "Dangerous Goods Handling",
+    desc: "Flag and classify dangerous goods per IATA and IMDG regulations. Ensure correct documentation and handling instructions are attached to every relevant shipment.",
+  },
+  {
+    icon: Shield,
+    title: "Sanction List Screening",
+    desc: "Screen senders and receivers against international sanctions lists before shipment processing. Block or flag restricted entities automatically.",
+  },
+  {
+    icon: MagnifyingGlass,
+    title: "Export / Import Restriction Checks",
+    desc: "Validate every shipment against country-level export and import restriction databases. Catch prohibited items before they reach the border.",
+  },
+  {
+    icon: Lock,
+    title: "Audit Trail & Compliance Logs",
+    desc: "Every document generated, status changed, and decision made is logged with user, timestamp, and reason providing a complete, exportable compliance audit trail.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Create Shipment",
+    desc: "Enter package details, sender, receiver, and commodity information. System prompts for HS codes and declared value at the point of booking.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Auto Compliance Check",
+    desc: "System screens against sanctions lists and restriction databases in real time. Flagged shipments are held for review before processing continues.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Generate Documents",
+    desc: "One click produces commercial invoice, packing list, certificate of origin, and customs declaration form all pre-populated and formatted for submission.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Calculate Duties",
+    desc: "Duties, VAT, and import taxes are computed using HS codes and destination country rules. Totals appear on the invoice and can be passed to the client.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Submit & Archive",
+    desc: "Submit documentation to customs authorities. All records are archived with full audit trail searchable, exportable, and retained per your data policy.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const documentTypes = [
+  { name: "Commercial Invoice", desc: "Legally required export document with full shipment and valuation details" },
+  { name: "Packing List", desc: "Detailed breakdown of all items, weights, and dimensions per package" },
+  { name: "Certificate of Origin", desc: "Certifies where goods were manufactured for tariff preference purposes" },
+  { name: "Customs Declaration", desc: "Formal declaration submitted to customs authorities for clearance" },
+  { name: "Airway Bill / Bill of Lading", desc: "Transport contract between shipper and carrier with full shipment details" },
+  { name: "Dangerous Goods Declaration", desc: "IATA/IMDG-compliant declaration for hazardous materials" },
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const complianceChecks = [
+  "Sanctions list screening (OFAC, UN, EU)",
+  "Export/import restriction validation",
+  "Prohibited items checking",
+  "Dangerous goods classification",
+  "HS code validation per destination",
+  "Dual-use goods identification",
+  "Country embargo verification",
+  "GDPR-compliant data retention",
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "200+", label: "Permission control points" },
+  { value: "100%", label: "Audit trail coverage" },
+  { value: "30+", label: "API modules" },
+  { value: "4", label: "Languages supported" },
 ];
 
-export default function Finance() {
+export default function CustomsCompliance() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -140,12 +132,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                Customs &
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Compliance</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Automate customs documentation, HS code management, duty calculations, and regulatory compliance checks all built directly into the NTIGI shipment workflow.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -179,10 +171,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Built for Compliant Global Trade
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                Every compliance requirement handled automatically from document generation to regulatory screening before the shipment moves.
               </p>
             </div>
 
@@ -208,10 +200,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Booking to Clearance
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                Compliance is embedded in the shipment workflow not a separate step that slows you down.
               </p>
             </div>
 
@@ -230,41 +222,44 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* Documents + Compliance Checks - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* Document Types */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <Receipt className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">Documents Generated</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                All required customs documents are produced directly from the shipment record no separate system, no re-entry of data.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
+              <div className="space-y-3 pt-2">
+                {documentTypes.map((doc, i) => (
                   <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Barcode className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-foreground">{doc.name}</span>
+                    </div>
+                    <p className="text-sm text-foreground/60 font-sans font-medium pl-5">{doc.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Compliance Checks */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Shield className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Automated Compliance Checks</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  Every shipment runs through a full compliance screening stack before processing automatically, without manual intervention.
                 </p>
-                <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
+                <div className="space-y-2 pt-2">
+                  {complianceChecks.map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
@@ -273,24 +268,19 @@ export default function Finance() {
                 </div>
               </div>
 
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
+              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <Lock className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Enterprise-Grade Security</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  All compliance data is protected with AES-256 encryption at rest and TLS 1.3 in transit. Role-based access control ensures only authorized staff can view or modify sensitive customs records.
                 </p>
-                <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2 pt-1">
+                  <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/60 font-sans font-medium">
+                    Complete audit trail with user, timestamp, and action recorded on every document change.
+                  </span>
                 </div>
               </div>
             </div>
@@ -301,9 +291,6 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10 max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
-                Use Cases
-              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
                 Who This Is Built For
               </h2>
@@ -314,29 +301,29 @@ export default function Finance() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Buildings className="h-4.5 w-4.5" />
                 </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Customs Brokers</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Handle multiple client accounts with document generation, HS code lookup, and duty calculation built in. Reduce manual paperwork and clearance time.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Globe className="h-4.5 w-4.5" />
+                </div>
                 <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Embed compliance directly into your international forwarding workflow. Documents are generated at the point of booking not as an afterthought.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
+                  <ChartLine className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Compliance Teams</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
-                </p>
-              </div>
-
-              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
-                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
-                </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Full audit trail, exportable compliance logs, and screening records for every shipment. Built-in GDPR tools and configurable data retention policies.
                 </p>
               </div>
             </div>
@@ -353,18 +340,18 @@ export default function Finance() {
               {[
                 {
                   title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
+                  desc: "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.",
                   href: "/solutions/international-forwarding",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Consolidation & Manifests",
+                  desc: "Group shipments into voyages, manage containers, and generate manifests for customs submission.",
+                  href: "/solutions/consolidation",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Finance & Billing",
+                  desc: "Issue multi-currency invoices with duties and taxes automatically calculated per jurisdiction.",
+                  href: "/solutions/finance",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +378,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Automate Your
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">Customs Operations?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI handles documentation, screening, and duty calculations for your specific trade lanes in a live demo with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

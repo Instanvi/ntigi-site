@@ -5,130 +5,120 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import {
+  Globe,
+  Package,
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
-  FileText,
-  Bell,
-  CheckCircle,
   Buildings,
+  FileText,
+  CurrencyDollar,
+  MapPin,
+  ChartLine,
+  Shield,
+  ClockCounterClockwise,
+  Truck,
   UsersThree,
-  Coins,
-  BookOpenText,
+  CheckCircle,
+  WarningCircle,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: Globe,
+    title: "Multi-Country Route Management",
+    desc: "Create and manage routes spanning multiple countries with multi-leg stops, transit points, and dynamic pricing per corridor. Cover West Africa to global ports with a single system.",
   },
   {
-    icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
-  },
-  {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
-  },
-  {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
-  },
-  {
-    icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
-  },
-  {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
-  },
-  {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
+    icon: Package,
+    title: "International Shipment Types",
+    desc: "Handle standard, express, bulk, return, and COD international shipments. Capture sender and receiver details across borders with full address validation.",
   },
   {
     icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    title: "Customs Documentation",
+    desc: "Auto-generate commercial invoices, packing lists, certificates of origin, and customs declaration forms. Manage HS codes and calculate duties and taxes per shipment.",
+  },
+  {
+    icon: Buildings,
+    title: "Partner Agency Network",
+    desc: "Connect with partner agencies abroad. Manage inter-branch transfers, commission structures, and inter-agency settlements all from a single dashboard.",
+  },
+  {
+    icon: CurrencyDollar,
+    title: "Multi-Currency Invoicing",
+    desc: "Issue invoices in multiple currencies. Handle tax and VAT calculations per jurisdiction with automatic currency conversion and PDF generation.",
+  },
+  {
+    icon: MapPin,
+    title: "Real-Time GPS Tracking",
+    desc: "Track every international shipment live. Customers receive automated SMS, email, and push notifications at each status update along the route.",
+  },
+  {
+    icon: Shield,
+    title: "Compliance & Sanctions Screening",
+    desc: "Built-in regulatory compliance checking, dangerous goods handling, export/import restriction enforcement, and sanctions list screening on every shipment.",
+  },
+  {
+    icon: ChartLine,
+    title: "Revenue & Route Analytics",
+    desc: "Monitor revenue per route, agent commission reports, branch performance comparisons, and delivery success rates all exportable to Excel or PDF.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Book the Shipment",
+    desc: "Create an international shipment with sender, receiver, package details, route, and service level. System generates a tracking number and receipt instantly.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Generate Documents",
+    desc: "NTIGI auto-produces all required customs documentation commercial invoice, packing list, certificate of origin ready for border submission.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Assign to Voyage/Manifest",
+    desc: "Group shipments into a manifest and assign to a voyage or container. Optimize load and print the manifest for carriers.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Track Across Borders",
+    desc: "Every status change picked up, in transit, at customs, out for delivery, delivered is logged and pushed to the customer in real time.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Settle & Invoice",
+    desc: "Once delivered, generate final invoices, process payments in local or foreign currency, and close the shipment with proof of delivery.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const complianceItems = [
+  "HS code management and duty calculation",
+  "Commercial invoice generation",
+  "Packing list and certificate of origin",
+  "Customs declaration forms",
+  "Dangerous goods handling",
+  "Sanction list screening",
+  "Export/import restriction checks",
+  "Audit trail for every action",
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const carrierIntegrations = [
+  { name: "DHL", type: "API Integration" },
+  { name: "FedEx", type: "API Integration" },
+  { name: "UPS", type: "API Integration" },
+  { name: "Local Carriers", type: "Custom APIs" },
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "100K+", label: "Shipments processed daily" },
+  { value: "22+", label: "Cargo handling methods" },
+  { value: "4", label: "Languages supported" },
+  { value: "30+", label: "API modules" },
 ];
 
-export default function Finance() {
+export default function InternationalForwarding() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -140,12 +130,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                International
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Forwarding</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Manage cross-border shipments, customs documentation, multi-currency invoicing, and partner agency networks from a single offline-first platform built for international freight forwarders.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -179,10 +169,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Everything a Global Freight Forwarder Needs
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                From booking to final delivery every tool built into one platform that works even without internet.
               </p>
             </div>
 
@@ -208,10 +198,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                How International Forwarding Works
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                A clear five-step process from booking to settlement fully trackable at every stage.
               </p>
             </div>
 
@@ -230,82 +220,74 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* Compliance + Carrier Integrations - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* Compliance */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <Shield className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">Customs & Compliance</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                NTIGI handles every document and compliance check required for international shipment clearance automatically, at the point of booking.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
-                  <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+              <div className="space-y-2 pt-2">
+                {complianceItems.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Carrier Integrations + Offline */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Truck className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Carrier Integrations</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  Connect with global carriers for rate comparison, label generation, and tracking all inside NTIGI.
                 </p>
-                <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
+                <div className="grid grid-cols-2 gap-3 pt-1">
+                  {carrierIntegrations.map((carrier, i) => (
+                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
+                      <div className="text-md font-bold uppercase tracking-wider text-foreground">{carrier.name}</div>
+                      <div className="text-sm text-blue-500 uppercase tracking-wider mt-0.5">{carrier.type}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
+              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <ClockCounterClockwise className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Offline-First Operation</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Create international shipments, issue documents, and update statuses even with no internet connection. Data syncs automatically the moment connectivity returns zero data loss, no duplicate entries.
                 </p>
-                <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2 pt-1">
+                  <WarningCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/60 font-sans font-medium">
+                    Critical for agents operating in West African port zones with intermittent connectivity.
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
+        {/* Use Case highlight */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10 max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
-                Use Cases
-              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Who This Is Built For
+                Built for Multi-Branch Forwarders
               </h2>
             </div>
 
@@ -314,9 +296,9 @@ export default function Finance() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Buildings className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Multiple Branches</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Operate separate branches with data isolation, branch-level permissions, and consolidated reporting at the top level. Each branch sees only what it needs to.
                 </p>
               </div>
 
@@ -324,19 +306,19 @@ export default function Finance() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <UsersThree className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Partner Agencies</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
+                  Onboard partner agencies at origin and destination points. Track commissions, inter-agency settlements, and partner performance from one place.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
+                  <ChartLine className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Full Visibility</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Real-time KPI dashboards, route utilization reports, and delivery success rates. Export any report to Excel, PDF, or CSV at any time.
                 </p>
               </div>
             </div>
@@ -349,22 +331,22 @@ export default function Finance() {
             <div className="text-left mb-10">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-l border-border-custom">
               {[
                 {
-                  title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
-                  href: "/solutions/international-forwarding",
-                },
-                {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
-                },
-                {
                   title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  desc: "Centralize global trade operations and automate compliance documentation at every border.",
+                  href: "/solutions/manifest-voyage",
+                },
+                {
+                  title: "Warehouse Management",
+                  desc: "Streamline goods-in to goods-out with consolidation, pallet tracking, and manifest generation.",
+                  href: "/solutions/warehouse",
+                },
+                {
+                  title: "Finance & Billing",
+                  desc: "Process payments in multiple currencies, generate invoices, and manage agent commissions.",
+                  href: "/solutions/finance",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +373,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Streamline Your
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">International Operations?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                Book a live walkthrough with our team. We'll show you how NTIGI handles your exact forwarding workflow end to end.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

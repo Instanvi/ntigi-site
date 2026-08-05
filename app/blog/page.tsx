@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, Clock } from "@phosphor-icons/react/dist/ssr";
 
-export const revalidate = 60; // Revalidate content every 60 seconds
+export const revalidate = 60;
 
 export default async function BlogListing() {
   let posts: any[] = [];
@@ -82,7 +82,7 @@ export default async function BlogListing() {
                           {post.category}
                         </span>
                         <span className="text-[10px] font-bold text-foreground/45 group-hover:text-blue-500">
-                          // {indexStr}
+                          {indexStr}
                         </span>
                       </div>
 

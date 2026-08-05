@@ -7,128 +7,120 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
-  FileText,
-  Bell,
   CheckCircle,
-  Buildings,
+  Camera,
+  Signature,
+  MapPin,
+  DeviceMobile,
+  Bell,
+  Barcode,
+  ClockCounterClockwise,
+  Shield,
+  Truck,
+  ChartLine,
   UsersThree,
-  Coins,
-  BookOpenText,
+  Warning,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: Signature,
+    title: "Signature Capture",
+    desc: "Drivers capture the recipient's digital signature directly on their mobile device at the point of delivery. Signature is stored against the shipment record instantly.",
   },
   {
-    icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
+    icon: Camera,
+    title: "Photo Documentation",
+    desc: "Capture photos of delivered packages, damaged goods, or delivery locations. Photos are uploaded to the shipment record and timestamped for dispute resolution.",
   },
   {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
+    icon: MapPin,
+    title: "Real-Time GPS Tracking",
+    desc: "Track every driver's location live during delivery runs. Managers see the full fleet on a map. Customers see their shipment moving toward them in real time.",
   },
   {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
+    icon: Bell,
+    title: "Automated Customer Notifications",
+    desc: "Customers receive automatic SMS, email, and push notifications at each delivery milestone: out for delivery, arrived, delivered. No manual updates needed.",
   },
   {
-    icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
+    icon: Barcode,
+    title: "Barcode Scanning at Delivery",
+    desc: "Drivers scan package barcodes to confirm the correct item is being delivered to the correct recipient. Prevents wrong-delivery incidents before they happen.",
   },
   {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
+    icon: ClockCounterClockwise,
+    title: "Delivery Timeline History",
+    desc: "Every status update — picked up, in transit, out for delivery, delivered — is logged with timestamp, GPS coordinates, and the driver who performed the action.",
   },
   {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
+    icon: DeviceMobile,
+    title: "Driver Mobile App (PWA)",
+    desc: "Drivers use NTIGI's mobile PWA app to manage their delivery queue, navigate routes, scan barcodes, capture signatures and photos — all from any smartphone.",
   },
   {
-    icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    icon: Shield,
+    title: "Dispute Protection",
+    desc: "Every delivery is backed by a complete evidence record: signature, photos, GPS location, timestamp, and driver identity. Resolve client disputes in seconds.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Assign to Driver",
+    desc: "Shipments are assigned to a driver and appear in their delivery queue on the mobile app. The driver receives a notification with the day's pickup and delivery list.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Pick Up & Scan",
+    desc: "Driver scans the barcode at pickup to confirm they have the correct package. Status updates to 'In Transit' and the customer is notified automatically.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Navigate & Arrive",
+    desc: "Driver navigates to the delivery address. GPS location is tracked throughout the route. Status updates to 'Out for Delivery' when the driver is nearby.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Capture POD",
+    desc: "At the door, the driver captures the recipient's signature and takes a photo of the delivered package. Both are attached to the shipment record in real time.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Confirm & Close",
+    desc: "Delivery is confirmed, status updates to 'Delivered', and the customer receives instant notification. The full POD record is available for download immediately.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const podRecord = [
+  { label: "Recipient Signature", desc: "Digital signature captured on driver's device" },
+  { label: "Delivery Photos", desc: "Photos of the package and delivery location" },
+  { label: "GPS Coordinates", desc: "Exact location where delivery was confirmed" },
+  { label: "Delivery Timestamp", desc: "Date and time of delivery confirmation" },
+  { label: "Driver Identity", desc: "Which driver completed the delivery" },
+  { label: "Barcode Scan Log", desc: "Package scan confirmation at delivery" },
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const notificationTypes = [
+  "Out for delivery SMS notification",
+  "Estimated arrival time update",
+  "Delivered confirmation with timestamp",
+  "Photo delivery confirmation",
+  "Failed delivery attempt alert",
+  "Rescheduled delivery notification",
+  "WhatsApp delivery updates",
+  "Push notifications (iOS and Android)",
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "100%", label: "Delivery evidence" },
+  { value: "Real-Time", label: "GPS tracking" },
+  { value: "22+", label: "Cargo handling tags" },
+  { value: "Mobile", label: "PWA driver app" },
 ];
 
-export default function Finance() {
+export default function ProofOfDelivery() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -138,14 +130,24 @@ export default function Finance() {
         {/* Hero */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
+            <Link
+              href="/solutions/route-optimization"
+              className="inline-flex items-center gap-2 text-foreground/60 hover:text-blue-500 mb-6 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="text-xs uppercase font-bold tracking-wider">Solutions</span>
+            </Link>
             <div className="max-w-3xl space-y-4">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">
+                For Couriers & Last-Mile Delivery
+              </div>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                Proof of
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Delivery</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Capture signatures, photos, GPS coordinates, and delivery timestamps on every shipment. Protect your business from disputes and give customers real-time visibility from dispatch to doorstep.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -178,11 +180,14 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Capabilities
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Complete Last-Mile Delivery Evidence
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                Every delivery backed by a full evidence record. Every customer kept informed. Every driver equipped with the tools they need.
               </p>
             </div>
 
@@ -203,15 +208,18 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Workflow */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Workflow
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Dispatch to Confirmed Delivery
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                A five-step process that keeps drivers, managers, and customers aligned from the moment a package leaves the warehouse.
               </p>
             </div>
 
@@ -230,41 +238,44 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* POD Record + Notifications */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* POD Record Contents */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <Shield className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">What Every POD Record Contains</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                Each delivery confirmation generates a complete, tamper-proof evidence record stored against the shipment — retrievable any time by managers or clients.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
+              <div className="space-y-3 pt-1">
+                {podRecord.map((item, i) => (
                   <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.label}</span>
+                    </div>
+                    <p className="text-sm text-foreground/60 font-sans font-medium pl-5">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Notifications + Driver App */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Bell className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Customer Notifications</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  Customers stay informed at every step without your staff lifting a finger. All notifications are automated and sent via the customer's preferred channel.
                 </p>
                 <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
+                  {notificationTypes.map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
@@ -273,24 +284,19 @@ export default function Finance() {
                 </div>
               </div>
 
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
+              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <DeviceMobile className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Driver Mobile App</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Drivers use NTIGI's mobile PWA on any Android or iOS device. No app store download required — just open the browser, log in, and start delivering. The app works offline and syncs when connectivity returns.
                 </p>
-                <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2 pt-1">
+                  <Warning className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/60 font-sans font-medium">
+                    Critical for drivers in areas with poor signal coverage — all POD data is captured offline and synced automatically.
+                  </span>
                 </div>
               </div>
             </div>
@@ -312,11 +318,11 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Buildings className="h-4.5 w-4.5" />
+                  <Truck className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Local Courier Services</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Track 20 to 50 drivers daily with live GPS. Capture signatures and photos at every drop. Resolve customer disputes with timestamped evidence within minutes.
                 </p>
               </div>
 
@@ -324,19 +330,19 @@ export default function Finance() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <UsersThree className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">E-commerce Fulfilment</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
+                  Give online shoppers the delivery experience they expect. Real-time tracking, automated notifications, and a photo confirmation they can access from their order page.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
+                  <ChartLine className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Delivery Networks</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Manage multi-stop delivery runs for bulk freight. Each stop gets its own POD record, keeping clients, agents, and operations teams aligned with zero paperwork.
                 </p>
               </div>
             </div>
@@ -352,19 +358,19 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
                 {
-                  title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
-                  href: "/solutions/international-forwarding",
+                  title: "Route Optimization",
+                  desc: "Plan and optimize delivery routes so drivers spend less time navigating and more time delivering.",
+                  href: "/solutions/route-optimization",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Fleet & Driver Management",
+                  desc: "Manage vehicle assignments, driver profiles, license tracking, and performance metrics across your fleet.",
+                  href: "/solutions/fleet-management",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Finance & Billing",
+                  desc: "Collect COD payments at delivery, reconcile collections per driver, and auto-generate delivery receipts.",
+                  href: "/solutions/finance",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +397,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Protect Every
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">Delivery You Make?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI captures signatures, photos, and GPS evidence for every delivery — in a live walkthrough with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

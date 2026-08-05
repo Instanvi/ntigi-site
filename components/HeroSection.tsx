@@ -9,12 +9,11 @@ export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Use IntersectionObserver instead of scroll event
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           sectionRef.current?.classList.add("active");
-          observer.disconnect(); // Run once
+          observer.disconnect(); 
         }
       },
       { threshold: 0.15 }
@@ -29,7 +28,6 @@ export default function HeroSection() {
       ref={sectionRef}
       className="relative z-0 w-full pt-28 pb-16 overflow-hidden flex flex-col justify-center min-h-[90vh] reveal-on-scroll"
     >
-      {/* Dynamic Background Animations */}
       <BackgroundGrid />
 
       <div className="mx-auto max-w-7xl px-6 md:px-8 flex flex-col items-center space-y-6 text-center relative z-10">
@@ -74,9 +72,9 @@ export default function HeroSection() {
             <div className="px-4 py-2 border-b border-border-custom bg-[var(--console-header)] flex items-center justify-between text-[10px] text-foreground/60">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-none bg-red-500/30 border border-red-500/50" />
-                  <span className="w-2.5 h-2.5 rounded-none bg-yellow-500/30 border border-yellow-500/50" />
-                  <span className="w-2.5 h-2.5 rounded-none bg-green-500/30 border border-green-500/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/30 border border-red-500/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/30 border border-yellow-500/50" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/30 border border-green-500/50" />
                 </div>
                 <div className="flex items-center gap-1 pl-2 border-l border-border-custom">
                   <Terminal className="h-3 w-3 text-[#3b82f6]" />
@@ -84,7 +82,7 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-none bg-blue-500 animate-ping" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
                 <span className="tracking-wider text-[#3b82f6]">SYNC: ACTIVE</span>
               </div>
             </div>
@@ -112,13 +110,12 @@ export default function HeroSection() {
 
               {/* Right Column: Platform Video Visualizer */}
               <div className="md:col-span-2 relative aspect-[16/10] md:aspect-auto w-full bg-black/5 overflow-hidden flex items-center justify-center">
-                {/* Background Video with Poster */}
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  poster="/hero-poster.jpg"
+                  poster="/ship.jpg"
                   className="absolute inset-0 w-full h-full object-cover opacity-90 dark:opacity-85"
                 >
                   <source src="/hero.mp4" type="video/mp4" />

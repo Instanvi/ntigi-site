@@ -102,7 +102,7 @@ export default function BlogSection() {
                         {post.category}
                       </span>
                       <span className="font-mono text-[10px] font-bold text-foreground/45 group-hover:text-blue-500">
-                        // {indexStr}
+                        {indexStr}
                       </span>
                     </div>
 
