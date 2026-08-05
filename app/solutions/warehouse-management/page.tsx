@@ -7,132 +7,123 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
+  Warehouse,
   MapPin,
-  Path,
-  Clock,
-  Truck,
+  Barcode,
+  Stack,
+  ArrowsLeftRight,
   ChartLine,
-  CurrencyDollar,
-  MapTrifold,
-  Gauge,
   CheckCircle,
-  DeviceMobile,
-  Globe,
-  ArrowsClockwise,
-  UsersThree,
+  Package,
+  ClipboardText,
+  Cube,
+  ArrowsCounterClockwise,
+  Truck,
   Buildings,
+  UsersThree,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Path,
-    title: "Multi-Leg Route Creation",
-    desc: "Define routes with multiple stops, waypoints, and transit hubs. Each leg has its own distance, transit time, pricing, and available service levels.",
+    icon: Warehouse,
+    title: "Multiple Warehouse Support",
+    desc: "Register and manage any number of warehouse locations from a single NTIGI account. Each warehouse has its own location, capacity, assigned staff, and operational records.",
   },
   {
     icon: MapPin,
-    title: "Stop & Location Management",
-    desc: "Create and manage pickup and delivery locations with GPS coordinates, address validation, and coverage area mapping. Search and assign stops to any route.",
+    title: "Shelf and Bin Locations",
+    desc: "Define physical shelf and bin locations within each warehouse. Assign incoming goods to specific shelf positions. Find any package by its bin location instantly.",
   },
   {
-    icon: Clock,
-    title: "Transit Time Estimation",
-    desc: "Set and display expected transit times per route segment. Customers and agents see estimated arrival windows at booking time, not after.",
-  },
-  {
-    icon: CurrencyDollar,
-    title: "Pricing Per Route",
-    desc: "Configure rate cards per route with weight-based, zone-based, and dimensional weight pricing. Apply service level surcharges, fuel fees, and seasonal rates.",
-  },
-  {
-    icon: MapTrifold,
-    title: "Interactive Map Visualization",
-    desc: "View routes, stops, and active deliveries on interactive maps powered by Leaflet and OpenStreetMap. Visualize coverage areas and cluster delivery locations.",
-  },
-  {
-    icon: Gauge,
-    title: "Distance Calculation",
-    desc: "Automatic distance and duration calculation between stops using Google Maps API. Distances inform pricing, transit time estimates, and fuel cost tracking.",
-  },
-  {
-    icon: Truck,
-    title: "Vehicle Assignment to Routes",
-    desc: "Assign registered vehicles to specific routes based on capacity, type, and availability. Track which vehicle is running which route at any point in time.",
+    icon: Package,
+    title: "Capacity Management",
+    desc: "Track used and available capacity per warehouse. Monitor fill levels by weight and volume to prevent over-loading and plan incoming shipments effectively.",
   },
   {
     icon: ChartLine,
-    title: "Route Performance Analytics",
-    desc: "Monitor shipment volumes per route, delivery success rates, average transit times, and revenue per corridor. Identify underperforming routes instantly.",
+    title: "Stock Tracking",
+    desc: "Track stock levels in real time. View what is currently in the warehouse, what is reserved for outgoing shipments, and what has been dispatched.",
+  },
+  {
+    icon: Barcode,
+    title: "Receiving with Barcode Scanning",
+    desc: "Staff scan package barcodes at receiving to confirm every item entering the warehouse. Packages are automatically logged with location, weight, and arrival timestamp.",
+  },
+  {
+    icon: ArrowsLeftRight,
+    title: "Goods-In and Dispatch",
+    desc: "Full receiving and dispatch workflows. From the moment a package arrives to when it leaves the warehouse, every movement is recorded with user and timestamp.",
+  },
+  {
+    icon: Stack,
+    title: "Consolidation and Pallet Tracking",
+    desc: "Group incoming shipments into consolidation batches. Assign packages to pallets with weight and dimension tracking. Optimize loads before container assignment.",
+  },
+  {
+    icon: ClipboardText,
+    title: "Manifest and Voyage Management",
+    desc: "Generate voyage manifests directly from warehouse consolidation batches. Assign to containers or vehicles and track manifest status through to departure.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Define the Route",
-    desc: "Create a route with origin, destination, and intermediate stops. Set the route name, carrier type, transit time, and which services are available on this corridor.",
+    title: "Configure Warehouse",
+    desc: "Set up each warehouse with its name, location, capacity, and shelf layout. Assign warehouse staff and configure which shipment types are handled at that location.",
   },
   {
     step: "02",
-    title: "Configure Pricing",
-    desc: "Set rate cards for the route: weight bands, zone pricing, package type rates, express surcharges, and any custom contract rates for specific clients.",
+    title: "Receive Goods",
+    desc: "Staff scan incoming packages at the receiving dock. Each item is logged against its shipment record, assigned a shelf location, and marked as in-warehouse.",
   },
   {
     step: "03",
-    title: "Assign Vehicles",
-    desc: "Link vehicles from your fleet to the route. The system tracks capacity and ensures the right vehicle type is matched to the route requirements.",
+    title: "Locate and Track",
+    desc: "At any time, staff can search for any package by its tracking number or barcode and immediately see which shelf or bin it is in and when it arrived.",
   },
   {
     step: "04",
-    title: "Assign Shipments",
-    desc: "Agents select the route at booking time. Shipments are grouped by route for dispatch. The system shows available capacity per run before assignment.",
+    title: "Consolidate for Dispatch",
+    desc: "Group packages heading to the same destination into a consolidation batch. Assign to pallets, then to a container. Generate the manifest automatically.",
   },
   {
     step: "05",
-    title: "Track and Report",
-    desc: "Monitor every active shipment on the route in real time. Report on route utilization, delivery success, and revenue contribution at any time.",
+    title: "Dispatch and Close",
+    desc: "When the load departs, confirm dispatch per package. Stock levels update instantly. All records are archived with a full audit trail.",
   },
 ];
 
-const routeAttributes = [
-  { label: "Origin and Destination", desc: "Full address with GPS coordinates for each route endpoint" },
-  { label: "Intermediate Stops", desc: "Configurable waypoints with sequence and transit time per leg" },
-  { label: "Route Scheduling", desc: "Set departure days, frequencies, and cutoff times per route" },
-  { label: "Service Levels", desc: "Standard, express, and overnight options per route corridor" },
-  { label: "Distance and Duration", desc: "Auto-calculated from Google Maps API at route creation" },
-  { label: "Coverage Area", desc: "Geographic mapping of pickup and delivery zones per route" },
+const warehouseRecord = [
+  { label: "Name and Location", desc: "Warehouse identifier with GPS coordinates and address" },
+  { label: "Total Capacity", desc: "Maximum weight and volume the warehouse can hold" },
+  { label: "Current Occupancy", desc: "Real-time fill level by weight and volume" },
+  { label: "Shelf and Bin Map", desc: "Physical layout of storage positions within the warehouse" },
+  { label: "Assigned Staff", desc: "Which users can operate and view this warehouse" },
+  { label: "Receiving Log", desc: "All goods received with date, quantity, and staff who received" },
+  { label: "Dispatch Log", desc: "All goods dispatched with destination, vehicle, and departure time" },
+  { label: "Current Stock", desc: "All packages currently in the warehouse with their bin locations" },
 ];
 
-const mapFeatures = [
-  "Interactive route visualization on OpenStreetMap",
-  "Real-time vehicle and driver location tracking",
-  "Delivery cluster mapping for dense urban areas",
-  "Geofencing for zone-based coverage rules",
-  "Address autocomplete powered by Google Maps",
-  "Geocoding and reverse geocoding for all stops",
-  "Route overlay showing full multi-leg path",
-  "Live shipment movement during transit",
-];
-
-const pricingRules = [
-  { name: "Weight-Based Pricing", desc: "Rate tiers by package weight with configurable bands" },
-  { name: "Zone-Based Pricing", desc: "Different rates based on origin and destination zones" },
-  { name: "Dimensional Weight", desc: "Volumetric weight calculation for oversized packages" },
-  { name: "Service Level Rates", desc: "Standard, express, and overnight pricing per corridor" },
-  { name: "Fuel Surcharge", desc: "Configurable fuel surcharge applied per route or globally" },
-  { name: "Seasonal Pricing", desc: "Adjust rates for peak seasons with time-bound rules" },
-  { name: "Custom Rate Contracts", desc: "Client-specific agreed rates override default pricing" },
-  { name: "Handling Fees", desc: "Additional fees for special cargo types or extra services" },
+const stockFeatures = [
+  "Real-time stock levels per warehouse",
+  "Reserved versus available stock tracking",
+  "Package-level location search by barcode",
+  "Arrival and departure timestamp on every movement",
+  "Bulk receiving and dispatch operations",
+  "Lost parcel reporting and investigation tools",
+  "Barcode scanning via mobile PWA for warehouse staff",
+  "Export stock reports to Excel or CSV",
 ];
 
 const stats = [
-  { value: "Multi-Leg", label: "Route support" },
-  { value: "Real-Time", label: "GPS tracking" },
-  { value: "11+", label: "Pricing rule types" },
-  { value: "100%", label: "Offline capable" },
+  { value: "Multi", label: "Warehouse support" },
+  { value: "Real-Time", label: "Stock tracking" },
+  { value: "Barcode", label: "Scan to receive" },
+  { value: "100%", label: "Movement audit trail" },
 ];
 
-export default function RouteOptimization() {
+export default function WarehouseManagement() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -144,12 +135,12 @@ export default function RouteOptimization() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Route
+                Warehouse
                 <br />
-                <span className="text-blue-500">Optimization</span>
+                <span className="text-blue-500">Management</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Create and manage multi-leg routes with stop management, transit time estimation, zone-based pricing, real-time GPS tracking, and interactive map visualization. Every delivery corridor configured exactly how your operation needs it.
+                Manage multiple warehouses with shelf and bin location tracking, barcode-scan receiving, real-time stock levels, consolidation, and complete dispatch operations. Works fully offline.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -182,11 +173,14 @@ export default function RouteOptimization() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Capabilities
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Full Route and Network Control
+                From Goods-In to Voyage Departure
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every aspect of your delivery network configured, priced, tracked, and reported from a single platform.
+                Every warehouse operation from receiving through consolidation to dispatch managed in one system that works even without internet.
               </p>
             </div>
 
@@ -211,11 +205,14 @@ export default function RouteOptimization() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Workflow
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Route Setup to Live Tracking
+                From Setup to Dispatch
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                A clear five-step process that takes a new corridor from definition to fully operational delivery route.
+                A clear five-step warehouse lifecycle from initial configuration through to final dispatch with every action tracked.
               </p>
             </div>
 
@@ -234,19 +231,21 @@ export default function RouteOptimization() {
           </div>
         </section>
 
+        {/* Warehouse Record + Stock Features - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
+            {/* Warehouse Record */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Path className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">What Every Route Contains</h3>
+                <Warehouse className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">What Every Warehouse Record Contains</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Each route is a complete operational record. Every piece of information agents need to book, price, and dispatch a shipment is attached to the route.
+                Each warehouse is a complete operational record. Everything needed to manage, staff, and report on that location is in one place.
               </p>
               <div className="space-y-3 pt-1">
-                {routeAttributes.map((item, i) => (
+                {warehouseRecord.map((item, i) => (
                   <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
                     <div className="flex items-center gap-2 mb-0.5">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
@@ -258,18 +257,18 @@ export default function RouteOptimization() {
               </div>
             </div>
 
-            {/* Map Features + Offline note */}
+            {/* Stock Tracking + Offline */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <Globe className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Maps and Location Features</h3>
+                  <ChartLine className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Stock Tracking Features</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Powered by Leaflet with OpenStreetMap and Google Maps API for address resolution, distance calculation, and live tracking visualization.
+                  Every package in your warehouse is tracked at the item level. No batch-level guesswork. Staff can find any specific package in seconds.
                 </p>
                 <div className="space-y-2 pt-1">
-                  {mapFeatures.map((item, i) => (
+                  {stockFeatures.map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
@@ -280,16 +279,16 @@ export default function RouteOptimization() {
 
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ArrowsClockwise className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Offline Route Access</h3>
+                  <ArrowsCounterClockwise className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Works Offline at the Warehouse Floor</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Route data syncs to the desktop and mobile apps during connectivity and remains available offline. Agents can book shipments on any route without an internet connection. Reference data including routes, stops, and pricing syncs automatically in the background every 5 minutes.
+                  Warehouse staff can scan, receive, and update stock even in areas without Wi-Fi or mobile signal. All actions queue locally and sync the moment connectivity returns. Zero lost receiving records, zero duplicate entries.
                 </p>
                 <div className="flex items-start gap-2 pt-1">
-                  <DeviceMobile className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <Barcode className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-foreground/60 font-sans font-medium">
-                    Works on web, Windows desktop app, and mobile PWA with full offline parity.
+                    Barcode scanning works fully offline via the NTIGI mobile PWA on any smartphone or tablet.
                   </span>
                 </div>
               </div>
@@ -297,39 +296,13 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* Pricing Rules Grid */}
+        {/* Use Cases */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <div className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Every Pricing Model Your Route Needs
-              </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Configure any combination of pricing rules per route. Mix weight tiers, zone rates, service levels, and custom contracts on the same corridor.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-background">
-              {pricingRules.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-2"
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <CurrencyDollar className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</h3>
-                  </div>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 border-b border-border-custom">
-          <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Use Cases
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
                 Who This Is Built For
               </h2>
@@ -338,11 +311,11 @@ export default function RouteOptimization() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Truck className="h-4.5 w-4.5" />
+                  <Cube className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">City Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Transit Warehouse Operators</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Define inner-city delivery zones with cluster mapping, assign drivers to zone routes, and track every vehicle on a live map throughout the delivery day.
+                  Receive incoming shipments from multiple origins, sort by destination, consolidate into containers, and dispatch. Every movement tracked from dock to door.
                 </p>
               </div>
 
@@ -350,19 +323,19 @@ export default function RouteOptimization() {
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Buildings className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Inter-City Freight Lines</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Bonded Warehouses</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Create multi-leg routes spanning cities and borders with stop-by-stop transit times. Price each corridor separately and report on performance per line.
+                  Store goods under customs bond with full audit trail per item. Track which goods have cleared customs and which are still under bond, with document generation at release.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
+                  <Truck className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Agency Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Consolidators</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Assign partner agencies to specific route segments. Each agency handles their leg with full visibility into what is arriving, when, and what it should cost.
+                  Accept LCL (less than container load) shipments from multiple clients, consolidate into full container loads, and generate Bills of Lading and port manifests before departure.
                 </p>
               </div>
             </div>
@@ -370,7 +343,7 @@ export default function RouteOptimization() {
         </section>
 
         {/* Related Solutions */}
-        <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
+        <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-10">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
@@ -378,19 +351,19 @@ export default function RouteOptimization() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
                 {
-                  title: "Fleet and Driver Management",
-                  desc: "Register vehicles, track maintenance, and assign drivers to the routes you have configured.",
-                  href: "/solutions/fleet-management",
+                  title: "Consolidation and Manifests",
+                  desc: "Group warehouse shipments into voyage manifests, assign containers, and track from consolidation to port departure.",
+                  href: "/solutions/consolidation",
                 },
                 {
-                  title: "Proof of Delivery",
-                  desc: "Capture signatures, photos, and GPS confirmation at every stop along your delivery routes.",
-                  href: "/solutions/proof-of-delivery",
+                  title: "Customs and Compliance",
+                  desc: "Generate customs documents for bonded goods, manage HS codes, and run compliance screening on every release.",
+                  href: "/solutions/customs-compliance",
                 },
                 {
-                  title: "Finance and Billing",
-                  desc: "Apply the route pricing rules directly to invoices. Every charge calculated from the route rate card at booking time.",
-                  href: "/solutions/finance",
+                  title: "International Forwarding",
+                  desc: "Coordinate multi-leg routes that flow through your warehouse as a transit hub before final international dispatch.",
+                  href: "/solutions/international-forwarding",
                 },
               ].map((sol, i) => (
                 <Link
@@ -417,12 +390,12 @@ export default function RouteOptimization() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Build Your
+                Ready to Take Control
                 <br />
-                <span className="text-blue-500">Delivery Network?</span>
+                <span className="text-blue-500">of Your Warehouse?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI manages your route corridors, stop networks, and pricing structures in a live walkthrough with our team.
+                See how NTIGI manages receiving, stock tracking, consolidation, and dispatch for your warehouse operation in a live walkthrough with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

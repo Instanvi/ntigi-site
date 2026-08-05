@@ -7,128 +7,122 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
   ArrowsCounterClockwise,
-  FileText,
+  Package,
+  Receipt,
   Bell,
+  MapPin,
   CheckCircle,
+  Camera,
+  CurrencyDollar,
+  ClipboardText,
+  Barcode,
+  ChartLine,
+  ShoppingBag,
+  Truck,
   Buildings,
-  UsersThree,
-  Coins,
-  BookOpenText,
+  Warning,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: ArrowsCounterClockwise,
+    title: "Return Shipment Creation",
+    desc: "Create return shipments with full sender and receiver details. Linked to the original outbound shipment for complete lifecycle tracking. Supports all package types and handling methods.",
+  },
+  {
+    icon: Package,
+    title: "22 Cargo Handling Tags",
+    desc: "Apply any of 22 cargo handling tags to return shipments: Fragile, Damaged, Hazardous, Perishable, and more. Handlers see exactly how to treat returning goods.",
+  },
+  {
+    icon: MapPin,
+    title: "Real-Time Return Tracking",
+    desc: "Track every return shipment live with GPS. Customers and operations staff see the return status from pickup to arrival at your warehouse or origin point.",
+  },
+  {
+    icon: Barcode,
+    title: "Barcode and QR Code",
+    desc: "Auto-generate barcodes and QR codes for every return shipment. Print return labels on demand. Scan at pickup and receipt to confirm chain of custody.",
+  },
+  {
+    icon: Camera,
+    title: "Photo Documentation",
+    desc: "Capture photos at pickup to document the condition of returned goods. Photos attach to the return record and protect against disputes over damage.",
   },
   {
     icon: Receipt,
-    title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
+    title: "Automatic Invoice and Refund",
+    desc: "Generate return invoices automatically. Apply refunds or credit notes against the original invoice. Multi-currency support with full PDF generation.",
   },
   {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
-  },
-  {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
+    icon: Bell,
+    title: "Customer Notifications",
+    desc: "Customers receive automatic SMS, email, and push notifications at each stage of their return: pickup confirmed, in transit, received, and refund issued.",
   },
   {
     icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
-  },
-  {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
-  },
-  {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
-  },
-  {
-    icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    title: "Returns Reporting",
+    desc: "Track return volumes per route, return reasons, refund totals, and processing times. Export reports to Excel or CSV for operations and finance teams.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Return Requested",
+    desc: "Customer submits a return request through the portal or your agent creates one directly. The original shipment is linked and the return reason is recorded.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Return Label Issued",
+    desc: "A return shipping label with barcode is generated instantly. Emailed to the customer or printed by your agent. Ready to apply to the package immediately.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Package Picked Up",
+    desc: "Driver scans the return barcode at pickup and captures a photo of the package condition. Status updates to In Transit and the customer is notified automatically.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Received and Inspected",
+    desc: "When the return arrives at your warehouse, staff scan it back into stock. Condition is logged with photos. The return is marked as received and the original order updated.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Refund Processed",
+    desc: "A refund or credit note is applied against the original invoice. The customer receives a notification and the transaction is closed in the financial records.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const returnRecord = [
+  { label: "Original Shipment Link", desc: "Connected to the outbound shipment for full lifecycle view" },
+  { label: "Return Reason", desc: "Recorded at request time for reporting and analysis" },
+  { label: "Package Condition", desc: "Documented with pickup photo and handling tags" },
+  { label: "Pickup Timestamp", desc: "Date and time driver collected the return" },
+  { label: "Driver Identity", desc: "Which driver handled the return pickup" },
+  { label: "Return Tracking Number", desc: "Unique reference for this return shipment" },
+  { label: "Receipt Confirmation", desc: "Scan confirmation when return arrives at warehouse" },
+  { label: "Refund Reference", desc: "Linked credit note or refund transaction" },
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const returnTypes = [
+  { name: "Standard Return", desc: "Scheduled pickup and return to origin" },
+  { name: "Express Return", desc: "Priority return with faster pickup window" },
+  { name: "Damaged Goods Return", desc: "Condition-documented return with photo evidence" },
+  { name: "Wrong Item Return", desc: "Linked to original shipment for reconciliation" },
+  { name: "Refused Delivery", desc: "Package returned without delivery attempted" },
+  { name: "COD Return", desc: "Return with COD collection reversal tracking" },
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "Full", label: "Return lifecycle" },
+  { value: "Auto", label: "Refund processing" },
+  { value: "Real-Time", label: "GPS tracking" },
+  { value: "Photo", label: "Condition evidence" },
 ];
 
-export default function Finance() {
+export default function Returns() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -138,14 +132,24 @@ export default function Finance() {
         {/* Hero */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
+            <Link
+              href="/solutions/customer-portal"
+              className="inline-flex items-center gap-2 text-foreground/60 hover:text-blue-500 mb-6 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="text-xs uppercase font-bold tracking-wider">Solutions</span>
+            </Link>
             <div className="max-w-3xl space-y-4">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">
+                For E-commerce and Courier Operations
+              </div>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                Returns
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Management</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Handle return shipments with the same tracking, documentation, and automation as outbound deliveries. From return label generation to refund processing, every step is tracked and managed in NTIGI.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -178,11 +182,14 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Capabilities
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Reverse Logistics Built into NTIGI
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                Returns use the same platform, same workflows, and same tracking as outbound shipments. No separate system needed.
               </p>
             </div>
 
@@ -203,15 +210,18 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Workflow */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Workflow
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Return Request to Refund
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                A five-step return lifecycle where every action is tracked, documented, and communicated automatically.
               </p>
             </div>
 
@@ -230,67 +240,65 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* Return Record + Return Types - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* Return Record */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <ClipboardText className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">What Every Return Record Contains</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                Each return is a complete operational record linked to its original outbound shipment. Every party involved can see the full return history at any point.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
+              <div className="space-y-3 pt-1">
+                {returnRecord.map((item, i) => (
                   <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                      <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.label}</span>
+                    </div>
+                    <p className="text-sm text-foreground/60 font-sans font-medium pl-5">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Return Types + Finance */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <ArrowsCounterClockwise className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Return Types Supported</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  Every return scenario your operation handles is covered in NTIGI with the appropriate workflow and documentation.
                 </p>
-                <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
+                <div className="space-y-3 pt-1">
+                  {returnTypes.map((item, i) => (
+                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
+                      <div className="text-sm font-bold uppercase tracking-wider text-foreground mb-0.5">{item.name}</div>
+                      <div className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
+              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <CurrencyDollar className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reconciliation</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Returns are fully reconciled against the original invoice. Credit notes, refunds, and partial refunds are all supported. Multi-currency returns handled automatically with PDF generation and email delivery.
                 </p>
-                <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2 pt-1">
+                  <Warning className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/60 font-sans font-medium">
+                    Return invoices and refund records are available in the customer portal the moment they are processed.
+                  </span>
                 </div>
               </div>
             </div>
@@ -312,31 +320,31 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <ShoppingBag className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">E-commerce Fulfilment</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Handle online shopper returns at scale. Customers initiate returns through the portal, receive a label automatically, and track the return to refund confirmation.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
+                  <Truck className="h-4.5 w-4.5" />
+                </div>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Services</h4>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
+                  Manage refused deliveries and wrong-address returns in your daily driver runs. Returns are created, dispatched, and tracked using the same driver mobile app.
+                </p>
+              </div>
+
+              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
+                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                   <Buildings className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">B2B Logistics</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
-                </p>
-              </div>
-
-              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
-                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
-                </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
-                </p>
-              </div>
-
-              <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
-                <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
-                </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Process bulk return shipments from business clients with credit notes issued automatically against their account. Full return volume reporting per client and per route.
                 </p>
               </div>
             </div>
@@ -352,19 +360,19 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
                 {
-                  title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
-                  href: "/solutions/international-forwarding",
+                  title: "Customer Portal",
+                  desc: "Customers submit return requests and track returns in real time through their self-service portal.",
+                  href: "/solutions/customer-portal",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Proof of Delivery",
+                  desc: "Drivers capture photos and signatures at return pickup to document package condition at collection.",
+                  href: "/solutions/proof-of-delivery",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Finance and Billing",
+                  desc: "Return invoices, credit notes, and refund processing are handled automatically and linked to the original transaction.",
+                  href: "/solutions/finance",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +399,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Handle Returns
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">Without the Headache?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI manages your entire return lifecycle from request to refund in a live walkthrough with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

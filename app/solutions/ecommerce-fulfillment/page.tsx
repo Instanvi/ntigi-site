@@ -7,128 +7,123 @@ import { Button } from "@/components/ui/Button";
 import {
   ArrowLeft,
   ArrowRight,
-  CurrencyDollar,
-  Receipt,
-  ChartLine,
-  Cardholder,
-  Bank,
-  ArrowsCounterClockwise,
-  FileText,
+  Package,
+  Stack,
   Bell,
+  Code,
+  ArrowsCounterClockwise,
+  CurrencyDollar,
+  MapPin,
+  ChartLine,
   CheckCircle,
-  Buildings,
-  UsersThree,
-  Coins,
-  BookOpenText,
+  Receipt,
+  ShoppingBag,
+  Storefront,
+  Globe,
+  Barcode,
 } from "@phosphor-icons/react";
 
 const capabilities = [
   {
-    icon: Cardholder,
-    title: "Multi-Method Payments",
-    desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place.",
+    icon: Stack,
+    title: "Bulk Shipment Creation",
+    desc: "Process hundreds of orders in one operation. Create shipments individually or import in bulk. Each order gets its own tracking number, label, and receipt automatically.",
+  },
+  {
+    icon: MapPin,
+    title: "Real-Time Order Tracking",
+    desc: "Every online shopper can track their order in real time via the public tracking portal or customer portal. No login required for the public tracking page.",
+  },
+  {
+    icon: Bell,
+    title: "Automated Customer Notifications",
+    desc: "Shoppers receive automatic SMS, email, push, and WhatsApp notifications at every delivery milestone. Configured once by your operations team, runs automatically.",
+  },
+  {
+    icon: Code,
+    title: "REST API for Store Integration",
+    desc: "Connect your online store directly to NTIGI via the REST API. Orders placed on your platform trigger shipment creation in NTIGI automatically without manual entry.",
+  },
+  {
+    icon: ArrowsCounterClockwise,
+    title: "Returns Management",
+    desc: "Customers initiate returns through the portal. Return labels are generated automatically. Every return is tracked, photographed, and reconciled against the original order.",
+  },
+  {
+    icon: CurrencyDollar,
+    title: "COD Management",
+    desc: "Track cash on delivery collections per driver across every route. Automatic reconciliation when orders are delivered and paid. Full COD reporting per client and per run.",
   },
   {
     icon: Receipt,
     title: "Automatic Invoice Generation",
-    desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in.",
+    desc: "Invoices are created the moment a shipment is booked. PDF generation, email delivery, and download access for customers in the portal from day one.",
   },
   {
-    icon: CurrencyDollar,
-    title: "Multi-Currency Support",
-    desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route.",
-  },
-  {
-    icon: ArrowsCounterClockwise,
-    title: "COD & Split Payments",
-    desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment.",
-  },
-  {
-    icon: ChartLine,
-    title: "Revenue & P&L Reports",
-    desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly.",
-  },
-  {
-    icon: UsersThree,
-    title: "Agent Commission Tracking",
-    desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns.",
-  },
-  {
-    icon: Bank,
-    title: "Outstanding Balances",
-    desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS.",
-  },
-  {
-    icon: FileText,
-    title: "Refund Management",
-    desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail.",
+    icon: Barcode,
+    title: "Barcode and Label Printing",
+    desc: "Generate and print shipping labels with barcodes and QR codes for every order. Batch print entire dispatch runs. Scan labels at pickup and delivery.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Shipment Booked",
-    desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges.",
+    title: "Order Received",
+    desc: "Your online store sends order data to NTIGI via the REST API or your agent creates shipments manually. Each order is processed into a shipment record instantly.",
   },
   {
     step: "02",
-    title: "Invoice Generated",
-    desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download.",
+    title: "Label Printed",
+    desc: "A shipping label with barcode is generated and printed. The customer receives an order confirmation with tracking number via SMS and email automatically.",
   },
   {
     step: "03",
-    title: "Payment Collected",
-    desc: "Payment is recorded against the invoice cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately.",
+    title: "Dispatched and Tracked",
+    desc: "The package is assigned to a driver and route. The customer can track live. Automated notifications fire at each status update without any manual intervention.",
   },
   {
     step: "04",
-    title: "COD Tracked",
-    desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record.",
+    title: "Delivered and Confirmed",
+    desc: "Driver captures signature and delivery photo. Delivery confirmation is sent to the customer. COD payment is recorded if applicable. Invoice is closed.",
   },
   {
     step: "05",
-    title: "Reports Generated",
-    desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV.",
+    title: "Returns Processed",
+    desc: "If a return is requested, the customer gets a label automatically. The return is tracked back to your warehouse and a credit note or refund is issued.",
   },
 ];
 
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
+const apiCapabilities = [
+  "Create shipments via REST API",
+  "Bulk shipment creation endpoints",
+  "Real-time tracking webhooks",
+  "Status update callbacks to your store",
+  "Label and barcode generation API",
+  "Invoice and receipt retrieval",
+  "Customer notification triggers",
+  "COD status and reconciliation",
 ];
 
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
+const notificationTriggers = [
+  { event: "Order Confirmed", channel: "Email + SMS" },
+  { event: "Package Picked Up", channel: "SMS + Push" },
+  { event: "In Transit Update", channel: "SMS" },
+  { event: "Out for Delivery", channel: "SMS + WhatsApp" },
+  { event: "Delivered", channel: "Email + SMS + Push" },
+  { event: "Delivery Photo", channel: "Email" },
+  { event: "Return Initiated", channel: "Email + SMS" },
+  { event: "Refund Issued", channel: "Email" },
 ];
 
 const stats = [
-  { value: "8+", label: "Payment methods" },
-  { value: "Multi", label: "Currency support" },
-  { value: "100%", label: "Audit trail" },
-  { value: "Excel/PDF", label: "Export formats" },
+  { value: "Bulk", label: "Order processing" },
+  { value: "API", label: "Store integration" },
+  { value: "Auto", label: "Notifications" },
+  { value: "Real-Time", label: "GPS tracking" },
 ];
 
-export default function Finance() {
+export default function EcommerceFulfillment() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -138,14 +133,24 @@ export default function Finance() {
         {/* Hero */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
+            <Link
+              href="/solutions/returns"
+              className="inline-flex items-center gap-2 text-foreground/60 hover:text-blue-500 mb-6 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="text-xs uppercase font-bold tracking-wider">Solutions</span>
+            </Link>
             <div className="max-w-3xl space-y-4">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">
+                For E-commerce Businesses
+              </div>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Finance
+                E-commerce
                 <br />
-                <span className="text-blue-500">& Billing</span>
+                <span className="text-blue-500">Fulfillment</span>
               </h1>
               <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports all built directly into the NTIGI logistics workflow.
+                Connect your online store to NTIGI via REST API. Process bulk orders, automate customer notifications, manage COD collections, and handle returns. One logistics platform built for high-volume e-commerce fulfillment.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">
@@ -178,11 +183,14 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Capabilities
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                Complete Financial Control
+                Everything Your E-commerce Operation Needs
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Every financial operation from payment collection to accounting exports integrated into your logistics workflow.
+                From order intake to delivery confirmation, NTIGI handles the full fulfillment lifecycle for e-commerce businesses of any size.
               </p>
             </div>
 
@@ -203,15 +211,18 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Workflow */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="text-left mb-12 max-w-2xl">
+              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">
+                Workflow
+              </div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">
-                From Booking to Settlement
+                From Order Placed to Delivered
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Finance is embedded in the shipment lifecycle. No separate billing system needed.
+                A five-step fulfillment cycle where every action is automated, tracked, and visible to both your team and your customers.
               </p>
             </div>
 
@@ -230,67 +241,64 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* Payment Methods + Reports + Accounting - 3 sections */}
+        {/* API Capabilities + Notifications - 2 column */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
-            {/* Payment Methods */}
+            {/* API */}
             <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
-                <Coins className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                <Code className="w-5 h-5" />
+                <h3 className="text-md font-bold uppercase tracking-wider">REST API Integration</h3>
               </div>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                Every payment method your clients use is supported. Configure which methods are active per branch and per service level.
+                Connect your e-commerce platform, marketplace, or custom store system directly to NTIGI. Orders flow in automatically and tracking data flows back to your storefront.
               </p>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                {paymentMethods.map((method, i) => (
-                  <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                    <div className="text-sm font-bold uppercase tracking-wider text-foreground">{method.name}</div>
-                    <div className="text-sm text-foreground/60 font-sans font-medium mt-0.5">{method.detail}</div>
+              <div className="space-y-2 pt-1">
+                {apiCapabilities.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reports + Accounting Integrations */}
+            {/* Notification Triggers + COD note */}
             <div className="space-y-6">
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <Bell className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">Automated Notification Events</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Every report you need available instantly with custom date ranges and one-click export.
+                  Every delivery event triggers an automatic notification to the customer via their preferred channel. No staff action required.
                 </p>
-                <div className="space-y-2 pt-1">
-                  {reportTypes.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                      <span className="text-sm text-foreground/80 font-sans font-medium">{item}</span>
+                <div className="space-y-3 pt-1">
+                  {notificationTriggers.map((item, i) => (
+                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.event}</span>
+                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.channel}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
+              <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
-                  <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <CurrencyDollar className="w-5 h-5" />
+                  <h3 className="text-md font-bold uppercase tracking-wider">COD for Online Stores</h3>
                 </div>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Connect your existing accounting tools or export to any platform using standard formats.
+                  Many e-commerce customers in West Africa and other markets prefer cash on delivery. NTIGI tracks COD collection per driver, reconciles per order, and reports outstanding COD totals at any time.
                 </p>
-                <div className="space-y-3 pt-1">
-                  {accountingIntegrations.map((item, i) => (
-                    <div key={i} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.name}</span>
-                        <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">{item.status}</span>
-                      </div>
-                      <p className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</p>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2 pt-1">
+                  <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground/60 font-sans font-medium">
+                    COD orders tracked from dispatch through collection and reconciliation automatically.
+                  </span>
                 </div>
               </div>
             </div>
@@ -312,31 +320,31 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Buildings className="h-4.5 w-4.5" />
+                  <ShoppingBag className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Online Retailers</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.
+                  Process hundreds of orders daily with bulk creation, automatic label printing, and real-time tracking for every customer. Integrate your store via API and eliminate manual data entry.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <UsersThree className="h-4.5 w-4.5" />
+                  <Storefront className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Marketplace Sellers</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.
+                  Fulfil orders from multiple marketplaces through a single NTIGI account. Separate client records per marketplace, combined reporting for your finance team.
                 </p>
               </div>
 
               <div className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                 <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                  <Bell className="h-4.5 w-4.5" />
+                  <Globe className="h-4.5 w-4.5" />
                 </div>
-                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
+                <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Cross-Border E-commerce</h4>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.
+                  Ship internationally with customs documentation generated automatically. Multi-currency invoicing, duty calculations, and tracking from checkout to doorstep across borders.
                 </p>
               </div>
             </div>
@@ -352,19 +360,19 @@ export default function Finance() {
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
                 {
-                  title: "International Forwarding",
-                  desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
-                  href: "/solutions/international-forwarding",
+                  title: "Customer Portal",
+                  desc: "Your online shoppers track their orders, download invoices, and submit returns through a self-service portal branded to your operation.",
+                  href: "/solutions/customer-portal",
                 },
                 {
-                  title: "Client Management",
-                  desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
-                  href: "/solutions/client-management",
+                  title: "Returns Management",
+                  desc: "Handle customer returns at scale with automatic return labels, photo documentation, and refund processing.",
+                  href: "/solutions/returns",
                 },
                 {
-                  title: "Customs & Compliance",
-                  desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
-                  href: "/solutions/customs-compliance",
+                  title: "Proof of Delivery",
+                  desc: "Give customers delivery confirmation with signature, photo, and GPS coordinates delivered automatically after every drop.",
+                  href: "/solutions/proof-of-delivery",
                 },
               ].map((sol, i) => (
                 <Link
@@ -391,12 +399,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of
+                Ready to Scale Your
                 <br />
-                <span className="text-blue-500">Your Logistics Finances?</span>
+                <span className="text-blue-500">E-commerce Fulfilment?</span>
               </h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.
+                See how NTIGI connects to your online store and handles your full order-to-delivery lifecycle in a live walkthrough with our team.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button variant="primary" href="/demo" size="lg">

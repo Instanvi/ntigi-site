@@ -38,7 +38,6 @@ export default function BackgroundGrid() {
       height = rect.height;
       gridNeedsRedraw = true;
 
-      // Recreate offscreen canvas for grid
       offscreenCanvasRef.current = document.createElement('canvas');
       offscreenCanvasRef.current.width = canvas.width;
       offscreenCanvasRef.current.height = canvas.height;
@@ -47,7 +46,6 @@ export default function BackgroundGrid() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Draw static grid to offscreen canvas
     const drawGrid = () => {
       if (!offscreenCanvasRef.current) return;
       const offCtx = offscreenCanvasRef.current.getContext("2d");
@@ -90,7 +88,6 @@ export default function BackgroundGrid() {
       }
     };
 
-    // Floating connection nodes (professional, minimal)
     const nodes: Array<{
       x: number;
       y: number;
@@ -100,7 +97,6 @@ export default function BackgroundGrid() {
       opacity: number;
     }> = [];
 
-    // Initialize fewer, more purposeful nodes
     for (let i = 0; i < 8; i++) {
       nodes.push({
         x: Math.random() * width,
