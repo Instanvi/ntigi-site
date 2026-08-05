@@ -62,7 +62,7 @@ FROM node:${NODE_VERSION} AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=3008
 ENV HOSTNAME="0.0.0.0"
 
 # Optional: disable telemetry at runtime
@@ -80,6 +80,6 @@ COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 
 USER node
 
-EXPOSE 3007
+EXPOSE 3008
 
 CMD ["node", "server.js"]
