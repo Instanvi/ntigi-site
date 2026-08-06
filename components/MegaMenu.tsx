@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ReactNode, type ElementType } from "react";
 import Link from "next/link";
 import { CaretDown } from "@phosphor-icons/react";
 
@@ -8,11 +8,13 @@ interface MegaMenuItem {
     name: string;
     desc: string;
     href: string;
+    icon?: ElementType;
 }
 
 interface MegaMenuTab {
     id: string;
     label: string;
+    icon?: ElementType;
 }
 
 interface MegaMenuProps {
@@ -84,21 +86,25 @@ export default function MegaMenu({ label, tabs, items }: MegaMenuProps) {
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
                 >
-                    {/* Sidebar Solutions only */}
+                    {/* Sidebar — Solutions only */}
                     {hasSidebar && tabs && (
-                        <div className="w-[220px] bg-background/95 border-r border-border-custom p-5 space-y-2 shrink-0">
-                            {tabs.map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onMouseEnter={() => handleTabChange(tab.id)}
-                                    className={`w-full text-left px-4 py-3 text-[13px] tracking-wider uppercase rounded-none transition-all duration-200 flex items-center justify-between cursor-pointer ${activeTab === tab.id
+                        <div className="w-[240px] bg-background/95 border-r border-border-custom p-5 space-y-1.5 shrink-0">
+                            {tabs.map((tab) => {
+                                const TabIcon = tab.icon;
+                                return (
+                                    <button
+                                        key={tab.id}
+                                        onMouseEnter={() => handleTabChange(tab.id)}
+                                        className={`w-full text-left px-3 py-3 text-[11px] tracking-wider uppercase rounded-none transition-all duration-200 flex items-center gap-2.5 cursor-pointer ${activeTab === tab.id
                                             ? "bg-primary/10 border-l-2 border-blue-500 text-[#3b82f6]"
                                             : "text-foreground/75 hover:bg-primary/5 hover:text-foreground"
-                                        }`}
-                                >
-                                    {tab.label}
-                                </button>
-                            ))}
+                                            }`}
+                                    >
+                                        {TabIcon && <TabIcon className="h-4 w-4 shrink-0" />}
+                                        <span className="truncate">{tab.label}</span>
+                                    </button>
+                                );
+                            })}
                         </div>
                     )}
 
@@ -108,20 +114,32 @@ export default function MegaMenu({ label, tabs, items }: MegaMenuProps) {
                             key={hasSidebar ? animKey : "flat"}
                             className={`grid gap-4 mega-swap ${gridClass}`}
                         >
-                            {activeItems.map((item, index) => (
-                                <Link
-                                    key={index}
-                                    href={item.href}
-                                    className="group p-4 rounded-none border border-transparent hover:border-border-custom hover:bg-primary/5 transition-all duration-200"
-                                >
-                                    <h4 className="text-[13px] font-bold text-foreground group-hover:text-blue-400 transition-colors mb-1.5 uppercase tracking-wider">
-                                        {item.name}
-                                    </h4>
-                                    <p className="text-[12px] text-foreground/70 leading-relaxed">
-                                        {item.desc}
-                                    </p>
-                                </Link>
-                            ))}
+                            {activeItems.map((item, index) => {
+                                const ItemIcon = item.icon;
+                                return (
+                                    <Link
+                                        key={index}
+                                        href={item.href}
+                                        className="group p-4 rounded-none border border-transparent hover:border-border-custom hover:bg-primary/5 transition-all duration-200"
+                                    >
+                                        <div className="flex items-start gap-2.5">
+                                            {ItemIcon && (
+                                                <div className="mt-0.5 p-1.5 rounded-none bg-blue-500/10 border border-blue-500/20 text-blue-500 group-hover:bg-blue-500 group-hover:text-white group-hover:border-blue-500 transition-colors shrink-0">
+                                                    <ItemIcon className="h-3.5 w-3.5" />
+                                                </div>
+                                            )}
+                                            <div className="min-w-0">
+                                                <h4 className="text-[13px] font-bold text-foreground group-hover:text-blue-400 transition-colors mb-1 uppercase tracking-wider">
+                                                    {item.name}
+                                                </h4>
+                                                <p className="text-[12px] text-foreground/70 leading-relaxed">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -129,18 +147,10 @@ export default function MegaMenu({ label, tabs, items }: MegaMenuProps) {
 
             <style>{`
         @keyframes megaSwap {
-          0% {
-            opacity: 0;
-            transform: translateY(6px) scale(0.995);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
+          0% { opacity: 0; transform: translateY(6px) scale(0.995); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
         }
-        .mega-swap {
-          animation: megaSwap 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+        .mega-swap { animation: megaSwap 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       `}</style>
         </div>
     );

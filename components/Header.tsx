@@ -1,9 +1,44 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ElementType } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import { Globe, List, X, Sun, Moon, CaretDown } from "@phosphor-icons/react";
+import {
+  Globe,
+  List,
+  X,
+  Sun,
+  Moon,
+  CaretDown,
+  Airplane,
+  AirplaneTilt,
+  ShieldCheck,
+  Stack,
+  Buildings,
+  MapPinLine,
+  Truck,
+  CheckCircle,
+  CreditCard,
+  Warehouse,
+  Cube,
+  ArrowsInLineHorizontal,
+  Package,
+  ArrowUUpLeft,
+  UserCircle,
+  SquaresFour,
+  Tag,
+  PlayCircle,
+  Code,
+  BookOpen,
+  Headset,
+  Star,
+  Handshake,
+  Envelope,
+  Building,
+  Briefcase,
+  Article,
+  ShoppingCart,
+} from "@phosphor-icons/react";
 import { Button } from "./ui/Button";
 import MegaMenu from "./MegaMenu";
 
@@ -36,57 +71,61 @@ export default function Header() {
     }
   };
 
-  /* ─── Data ─── */
+  /* ─── Solutions ─── */
   const solutionTabs = [
-    { id: "forwarders", label: "Freight Forwarders" },
-    { id: "courier", label: "Courier & Delivery" },
-    { id: "warehouse", label: "Warehouse Operators" },
-    { id: "ecommerce", label: "E-commerce" },
+    { id: "forwarders", label: "Freight Forwarders", icon: Airplane },
+    { id: "courier", label: "Courier & Delivery", icon: Truck },
+    { id: "warehouse", label: "Warehouse Operators", icon: Warehouse },
+    { id: "ecommerce", label: "E-commerce", icon: ShoppingCart },
   ];
-  const solutionItems: Record<string, { name: string; desc: string; href: string }[]> = {
+
+  const solutionItems: Record<string, { name: string; desc: string; href: string; icon: ElementType }[]> = {
     forwarders: [
-      { name: "International Forwarding", desc: "End-to-end forwarding operations with multi-leg routing and agency networks.", href: "/solutions/international-forwarding" },
-      { name: "Customs & Compliance", desc: "Automated declarations, duty calculations, and regulatory document generation.", href: "/solutions/customs-compliance" },
-      { name: "Consolidation & Manifests", desc: "Group shipments, manage containers, and generate voyage manifests.", href: "/solutions/consolidation" },
-      { name: "Multi-Branch Network", desc: "Inter-branch transfers, settlements, and role-based data isolation.", href: "/solutions/multi-branch" },
+      { name: "International Forwarding", desc: "End-to-end forwarding operations with multi-leg routing and agency networks.", href: "/solutions/international-forwarding", icon: AirplaneTilt },
+      { name: "Customs & Compliance", desc: "Automated declarations, duty calculations, and regulatory document generation.", href: "/solutions/customs-compliance", icon: ShieldCheck },
+      { name: "Consolidation & Manifests", desc: "Group shipments, manage containers, and generate voyage manifests.", href: "/solutions/consolidation", icon: Stack },
+      { name: "Multi-Branch Network", desc: "Inter-branch transfers, settlements, and role-based data isolation.", href: "/solutions/multi-branch", icon: Buildings },
     ],
     courier: [
-      { name: "Route Optimization", desc: "AI-powered planning for delivery times, fuel savings, and fleet efficiency.", href: "/solutions/route-optimization" },
-      { name: "Fleet & Driver Management", desc: "Vehicle registration, maintenance schedules, and driver mobile app.", href: "/solutions/fleet-management" },
-      { name: "Proof of Delivery", desc: "Signature capture, photo documentation, and real-time GPS tracking.", href: "/solutions/proof-of-delivery" },
-      { name: "Finance & Billing", desc: "Cash, card, mobile money, COD tracking, and automated invoicing.", href: "/solutions/finance-billing" },
+      { name: "Route Optimization", desc: "AI-powered planning for delivery times, fuel savings, and fleet efficiency.", href: "/solutions/route-optimization", icon: MapPinLine },
+      { name: "Fleet & Driver Management", desc: "Vehicle registration, maintenance schedules, and driver mobile app.", href: "/solutions/fleet-management", icon: Truck },
+      { name: "Proof of Delivery", desc: "Signature capture, photo documentation, and real-time GPS tracking.", href: "/solutions/proof-of-delivery", icon: CheckCircle },
+      { name: "Finance & Billing", desc: "Cash, card, mobile money, COD tracking, and automated invoicing.", href: "/solutions/finance-billing", icon: CreditCard },
     ],
     warehouse: [
-      { name: "Warehouse Management", desc: "Multi-warehouse support with shelf locations, capacity, and stock tracking.", href: "/solutions/warehouse-management" },
-      { name: "Inventory & Stock Control", desc: "Real-time stock levels, receiving, dispatch, and bin management.", href: "/solutions/inventory-control" },
-      { name: "Consolidation Hub", desc: "Pallet tracking, load optimization, and container manifest workflows.", href: "/solutions/consolidation-hub" },
+      { name: "Warehouse Management", desc: "Multi-warehouse support with shelf locations, capacity, and stock tracking.", href: "/solutions/warehouse-management", icon: Warehouse },
+      { name: "Inventory & Stock Control", desc: "Real-time stock levels, receiving, dispatch, and bin management.", href: "/solutions/inventory-control", icon: Cube },
+      { name: "Consolidation Hub", desc: "Pallet tracking, load optimization, and container manifest workflows.", href: "/solutions/consolidation-hub", icon: ArrowsInLineHorizontal },
     ],
     ecommerce: [
-      { name: "Fulfillment Operations", desc: "High-volume order processing, bulk shipment creation, and tracking.", href: "/solutions/ecommerce-fulfillment" },
-      { name: "Returns Management", desc: "Return shipment handling, refunds, and reverse logistics workflows.", href: "/solutions/returns" },
-      { name: "Customer Portal", desc: "Self-service booking, tracking, invoice downloads, and payment history.", href: "/solutions/customer-portal" },
+      { name: "Fulfillment Operations", desc: "High-volume order processing, bulk shipment creation, and tracking.", href: "/solutions/ecommerce-fulfillment", icon: Package },
+      { name: "Returns Management", desc: "Return shipment handling, refunds, and reverse logistics workflows.", href: "/solutions/returns", icon: ArrowUUpLeft },
+      { name: "Customer Portal", desc: "Self-service booking, tracking, invoice downloads, and payment history.", href: "/solutions/customer-portal", icon: UserCircle },
     ],
   };
 
+  /* ─── Platform ─── */
   const platformItems = [
-    { name: "Platform Overview", desc: "A unified view of how NTIGI connects your entire logistics operation.", href: "/platform" },
-    { name: "Pricing", desc: "Transparent pricing for teams of all sizes. No hidden fees.", href: "/pricing" },
-    { name: "Request a Demo", desc: "See NTIGI in action with a personalized walkthrough.", href: "/demo" },
-    { name: "API & Developers", desc: "REST API, webhooks, SDKs, and integration guides.", href: "/developers" },
+    { name: "Platform Overview", desc: "A unified view of how NTIGI connects your entire logistics operation.", href: "/platform", icon: SquaresFour },
+    { name: "Pricing", desc: "Transparent pricing for teams of all sizes. No hidden fees.", href: "/pricing", icon: Tag },
+    { name: "Request a Demo", desc: "See NTIGI in action with a personalized walkthrough.", href: "/demo", icon: PlayCircle },
+ /* { name: "API & Developers", desc: "REST API, webhooks, SDKs, and integration guides.", href: "/developers", icon: Code }, */
   ];
 
+  /* ─── Resources ─── */
   const resourceItems = [
-    { name: "Documentation", desc: "Comprehensive guides for users, admins, and developers.", href: "/docs" },
-    { name: "Support Center", desc: "Searchable knowledge base and troubleshooting guides.", href: "/support" },
-    { name: "Customer Stories", desc: "How freight forwarders and couriers scale with NTIGI.", href: "/resources/stories" },
-    { name: "Partner Network", desc: "Explore our global network of agencies and integrators.", href: "/partners" },
-    { name: "Contact Us", desc: "Reach our team for sales, support, or partnerships.", href: "/contact" },
+    { name: "Documentation", desc: "Comprehensive guides for users, admins, and developers.", href: "/docs", icon: BookOpen },
+  /*  { name: "Support Center", desc: "Searchable knowledge base and troubleshooting guides.", href: "/support", icon: Headset }, */
+  /*  { name: "Customer Stories", desc: "How freight forwarders and couriers scale with NTIGI.", href: "/resources/stories", icon: Star }, */
+  /*  { name: "Partner Network", desc: "Explore our global network of agencies and integrators.", href: "/partners", icon: Handshake }, */
+    { name: "Contact Us", desc: "Reach our team for sales, support, or partnerships.", href: "/contact", icon: Envelope },
   ];
 
+  /* ─── Company ─── */
   const companyItems = [
-    { name: "About NTIGI", desc: "Our mission to modernize global logistics with offline-first technology.", href: "/company" },
-    { name: "Careers", desc: "Engineering, sales, support, and logistics specialist roles.", href: "/careers" },
-    { name: "Blog", desc: "Insights on logistics tech, compliance, and industry trends.", href: "/blog" },
+    { name: "About NTIGI", desc: "Our mission to modernize global logistics with offline-first technology.", href: "/company", icon: Building },
+    { name: "Careers", desc: "Engineering, sales, support, and logistics specialist roles.", href: "/careers", icon: Briefcase },
+    { name: "Blog", desc: "Insights on logistics tech, compliance, and industry trends.", href: "/blog", icon: Article },
   ];
 
   const toggleMobileSection = (section: string) => {
@@ -161,7 +200,8 @@ export default function Header() {
               <div className="pb-3 space-y-4">
                 {solutionTabs.map((tab) => (
                   <div key={tab.id} className="pl-2">
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1.5">
+                      {tab.icon && <tab.icon className="h-3 w-3" />}
                       {tab.label}
                     </div>
                     <div className="space-y-0.5">
@@ -170,8 +210,9 @@ export default function Header() {
                           key={i}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="block py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
+                          className="flex items-center gap-1.5 py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
                         >
+                          {item.icon && <item.icon className="h-3 w-3 shrink-0" />}
                           {item.name}
                         </Link>
                       ))}
@@ -198,8 +239,9 @@ export default function Header() {
                     key={i}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
+                    className="flex items-center gap-1.5 py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
                   >
+                    {item.icon && <item.icon className="h-3 w-3 shrink-0" />}
                     {item.name}
                   </Link>
                 ))}
@@ -223,8 +265,9 @@ export default function Header() {
                     key={i}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
+                    className="flex items-center gap-1.5 py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
                   >
+                    {item.icon && <item.icon className="h-3 w-3 shrink-0" />}
                     {item.name}
                   </Link>
                 ))}
@@ -248,8 +291,9 @@ export default function Header() {
                     key={i}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
+                    className="flex items-center gap-1.5 py-1.5 px-2 text-[11px] text-foreground/80 hover:text-blue-400 hover:bg-primary/5 transition-colors rounded-none"
                   >
+                    {item.icon && <item.icon className="h-3 w-3 shrink-0" />}
                     {item.name}
                   </Link>
                 ))}

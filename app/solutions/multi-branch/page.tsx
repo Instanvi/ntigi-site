@@ -97,7 +97,6 @@ export default function MultiBranch() {
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-3xl space-y-4">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">For Freight Forwarders & Logistics Networks</div>
               <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
                 Multi-Branch<br /><span className="text-blue-500">Network</span>
               </h1>
