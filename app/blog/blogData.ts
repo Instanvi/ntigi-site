@@ -23,16 +23,16 @@ export const blogArticles: BlogPost[] = [
     image: "/ship.jpeg",
     tags: ["Electronics", "Lithium Batteries", "Compliance"],
     content: [
-      { type: "p", text: "Shipping electronics internationally is one of the most common requests we handle — and also one of the most regulated. Between regulations on lithium batteries and carrier-specific rules, there's a lot to get right. This guide covers everything you need to know to ship electronics safely, legally, and cost-effectively." },
+      { type: "p", text: "Shipping electronics internationally is one of the most common requests we handle and also one of the most regulated. Between regulations on lithium batteries and carrier-specific rules, there's a lot to get right. This guide covers everything you need to know to ship electronics safely, legally, and cost-effectively." },
       { type: "h2", text: "Understanding Lithium Battery Regulations" },
       { type: "p", text: "Lithium batteries power everything from smartphones to laptops. But they're also classified as dangerous goods because they pose fire risks if damaged or short-circuited. This classification affects how you pack, label, and declare your shipment." },
-      { type: "warning", text: "Loose lithium batteries (not installed in devices) are prohibited on passenger aircraft. Always declare electronics accurately — undeclared batteries can result in package seizure or customs penalties." },
+      { type: "warning", text: "Loose lithium batteries (not installed in devices) are prohibited on passenger aircraft. Always declare electronics accurately undeclared batteries can result in package seizure or customs penalties." },
       { type: "h3", text: "Step-by-Step Packing Guide" },
       { type: "ol", text: "", items: [
         "Power off all devices completely. Do not ship electronics in sleep mode.",
         "Wrap each device individually in anti-static bubble wrap, minimum 2 inches thick.",
         "Place devices in original retail packaging if available, or use a sturdy corrugated box with cushioning on all sides.",
-        "Label the outer box with 'LITHIUM BATTERIES — HANDLE WITH CARE' if shipping devices with non-removable batteries."
+        "Label the outer box with 'LITHIUM BATTERIES HANDLE WITH CARE' if shipping devices with non-removable batteries."
       ]},
     ]
   },

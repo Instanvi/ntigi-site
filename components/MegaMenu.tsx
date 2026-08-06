@@ -84,7 +84,7 @@ export default function MegaMenu({ label, tabs, items }: MegaMenuProps) {
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
                 >
-                    {/* Sidebar — Solutions only */}
+                    {/* Sidebar Solutions only */}
                     {hasSidebar && tabs && (
                         <div className="w-[220px] bg-background/95 border-r border-border-custom p-5 space-y-2 shrink-0">
                             {tabs.map((tab) => (

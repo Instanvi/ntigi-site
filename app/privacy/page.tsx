@@ -44,9 +44,9 @@ export default function PrivacyPolicyPage() {
                 <div className="rounded-none mb-4">
                   <h3 className="font-bold text-primary mb-3">Personal Information We Collect</h3>
                   <ul className="space-y-2 text-gray-700 text-sm p-5">
-                    <li><strong>You give it to us</strong> — account details, billing information, shipment and policy information, and anything you share with support.</li>
-                    <li><strong>We collect it automatically</strong> — device identifiers, IP address, pages viewed, and approximate location, gathered through cookies and similar technologies while you use our Services.</li>
-                    <li><strong>We receive it from others</strong> — carriers, payment processors, and address-verification partners who help us keep your records accurate and your shipments moving.</li>
+                    <li><strong>You give it to us</strong> account details, billing information, shipment and policy information, and anything you share with support.</li>
+                    <li><strong>We collect it automatically</strong> device identifiers, IP address, pages viewed, and approximate location, gathered through cookies and similar technologies while you use our Services.</li>
+                    <li><strong>We receive it from others</strong> carriers, payment processors, and address-verification partners who help us keep your records accurate and your shipments moving.</li>
                   </ul>
                 </div>
               </section>
@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-2xl font-bold text-primary mb-4">6. International Data Transfers</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  NTIGI operates globally, so your information may be processed in a country other than the one you live in, including the United States. Where required, we use recognized safeguards — such as standard contractual clauses — to protect information transferred across borders.
+                  NTIGI operates globally, so your information may be processed in a country other than the one you live in, including the United States. Where required, we use recognized safeguards such as standard contractual clauses to protect information transferred across borders.
                 </p>
               </section>
 
