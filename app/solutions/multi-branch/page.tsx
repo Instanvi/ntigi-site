@@ -157,18 +157,132 @@ export default function MultiBranch() {
               
               <div className="hidden md:block">
                 <ConsoleFrame label="NTIGI_OS // NETWORK_MAP.sh" status="LIVE" delay={0.25}>
-                  <div className="p-6 font-mono text-xs text-blue-500/90 space-y-4 bg-black/40 min-h-[250px]">
-                    <div>$ ntigi network list --detailed</div>
-                    <div className="text-foreground/80 space-y-2">
-                      <div>[HQ] DOUALA_OFFICE (Active - 10,240 pkgs/day)</div>
-                      <div>├── [Branch] YAOUNDE_OFFICE (Active - 4,890 pkgs/day)</div>
-                      <div>├── [Branch] BUEA_OFFICE (Active - 2,150 pkgs/day)</div>
-                      <div>├── [Partner] LONDON_DEPOT (Connected - 1,800 pkgs/day)</div>
-                      <div>└── [Partner] CHICAGO_HUB (Connected - 3,420 pkgs/day)</div>
+                  <div className="relative w-full h-[280px] bg-[var(--console-bg)] overflow-hidden select-none">
+                    {/* Connection Lines */}
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                      {/* Line HQ -> Yaounde */}
+                      <line x1="50%" y1="18%" x2="22%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.4" />
+                      <line x1="50%" y1="18%" x2="22%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,5" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="50;0" dur="3s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Line HQ -> Buea */}
+                      <line x1="50%" y1="18%" x2="50%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.4" />
+                      <line x1="50%" y1="18%" x2="50%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,5" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="50;0" dur="2.5s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Line HQ -> London (Partner) */}
+                      <line x1="50%" y1="18%" x2="78%" y2="48%" stroke="#a855f7" strokeWidth="1.5" strokeOpacity="0.4" />
+                      <line x1="50%" y1="18%" x2="78%" y2="48%" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="4,6" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="50;0" dur="4s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Line Yaounde -> Yaounde North */}
+                      <line x1="22%" y1="58%" x2="14%" y2="82%" stroke="#10b981" strokeWidth="1" strokeOpacity="0.3" />
+                      <line x1="22%" y1="58%" x2="14%" y2="82%" stroke="#10b981" strokeWidth="1" strokeDasharray="3,3" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="30;0" dur="2s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Line Buea -> Buea Town */}
+                      <line x1="50%" y1="58%" x2="42%" y2="82%" stroke="#10b981" strokeWidth="1" strokeOpacity="0.3" />
+                      <line x1="50%" y1="58%" x2="42%" y2="82%" stroke="#10b981" strokeWidth="1" strokeDasharray="3,3" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="30;0" dur="2s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Line London -> Chicago (Partner link) */}
+                      <line x1="78%" y1="58%" x2="86%" y2="82%" stroke="#a855f7" strokeWidth="1" strokeOpacity="0.3" />
+                      <line x1="78%" y1="58%" x2="86%" y2="82%" stroke="#a855f7" strokeWidth="1" strokeDasharray="4,4" strokeLinecap="round">
+                        <animate attributeName="stroke-dashoffset" values="40;0" dur="3s" repeatCount="indefinite" />
+                      </line>
+                    </svg>
+
+                    {/* Nodes overlay */}
+                    {/* HQ */}
+                    <div className="absolute top-[18%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1.5 px-2 py-1 bg-blue-500/10 border border-blue-500/30 text-[9px] font-mono rounded">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <span className="font-bold text-foreground">HQ: DOUALA_OFFICE</span>
+                      </div>
+                      <span className="text-[8px] text-foreground/45 font-mono mt-0.5">10,240 pkgs/day</span>
                     </div>
-                    <div className="pt-2 text-green-500 animate-pulse flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
-                      <span>● All 5 network nodes fully operational (Sync 100%)</span>
+
+                    {/* YAOUNDE BRANCH */}
+                    <div className="absolute top-[50%] left-[22%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/10 border border-green-500/30 text-[9px] font-mono rounded">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                        </span>
+                        <span className="text-foreground font-medium">YAOUNDE_OFFICE</span>
+                      </div>
+                      <span className="text-[8px] text-foreground font-mono mt-0.5">4,890 pkgs/day</span>
+                    </div>
+
+                    {/* YAOUNDE NORTH SUB-BRANCH */}
+                    <div className="absolute top-[80%] left-[14%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/5 border border-emerald-500/20 text-[8px] font-mono rounded text-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
+                        <span>YAOUNDE_NORTH</span>
+                      </div>
+                      <span className="text-[7px] text-foreground font-mono mt-0.5">1,200 pkgs/day</span>
+                    </div>
+
+                    {/* BUEA BRANCH */}
+                    <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/10 border border-green-500/30 text-[9px] font-mono rounded">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                        </span>
+                        <span className="text-foreground font-medium">BUEA_OFFICE</span>
+                      </div>
+                      <span className="text-[8px] text-foreground font-mono mt-0.5">2,150 pkgs/day</span>
+                    </div>
+
+                    {/* BUEA TOWN SUB-BRANCH */}
+                    <div className="absolute top-[80%] left-[42%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/5 border border-emerald-500/20 text-[8px] font-mono rounded text-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
+                        <span>BUEA_TOWN</span>
+                      </div>
+                      <span className="text-[7px] text-foreground font-mono mt-0.5">950 pkgs/day</span>
+                    </div>
+
+                    {/* LONDON DEPOT PARTNER */}
+                    <div className="absolute top-[50%] left-[78%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 text-[9px] font-mono rounded">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-500"></span>
+                        </span>
+                        <span className="text-purple-300 font-medium">LONDON_DEPOT</span>
+                      </div>
+                      <span className="text-[8px] text-foreground font-mono mt-0.5">1,800 pkgs/day</span>
+                    </div>
+
+                    {/* CHICAGO HUB PARTNER */}
+                    <div className="absolute top-[80%] left-[86%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 text-[9px] font-mono rounded">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-500"></span>
+                        </span>
+                        <span className="text-purple-300 font-medium">CHICAGO_HUB</span>
+                      </div>
+                      <span className="text-[8px] text-foreground font-mono mt-0.5">3,420 pkgs/day</span>
+                    </div>
+
+                    {/* Footer Status Bar inside Console */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-[var(--console-bg)] px-4 py-1.5 border-t border-border-custom flex items-center justify-between text-[9px] text-foreground/60">
+                      <div className="flex items-center gap-1 text-green-500">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span>All nodes active</span>
+                      </div>
+                      <span>Sync Rate: 100%</span>
                     </div>
                   </div>
                 </ConsoleFrame>
@@ -303,9 +417,9 @@ export default function MultiBranch() {
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { icon: Globe, image: "/image1.jpg", title: "International Freight Forwarders", desc: "Run branches across multiple countries with full data isolation. Head office sees everything. Each branch only sees its own. Commission settlements happen automatically." },
-                { icon: Buildings, image: "/image2.jpg", title: "Regional Courier Networks", desc: "Manage city and town branches from one account. Agents at each location process their own shipments while operations managers see the full regional picture." },
-                { icon: Bell, image: "/image3.jpg", title: "Agency Partnerships", desc: "Onboard third-party agencies as partners in your network. Assign them specific routes, set commission rates, and track shipment handoffs with full financial audit trail." },
+                { icon: Globe, image: "/portview.jpg", title: "International Freight Forwarders", desc: "Run branches across multiple countries with full data isolation. Head office sees everything. Each branch only sees its own. Commission settlements happen automatically." },
+                { icon: Buildings, image: "/deliveryboy.jpg", title: "Regional Courier Networks", desc: "Manage city and town branches from one account. Agents at each location process their own shipments while operations managers see the full regional picture." },
+                { icon: Bell, image: "/handshake.jpg", title: "Agency Partnerships", desc: "Onboard third-party agencies as partners in your network. Assign them specific routes, set commission rates, and track shipment handoffs with full financial audit trail." },
               ].map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                   <div className="relative h-44 overflow-hidden border-b border-border-custom">

@@ -364,7 +364,7 @@ export default function Consolidation() {
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom">
                   <Image
-                    src="/ship.jpeg"
+                    src="/portview.jpg"
                     alt="Ocean freight — cargo ship at port"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -384,24 +384,12 @@ export default function Consolidation() {
 
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
-                  {/* animated shelf rows */}
-                  <div className="absolute inset-0 flex flex-col justify-center gap-2 px-4 py-3">
-                    {[3, 5, 4, 5, 3].map((cols, row) => (
-                      <div key={row} className="flex gap-1.5">
-                        {Array.from({ length: cols }).map((_, col) => (
-                          <motion.div
-                            key={col}
-                            initial={{ opacity: 0, scaleY: 0 }}
-                            whileInView={{ opacity: 1, scaleY: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.04 * (row * 5 + col), duration: 0.35, ease: easeOutExpo }}
-                            style={{ transformOrigin: "bottom" }}
-                            className="h-5 flex-1 bg-blue-500/15 border border-blue-500/25 group-hover:bg-blue-500/25 transition-colors duration-300"
-                          />
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+                  <Image
+                    src="/image3.webp"
+                    alt="Ocean freight — cargo ship at port"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/60 to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -418,32 +406,12 @@ export default function Consolidation() {
 
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
-                  {/* animated route nodes + connecting line */}
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 280 120" preserveAspectRatio="xMidYMid meet">
-                    <motion.path
-                      d="M 30 90 C 70 90, 80 30, 140 30 C 200 30, 210 90, 250 90"
-                      stroke="rgba(59,130,246,0.3)"
-                      strokeWidth="1.5"
-                      fill="none"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: easeOutExpo, delay: 0.2 }}
-                    />
-                    {[30, 140, 250].map((cx, i) => (
-                      <motion.circle
-                        key={i}
-                        cx={cx}
-                        cy={i === 1 ? 30 : 90}
-                        r="5"
-                        fill="rgba(59,130,246,0.6)"
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + i * 0.25, type: "spring", stiffness: 200 }}
-                      />
-                    ))}
-                  </svg>
+                  <Image
+                    src="/image4.webp"
+                    alt="Ocean freight — cargo ship at port"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/60 to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -461,7 +429,6 @@ export default function Consolidation() {
           </div>
         </section>
 
-        {/* ── RELATED SOLUTIONS ─────────────────────────────────────────────── */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">

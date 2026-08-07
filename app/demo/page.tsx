@@ -36,7 +36,7 @@ export default function RequestDemo() {
           </div>
           <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/2 z-0">
             <Image
-              src="/image1.jpg"
+              src="/shipment.jpg"
               alt="Logistics live demo demonstration"
               fill
               className="object-cover"
