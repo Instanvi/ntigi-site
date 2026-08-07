@@ -374,7 +374,7 @@ export default function InternationalForwarding() {
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom">
                   <Image
-                    src="/image2.jpg"
+                    src="/portview.jpg"
                     alt="Cargo ship at port — multiple branch operations"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -394,20 +394,12 @@ export default function InternationalForwarding() {
 
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
-                  <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-2 p-4 opacity-60">
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.05 * i, duration: 0.4 }}
-                        className="border border-border-custom bg-[var(--console-bg)] flex items-center justify-center"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
-                      </motion.div>
-                    ))}
-                  </div>
+                  <Image
+                    src="/handshake.jpg"
+                    alt="Cargo ship at port — multiple branch operations"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-500/5 pointer-events-none" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -423,19 +415,12 @@ export default function InternationalForwarding() {
 
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
-                  <div className="absolute inset-0 flex items-end px-5 pb-10 gap-1.5">
-                    {[65, 82, 47, 90, 73, 88, 55, 76].map((h, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.08 * i, duration: 0.5, ease: easeOutExpo }}
-                        style={{ height: `${h}%`, transformOrigin: "bottom" }}
-                        className="flex-1 bg-blue-500/20 border border-blue-500/30 group-hover:bg-blue-500/30 transition-colors duration-300"
-                      />
-                    ))}
-                  </div>
+                  <Image
+                    src="/ai.jpg"
+                    alt="Cargo ship at port — multiple branch operations"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute bottom-3 left-4 z-10">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
                       <ChartLine className="h-3.5 w-3.5" />

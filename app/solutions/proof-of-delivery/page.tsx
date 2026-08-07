@@ -482,7 +482,7 @@ export default function ProofOfDelivery() {
 
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image1.jpg" alt="Local courier delivery" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/deliveryboy.jpg" alt="Local courier delivery" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -498,7 +498,7 @@ export default function ProofOfDelivery() {
 
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image2.jpg" alt="E-commerce fulfilment delivery" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/personOffice.jpg" alt="E-commerce fulfilment delivery" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">

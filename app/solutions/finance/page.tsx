@@ -123,10 +123,6 @@ export default function Finance() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
-
-        {/* HERO — 2-col. Right uses ntigidashboard (finance/analytics view).
-            Different from intl-forwarding (shipmentlist) and customs (compliance screen).
-            No badge. Plain H1 only. */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
@@ -238,20 +234,13 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* PAYMENT METHODS + REPORTS + ACCOUNTING
-            This IS the proof layer for Finance — no console screenshots needed on top.
-            The payment grid and report checklist show what the product handles directly.
-            Layout: left card full-height (payment methods grid),
-                    right col stacked (reports checklist + accounting integrations).
-            shipmentlistHome.png used as a subtle visual accent in the left card header. */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
 
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none overflow-hidden">
-              {/* image accent strip at top of left card */}
-              <div className="relative h-36 overflow-hidden border-b border-border-custom">
+              <div className="relative h-40 overflow-hidden border-b border-border-custom">
                 <Image
-                  src="/shipmentlistHome.png"
+                  src="/money.jpg"
                   alt="NTIGI payment and billing screen"
                   fill
                   className="object-cover object-top"
@@ -319,10 +308,6 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* USE CASES — real photo headers, no badges, no graphs
-            image1 → Freight Forwarders (office/operations context)
-            image2 → Courier Networks  (field/delivery context)
-            image3 → Finance Teams     (analytics/reporting context) */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -332,7 +317,7 @@ export default function Finance() {
 
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image1.jpg" alt="Freight forwarder finance operations" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/logisticsboss.jpg" alt="Freight forwarder finance operations" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -348,7 +333,7 @@ export default function Finance() {
 
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image2.jpg" alt="Courier network COD reconciliation" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/image4.webp" alt="Courier network COD reconciliation" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -364,7 +349,7 @@ export default function Finance() {
 
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image3.jpg" alt="Finance team reviewing reports" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/ai.jpg" alt="Finance team reviewing reports" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">

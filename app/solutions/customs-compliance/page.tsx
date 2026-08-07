@@ -122,8 +122,6 @@ export default function CustomsCompliance() {
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
-
-        {/* HERO — 2-col: text left, console frame right */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
@@ -318,7 +316,6 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* USE CASES — real image headers, no graphs, no badges */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -326,10 +323,9 @@ export default function CustomsCompliance() {
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
 
-              {/* Card 1 — Customs Brokers — image1.jpg */}
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image1.jpg" alt="Customs broker reviewing shipment documents" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/personOffice.jpg" alt="Customs broker reviewing shipment documents" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -343,10 +339,9 @@ export default function CustomsCompliance() {
                 </div>
               </AnimatedSection>
 
-              {/* Card 2 — Freight Forwarders — image2.jpg */}
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image2.jpg" alt="Freight forwarder at port managing shipments" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/logisticsboss.jpg" alt="Freight forwarder at port managing shipments" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
@@ -360,10 +355,9 @@ export default function CustomsCompliance() {
                 </div>
               </AnimatedSection>
 
-              {/* Card 3 — Compliance Teams — image3.jpg */}
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image3.jpg" alt="Compliance team reviewing audit logs" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/complaince.jpg" alt="Compliance team reviewing audit logs" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
