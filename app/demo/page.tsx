@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { CheckCircle } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/Button";
 import AnimatedSection from "@/components/animations/AnimatedSection";
@@ -20,17 +21,28 @@ export default function RequestDemo() {
       <Header />
       <main className="flex-grow pt-16">
 
-        <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
-            <AnimatedSection className="max-w-3xl space-y-4">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">Request Live Demo</div>
-              <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Request a<br /><span className="text-blue-500">Live Demo</span>
-              </h1>
-              <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                See how our offline-first cloud platform streamlines maritime voyages, customs compliance, and package dispatch workflows.
-              </p>
-            </AnimatedSection>
+        <section className="relative min-h-[500px] border-b border-border-custom overflow-hidden noise-overlay flex items-stretch">
+          <div className="mx-auto max-w-7xl w-full px-6 md:px-8 py-20 flex items-center relative z-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+              <AnimatedSection className="space-y-4">
+                <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
+                  Request a<br /><span className="text-blue-500">Live Demo</span>
+                </h1>
+                <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
+                  See how our offline-first cloud platform streamlines maritime voyages, customs compliance, and package dispatch workflows.
+                </p>
+              </AnimatedSection>
+            </div>
+          </div>
+          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/2 z-0">
+            <Image
+              src="/image1.jpg"
+              alt="Logistics live demo demonstration"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--console-header)] via-[var(--console-header)]/40 to-transparent pointer-events-none" />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
@@ -53,7 +65,6 @@ export default function RequestDemo() {
             ) : (
               <AnimatedSection className="bg-[var(--console-bg)] border border-border-custom rounded-none p-8 md:p-12 space-y-8">
                 <div className="space-y-3">
-                  <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">Schedule Your Demo</div>
                   <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-foreground">Experience NTIGI</h2>
                   <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Fill out the form below and our team will contact you to schedule a personalized demonstration.</p>
                 </div>

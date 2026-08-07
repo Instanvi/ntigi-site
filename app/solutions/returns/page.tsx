@@ -3,15 +3,19 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import AnimatedSection from "@/components/animations/AnimatedSection";
+import FloatingShapes from "@/components/animations/FloatingShapes";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import {
   ArrowRight, ArrowsCounterClockwise, Package, Receipt, Bell,
   MapPin, CheckCircle, Camera, CurrencyDollar, ClipboardText,
-  Barcode, ChartLine, ShoppingBag, Truck, Buildings, Warning,
+  Barcode, ChartLine, ShoppingBag, Truck, Buildings, Warning, Terminal,
 } from "@phosphor-icons/react";
+
+const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
 const capabilities = [
   { icon: ArrowsCounterClockwise, title: "Return Shipment Creation", desc: "Create return shipments with full sender and receiver details. Linked to the original outbound shipment for complete lifecycle tracking. Supports all package types and handling methods." },
@@ -70,34 +74,81 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   return <div ref={ref} className="text-2xl font-bold text-blue-500 font-sans">{count}{suffix}</div>;
 }
 
+function ConsoleFrame({ label, status, children, delay = 0 }: {
+  label: string; status?: string; children: React.ReactNode; delay?: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay, ease: easeOutExpo }}
+      className="relative w-full border border-border-custom bg-[var(--console-bg)] overflow-hidden group"
+    >
+      <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      <div className="px-4 py-2 bg-[var(--console-header)] border-b border-border-custom flex items-center justify-between text-[10px] text-foreground/60">
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500/30 border border-red-500/50" />
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/30 border border-yellow-500/50" />
+            <span className="w-2.5 h-2.5 rounded-full bg-green-500/30 border border-green-500/50" />
+          </div>
+          <div className="flex items-center gap-1 pl-2 border-l border-border-custom">
+            <Terminal className="h-3 w-3 text-blue-500" />
+            <span className="tracking-wider">{label}</span>
+          </div>
+        </div>
+        {status && (
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
+            <span className="tracking-wider text-blue-500">{status}</span>
+          </div>
+        )}
+      </div>
+      {children}
+    </motion.div>
+  );
+}
+
 export default function Returns() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
 
-        <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
-            <AnimatedSection className="max-w-3xl space-y-4">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">For E-commerce and Courier Operations</div>
-              <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Returns<br /><span className="text-blue-500">Management</span>
-              </h1>
-              <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                Handle return shipments with the same tracking, documentation, and automation as outbound deliveries. From return label generation to refund processing, every step is tracked and managed in NTIGI.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
-              </div>
-            </AnimatedSection>
+        {/* HERO — 2-col: text left, ship.jpeg right inside console frame */}
+        <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
+          <FloatingShapes />
+          <div className="grid md:grid-cols-2 min-h-[420px]">
+
+            <div className="relative hidden md:block">
+              <Image src="/ship.jpeg" alt="Returns logistics at port" fill className="object-cover object-center" priority />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[var(--console-header)]/80" />
+              <div className="absolute inset-0 bg-[var(--console-header)]/20" />
+            </div>
+
+            <div className="relative bg-[var(--console-header)] py-20 px-8 md:px-12 flex items-center z-10">
+              <AnimatedSection className="space-y-5 max-w-lg">
+                <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
+                  Returns<br /><span className="text-blue-500">Management</span>
+                </h1>
+                <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case">
+                  Handle return shipments with the same tracking, documentation, and automation as outbound deliveries. From return label generation to refund processing, every step managed in NTIGI.
+                </p>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
+                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                </div>
+              </AnimatedSection>
+            </div>
+
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
+        {/* STATS BAR */}
         <section className="border-b border-border-custom bg-[var(--console-bg)]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 border-l border-border-custom">
+            <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t-2 border-t-blue-500/20 border-border-custom">
               {[
                 { display: "Full", label: "Return lifecycle" },
                 { display: "Auto", label: "Refund processing" },
@@ -113,6 +164,7 @@ export default function Returns() {
           </div>
         </section>
 
+        {/* CAPABILITIES */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -133,6 +185,7 @@ export default function Returns() {
           </div>
         </section>
 
+        {/* WORKFLOW */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -142,8 +195,10 @@ export default function Returns() {
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
               {workflow.map((step, index) => (
-                <AnimatedSection key={index} delay={index * 0.12} direction="up" className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02] transition-all relative">
-                  <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 + index * 0.12, type: "spring", stiffness: 200 }} className="w-8 h-8 rounded-full bg-[var(--console-bg)] border border-blue-500/30 flex items-center justify-center mb-3">
+                <AnimatedSection key={index} delay={index * 0.12} direction="up" className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.02] transition-all relative group">
+                  <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }}
+                    transition={{ delay: 0.3 + index * 0.12, type: "spring", stiffness: 200 }}
+                    className="w-8 h-8 rounded-full bg-[var(--console-bg)] border border-blue-500/30 group-hover:border-blue-500/60 transition-colors flex items-center justify-center mb-3">
                     <span className="text-[10px] font-bold text-blue-500">{step.step}</span>
                   </motion.div>
                   <h4 className="text-md font-bold uppercase tracking-wider text-foreground mb-2">{step.title}</h4>
@@ -154,6 +209,7 @@ export default function Returns() {
           </div>
         </section>
 
+        {/* RETURN RECORD + TYPES + FINANCIALS */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
@@ -161,7 +217,7 @@ export default function Returns() {
                 <ClipboardText className="w-5 h-5" />
                 <h3 className="text-md font-bold uppercase tracking-wider">What Every Return Record Contains</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Each return is a complete operational record linked to its original outbound shipment. Every party involved can see the full return history at any point.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Each return is a complete operational record linked to its original outbound shipment. Every party can see the full return history at any point.</p>
               <div className="space-y-3 pt-1">
                 {returnRecord.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -169,7 +225,7 @@ export default function Returns() {
                       <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm font-bold uppercase tracking-wider text-foreground">{item.label}</span>
                     </div>
-                    <p className="text-sm text-foreground/60 font-sans font-medium pl-5">{item.desc}</p>
+                    <p className="text-xs text-foreground/60 font-sans font-medium pl-5">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -186,7 +242,7 @@ export default function Returns() {
                   {returnTypes.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
                       <div className="text-sm font-bold uppercase tracking-wider text-foreground mb-0.5">{item.name}</div>
-                      <div className="text-sm text-foreground/60 font-sans font-medium">{item.desc}</div>
+                      <div className="text-xs text-foreground/60 font-sans font-medium">{item.desc}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -196,7 +252,7 @@ export default function Returns() {
                   <CurrencyDollar className="w-5 h-5" />
                   <h3 className="text-md font-bold uppercase tracking-wider">Financial Reconciliation</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Returns are fully reconciled against the original invoice. Credit notes, refunds, and partial refunds are all supported. Multi-currency returns handled automatically with PDF generation and email delivery.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Returns are fully reconciled against the original invoice. Credit notes, refunds, and partial refunds all supported. Multi-currency returns handled automatically with PDF generation and email delivery.</p>
                 <div className="flex items-start gap-2 pt-1">
                   <Warning className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-foreground/60 font-sans font-medium">Return invoices and refund records are available in the customer portal the moment they are processed.</span>
@@ -206,30 +262,65 @@ export default function Returns() {
           </div>
         </section>
 
+        {/* PROOF — console frame with app screenshot */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <AnimatedSection className="text-left mb-10 max-w-2xl">
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Returns Inside NTIGI</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Return shipments are created, tracked, and closed in the same shipment list your agents use every day.</p>
+            </AnimatedSection>
+            <ConsoleFrame label="NTIGI // RETURNS_VIEW.sh" status="LIVE" delay={0.1}>
+              <div className="relative w-full aspect-[21/9] bg-[var(--console-bg)] overflow-hidden">
+                <Image src="/shipmentlistHome.png" alt="NTIGI returns management screen" fill className="object-cover object-top" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/50 via-transparent to-transparent pointer-events-none" />
+                <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ delay: 0.6, ease: easeOutExpo }}
+                  className="absolute bottom-3 right-4 bg-black/70 border border-white/10 px-2 py-1 text-[8px] text-white/80 tracking-widest">
+                  RETURNS // LIFECYCLE_VIEW
+                </motion.div>
+              </div>
+              <div className="px-4 py-3 bg-[var(--console-header)]/60 border-t border-border-custom flex items-center gap-2">
+                <ArrowsCounterClockwise className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+                <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Return shipments tracked alongside outbound in the same workflow</span>
+              </div>
+            </ConsoleFrame>
+          </div>
+        </section>
+
+        {/* USE CASES */}
+        <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { icon: ShoppingBag, title: "E-commerce Fulfilment", desc: "Handle online shopper returns at scale. Customers initiate returns through the portal, receive a label automatically, and track the return to refund confirmation." },
-                { icon: Truck, title: "Courier Services", desc: "Manage refused deliveries and wrong-address returns in your daily driver runs. Returns are created, dispatched, and tracked using the same driver mobile app." },
-                { icon: Buildings, title: "B2B Logistics", desc: "Process bulk return shipments from business clients with credit notes issued automatically against their account. Full return volume reporting per client and per route." },
+                { img: "/image1.jpg", icon: ShoppingBag, title: "E-commerce Fulfilment", desc: "Handle online shopper returns at scale. Customers initiate returns through the portal, receive a label automatically, and track the return to refund confirmation." },
+                { img: "/image2.jpg", icon: Truck, title: "Courier Services", desc: "Manage refused deliveries and wrong-address returns in your daily driver runs. Returns are created, dispatched, and tracked using the same driver mobile app." },
+                { img: "/image3.jpg", icon: Buildings, title: "B2B Logistics", desc: "Process bulk return shipments from business clients with credit notes issued automatically against their account. Full return volume reporting per client and per route." },
               ].map((item, i) => (
-                <AnimatedSection key={i} delay={i * 0.12} className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
-                  <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
-                    <item.icon className="h-4.5 w-4.5" />
+                <AnimatedSection key={i} delay={i * 0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
+                  <div className="relative h-44 overflow-hidden border-b border-border-custom">
+                    <Image src={item.img} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-3 left-4">
+                      <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
+                        <item.icon className="h-3.5 w-3.5" />
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{item.title}</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{item.desc}</p>
+                  <div className="p-6 space-y-2">
+                    <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{item.title}</h4>
+                    <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{item.desc}</p>
+                  </div>
                 </AnimatedSection>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 border-b border-border-custom">
+        {/* RELATED SOLUTIONS */}
+        <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
@@ -238,7 +329,7 @@ export default function Returns() {
               {[
                 { title: "Customer Portal", desc: "Customers submit return requests and track returns in real time through their self-service portal.", href: "/solutions/customer-portal" },
                 { title: "Proof of Delivery", desc: "Drivers capture photos and signatures at return pickup to document package condition at collection.", href: "/solutions/proof-of-delivery" },
-                { title: "Finance and Billing", desc: "Return invoices, credit notes, and refund processing are handled automatically and linked to the original transaction.", href: "/solutions/finance" },
+                { title: "Finance and Billing", desc: "Return invoices, credit notes, and refund processing handled automatically and linked to the original transaction.", href: "/solutions/finance" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
@@ -254,7 +345,12 @@ export default function Returns() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
+          <motion.div animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-1/4 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-blue-500 blur-3xl -z-10 pointer-events-none" />
+          <motion.div animate={{ opacity: [0.03, 0.07, 0.03], scale: [1.05, 1, 1.05] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute right-1/4 top-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-primary blur-3xl -z-10 pointer-events-none" />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
@@ -267,8 +363,8 @@ export default function Returns() {
               </div>
             </AnimatedSection>
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
+
       </main>
       <Footer />
     </div>

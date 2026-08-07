@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import { motion, useInView } from "framer-motion";
@@ -92,21 +93,32 @@ export default function Pricing() {
       <Header />
       <main className="flex-grow pt-16">
 
-        <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
-          <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
-            <AnimatedSection className="max-w-3xl space-y-4">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">Shipment-Based Pricing</div>
-              <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                You Only Pay<br /><span className="text-blue-500">Per Shipment</span>
-              </h1>
-              <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                NTIGI does not charge flat monthly subscription fees. Your clients pay based on what they send or receive: package weight, dimensions, route, service level, and handling requirements. You configure the rates. NTIGI calculates and invoices automatically.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
-              </div>
-            </AnimatedSection>
+        <section className="relative min-h-[500px] border-b border-border-custom overflow-hidden noise-overlay flex items-stretch">
+          <div className="mx-auto max-w-7xl w-full px-6 md:px-8 py-20 flex items-center relative z-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+              <AnimatedSection className="space-y-4">
+                <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
+                  Usage-Based<br /><span className="text-blue-500">Payment</span>
+                </h1>
+                <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
+                  NTIGI does not charge flat monthly subscription fees. Your clients pay based on what they send or receive: package weight, dimensions, route, service level, and handling requirements. You configure the rates. NTIGI calculates and invoices automatically.
+                </p>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
+                  <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/2 z-0">
+            <Image
+              src="/payment.jpg"
+              alt="Logistics transport and shipping"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--console-header)] via-[var(--console-header)]/40 to-transparent pointer-events-none" />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
@@ -132,7 +144,6 @@ export default function Pricing() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider mb-3">Pricing Factors</div>
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">What Determines the Cost of a Shipment</h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Each shipment is priced by combining the relevant factors below. You configure all of them. Your rates, your rules, your margins.</p>
             </AnimatedSection>
@@ -255,9 +266,8 @@ export default function Pricing() {
 
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
-            <AnimatedSection className="bg-[var(--console-bg)] border border-border-custom rounded-none p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4">
-                <div className="inline-block px-3 py-1 bg-primary/10 border border-blue-500/30 text-blue-500 rounded-none text-xs font-bold uppercase tracking-wider">NTIGI Platform Access</div>
+            <AnimatedSection className="bg-[var(--console-bg)] border border-border-custom rounded-none p-8 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+              <div className="space-y-4 flex flex-col justify-center">
                 <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Custom Pricing for Your Operation</h2>
                 <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">NTIGI platform access is priced based on your operation size, shipment volume, number of users, required features, and deployment model. We build a plan around your business, not a one-size tier.</p>
                 <div className="space-y-2 pt-1">
@@ -269,7 +279,16 @@ export default function Pricing() {
                   ))}
                 </div>
               </div>
-              <div className="space-y-4">
+              <div className="hidden lg:block relative border border-border-custom overflow-hidden group min-h-[300px]">
+                <Image
+                  src="/image3.jpg"
+                  alt="Logistics warehouse operations"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/80 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="space-y-4 flex flex-col justify-center">
                 <div className="border border-border-custom p-6 space-y-3">
                   <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Get a Custom Quote</h3>
                   <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Tell our team about your operation. We will prepare a pricing proposal based on your branch count, shipment volumes, and deployment requirements.</p>
@@ -310,7 +329,16 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
+        <section className="relative py-24 border-b border-border-custom overflow-hidden noise-overlay">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/image1.jpg"
+              alt="Logistics solutions background"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-background/85" />
+          </div>
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
@@ -323,7 +351,7 @@ export default function Pricing() {
               </div>
             </AnimatedSection>
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-20" />
         </section>
       </main>
       <Footer />
