@@ -187,7 +187,7 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* CAPABILITIES — icons only, no badge */}
+        {/* CAPABILITIES icons only, no badge */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -393,7 +393,7 @@ export default function Finance() {
           </div>
         </section>
 
-        {/* CTA — animated gradient only, no static grid, no image */}
+        {/* CTA animated gradient only, no static grid, no image */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}

@@ -98,7 +98,7 @@ export default function FleetManagement() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — image left, text right. Reversed from the console-frame-right pattern.
+        {/* HERO image left, text right. Reversed from the console-frame-right pattern.
             ship.jpeg fills the left column at full height with overlay. */}
         <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
@@ -155,7 +155,7 @@ export default function FleetManagement() {
           </div>
         </section>
 
-        {/* VEHICLE CAPABILITIES — 3-col, no badge */}
+        {/* VEHICLE CAPABILITIES 3-col, no badge */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -176,7 +176,7 @@ export default function FleetManagement() {
           </div>
         </section>
 
-        {/* DRIVER CAPABILITIES — 3-col, no badge */}
+        {/* DRIVER CAPABILITIES 3-col, no badge */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -301,7 +301,7 @@ export default function FleetManagement() {
                 </div>
                 <div className="px-4 py-3 bg-[var(--console-header)] border-t border-border-custom flex items-center gap-2">
                   <Truck className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Fleet overview — vehicle status and GPS positions</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Fleet overview vehicle status and GPS positions</span>
                 </div>
               </motion.div>
 
@@ -316,14 +316,14 @@ export default function FleetManagement() {
                 </div>
                 <div className="px-4 py-3 bg-[var(--console-header)] border-t border-border-custom flex items-center gap-2">
                   <User className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Driver delivery queue — shipments assigned to route</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Driver delivery queue shipments assigned to route</span>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* USE CASES — real photo card headers */}
+        {/* USE CASES real photo card headers */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -409,7 +409,7 @@ export default function FleetManagement() {
           </div>
         </section>
 
-        {/* CTA — animated gradient, no static grid */}
+        {/* CTA animated gradient, no static grid */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}

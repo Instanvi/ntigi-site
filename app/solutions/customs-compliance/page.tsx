@@ -173,7 +173,7 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* CAPABILITIES — icons only, no badge */}
+        {/* CAPABILITIES icons only, no badge */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -194,7 +194,7 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* WORKFLOW — no badge, plain H2 */}
+        {/* WORKFLOW no badge, plain H2 */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -218,7 +218,7 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* DOCUMENTS + COMPLIANCE — text cards, untouched */}
+        {/* DOCUMENTS + COMPLIANCE text cards, untouched */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
@@ -271,13 +271,13 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* PROOF SECTION — 2 console frames */}
+        {/* PROOF SECTION 2 console frames */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">See It in Action</h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Live compliance screening at booking and auto-generated customs documents — all inside the same screen.
+                Live compliance screening at booking and auto-generated customs documents all inside the same screen.
               </p>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
@@ -401,7 +401,7 @@ export default function CustomsCompliance() {
           </div>
         </section>
 
-        {/* CTA — animated gradient only, no image, no static grid */}
+        {/* CTA animated gradient only, no image, no static grid */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}

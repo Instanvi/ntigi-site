@@ -94,7 +94,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   return <div ref={ref} className="text-2xl font-bold text-blue-500 font-sans">{count}{suffix}</div>;
 }
 
-/** Reusable console frame — matches the homepage terminal pattern exactly */
+/** Reusable console frame matches the homepage terminal pattern exactly */
 function ConsoleFrame({
   label,
   status,
@@ -309,7 +309,7 @@ export default function InternationalForwarding() {
             <AnimatedSection className="text-left mb-12 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">See It in Action</h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                From auto-generating customs documents at booking to tracking a shipment live across borders — all inside one screen.
+                From auto-generating customs documents at booking to tracking a shipment live across borders all inside one screen.
               </p>
             </AnimatedSection>
 
@@ -375,7 +375,7 @@ export default function InternationalForwarding() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom">
                   <Image
                     src="/portview.jpg"
-                    alt="Cargo ship at port — multiple branch operations"
+                    alt="Cargo ship at port multiple branch operations"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -396,7 +396,7 @@ export default function InternationalForwarding() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
                   <Image
                     src="/handshake.jpg"
-                    alt="Cargo ship at port — multiple branch operations"
+                    alt="Cargo ship at port multiple branch operations"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -417,7 +417,7 @@ export default function InternationalForwarding() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
                   <Image
                     src="/ai.jpg"
-                    alt="Cargo ship at port — multiple branch operations"
+                    alt="Cargo ship at port multiple branch operations"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />

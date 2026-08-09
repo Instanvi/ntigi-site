@@ -365,7 +365,7 @@ export default function Consolidation() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom">
                   <Image
                     src="/portview.jpg"
-                    alt="Ocean freight — cargo ship at port"
+                    alt="Ocean freight cargo ship at port"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -386,7 +386,7 @@ export default function Consolidation() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
                   <Image
                     src="/image3.webp"
-                    alt="Ocean freight — cargo ship at port"
+                    alt="Ocean freight cargo ship at port"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -408,7 +408,7 @@ export default function Consolidation() {
                 <div className="relative h-40 overflow-hidden border-b border-border-custom bg-[var(--console-header)]">
                   <Image
                     src="/image4.webp"
-                    alt="Ocean freight — cargo ship at port"
+                    alt="Ocean freight cargo ship at port"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -454,7 +454,7 @@ export default function Consolidation() {
           </div>
         </section>
 
-        {/* ── CTA — animated gradient only, no image ────────────────────────── */}
+        {/* ── CTA animated gradient only, no image ────────────────────────── */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}

@@ -91,7 +91,7 @@ export default function RouteOptimization() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — console frame header + screenshot background, text overlaid bottom-left.
+        {/* HERO console frame header + screenshot background, text overlaid bottom-left.
             Fixed min-h matches other hero sections (~420px content area). */}
         <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
@@ -115,7 +115,7 @@ export default function RouteOptimization() {
             </div>
           </div>
 
-          {/* screenshot background + overlaid text — fixed height matches other heroes */}
+          {/* screenshot background + overlaid text fixed height matches other heroes */}
           <div className="relative min-h-[420px] flex items-end">
             <Image
               src="/shipmentlistHome.png"
@@ -266,7 +266,7 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* PRICING ENGINE — 4-col grid, no badge */}
+        {/* PRICING ENGINE 4-col grid, no badge */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -287,7 +287,7 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* USE CASES — real photo card headers */}
+        {/* USE CASES real photo card headers */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -373,7 +373,7 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* CTA — animated gradient, no static grid */}
+        {/* CTA animated gradient, no static grid */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}

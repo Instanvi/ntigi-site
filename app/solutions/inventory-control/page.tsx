@@ -84,7 +84,7 @@ const scanFeedLinesA: FeedLine[] = [
   { code: "NTG-84726", event: "RECEIVED", detail: "Bin: A-04-08 · 22.0kg · Staff: Thomas Mueller", color: "text-green-400", delayAfter: 2500 },
   { code: "NTG-84599", event: "FOUND", detail: "Lost parcel recovered at Gate B · Staff: Anna Schmidt", color: "text-green-400", delayAfter: 900 },
   { code: "NTG-84601", event: "DISPATCHED", detail: "Route: ACC → TAM · Driver: Fatou Ndiaye", color: "text-foreground/40", delayAfter: 3600 },
-  { code: "NTG-84727", event: "AUDIT", detail: "Cycle count complete — 0 discrepancies · Staff: Kwame Asante", color: "text-blue-400", delayAfter: 1200 },
+  { code: "NTG-84727", event: "AUDIT", detail: "Cycle count complete 0 discrepancies · Staff: Kwame Asante", color: "text-blue-400", delayAfter: 1200 },
 ];
 
 /* Feed B: Lagos hub, afternoon shift */
@@ -103,7 +103,7 @@ const scanFeedLinesB: FeedLine[] = [
   { code: "NTG-91750", event: "FOUND", detail: "Misplaced item located at Dock 3 · Staff: Nji Che", color: "text-green-400", delayAfter: 1100 },
   { code: "NTG-91802", event: "DISPATCHED", detail: "Route: LOS → KAN · Driver: James Jones", color: "text-foreground/40", delayAfter: 4100 },
   { code: "NTG-92007", event: "RECEIVED", detail: "Bin: L-06-01 · 2.4kg · Staff: Ama Ntone", color: "text-green-400", delayAfter: 2000 },
-  { code: "NTG-92008", event: "AUDIT", detail: "Weight mismatch resolved — 4.2kg corrected · Staff: Peter Njoh", color: "text-blue-400", delayAfter: 800 },
+  { code: "NTG-92008", event: "AUDIT", detail: "Weight mismatch resolved 4.2kg corrected · Staff: Peter Njoh", color: "text-blue-400", delayAfter: 800 },
   { code: "NTG-91803", event: "DISPATCHED", detail: "Route: LOS → ONI · Driver: Chioma Okafor", color: "text-foreground/40", delayAfter: 3400 },
 ];
 
@@ -268,7 +268,7 @@ export default function InventoryControl() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — text left, stock scan terminal right */}
+        {/* HERO text left, stock scan terminal right */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
@@ -360,12 +360,12 @@ export default function InventoryControl() {
           </div>
         </section>
 
-        {/* PROOF — wide console frame + detail cards below */}
+        {/* PROOF wide console frame + detail cards below */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Stock View Inside NTIGI</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every item, every bin, every movement — visible from one dashboard screen.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every item, every bin, every movement visible from one dashboard screen.</p>
             </AnimatedSection>
 
             <motion.div
@@ -462,7 +462,7 @@ export default function InventoryControl() {
           </div>
         </section>
 
-        {/* USE CASES — photo card headers */}
+        {/* USE CASES photo card headers */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">

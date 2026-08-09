@@ -69,23 +69,23 @@ const podFeedLinesA: FeedLine[] = [
   { status: "ASSIGNED", msg: "PKG-2847 → Driver Kofi Mensah", color: "text-blue-400", delayAfter: 250 },
   { status: "ASSIGNED", msg: "PKG-2912 → Driver Ama Etta", color: "text-blue-400", delayAfter: 350 },
   { status: "ASSIGNED", msg: "PKG-3101 → Driver Sarah Ntone", color: "text-blue-400", delayAfter: 400 },
-  { status: "PICKED_UP", msg: "PKG-2847 — Barcode scan confirmed at Tema depot", color: "text-yellow-400", delayAfter: 1400 },
-  { status: "PICKED_UP", msg: "PKG-2912 — Barcode scan confirmed at Accra hub", color: "text-yellow-400", delayAfter: 900 },
-  { status: "IN_TRANSIT", msg: "PKG-2847 — GPS: 5.6037°N, 0.1870°W — enroute", color: "text-foreground/50", delayAfter: 4200 },
-  { status: "IN_TRANSIT", msg: "PKG-3101 — GPS: 5.6500°N, 0.2000°W — enroute", color: "text-foreground/50", delayAfter: 3100 },
-  { status: "OUT_FOR_DEL", msg: "PKG-2912 — Driver 0.8km from destination", color: "text-orange-400", delayAfter: 5800 },
-  { status: "OUT_FOR_DEL", msg: "PKG-2847 — Driver 1.2km from destination", color: "text-orange-400", delayAfter: 4600 },
-  { status: "ARRIVED", msg: "PKG-2912 — GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 3200 },
-  { status: "SIG_CAPTURED", msg: "PKG-2912 — Recipient: James Jones — signed", color: "text-green-400", delayAfter: 450 },
-  { status: "PHOTO_SAVED", msg: "PKG-2912 — 2 photos attached to record", color: "text-green-400", delayAfter: 280 },
-  { status: "DELIVERED", msg: "PKG-2912 — closed — SMS sent to +233...", color: "text-green-400", delayAfter: 200 },
-  { status: "ARRIVED", msg: "PKG-2847 — GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 5100 },
-  { status: "SIG_CAPTURED", msg: "PKG-2847 — Recipient: Fatou Ndiaye — signed", color: "text-green-400", delayAfter: 500 },
-  { status: "PHOTO_SAVED", msg: "PKG-2847 — 3 photos attached to record", color: "text-green-400", delayAfter: 320 },
-  { status: "DELIVERED", msg: "PKG-2847 — closed — SMS sent to +233...", color: "text-green-400", delayAfter: 200 },
-  { status: "FAILED_ATTEMPT", msg: "PKG-3200 — Recipient not available — Driver Peter Njoh", color: "text-red-400", delayAfter: 8200 },
-  { status: "ROUTE_UPDATED", msg: "PKG-3200 — Rescheduled to 14:00 — Driver Nji Che", color: "text-blue-400", delayAfter: 400 },
-  { status: "COD_COLLECTED", msg: "PKG-3356 — GHS 450.00 collected by Thomas Mueller", color: "text-green-400", delayAfter: 3800 },
+  { status: "PICKED_UP", msg: "PKG-2847 Barcode scan confirmed at Tema depot", color: "text-yellow-400", delayAfter: 1400 },
+  { status: "PICKED_UP", msg: "PKG-2912 Barcode scan confirmed at Accra hub", color: "text-yellow-400", delayAfter: 900 },
+  { status: "IN_TRANSIT", msg: "PKG-2847 GPS: 5.6037°N, 0.1870°W enroute", color: "text-foreground/50", delayAfter: 4200 },
+  { status: "IN_TRANSIT", msg: "PKG-3101 GPS: 5.6500°N, 0.2000°W enroute", color: "text-foreground/50", delayAfter: 3100 },
+  { status: "OUT_FOR_DEL", msg: "PKG-2912 Driver 0.8km from destination", color: "text-orange-400", delayAfter: 5800 },
+  { status: "OUT_FOR_DEL", msg: "PKG-2847 Driver 1.2km from destination", color: "text-orange-400", delayAfter: 4600 },
+  { status: "ARRIVED", msg: "PKG-2912 GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 3200 },
+  { status: "SIG_CAPTURED", msg: "PKG-2912 Recipient: James Jones signed", color: "text-green-400", delayAfter: 450 },
+  { status: "PHOTO_SAVED", msg: "PKG-2912 2 photos attached to record", color: "text-green-400", delayAfter: 280 },
+  { status: "DELIVERED", msg: "PKG-2912 closed SMS sent to +233...", color: "text-green-400", delayAfter: 200 },
+  { status: "ARRIVED", msg: "PKG-2847 GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 5100 },
+  { status: "SIG_CAPTURED", msg: "PKG-2847 Recipient: Fatou Ndiaye signed", color: "text-green-400", delayAfter: 500 },
+  { status: "PHOTO_SAVED", msg: "PKG-2847 3 photos attached to record", color: "text-green-400", delayAfter: 320 },
+  { status: "DELIVERED", msg: "PKG-2847 closed SMS sent to +233...", color: "text-green-400", delayAfter: 200 },
+  { status: "FAILED_ATTEMPT", msg: "PKG-3200 Recipient not available Driver Peter Njoh", color: "text-red-400", delayAfter: 8200 },
+  { status: "ROUTE_UPDATED", msg: "PKG-3200 Rescheduled to 14:00 Driver Nji Che", color: "text-blue-400", delayAfter: 400 },
+  { status: "COD_COLLECTED", msg: "PKG-3356 GHS 450.00 collected by Thomas Mueller", color: "text-green-400", delayAfter: 3800 },
 ];
 
 /* Feed B: Lagos corridor */
@@ -93,23 +93,23 @@ const podFeedLinesB: FeedLine[] = [
   { status: "ASSIGNED", msg: "PKG-4021 → Driver Chioma Okafor", color: "text-blue-400", delayAfter: 200 },
   { status: "ASSIGNED", msg: "PKG-4156 → Driver John Smith", color: "text-blue-400", delayAfter: 300 },
   { status: "ASSIGNED", msg: "PKG-4288 → Driver Che Ntone", color: "text-blue-400", delayAfter: 450 },
-  { status: "PICKED_UP", msg: "PKG-4021 — Barcode scan confirmed at Lagos depot", color: "text-yellow-400", delayAfter: 1600 },
-  { status: "PICKED_UP", msg: "PKG-4156 — Barcode scan confirmed at Ikeja hub", color: "text-yellow-400", delayAfter: 1100 },
-  { status: "PICKED_UP", msg: "PKG-4288 — Barcode scan confirmed at Victoria Island", color: "text-yellow-400", delayAfter: 1300 },
-  { status: "IN_TRANSIT", msg: "PKG-4021 — GPS: 6.5244°N, 3.3792°E — enroute", color: "text-foreground/50", delayAfter: 4500 },
-  { status: "IN_TRANSIT", msg: "PKG-4156 — GPS: 6.5100°N, 3.3500°E — enroute", color: "text-foreground/50", delayAfter: 3300 },
-  { status: "OUT_FOR_DEL", msg: "PKG-4021 — Driver 1.5km from destination", color: "text-orange-400", delayAfter: 6200 },
-  { status: "OUT_FOR_DEL", msg: "PKG-4156 — Driver 0.4km from destination", color: "text-orange-400", delayAfter: 4100 },
-  { status: "ARRIVED", msg: "PKG-4021 — GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 2900 },
-  { status: "SIG_CAPTURED", msg: "PKG-4021 — Recipient: Paul Nji — signed", color: "text-green-400", delayAfter: 550 },
-  { status: "PHOTO_SAVED", msg: "PKG-4021 — 2 photos attached to record", color: "text-green-400", delayAfter: 300 },
-  { status: "DELIVERED", msg: "PKG-4021 — closed — SMS sent to +234...", color: "text-green-400", delayAfter: 200 },
-  { status: "ARRIVED", msg: "PKG-4156 — GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 4800 },
-  { status: "SIG_CAPTURED", msg: "PKG-4156 — Recipient: Anna Schmidt — signed", color: "text-green-400", delayAfter: 420 },
-  { status: "PHOTO_SAVED", msg: "PKG-4156 — 1 photo attached to record", color: "text-green-400", delayAfter: 250 },
-  { status: "DELIVERED", msg: "PKG-4156 — closed — WhatsApp confirmation sent", color: "text-green-400", delayAfter: 200 },
-  { status: "FAILED_ATTEMPT", msg: "PKG-4288 — COD refused by recipient — Amadou Diallo", color: "text-red-400", delayAfter: 7500 },
-  { status: "RETURNED", msg: "PKG-4288 — Returned to depot — Driver Che Ntone", color: "text-yellow-400", delayAfter: 1500 },
+  { status: "PICKED_UP", msg: "PKG-4021 Barcode scan confirmed at Lagos depot", color: "text-yellow-400", delayAfter: 1600 },
+  { status: "PICKED_UP", msg: "PKG-4156 Barcode scan confirmed at Ikeja hub", color: "text-yellow-400", delayAfter: 1100 },
+  { status: "PICKED_UP", msg: "PKG-4288 Barcode scan confirmed at Victoria Island", color: "text-yellow-400", delayAfter: 1300 },
+  { status: "IN_TRANSIT", msg: "PKG-4021 GPS: 6.5244°N, 3.3792°E enroute", color: "text-foreground/50", delayAfter: 4500 },
+  { status: "IN_TRANSIT", msg: "PKG-4156 GPS: 6.5100°N, 3.3500°E enroute", color: "text-foreground/50", delayAfter: 3300 },
+  { status: "OUT_FOR_DEL", msg: "PKG-4021 Driver 1.5km from destination", color: "text-orange-400", delayAfter: 6200 },
+  { status: "OUT_FOR_DEL", msg: "PKG-4156 Driver 0.4km from destination", color: "text-orange-400", delayAfter: 4100 },
+  { status: "ARRIVED", msg: "PKG-4021 GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 2900 },
+  { status: "SIG_CAPTURED", msg: "PKG-4021 Recipient: Paul Nji signed", color: "text-green-400", delayAfter: 550 },
+  { status: "PHOTO_SAVED", msg: "PKG-4021 2 photos attached to record", color: "text-green-400", delayAfter: 300 },
+  { status: "DELIVERED", msg: "PKG-4021 closed SMS sent to +234...", color: "text-green-400", delayAfter: 200 },
+  { status: "ARRIVED", msg: "PKG-4156 GPS lock: delivery location confirmed", color: "text-foreground/50", delayAfter: 4800 },
+  { status: "SIG_CAPTURED", msg: "PKG-4156 Recipient: Anna Schmidt signed", color: "text-green-400", delayAfter: 420 },
+  { status: "PHOTO_SAVED", msg: "PKG-4156 1 photo attached to record", color: "text-green-400", delayAfter: 250 },
+  { status: "DELIVERED", msg: "PKG-4156 closed WhatsApp confirmation sent", color: "text-green-400", delayAfter: 200 },
+  { status: "FAILED_ATTEMPT", msg: "PKG-4288 COD refused by recipient Amadou Diallo", color: "text-red-400", delayAfter: 7500 },
+  { status: "RETURNED", msg: "PKG-4288 Returned to depot Driver Che Ntone", color: "text-yellow-400", delayAfter: 1500 },
 ];
 
 function PODTerminal() {
@@ -185,7 +185,7 @@ function PODTerminal() {
       transition={{ duration: 0.7, delay: 0.3, ease: easeOutExpo }}
       className="relative w-full border border-border-custom bg-[var(--console-bg)] overflow-hidden group aspect-[16/10] flex flex-col"
     >
-      {/* Hover shimmer — matches ConsoleFrame on other pages */}
+      {/* Hover shimmer matches ConsoleFrame on other pages */}
       <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
       {/* Header bar */}
@@ -212,7 +212,7 @@ function PODTerminal() {
         </div>
       </div>
 
-      {/* Terminal body — fills remaining height, clips overflow */}
+      {/* Terminal body fills remaining height, clips overflow */}
       <div className="flex-1 p-4 font-mono text-[10px] leading-3 space-y-1 overflow-hidden">
         {feed.map((line, i) => (
           <motion.div
@@ -269,7 +269,7 @@ export default function ProofOfDelivery() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — text left, live POD terminal feed right */}
+        {/* HERO text left, live POD terminal feed right */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
@@ -421,7 +421,7 @@ export default function ProofOfDelivery() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
               <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Inside the Driver App</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every driver sees their queue, navigates stops, and submits POD from this screen — on any smartphone, online or offline.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every driver sees their queue, navigates stops, and submits POD from this screen on any smartphone, online or offline.</p>
             </AnimatedSection>
             <motion.div
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
@@ -466,7 +466,7 @@ export default function ProofOfDelivery() {
               </div>
               <div className="px-4 py-3 bg-[var(--console-header)]/60 border-t border-border-custom flex items-center gap-2">
                 <DeviceMobile className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Driver delivery queue — scan, navigate, capture POD from any smartphone</span>
+                <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Driver delivery queue scan, navigate, capture POD from any smartphone</span>
               </div>
             </motion.div>
           </div>

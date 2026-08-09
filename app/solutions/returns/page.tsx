@@ -116,7 +116,7 @@ export default function Returns() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — 2-col: text left, ship.jpeg right inside console frame */}
+        {/* HERO 2-col: text left, ship.jpeg right inside console frame */}
         <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="grid md:grid-cols-2 min-h-[420px]">
@@ -262,7 +262,7 @@ export default function Returns() {
           </div>
         </section>
 
-        {/* PROOF — console frame with app screenshot */}
+        {/* PROOF console frame with app screenshot */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">

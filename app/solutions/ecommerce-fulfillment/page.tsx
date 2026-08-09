@@ -158,7 +158,7 @@ export default function EcommerceFulfillment() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — text left, looping API terminal right. No image, no badge. */}
+        {/* HERO text left, looping API terminal right. No image, no badge. */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
@@ -299,7 +299,7 @@ export default function EcommerceFulfillment() {
           </div>
         </section>
 
-        {/* PROOF — flat image pair (no console header bar) */}
+        {/* PROOF flat image pair (no console header bar) */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -308,8 +308,8 @@ export default function EcommerceFulfillment() {
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { src: "/shipmentlistHome.png", icon: Package, caption: "Bulk order list — all shipments, statuses, and tracking in one view" },
-                { src: "/ntigidashboard.png", icon: ChartLine, caption: "Operations dashboard — volume, revenue, and delivery metrics live" },
+                { src: "/shipmentlistHome.png", icon: Package, caption: "Bulk order list all shipments, statuses, and tracking in one view" },
+                { src: "/ntigidashboard.png", icon: ChartLine, caption: "Operations dashboard volume, revenue, and delivery metrics live" },
               ].map((item, i) => (
                 <motion.div key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -330,7 +330,7 @@ export default function EcommerceFulfillment() {
           </div>
         </section>
 
-        {/* USE CASES — real photo headers */}
+        {/* USE CASES real photo headers */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">

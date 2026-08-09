@@ -118,7 +118,7 @@ export default function CustomerPortal() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — 2-col layout with absolute-positioned image on the right (like pricing) */}
+        {/* HERO 2-col layout with absolute-positioned image on the right (like pricing) */}
         <section className="relative min-h-[500px] border-b border-border-custom overflow-hidden noise-overlay flex items-stretch">
           <FloatingShapes />
           <div className="mx-auto max-w-7xl w-full px-6 md:px-8 py-20 flex items-center relative z-10">
@@ -264,7 +264,7 @@ export default function CustomerPortal() {
           </div>
         </section>
 
-        {/* WHO BENEFITS MOST — updated to include images */}
+        {/* WHO BENEFITS MOST updated to include images */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -321,7 +321,7 @@ export default function CustomerPortal() {
           </div>
         </section>
 
-        {/* CTA — updated with background effects */}
+        {/* CTA updated with background effects */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute left-1/4 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-blue-500 blur-3xl -z-10 pointer-events-none" />

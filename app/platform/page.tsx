@@ -23,7 +23,7 @@ export default function Platform() {
                   One Platform<br /><span className="text-blue-500">Three Ways to Work</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                  Access your logistics operations from anywhere. Web dashboard for managers, desktop app for stations, mobile app for drivers — all synchronized in real-time.
+                  Access your logistics operations from anywhere. Web dashboard for managers, desktop app for stations, mobile app for drivers all synchronized in real-time.
                 </p>
               </AnimatedSection>
             </div>
@@ -49,7 +49,7 @@ export default function Platform() {
               {[
                 { icon: Laptop, title: "Web Dashboard", desc: "Complete command center accessible from any browser. Track shipments, manage teams, generate reports, and oversee your entire network in real-time." },
                 { icon: Desktop, title: "Desktop Application", desc: "Fast Windows app for courier stations. Create shipments in seconds, print labels instantly, and work completely offline with automatic background sync." },
-                { icon: DeviceMobile, title: "Mobile App", desc: "Field tools for drivers and agents. Scan barcodes, update delivery status, capture proof of delivery, and navigate routes — all from your phone." },
+                { icon: DeviceMobile, title: "Mobile App", desc: "Field tools for drivers and agents. Scan barcodes, update delivery status, capture proof of delivery, and navigate routes all from your phone." },
               ].map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.12} className="p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] transition-all duration-200 space-y-3">
                   <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
@@ -70,7 +70,7 @@ export default function Platform() {
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-4 border-t border-l border-border-custom">
               {[
-                { icon: Database, title: "Local Storage", desc: "Create shipments, manage clients, process payments — all without internet. Data stored safely on your device." },
+                { icon: Database, title: "Local Storage", desc: "Create shipments, manage clients, process payments all without internet. Data stored safely on your device." },
                 { icon: ArrowsClockwise, title: "Auto Sync", desc: "Changes sync automatically in the background when you reconnect. Never worry about manual uploads or data loss." },
                 { icon: CloudArrowUp, title: "Fast Updates", desc: "Only new changes are uploaded, saving bandwidth. Process hundreds of shipments, sync in seconds." },
                 { icon: ShieldCheck, title: "Data Safety", desc: "Multiple backup layers ensure nothing is ever lost, even during power outages or network failures." },

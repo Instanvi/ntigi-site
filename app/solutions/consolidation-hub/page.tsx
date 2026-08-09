@@ -87,7 +87,7 @@ export default function ConsolidationHub() {
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO — ship.jpeg full background, text overlaid bottom-left. No badge. */}
+        {/* HERO ship.jpeg full background, text overlaid bottom-left. No badge. */}
         <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
           <div className="relative min-h-[420px] flex items-end">
@@ -127,7 +127,7 @@ export default function ConsolidationHub() {
           </div>
         </section>
 
-        {/* CAPABILITIES — no badge */}
+        {/* CAPABILITIES no badge */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -148,7 +148,7 @@ export default function ConsolidationHub() {
           </div>
         </section>
 
-        {/* WORKFLOW — no badge */}
+        {/* WORKFLOW no badge */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
@@ -211,7 +211,7 @@ export default function ConsolidationHub() {
           </div>
         </section>
 
-        {/* PROOF — flat image pair, no console header bar */}
+        {/* PROOF flat image pair, no console header bar */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -220,8 +220,8 @@ export default function ConsolidationHub() {
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { src: "/shipmentlistHome.png", icon: Package, caption: "Consolidation batch view — packages grouped by destination and pallet" },
-                { src: "/ntigidashboard.png", icon: ChartLine, caption: "Hub operations dashboard — container fill rates and voyage status" },
+                { src: "/shipmentlistHome.png", icon: Package, caption: "Consolidation batch view packages grouped by destination and pallet" },
+                { src: "/ntigidashboard.png", icon: ChartLine, caption: "Hub operations dashboard container fill rates and voyage status" },
               ].map((item, i) => (
                 <motion.div key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -242,7 +242,7 @@ export default function ConsolidationHub() {
           </div>
         </section>
 
-        {/* USE CASES — real photo headers, no badge */}
+        {/* USE CASES real photo headers, no badge */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
@@ -300,7 +300,7 @@ export default function ConsolidationHub() {
           </div>
         </section>
 
-        {/* CTA — animated gradient, no static grid */}
+        {/* CTA animated gradient, no static grid */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute left-1/4 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-blue-500 blur-3xl -z-10 pointer-events-none" />
