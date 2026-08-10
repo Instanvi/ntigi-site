@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,54 +14,11 @@ import {
   Warning, MagnifyingGlass, CheckCircle, Lock, Receipt, Barcode,
   Buildings, ChartLine, Terminal,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-const capabilities = [
-  { icon: FileText, title: "Commercial Invoice Generation", desc: "Auto-generate compliant commercial invoices for every international shipment. Pre-filled with shipper, receiver, commodity details, HS codes, and declared values." },
-  { icon: ClipboardText, title: "Packing List & Certificate of Origin", desc: "Produce packing lists and certificates of origin directly from shipment data. No re-entering information, documents pull from the booking record." },
-  { icon: Scales, title: "HS Code Management", desc: "Search and assign Harmonized System codes to packages. System validates codes and calculates applicable duties and taxes per destination country." },
-  { icon: Globe, title: "Duty & Tax Calculation", desc: "Automatically compute customs duties, VAT, and applicable import taxes based on HS codes, declared values, and destination regulations." },
-  { icon: Warning, title: "Dangerous Goods Handling", desc: "Flag and classify dangerous goods per IATA and IMDG regulations. Ensure correct documentation and handling instructions are attached to every relevant shipment." },
-  { icon: Shield, title: "Sanction List Screening", desc: "Screen senders and receivers against international sanctions lists before shipment processing. Block or flag restricted entities automatically." },
-  { icon: MagnifyingGlass, title: "Export / Import Restriction Checks", desc: "Validate every shipment against country-level export and import restriction databases. Catch prohibited items before they reach the border." },
-  { icon: Lock, title: "Audit Trail & Compliance Logs", desc: "Every document generated, status changed, and decision made is logged with user, timestamp, and reason, providing a complete exportable compliance audit trail." },
-];
 
-const workflow = [
-  { step: "01", title: "Create Shipment", desc: "Enter package details, sender, receiver, and commodity information. System prompts for HS codes and declared value at the point of booking." },
-  { step: "02", title: "Auto Compliance Check", desc: "System screens against sanctions lists and restriction databases in real time. Flagged shipments are held for review before processing continues." },
-  { step: "03", title: "Generate Documents", desc: "One click produces commercial invoice, packing list, certificate of origin, and customs declaration form, all pre-populated and formatted for submission." },
-  { step: "04", title: "Calculate Duties", desc: "Duties, VAT, and import taxes are computed using HS codes and destination country rules. Totals appear on the invoice and can be passed to the client." },
-  { step: "05", title: "Submit & Archive", desc: "Submit documentation to customs authorities. All records are archived with full audit trail, searchable, exportable, and retained per your data policy." },
-];
-
-const documentTypes = [
-  { name: "Commercial Invoice", desc: "Legally required export document with full shipment and valuation details" },
-  { name: "Packing List", desc: "Detailed breakdown of all items, weights, and dimensions per package" },
-  { name: "Certificate of Origin", desc: "Certifies where goods were manufactured for tariff preference purposes" },
-  { name: "Customs Declaration", desc: "Formal declaration submitted to customs authorities for clearance" },
-  { name: "Airway Bill / Bill of Lading", desc: "Transport contract between shipper and carrier with full shipment details" },
-  { name: "Dangerous Goods Declaration", desc: "IATA/IMDG-compliant declaration for hazardous materials" },
-];
-
-const complianceChecks = [
-  "Sanctions list screening (OFAC, UN, EU)",
-  "Export/import restriction validation",
-  "Prohibited items checking",
-  "Dangerous goods classification",
-  "HS code validation per destination",
-  "Dual-use goods identification",
-  "Country embargo verification",
-  "GDPR-compliant data retention",
-];
-
-const stats = [
-  { value: 200, suffix: "+", label: "Permission control points" },
-  { value: 100, suffix: "%", label: "Audit trail coverage" },
-  { value: 30, suffix: "+", label: "API modules" },
-  { value: 4, suffix: "", label: "Languages supported" },
-];
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -118,6 +75,54 @@ function ConsoleFrame({ label, status, children, delay = 0 }: {
 }
 
 export default function CustomsCompliance() {
+  const t = useTranslations("Solutions.customs-compliance");
+
+  const capabilities = [
+    { icon: FileText, title: t("capabilities.0.title"), desc: t("capabilities.0.desc") },
+    { icon: ClipboardText, title: t("capabilities.1.title"), desc: t("capabilities.1.desc") },
+    { icon: Scales, title: t("capabilities.2.title"), desc: t("capabilities.2.desc") },
+    { icon: Globe, title: t("capabilities.3.title"), desc: t("capabilities.3.desc") },
+    { icon: Warning, title: t("capabilities.4.title"), desc: t("capabilities.4.desc") },
+    { icon: Shield, title: t("capabilities.5.title"), desc: t("capabilities.5.desc") },
+    { icon: MagnifyingGlass, title: t("capabilities.6.title"), desc: t("capabilities.6.desc") },
+    { icon: Lock, title: t("capabilities.7.title"), desc: t("capabilities.7.desc") },
+  ];
+
+  const workflow = [
+    { step: "01", title: t("workflow.0.title"), desc: t("workflow.0.desc") },
+    { step: "02", title: t("workflow.1.title"), desc: t("workflow.1.desc") },
+    { step: "03", title: t("workflow.2.title"), desc: t("workflow.2.desc") },
+    { step: "04", title: t("workflow.3.title"), desc: t("workflow.3.desc") },
+    { step: "05", title: t("workflow.4.title"), desc: t("workflow.4.desc") },
+  ];
+
+  const documentTypes = [
+    { name: t("documentTypes.0.name"), desc: t("documentTypes.0.desc") },
+    { name: t("documentTypes.1.name"), desc: t("documentTypes.1.desc") },
+    { name: t("documentTypes.2.name"), desc: t("documentTypes.2.desc") },
+    { name: t("documentTypes.3.name"), desc: t("documentTypes.3.desc") },
+    { name: t("documentTypes.4.name"), desc: t("documentTypes.4.desc") },
+    { name: t("documentTypes.5.name"), desc: t("documentTypes.5.desc") },
+  ];
+
+  const complianceChecks = [
+    t("complianceChecks.0"),
+    t("complianceChecks.1"),
+    t("complianceChecks.2"),
+    t("complianceChecks.3"),
+    t("complianceChecks.4"),
+    t("complianceChecks.5"),
+    t("complianceChecks.6"),
+    t("complianceChecks.7"),
+  ];
+
+  const stats = [
+    { value: parseInt(t("stats.0.value")), suffix: t("stats.0.suffix"), label: t("stats.0.label") },
+    { value: parseInt(t("stats.1.value")), suffix: t("stats.1.suffix"), label: t("stats.1.label") },
+    { value: parseInt(t("stats.2.value")), suffix: t("stats.2.suffix"), label: t("stats.2.label") },
+    { value: parseInt(t("stats.3.value")), suffix: t("stats.3.suffix"), label: t("stats.3.label") },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -128,19 +133,19 @@ export default function CustomsCompliance() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <AnimatedSection className="space-y-5">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Customs &<br /><span className="text-blue-500">Compliance</span>
+                  {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                 </h1>
                 <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-md">
-                  Automate customs documentation, HS code management, duty calculations, and regulatory compliance checks, all built directly into the NTIGI shipment workflow.
+                  {t("jsx.p_0")}
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                  <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                 </div>
               </AnimatedSection>
 
               <div className="hidden md:block">
-                <ConsoleFrame label="NTIGI_OS // COMPLIANCE_CHECK.sh" status="LIVE" delay={0.25}>
+                <ConsoleFrame label={t("jsx.terminal_label_0")} status={t("jsx.status_live")} delay={0.25}>
                   <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                     <Image src="/ntigidashboard.png" alt="NTIGI customs compliance screen" fill className="object-cover object-top" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/60 via-transparent to-transparent pointer-events-none" />
@@ -177,8 +182,8 @@ export default function CustomsCompliance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Built for Compliant Global Trade</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every compliance requirement handled automatically, from document generation to regulatory screening, before the shipment moves.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {capabilities.map((item, index) => (
@@ -198,8 +203,8 @@ export default function CustomsCompliance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Booking to Clearance</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Compliance is embedded in the shipment workflow, not a separate step that slows you down.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -224,9 +229,9 @@ export default function CustomsCompliance() {
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
                 <Receipt className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Documents Generated</h3>
+                <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_0")}</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">All required customs documents are produced directly from the shipment record, no separate system, no re-entry of data.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_3")}</p>
               <div className="space-y-3 pt-2">
                 {documentTypes.map((doc, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -244,9 +249,9 @@ export default function CustomsCompliance() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Shield className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Automated Compliance Checks</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every shipment runs through a full compliance screening stack before processing, automatically, without manual intervention.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
                 <div className="space-y-2 pt-2">
                   {complianceChecks.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="flex items-center gap-2">
@@ -259,12 +264,12 @@ export default function CustomsCompliance() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Lock className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Enterprise-Grade Security</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_2")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">All compliance data is protected with AES-256 encryption at rest and TLS 1.3 in transit. Role-based access control ensures only authorized staff can view or modify sensitive customs records.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="flex items-start gap-2 pt-1">
                   <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground/60 font-sans font-medium">Complete audit trail with user, timestamp, and action recorded on every document change.</span>
+                  <span className="text-sm text-foreground/60 font-sans font-medium">{t("jsx.p_5_desc")}</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -275,13 +280,13 @@ export default function CustomsCompliance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">See It in Action</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
               <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Live compliance screening at booking and auto-generated customs documents all inside the same screen.
+                {t("jsx.p_6")}
               </p>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
-              <ConsoleFrame label="NTIGI // SANCTIONS_SCREEN.sh" status="READY" delay={0.1}>
+              <ConsoleFrame label={t("jsx.terminal_label_1")} status={t("jsx.status_ready")} delay={0.1}>
                 <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                   <Image src="/shipmentlistHome.png" alt="NTIGI compliance screening view" fill className="object-cover object-top" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/50 via-transparent to-transparent pointer-events-none" />
@@ -293,11 +298,11 @@ export default function CustomsCompliance() {
                 </div>
                 <div className="px-4 py-3 border-t border-border-custom bg-[var(--console-header)]/60 flex items-center gap-2">
                   <Shield className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Real-time sanctions and restriction screening at point of booking</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.terminal_desc_1")}</span>
                 </div>
               </ConsoleFrame>
 
-              <ConsoleFrame label="NTIGI // CUSTOMS_DOCS.sh" status="LIVE" delay={0.2}>
+              <ConsoleFrame label={t("jsx.terminal_label_2")} status={t("jsx.status_live")} delay={0.2}>
                 <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                   <Image src="/ntigidashboard.png" alt="NTIGI customs document generation" fill className="object-cover object-top" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/50 via-transparent to-transparent pointer-events-none" />
@@ -309,7 +314,7 @@ export default function CustomsCompliance() {
                 </div>
                 <div className="px-4 py-3 border-t border-border-custom bg-[var(--console-header)]/60 flex items-center gap-2">
                   <FileText className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Commercial invoice, packing list &amp; certificate generated in one click</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.terminal_desc_2")}</span>
                 </div>
               </ConsoleFrame>
             </div>
@@ -319,7 +324,7 @@ export default function CustomsCompliance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
 
@@ -334,8 +339,8 @@ export default function CustomsCompliance() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Customs Brokers</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Handle multiple client accounts with document generation, HS code lookup, and duty calculation built in. Reduce manual paperwork and clearance time.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_0")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_7")}</p>
                 </div>
               </AnimatedSection>
 
@@ -350,8 +355,8 @@ export default function CustomsCompliance() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Embed compliance directly into your international forwarding workflow. Documents are generated at the point of booking, not as an afterthought.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_1")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_8")}</p>
                 </div>
               </AnimatedSection>
 
@@ -366,8 +371,8 @@ export default function CustomsCompliance() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Compliance Teams</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Full audit trail, exportable compliance logs, and screening records for every shipment. Built-in GDPR tools and configurable data retention policies.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_2")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
                 </div>
               </AnimatedSection>
 
@@ -379,20 +384,20 @@ export default function CustomsCompliance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_4")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "International Forwarding", desc: "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.", href: "/solutions/international-forwarding" },
-                { title: "Consolidation & Manifests", desc: "Group shipments into voyages, manage containers, and generate manifests for customs submission.", href: "/solutions/consolidation" },
-                { title: "Finance & Billing", desc: "Issue multi-currency invoices with duties and taxes automatically calculated per jurisdiction.", href: "/solutions/finance-billing" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/international-forwarding" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/consolidation" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/finance-billing" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -416,12 +421,12 @@ export default function CustomsCompliance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Automate Your<br /><span className="text-blue-500">Customs Operations?</span>
+                {t("jsx.h2_5_part1")}<br /><span className="text-blue-500">{t("jsx.h2_5_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI handles documentation, screening, and duty calculations for your specific trade lanes in a live demo with our team.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_10")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

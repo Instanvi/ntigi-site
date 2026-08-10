@@ -22,41 +22,107 @@
     },
     "solutions": {
       "forwarders": {
-        "intlForwarding": { "name": "Transit International", "desc": "Opérations de transit de bout en bout avec routage multi-étapes et réseaux d'agences." },
-        "customs": { "name": "Douanes & Conformité", "desc": "Déclarations automatisées, calculs de droits et génération de documents réglementaires." },
-        "consolidation": { "name": "Consolidation & Manifestes", "desc": "Regrouper les expéditions, gérer les conteneurs et générer les manifestes de voyage." },
-        "multiBranch": { "name": "Réseau Multi-Agences", "desc": "Transferts inter-agences, règlements et isolation des données par rôle." }
+        "intlForwarding": {
+          "name": "Transit International",
+          "desc": "Opérations de transit de bout en bout avec routage multi-étapes et réseaux d'agences."
+        },
+        "customs": {
+          "name": "Douanes & Conformité",
+          "desc": "Déclarations automatisées, calculs de droits et génération de documents réglementaires."
+        },
+        "consolidation": {
+          "name": "Consolidation & Manifestes",
+          "desc": "Regrouper les expéditions, gérer les conteneurs et générer les manifestes de voyage."
+        },
+        "multiBranch": {
+          "name": "Réseau Multi-Agences",
+          "desc": "Transferts inter-agences, règlements et isolation des données par rôle."
+        }
       },
       "courier": {
-        "routeOpt": { "name": "Optimisation des Itinéraires", "desc": "Planification assistée par IA pour les délais de livraison, les économies de carburant et l'efficacité de la flotte." },
-        "fleet": { "name": "Gestion Flotte & Chauffeurs", "desc": "Immatriculation des véhicules, plannings de maintenance et application mobile chauffeur." },
-        "pod": { "name": "Preuve de Livraison", "desc": "Capture de signature, documentation photo et suivi GPS en temps réel." },
-        "finance": { "name": "Finance & Facturation", "desc": "Espèces, carte, mobile money, suivi COD et facturation automatisée." }
+        "routeOpt": {
+          "name": "Optimisation des Itinéraires",
+          "desc": "Planification assistée par IA pour les délais de livraison, les économies de carburant et l'efficacité de la flotte."
+        },
+        "fleet": {
+          "name": "Gestion Flotte & Chauffeurs",
+          "desc": "Immatriculation des véhicules, plannings de maintenance et application mobile chauffeur."
+        },
+        "pod": {
+          "name": "Preuve de Livraison",
+          "desc": "Capture de signature, documentation photo et suivi GPS en temps réel."
+        },
+        "finance": {
+          "name": "Finance & Facturation",
+          "desc": "Espèces, carte, mobile money, suivi COD et facturation automatisée."
+        }
       },
       "warehouse": {
-        "wms": { "name": "Gestion d'Entrepôt", "desc": "Support multi-entrepôts avec emplacements en rayons, capacité et suivi des stocks." },
-        "inventory": { "name": "Contrôle des Stocks", "desc": "Niveaux de stock en temps réel, réception, expédition et gestion des emplacements." },
-        "consolidationHub": { "name": "Hub de Consolidation", "desc": "Suivi des palettes, optimisation des charges et flux de travail des manifestes de conteneurs." }
+        "wms": {
+          "name": "Gestion d'Entrepôt",
+          "desc": "Support multi-entrepôts avec emplacements en rayons, capacité et suivi des stocks."
+        },
+        "inventory": {
+          "name": "Contrôle des Stocks",
+          "desc": "Niveaux de stock en temps réel, réception, expédition et gestion des emplacements."
+        },
+        "consolidationHub": {
+          "name": "Hub de Consolidation",
+          "desc": "Suivi des palettes, optimisation des charges et flux de travail des manifestes de conteneurs."
+        }
       },
       "ecommerce": {
-        "fulfillment": { "name": "Opérations de Fulfillment", "desc": "Traitement des commandes à volume élevé, création d'expéditions en masse et suivi." },
-        "returns": { "name": "Gestion des Retours", "desc": "Traitement des expéditions retour, remboursements et flux logistique inversé." },
-        "portal": { "name": "Portail Client", "desc": "Réservation en libre-service, suivi, téléchargement de factures et historique des paiements." }
+        "fulfillment": {
+          "name": "Opérations de Fulfillment",
+          "desc": "Traitement des commandes à volume élevé, création d'expéditions en masse et suivi."
+        },
+        "returns": {
+          "name": "Gestion des Retours",
+          "desc": "Traitement des expéditions retour, remboursements et flux logistique inversé."
+        },
+        "portal": {
+          "name": "Portail Client",
+          "desc": "Réservation en libre-service, suivi, téléchargement de factures et historique des paiements."
+        }
       }
     },
     "platform": {
-      "overview": { "name": "Aperçu de la Plateforme", "desc": "Une vue unifiée de la façon dont NTIGI connecte l'ensemble de vos opérations logistiques." },
-      "pricing": { "name": "Tarification", "desc": "Tarification transparente pour les équipes de toutes tailles. Aucun frais caché." },
-      "demo": { "name": "Demander une Démo", "desc": "Découvrez NTIGI en action lors d'une démonstration personnalisée." }
+      "overview": {
+        "name": "Aperçu de la Plateforme",
+        "desc": "Une vue unifiée de la façon dont NTIGI connecte l'ensemble de vos opérations logistiques."
+      },
+      "pricing": {
+        "name": "Tarification",
+        "desc": "Tarification transparente pour les équipes de toutes tailles. Aucun frais caché."
+      },
+      "demo": {
+        "name": "Demander une Démo",
+        "desc": "Découvrez NTIGI en action lors d'une démonstration personnalisée."
+      }
     },
     "resources": {
-      "docs": { "name": "Documentation", "desc": "Guides complets pour les utilisateurs, administrateurs et développeurs." },
-      "contact": { "name": "Nous Contacter", "desc": "Rejoignez notre équipe pour les ventes, le support ou les partenariats." }
+      "docs": {
+        "name": "Documentation",
+        "desc": "Guides complets pour les utilisateurs, administrateurs et développeurs."
+      },
+      "contact": {
+        "name": "Nous Contacter",
+        "desc": "Rejoignez notre équipe pour les ventes, le support ou les partenariats."
+      }
     },
     "company": {
-      "about": { "name": "À Propos de NTIGI", "desc": "Notre mission de moderniser la logistique mondiale avec une technologie hors ligne en priorité." },
-      "careers": { "name": "Carrières", "desc": "Rôles en ingénierie, ventes, support et spécialistes logistique." },
-      "blog": { "name": "Blog", "desc": "Perspectives sur la technologie logistique, la conformité et les tendances du secteur." }
+      "about": {
+        "name": "À Propos de NTIGI",
+        "desc": "Notre mission de moderniser la logistique mondiale avec une technologie hors ligne en priorité."
+      },
+      "careers": {
+        "name": "Carrières",
+        "desc": "Rôles en ingénierie, ventes, support et spécialistes logistique."
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Perspectives sur la technologie logistique, la conformité et les tendances du secteur."
+      }
     }
   },
   "Hero": {
@@ -85,26 +151,68 @@
     "sectionTitle2": "Contrôle Logistique Unifié.",
     "sectionDesc": "Gérez chaque étape des transits internationaux, des transactions clients et des transferts d'entrepôt sur un écosystème sécurisé, hors ligne en priorité.",
     "items": {
-      "manifest": { "title": "Gestion des Manifestes & Voyages", "desc": "Contrôle complet des manifestes de fret maritime, planification des voyages et suivi des navires en temps réel." },
-      "shipment": { "title": "Gestion des Expéditions", "desc": "Suivi des expéditions de bout en bout, de l'origine à la destination, avec mises à jour automatiques et notifications." },
-      "crm": { "title": "Intégration CRM Client", "desc": "CRM complet avec niveaux de permissions granulaires, libre-service client et niveaux de contrats." },
-      "route": { "title": "Optimisation des Itinéraires", "desc": "Planification de corridors intelligente et suivi multi-étapes pour des vitesses de transit et des coûts d'itinéraires optimaux." },
-      "warehouse": { "title": "Opérations d'Entrepôt", "desc": "Suivi intégré de la capacité de stockage, allocations de rayons et documentation de réception/expédition." },
-      "finance": { "title": "Finance & Facturation", "desc": "Modèles de facturation automatisés, opérations de paiement fractionné et suivi des échanges multi-devises." },
-      "analytics": { "title": "Analytique en Temps Réel", "desc": "Rapports de performance opérationnelle consolidés et grilles d'analyse visuelle." },
-      "compliance": { "title": "Conformité Entreprise", "desc": "Visibilité basée sur les rôles, pistes d'activités complètes et validations JWT/OTP sécurisées." },
-      "offline": { "title": "Synchronisation Hors Ligne", "desc": "Saisissez et interrogez des données sans connexion internet. Synchronisation automatique dynamique lors de la reconnexion." },
-      "cloud": { "title": "Accès Cloud Transparent", "desc": "Console basée sur navigateur sécurisée et Application Web Progressive (PWA) sur n'importe quel appareil." },
-      "continuous": { "title": "Opération Continue", "desc": "La mise en cache au niveau du navigateur garantit que les opérations de gestion du fret ne s'arrêtent jamais en cas de panne réseau." },
-      "customs": { "title": "Douanes & Conformités", "desc": "Facturation commerciale automatisée, recherches de codes SH et contrôle des règles d'exportation." }
+      "manifest": {
+        "title": "Gestion des Manifestes & Voyages",
+        "desc": "Contrôle complet des manifestes de fret maritime, planification des voyages et suivi des navires en temps réel."
+      },
+      "shipment": {
+        "title": "Gestion des Expéditions",
+        "desc": "Suivi des expéditions de bout en bout, de l'origine à la destination, avec mises à jour automatiques et notifications."
+      },
+      "crm": {
+        "title": "Intégration CRM Client",
+        "desc": "CRM complet avec niveaux de permissions granulaires, libre-service client et niveaux de contrats."
+      },
+      "route": {
+        "title": "Optimisation des Itinéraires",
+        "desc": "Planification de corridors intelligente et suivi multi-étapes pour des vitesses de transit et des coûts d'itinéraires optimaux."
+      },
+      "warehouse": {
+        "title": "Opérations d'Entrepôt",
+        "desc": "Suivi intégré de la capacité de stockage, allocations de rayons et documentation de réception/expédition."
+      },
+      "finance": {
+        "title": "Finance & Facturation",
+        "desc": "Modèles de facturation automatisés, opérations de paiement fractionné et suivi des échanges multi-devises."
+      },
+      "analytics": {
+        "title": "Analytique en Temps Réel",
+        "desc": "Rapports de performance opérationnelle consolidés et grilles d'analyse visuelle."
+      },
+      "compliance": {
+        "title": "Conformité Entreprise",
+        "desc": "Visibilité basée sur les rôles, pistes d'activités complètes et validations JWT/OTP sécurisées."
+      },
+      "offline": {
+        "title": "Synchronisation Hors Ligne",
+        "desc": "Saisissez et interrogez des données sans connexion internet. Synchronisation automatique dynamique lors de la reconnexion."
+      },
+      "cloud": {
+        "title": "Accès Cloud Transparent",
+        "desc": "Console basée sur navigateur sécurisée et Application Web Progressive (PWA) sur n'importe quel appareil."
+      },
+      "continuous": {
+        "title": "Opération Continue",
+        "desc": "La mise en cache au niveau du navigateur garantit que les opérations de gestion du fret ne s'arrêtent jamais en cas de panne réseau."
+      },
+      "customs": {
+        "title": "Douanes & Conformités",
+        "desc": "Facturation commerciale automatisée, recherches de codes SH et contrôle des règles d'exportation."
+      }
     }
   },
   "Platform": {
     "section1Title1": "Accès Partout,",
     "section1Title2": "Travaillez Partout",
     "section1Desc": "NTIGI offre un accès transparent sur tous vos canaux d'affaires principaux. Que vous soyez dans l'agence régionale ou en déplacement, vos bases de données logistiques restent parfaitement à jour.",
-    "webApp": { "title": "Application Web", "desc": "Interface web complète accessible en toute sécurité depuis n'importe quel navigateur de bureau ou portable moderne." },
-    "mobileApp": { "title": "Web Mobile & PWA", "desc": "Application Web Progressive (PWA) avec mise en cache locale optimisée pour le suivi sur mobile et tablette." },
+    "webApp": {
+      "title": "Application Web",
+      "desc": "Interface web complète accessible en toute sécurité depuis n'importe quel navigateur de bureau ou portable moderne."
+    },
+    "mobileApp": {
+      "title": "Web Mobile & PWA",
+      "desc": "Application Web Progressive (PWA) avec mise en cache locale optimisée pour le suivi sur mobile et tablette."
+    },
     "explorePlatform": "Explorer la Plateforme",
     "section2Title1": "Ne Jamais Arrêter de Travailler,",
     "section2Title2": "Même Hors Ligne",
@@ -183,5 +291,1967 @@
     "label": "Langue",
     "en": "EN",
     "fr": "FR"
+  },
+  "Solutions": {
+    "consolidation": {
+      "capabilities": [
+        {
+          "title": "Regroupement des expéditions",
+          "desc": "Regroupez plusieurs expéditions individuelles en un seul chargement consolidé. Réduisez les coûts d’expédition unitaires et optimisez l’utilisation des conteneurs sur tous les itinéraires."
+        },
+        {
+          "title": "Gestion des conteneurs",
+          "desc": "Suivez et gérez les conteneurs par type, capacité et voyage assigné. Surveillez les niveaux de remplissage et attribuez les expéditions aux conteneurs avec une optimisation du chargement."
+        },
+        {
+          "title": "Suivi des palettes",
+          "desc": "Attribuez les expéditions aux palettes, suivez le poids, les dimensions et les positions des palettes dans les conteneurs. Visibilité totale de l'entrepôt au port."
+        },
+        {
+          "title": "Génération de manifeste",
+          "desc": "Créez automatiquement des manifestes de voyage à partir des données d'expédition consolidées. Imprimez ou exportez des manifestes pour les transporteurs, les douanes et les autorités portuaires."
+        },
+        {
+          "title": "Gestion des voyages",
+          "desc": "Planifiez et gérez les voyages avec les détails du navire, les ports de départ et d'arrivée et les temps de transit estimés. Attribuez des manifestes aux voyages en une seule étape."
+        },
+        {
+          "title": "Optimisation de la charge",
+          "desc": "Maximisez l’utilisation des conteneurs avec des outils de planification de chargement. Visualisez comment les colis s'assemblent en poids et en volume avant de finaliser le chargement."
+        },
+        {
+          "title": "Lecture de codes à barres",
+          "desc": "Scannez les codes-barres des colis à la réception et à l'expédition pour vérifier chaque article d'une consolidation. Réduisez les erreurs de saisie manuelle et accélérez le traitement du fret."
+        },
+        {
+          "title": "Suivi de l'état du manifeste",
+          "desc": "Suivez les manifestes à chaque étape : ouvert, en cours, soumis, fermé. Fermez et finalisez les manifestes en une seule action au départ du voyage."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Recevoir des envois",
+          "desc": "Les expéditions entrantes sont reçues à l’entrepôt et numérisées dans le système. Chaque colis est enregistré avec son poids, ses dimensions et ses exigences de manutention."
+        },
+        {
+          "step": "02",
+          "title": "Groupe de consolidation",
+          "desc": "Sélectionnez les envois se dirigeant vers la même destination ou via le même itinéraire. Regroupez-les dans un lot de consolidation pour un voyage spécifique."
+        },
+        {
+          "step": "03",
+          "title": "Attribuer au conteneur",
+          "desc": "Affectez le lot consolidé à un conteneur ou une palette. L'optimisation de la charge montre la capacité disponible et suggère la disposition la plus efficace."
+        },
+        {
+          "step": "04",
+          "title": "Générer un manifeste",
+          "desc": "NTIGI produit automatiquement le manifeste de voyage avec tous les détails de l'expédition, les poids, le nombre de colis et les informations douanières prêts pour le transporteur."
+        },
+        {
+          "step": "05",
+          "title": "Clôture et expédition",
+          "desc": "Fermez le manifeste une fois le chargement terminé. Le statut du voyage est mis à jour, les clients sont informés et tous les enregistrements sont archivés avec une piste d'audit complète."
+        }
+      ],
+      "manifestFeatures": [
+        "Généré automatiquement à partir des données d'expédition",
+        "Comprend tous les détails de l'emballage et du poids",
+        "Documentation prête pour la douane",
+        "Export PDF pour les transporteurs et les autorités",
+        "Prise en charge de l'impression par lots",
+        "Versionnement et historique du manifeste",
+        "Suivi du statut : ouvert, soumis, fermé",
+        "Finaliser en une seule action"
+      ],
+      "voyageDetails": [
+        {
+          "label": "Nom du navire",
+          "desc": "Attribuer un identifiant de navire ou de transport à chaque voyage"
+        },
+        {
+          "label": "Port de départ",
+          "desc": "Port d'origine avec coordonnées GPS et détails de localisation"
+        },
+        {
+          "label": "Port d'arrivée",
+          "desc": "Port de destination avec fenêtre de livraison prévue"
+        },
+        {
+          "label": "Temps de transit",
+          "desc": "Durée de transit estimée par configuration d'itinéraire"
+        },
+        {
+          "label": "Nombre de manifestes",
+          "desc": "Nombre de manifestes affectés au voyage"
+        },
+        {
+          "label": "Nombre d'envois",
+          "desc": "Total des colis pour tous les manifestes du voyage"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Expéditions par jour"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Étiquettes de manutention du fret"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "Modules API"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Compatible hors ligne"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Consolidation",
+        "h1_0_part2": "et Manifestes",
+        "p_0": "Regroupez les expéditions, gérez les conteneurs, générez des manifestes de voyage et suivez chaque chargement, du sol de l'entrepôt au départ du port, le tout dans un système unique axé sur le hors-ligne.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "terminal_label_0": "NTIGI_OS // CONSOLIDATION.sh",
+        "terminal_label_1": "NTIGI // MANIFEST_GEN.sh",
+        "terminal_label_2": "NTIGI // VOYAGE_TRACKER.sh",
+        "terminal_desc_1": "Manifeste généré automatiquement avec toutes les données d'expédition, de poids et de douane",
+        "terminal_desc_2": "Dossier de voyage avec navire, ports, manifestes et totaux d'expédition",
+        "status_live": "LIVE",
+        "status_ready": "PRÊT",
+        "h2_0": "Tout, du regroupement au départ",
+        "p_1": "Opérations de consolidation complètes dans un seul système, de la réception des colis individuels à la clôture du manifeste de voyage.",
+        "h2_1": "De la réception au départ du voyage",
+        "p_2": "Un processus de consolidation clair en cinq étapes, chaque action étant suivie et chaque document généré automatiquement.",
+        "h2_2": "Manifeste et voyage dans NTIGI",
+        "p_3": "De la génération automatique d'un manifeste à partir de votre lot de consolidation au suivi d'un voyage de port à port, le tout sur un seul écran.",
+        "h3_0": "Gestion des manifestes",
+        "p_4": "Les manifestes sont générés automatiquement à partir des expéditions de votre consolidation. Pas de saisie manuelle de données, le système génère le document à partir du dossier de réservation.",
+        "h3_1": "Détails du dossier de voyage",
+        "p_5": "Chaque voyage capture l'image opérationnelle complète : navire, ports, calendriers, ainsi que tous les manifestes et expéditions associés.",
+        "h2_3": "Pour qui cela est conçu",
+        "h4_0": "Opérateurs de fret maritime",
+        "p_6": "Consolidez les expéditions LCL dans des conteneurs complets. Générez des connaissements et des manifestes portuaires directement depuis NTIGI.",
+        "h4_1": "Opérateurs d'entrepôt",
+        "p_7": "Gerez les réceptions avec lecture de codes-barres, affectez-les à des lots de consolidation par destination et suivez chaque palette de l'étagère au quai d'expédition.",
+        "h4_2": "Consolidateurs de colis",
+        "p_8": "Regroupez les colis de livraison du dernier kilomètre dans des consolidations basées sur les itinéraires pour les véhicules d'expédition. Réduisez les trajets, augmentez la densité de livraison par course.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Transit international",
+        "related_desc_0": "Gérez les expéditions transfrontalières, les itinéraires multi-étapes et les réseaux d'agences partenaires de bout en bout.",
+        "related_title_1": "Douanes et conformité",
+        "related_desc_1": "Générez automatiquement les documents douaniers et effectuez des contrôles de conformité sur chaque expédition consolidée.",
+        "related_title_2": "Gestion d'entrepôt",
+        "related_desc_2": "Gérez les emplacements d'étagères, les niveaux de stock, la réception et l'expédition au sein de vos opérations d'entrepôt.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à simplifier vos",
+        "h2_5_part2": "opérations de consolidation ?",
+        "p_9": "Découvrez comment NTIGI gère votre flux de travail de consolidation, de la réception en entrepôt au départ du voyage, lors d'une présentation en direct avec notre équipe."
+      }
+    },
+    "consolidation-hub": {
+      "capabilities": [
+        {
+          "title": "Suivi des palettes",
+          "desc": "Attribuez des colis individuels aux palettes avec un suivi complet du poids et des dimensions. Chaque palette possède son propre enregistrement indiquant le chargement actuel, le conteneur attribué et l'état de départ."
+        },
+        {
+          "title": "Optimisation du remplissage des conteneurs",
+          "desc": "Visualisez la capacité disponible du conteneur avant de finaliser un chargement. Le système indique l'utilisation du poids et du volume et signale les conteneurs en surcapacité ou en sous-capacité."
+        },
+        {
+          "title": "Planification des charges",
+          "desc": "Planifiez la manière dont les colis sont disposés sur les palettes et les conteneurs. Organisez-vous par destination, itinéraire ou type d'expédition pour minimiser le temps de traitement aux ports de déchargement."
+        },
+        {
+          "title": "Scan de codes-barres pour consolider",
+          "desc": "Le personnel de l'entrepôt scanne les codes-barres au poste de consolidation pour attribuer les colis aux lots de consolidation. Chaque analyse est enregistrée avec l'horodatage et l'identité de l'opérateur."
+        },
+        {
+          "title": "Flux de travail du manifeste",
+          "desc": "Générez automatiquement des manifestes de voyage à partir des données de lots de consolidation. Les manifestes incluent tous les détails du colis, les poids, les dimensions et les informations douanières pour les transporteurs."
+        },
+        {
+          "title": "Mission de voyage",
+          "desc": "Attribuez des lots de consolidation aux voyages en une seule étape. Suivez le voyage depuis la création du manifeste jusqu'à la confirmation du départ et l'arrivée au port de destination."
+        },
+        {
+          "title": "Intégration de l'emplacement de l'entrepôt",
+          "desc": "La cargaison consolidée reste liée à son étagère d'entrepôt et à son emplacement de bac jusqu'à son expédition. Le personnel sait toujours où se trouve un article dans l’entrepôt pendant le processus de consolidation."
+        },
+        {
+          "title": "Rapports sur les performances du hub",
+          "desc": "Surveillez les volumes de consolidation, les taux de remplissage des conteneurs, le temps de séjour moyen par expédition et les horaires de départ. Exportez des rapports pour les équipes d’exploitation et de gestion."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Recevoir au Hub",
+          "desc": "Les expéditions entrantes arrivent au centre de consolidation et sont numérisées dans le système. Chaque package se voit attribuer un emplacement et est marqué pour son lot de consolidation de destination."
+        },
+        {
+          "step": "02",
+          "title": "Trier et regrouper",
+          "desc": "Les colis sont triés par itinéraire de destination et regroupés en lots de consolidation. Le système indique combien de colis sont prêts pour chaque lot et leur poids combiné."
+        },
+        {
+          "step": "03",
+          "title": "Attribuer aux palettes",
+          "desc": "Le personnel scanne les colis pour les attribuer aux palettes. L'optimisation de la charge suit la capacité restante et alerte lorsqu'une palette atteint sa limite de poids ou de volume."
+        },
+        {
+          "step": "04",
+          "title": "Charger dans des conteneurs",
+          "desc": "Les palettes sont affectées aux conteneurs. Le système affiche les niveaux de remplissage des conteneurs et confirme que le chargement respecte sa capacité avant la génération du manifeste."
+        },
+        {
+          "step": "05",
+          "title": "Générer et distribuer",
+          "desc": "Le manifeste est produit automatiquement. Le personnel confirme que le chargement est terminé et ferme le manifeste. Le statut du voyage est mis à jour et le lot de consolidation est expédié."
+        }
+      ],
+      "manifestFeatures": [
+        "Généré automatiquement à partir des données de lots de consolidation",
+        "Tous les poids et dimensions du colis sont inclus",
+        "Prêt pour la douane avec codes SH et valeurs déclarées",
+        "Export PDF pour les transporteurs et les autorités portuaires",
+        "Impression par lots pour les opérations multi-manifestes",
+        "Historique des versions et des modifications du manifeste",
+        "Suivi du statut : ouvert, soumis, fermé",
+        "Finaliser avec une seule action de confirmation"
+      ],
+      "palletRecord": [
+        {
+          "label": "ID de palette",
+          "desc": "Identifiant unique lié au code barre et au code QR à scanner"
+        },
+        {
+          "label": "Poids total",
+          "desc": "Poids réel combiné de tous les colis sur la palette"
+        },
+        {
+          "label": "Volume utilisé",
+          "desc": "Volume cubique calculé par rapport à la limite de capacité des palettes"
+        },
+        {
+          "label": "Nombre de colis",
+          "desc": "Nombre de colis individuels affectés à cette palette"
+        },
+        {
+          "label": "Conteneur attribué",
+          "desc": "Dans quel conteneur cette palette a été chargée"
+        },
+        {
+          "label": "Destination",
+          "desc": "Itinéraire cible et destination de livraison pour la palette"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Expéditions par jour"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Étiquettes de manutention du fret"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "Modules API"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Compatible hors ligne"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Hub de",
+        "h1_0_part2": "consolidation",
+        "p_0": "Suivi des palettes, optimisation du chargement et flux de travail de manifestes de conteneurs pour les opérations de consolidation d'entrepôt. Chaque colis est suivi de la réception au départ du voyage dans un système unique axé sur le hors-ligne.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "h2_0": "Contrôle complet du hub de consolidation",
+        "p_1": "Chaque étape, de la réception des expéditions au hub au chargement du conteneur final et à la génération du manifeste de voyage, est suivie et automatisée.",
+        "h2_1": "De la réception au hub au départ du voyage",
+        "p_2": "Un cycle de consolidation clair en cinq étapes pour le hub, du moment où le fret arrive à celui où le conteneur part.",
+        "h3_0": "Génération de manifestes",
+        "p_3": "Les manifestes de voyage sont produits automatiquement à partir des données de lots de consolidation. Pas de resaisie d'informations. Le manifeste provient directement des dossiers d'expédition et de palette.",
+        "h3_1": "Ce que contient chaque dossier de palette",
+        "p_4": "Chaque palette du hub dispose d'un dossier opérationnel complet. Le personnel peut localiser, peser et expédier n'importe quelle palette sans approximation.",
+        "h2_2": "Opérations du hub dans NTIGI",
+        "p_5": "La vue des lots de consolidation et le tableau de bord des opérations que votre équipe d'entrepôt utilise chaque jour sur le terrain.",
+        "caption_0": "Vue des lots de consolidation : colis regroupés par destination et palette",
+        "caption_1": "Tableau de bord des opérations du hub : taux de remplissage des conteneurs et statut du voyage",
+        "h2_3": "Pour qui cela est conçu",
+        "h4_0": "Consolidateurs de fret maritime",
+        "p_6": "Recevez du fret LCL de plusieurs expéditeurs, triez par port de destination, chargez dans des conteneurs FCL et générez des connaissements et des manifestes portuaires en un seul flux.",
+        "h4_1": "Hubs d'entrepôt de transit",
+        "p_7": "Gérez la réception de volumes importants en provenance de plusieurs origines. Triez, palettisez et chargez les conteneurs sortants tout en suivant chaque colis par lecture de codes-barres à chaque étape.",
+        "h4_2": "Centres de distribution régionaux",
+        "p_8": "Consolidez les livraisons du dernier kilomètre d'un hub central en chargements par itinéraire. Maximisez la capacité des véhicules et réduisez le nombre de trajets grâce aux outils d'optimisation.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Gestion d'entrepôt",
+        "related_desc_0": "Configurez les emplacements d'étagères et de bacs d'entrepôt, gérez la capacité et exécutez des opérations complètes de réception et d'expédition qui alimentent le hub de consolidation.",
+        "related_title_1": "Contrôle des stocks et inventaire",
+        "related_desc_1": "Suivez chaque colis au niveau de l'article avec la lecture de codes-barres et des mises à jour de stock en temps réel qui s'intègrent directement aux affectations de lots de consolidation.",
+        "related_title_2": "Douanes et conformité",
+        "related_desc_2": "Générez la documentation douanière pour les expéditions consolidées et effectuez des contrôles de conformité avant de soumettre le manifeste aux autorités portuaires.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à optimiser votre",
+        "h2_5_part2": "hub de consolidation ?",
+        "p_9": "Découvrez comment NTIGI gère le suivi des palettes, l'optimisation de la charge et la génération de manifestes pour votre hub de consolidation lors d'une présentation en direct avec notre équipe."
+      }
+    },
+    "customer-portal": {
+      "capabilities": [
+        {
+          "title": "Réservation d'expédition en libre-service",
+          "desc": "Les clients réservent leurs expéditions directement via le portail sans appeler un agent. Sélectionnez l'itinéraire, le type de forfait, le niveau de service et confirmez le prix avant de soumettre."
+        },
+        {
+          "title": "Suivi des expéditions en temps réel",
+          "desc": "Chaque client peut suivre ses propres expéditions en direct. Mises à jour de l'état depuis la collecte jusqu'à la livraison, avec des données de localisation sauvegardées par GPS à chaque étape."
+        },
+        {
+          "title": "Téléchargements de factures",
+          "desc": "Les clients accèdent et téléchargent les factures PDF pour toutes leurs expéditions directement depuis le portail. Pas besoin de contacter un agent pour les documents de facturation."
+        },
+        {
+          "title": "Historique des paiements",
+          "desc": "L'historique complet des paiements est visible pour chaque client : chaque paiement effectué, chaque solde impayé et chaque statut de facture en un seul endroit."
+        },
+        {
+          "title": "Gestion des profils",
+          "desc": "Les clients mettent à jour leurs propres coordonnées, adresses et préférences de notification sans l'intervention du personnel. Les modifications sont reflétées instantanément sur toutes leurs expéditions."
+        },
+        {
+          "title": "Notifications automatisées",
+          "desc": "Les clients reçoivent des notifications automatiques par SMS, e-mail, push et WhatsApp à chaque étape de l'expédition. Configuré par le client, pas par vos agents."
+        },
+        {
+          "title": "Portail de suivi public",
+          "desc": "Tout envoi peut être suivi publiquement en saisissant le numéro de suivi. Aucune connexion requise. Partagez le lien de suivi avec toute personne ayant besoin de visibilité sur un envoi."
+        },
+        {
+          "title": "Accès aux applications mobiles",
+          "desc": "Le portail client complet est accessible sous forme de PWA mobile. Les clients l'installent une seule fois depuis leur navigateur et y accèdent comme une application native sur n'importe quel appareil."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Registres des clients",
+          "desc": "Les clients s'inscrivent ou sont créés dans le système par vos agents. Ils reçoivent des identifiants de connexion et accèdent immédiatement à leur portail personnalisé."
+        },
+        {
+          "step": "02",
+          "title": "Réserver un envoi",
+          "desc": "Le client sélectionne l'itinéraire, les détails du forfait et le niveau de service. Le prix est calculé automatiquement à partir de vos tableaux de tarifs configurés. Aucun agent n'est nécessaire."
+        },
+        {
+          "step": "03",
+          "title": "Reçoit la confirmation",
+          "desc": "Une confirmation de réservation est envoyée automatiquement par e-mail et SMS avec le numéro de suivi, le récapitulatif des coûts et la fenêtre de livraison estimée."
+        },
+        {
+          "step": "04",
+          "title": "Pistes en temps réel",
+          "desc": "Le client suit son envoi via le portail ou le lien de suivi public. Chaque mise à jour de statut déclenche une notification automatique sur leur canal préféré."
+        },
+        {
+          "step": "05",
+          "title": "Facture de téléchargement",
+          "desc": "Une fois livrée, le client télécharge sa facture PDF depuis le portail. Les soldes impayés et l’historique des paiements sont toujours visibles sur leur compte."
+        }
+      ],
+      "customerFeatures": [
+        {
+          "label": "Réservation d'expédition",
+          "desc": "Réservez de nouvelles expéditions sans contacter un agent"
+        },
+        {
+          "label": "Suivi en direct",
+          "desc": "Mises à jour de statut sauvegardées par GPS pour chaque envoi"
+        },
+        {
+          "label": "Téléchargements de factures",
+          "desc": "Factures PDF disponibles à tout moment"
+        },
+        {
+          "label": "Payment History",
+          "desc": "Historique complet des transactions et des soldes"
+        },
+        {
+          "label": "Mises à jour du profil",
+          "desc": "Manage contact details and preferences"
+        },
+        {
+          "label": "Paramètres de notification",
+          "desc": "Choisissez les alertes SMS, e-mail, WhatsApp ou push"
+        },
+        {
+          "label": "Demandes de retour",
+          "desc": "Initier les expéditions de retour depuis le portail"
+        },
+        {
+          "label": "PWA mobile",
+          "desc": "Fonctionne sur n'importe quel smartphone sans boutique d'applications"
+        }
+      ],
+      "notificationTypes": [
+        "Confirmation de l'envoi réservé",
+        "Notification de retrait du colis",
+        "Mises à jour du statut en transit",
+        "Alerte de livraison",
+        "Confirmation livrée avec horodatage",
+        "Preuve de livraison photo et signature",
+        "Notification générée par la facture",
+        "Confirmation de paiement reçu"
+      ],
+      "jsx": {
+        "h1_0_part1": "Portail",
+        "h1_0_part2": "client",
+        "p_0": "Donnez à chaque client son propre portail en libre-service. Réservez des expéditions, suivez les livraisons en temps réel, téléchargez des factures et gérez les profils depuis n'importe quel appareil. Aucun appel d'agent requis.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Libre-Service",
+        "stat_label_0": "Réservation d'envois",
+        "stat_display_1": "Temps Réel",
+        "stat_label_1": "Suivi GPS",
+        "stat_display_2": "Mobile",
+        "stat_label_2": "Accès PWA",
+        "stat_display_3": "Automatique",
+        "stat_label_3": "Notifications",
+        "h2_0": "Tout ce dont les clients ont besoin sans vous appeler",
+        "p_1": "Le portail client gère automatiquement toutes les demandes courantes des clients, réduisant ainsi les appels de support et améliorant l'expérience client.",
+        "h2_1": "De l'inscription à la livraison",
+        "p_2": "Le parcours client complet du premier login à la confirmation de livraison, sans aucune interaction d'agent requise.",
+        "h3_0": "Ce que chaque client peut faire",
+        "p_3": "Chaque client bénéficie d'un portail sécurisé et personnalisé affichant uniquement ses propres expéditions, factures et historique des paiements.",
+        "h3_1": "Événements de notification automatisés",
+        "p_4": "Chaque événement d'expédition déclenche une notification automatique via le canal préféré du client. Aucun envoi manuel par votre personnel.",
+        "h3_2": "Accès PWA Mobile",
+        "p_5": "Les clients accèdent au portail complet depuis n'importe quel smartphone sans télécharger d'application. Ouvrez le navigateur, connectez-vous et ajoutez à l'écran d'accueil. Disponible sur iOS et Android. Fonctionne même avec une connectivité intermittente.",
+        "p_5_desc": "Prend en charge l'anglais, le français, le chinois et l'allemand dès le départ, avec d'autres langues prêtes à être ajoutées.",
+        "h2_2": "Qui en profite le plus",
+        "h4_0": "Entreprises d'e-commerce",
+        "p_6": "Offrez à vos acheteurs en ligne l'expérience de suivi qu'ils attendent. Notifications en temps réel, photos de livraison et une page de suivi épurée aux couleurs de votre entreprise logistique.",
+        "h4_1": "Expéditeurs professionnels fréquents",
+        "p_7": "Les clients professionnels qui expédient quotidiennement peuvent gérer leurs propres réservations, surveiller les soldes impayés et télécharger les factures pour la comptabilité sans solliciter votre personnel.",
+        "h4_2": "Gestion des retours",
+        "p_8": "Les clients soumettent des demandes de retour via le portail. Votre équipe examine et approuve. Le retour est créé, suivi et facturé automatiquement.",
+        "h2_3": "Solutions connexes",
+        "related_title_0": "Preuve de livraison",
+        "related_desc_0": "Capture de signature et confirmation photo envoyées directement au client via le portail après chaque livraison.",
+        "related_title_1": "Finance et facturation",
+        "related_desc_1": "Les factures générées lors de la réservation sont immédiatement disponibles pour téléchargement par le client dans le portail.",
+        "related_title_2": "Transit international",
+        "related_desc_2": "Les clients internationaux suivent les expéditions multi-étapes et reçoivent les mises à jour du statut douanier via le portail.",
+        "learn_more": "En savoir plus",
+        "h2_4_part1": "Prêt à offrir à vos clients",
+        "h2_4_part2": "un libre-service complet ?",
+        "p_9": "Découvrez comment le portail client de NTIGI gère les réservations, le suivi, la facturation et les notifications pour vos clients lors d'une présentation en direct."
+      }
+    },
+    "customs-compliance": {
+      "capabilities": [
+        {
+          "title": "Génération de factures commerciales",
+          "desc": "Générez automatiquement des factures commerciales conformes pour chaque expédition internationale. Pré-rempli avec l'expéditeur, le destinataire, les détails des produits, les codes SH et les valeurs déclarées."
+        },
+        {
+          "title": "Liste de colisage et certificat d'origine",
+          "desc": "Produisez des listes de colisage et des certificats d’origine directement à partir des données d’expédition. Pas de nouvelle saisie des informations, les documents sont extraits du dossier de réservation."
+        },
+        {
+          "title": "Gestion des codes SH",
+          "desc": "Recherchez et attribuez des codes du Système harmonisé aux colis. Le système valide les codes et calcule les droits et taxes applicables par pays de destination."
+        },
+        {
+          "title": "Calcul des droits et taxes",
+          "desc": "Calculez automatiquement les droits de douane, la TVA et les taxes d'importation applicables en fonction des codes SH, des valeurs déclarées et des réglementations de destination."
+        },
+        {
+          "title": "Manutention des marchandises dangereuses",
+          "desc": "Signaler et classer les marchandises dangereuses conformément aux réglementations IATA et IMDG. Assurez-vous que la documentation et les instructions de manipulation correctes sont jointes à chaque expédition concernée."
+        },
+        {
+          "title": "Vérification de la liste des sanctions",
+          "desc": "Vérifiez les expéditeurs et les destinataires par rapport aux listes de sanctions internationales avant le traitement des expéditions. Bloquez ou signalez automatiquement les entités restreintes."
+        },
+        {
+          "title": "Contrôles des restrictions à l'exportation/à l'importation",
+          "desc": "Validez chaque expédition par rapport aux bases de données de restrictions d’exportation et d’importation au niveau national. Attrapez les articles interdits avant qu’ils n’atteignent la frontière."
+        },
+        {
+          "title": "Piste d'audit et journaux de conformité",
+          "desc": "Chaque document généré, chaque statut modifié et chaque décision prise est enregistré avec l'utilisateur, l'horodatage et la raison, fournissant ainsi une piste d'audit de conformité exportable complète."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Créer un envoi",
+          "desc": "Saisissez les détails du colis, l'expéditeur, le destinataire et les informations sur les produits. Le système demande les codes HS et la valeur déclarée au moment de la réservation."
+        },
+        {
+          "step": "02",
+          "title": "Vérification automatique de la conformité",
+          "desc": "Le système vérifie en temps réel les listes de sanctions et les bases de données de restrictions. Les expéditions signalées sont conservées pour examen avant la poursuite du traitement."
+        },
+        {
+          "step": "03",
+          "title": "Générer des documents",
+          "desc": "Un clic produit une facture commerciale, une liste de colisage, un certificat d'origine et un formulaire de déclaration en douane, tous pré-remplis et formatés pour la soumission."
+        },
+        {
+          "step": "04",
+          "title": "Calculer les droits",
+          "desc": "Les droits de douane, la TVA et les taxes d'importation sont calculés à l'aide des codes SH et des règles du pays de destination. Les totaux apparaissent sur la facture et peuvent être transmis au client."
+        },
+        {
+          "step": "05",
+          "title": "Soumettre et archiver",
+          "desc": "Soumettre la documentation aux autorités douanières. Tous les enregistrements sont archivés avec une piste d'audit complète, consultables, exportables et conservés conformément à votre politique de données."
+        }
+      ],
+      "documentTypes": [
+        {
+          "name": "Facture commerciale",
+          "desc": "Document d'exportation légalement requis avec tous les détails d'expédition et d'évaluation"
+        },
+        {
+          "name": "Liste de colisage",
+          "desc": "Répartition détaillée de tous les articles, poids et dimensions par colis"
+        },
+        {
+          "name": "Certificat d'origine",
+          "desc": "Certifie où les marchandises ont été fabriquées à des fins de préférence tarifaire"
+        },
+        {
+          "name": "Déclaration de douane",
+          "desc": "Déclaration formelle soumise aux autorités douanières pour dédouanement"
+        },
+        {
+          "name": "Lettre de transport aérien / Connaissement",
+          "desc": "Contrat de transport entre l'expéditeur et le transporteur avec tous les détails de l'expédition"
+        },
+        {
+          "name": "Déclaration de marchandises dangereuses",
+          "desc": "Déclaration conforme IATA/IMDG pour les matières dangereuses"
+        }
+      ],
+      "complianceChecks": [
+        "Vérification des listes de sanctions (OFAC, ONU, UE)",
+        "Validation des restrictions d'exportation/importation",
+        "Vérification des objets interdits",
+        "Classement des marchandises dangereuses",
+        "Validation du code SH par destination",
+        "Identification des biens à double usage",
+        "Vérification de l'embargo du pays",
+        "Conservation des données conforme au RGPD"
+      ],
+      "stats": [
+        {
+          "value": "200",
+          "suffix": "+",
+          "label": "Points de contrôle des autorisations"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Couverture de la piste d'audit"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "Modules API"
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Langues prises en charge"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Douanes &",
+        "h1_0_part2": "Conformité",
+        "p_0": "Automatisez la documentation douanière, la gestion des codes SH, les calculs de droits et les contrôles de conformité réglementaire, le tout directement intégré au flux de travail d'expédition NTIGI.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "terminal_label_0": "NTIGI_OS // COMPLIANCE_CHECK.sh",
+        "status_live": "LIVE",
+        "status_ready": "PRÊT",
+        "h2_0": "Conçu pour un commerce mondial conforme",
+        "p_1": "Chaque exigence de conformité est gérée automatiquement, de la génération de documents au contrôle réglementaire, avant le déplacement de l'expédition.",
+        "h2_1": "De la réservation au dédouanement",
+        "p_2": "La conformité est intégrée au flux de travail d'expédition, et non comme une étape distincte qui vous ralentit.",
+        "h3_0": "Documents générés",
+        "p_3": "Tous les documents douaniers requis sont produits directement à partir du dossier d'expédition, sans système distinct, sans ressaisie de données.",
+        "h3_1": "Contrôles de conformité automatisés",
+        "p_4": "Chaque expédition passe par une pile complète de contrôle de conformité avant le traitement, automatiquement, sans intervention manuelle.",
+        "h3_2": "Sécurité de niveau entreprise",
+        "p_5": "Toutes les données de conformité sont protégées par un chiffrement AES-256 au repos et TLS 1.3 en transit. Le contrôle d'accès basé sur les rôles garantit que seul le personnel autorisé peut consulter ou modifier les dossiers douaniers sensibles.",
+        "p_5_desc": "Piste d'audit complète avec utilisateur, horodatage et action enregistrés à chaque modification de document.",
+        "h2_2": "Découvrez-le en action",
+        "p_6": "Contrôle de conformité en temps réel lors de la réservation et documents douaniers générés automatiquement sur le même écran.",
+        "terminal_label_1": "NTIGI // SANCTIONS_SCREEN.sh",
+        "terminal_label_2": "NTIGI // CUSTOMS_DOCS.sh",
+        "terminal_desc_1": "Contrôle des sanctions et des restrictions en temps réel lors de la réservation",
+        "terminal_desc_2": "Facture commerciale, liste de colisage et certificat générés en un seul clic",
+        "h2_3": "Pour qui cela est conçu",
+        "h4_0": "Commissionnaires en douane",
+        "p_7": "Gégez plusieurs comptes clients avec la génération de documents, la recherche de codes SH et le calcul des droits intégrés. Réduisez la paperasse manuelle et le temps de dédouanement.",
+        "h4_1": "Transitaires",
+        "p_8": "Intégrez la conformité directement dans votre flux de travail de transit international. Les documents sont générés au moment de la réservation, pas après coup.",
+        "h4_2": "Équipes de conformité",
+        "p_9": "Piste d'audit complète, journaux de conformité exportables et dossiers de contrôle pour chaque expédition. Outils intégrés conformes au RGPD et politiques de conservation des données configurables.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Transit international",
+        "related_desc_0": "Gérez les expéditions transfrontalières, les itinéraires multi-étapes et les réseaux d'agences partenaires de bout en bout.",
+        "related_title_1": "Consolidation & Manifestes",
+        "related_desc_1": "Regroupez les expéditions par voyage, gérez les conteneurs et générez des manifestes pour la soumission aux douanes.",
+        "related_title_2": "Finance & Facturation",
+        "related_desc_2": "Émettez des factures multi-devises avec droits et taxes calculés automatiquement par juridiction.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à automatiser vos",
+        "h2_5_part2": "opérations douanières ?",
+        "p_10": "Découvrez comment NTIGI gère la documentation, le contrôle et les calculs de droits pour vos routes commerciales spécifiques lors d'une démo en direct."
+      }
+    },
+    "ecommerce-fulfillment": {
+      "capabilities": [
+        {
+          "title": "Création d'envois groupés",
+          "desc": "Traitez des centaines de commandes en une seule opération. Créez des expéditions individuellement ou importez en masse. Chaque commande reçoit automatiquement son propre numéro de suivi, sa propre étiquette et son propre reçu."
+        },
+        {
+          "title": "Suivi des commandes en temps réel",
+          "desc": "Chaque acheteur en ligne peut suivre sa commande en temps réel via le portail de suivi public ou le portail client. Aucune connexion requise pour la page de suivi publique."
+        },
+        {
+          "title": "Notifications client automatisées",
+          "desc": "Les acheteurs reçoivent des notifications automatiques par SMS, e-mail, push et WhatsApp à chaque étape de livraison. Configuré une fois par votre équipe opérationnelle, s'exécute automatiquement."
+        },
+        {
+          "title": "API REST pour l'intégration du magasin",
+          "desc": "Connectez votre boutique en ligne directement à NTIGI via l'API REST. Les commandes passées sur votre plateforme déclenchent automatiquement la création d'expéditions dans NTIGI sans saisie manuelle."
+        },
+        {
+          "title": "Gestion des retours",
+          "desc": "Les clients lancent les retours via le portail. Les étiquettes de retour sont générées automatiquement. Chaque retour est suivi, photographié et rapproché de la commande originale."
+        },
+        {
+          "title": "Gestion de la DCO",
+          "desc": "Suivez les encaissements à la livraison par chauffeur sur chaque itinéraire. Rapprochement automatique lorsque les commandes sont livrées et payées. Reporting COD complet par client et par exécution."
+        },
+        {
+          "title": "Génération automatique de factures",
+          "desc": "Les factures sont créées au moment où une expédition est réservée. Génération de PDF, envoi par e-mail et accès au téléchargement pour les clients sur le portail dès le premier jour."
+        },
+        {
+          "title": "Impression de codes-barres et d'étiquettes",
+          "desc": "Générez et imprimez des étiquettes d'expédition avec des codes-barres et des codes QR pour chaque commande. Imprimez par lots des exécutions entières d’expédition. Scannez les étiquettes lors du ramassage et de la livraison."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Commande reçue",
+          "desc": "Votre boutique en ligne envoie les données de commande à NTIGI via l'API REST ou votre agent crée les expéditions manuellement. Chaque commande est instantanément traitée dans un enregistrement d’expédition."
+        },
+        {
+          "step": "02",
+          "title": "Étiquette imprimée",
+          "desc": "Une étiquette d'expédition avec code-barres est générée et imprimée. Le client reçoit automatiquement une confirmation de commande avec numéro de suivi par SMS et e-mail."
+        },
+        {
+          "step": "03",
+          "title": "Expédié et suivi",
+          "desc": "Le forfait est attribué à un chauffeur et à un itinéraire. Le client peut suivre en direct. Des notifications automatisées se déclenchent à chaque mise à jour de statut sans aucune intervention manuelle."
+        },
+        {
+          "step": "04",
+          "title": "Livré et confirmé",
+          "desc": "Le chauffeur capture la signature et la photo de livraison. Une confirmation de livraison est envoyée au client. Le paiement contre remboursement est enregistré le cas échéant. La facture est fermée."
+        },
+        {
+          "step": "05",
+          "title": "Retours traités",
+          "desc": "Si un retour est demandé, le client reçoit automatiquement une étiquette. Le retour est suivi jusqu'à votre entrepôt et une note de crédit ou un remboursement est émis."
+        }
+      ],
+      "apiCapabilities": [
+        "Créer des expéditions via l'API REST",
+        "Points de terminaison de création d’envois groupés",
+        "Webhooks de suivi en temps réel",
+        "Rappels de mise à jour du statut vers votre magasin",
+        "API de génération d'étiquettes et de codes-barres",
+        "Récupération des factures et reçus",
+        "Déclencheurs de notification client",
+        "Statut COD et rapprochement"
+      ],
+      "notificationTriggers": [
+        {
+          "event": "Order Confirmed",
+          "channel": "Email + SMS"
+        },
+        {
+          "event": "Package Picked Up",
+          "channel": "SMS + Push"
+        },
+        {
+          "event": "In Transit Update",
+          "channel": "SMS"
+        },
+        {
+          "event": "Out for Delivery",
+          "channel": "SMS + WhatsApp"
+        },
+        {
+          "event": "Delivered",
+          "channel": "Email + SMS + Push"
+        },
+        {
+          "event": "Delivery Photo",
+          "channel": "Email"
+        },
+        {
+          "event": "Return Initiated",
+          "channel": "Email + SMS"
+        },
+        {
+          "event": "Refund Issued",
+          "channel": "Email"
+        }
+      ],
+      "apiLines": [
+        {
+          "delay": "0",
+          "color": "text-foreground/40",
+          "text": "POST /api/v1/shipments"
+        },
+        {
+          "delay": "320",
+          "color": "text-green-400",
+          "id": "SHP-29471"
+        },
+        {
+          "delay": "640",
+          "color": "text-foreground/40",
+          "text": "POST /api/v1/shipments"
+        },
+        {
+          "delay": "960",
+          "color": "text-green-400",
+          "id": "SHP-29472"
+        },
+        {
+          "delay": "1280",
+          "color": "text-blue-400",
+          "text": "GET  /api/v1/shipments/SHP-29471/label"
+        },
+        {
+          "delay": "1600",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  label.pdf  [barcode attached]"
+        },
+        {
+          "delay": "1920",
+          "color": "text-yellow-400",
+          "tracking": "true"
+        },
+        {
+          "delay": "2240",
+          "color": "text-foreground/40",
+          "text": "GET  /api/v1/shipments?status=in_transit"
+        },
+        {
+          "delay": "2560",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  [ 847 shipments ]"
+        },
+        {
+          "delay": "2880",
+          "color": "text-blue-400",
+          "text": "POST /api/v1/notifications/bulk"
+        },
+        {
+          "delay": "3200",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  sent: 847  failed: 0"
+        }
+      ]
+    },
+    "finance": {
+      "capabilities": [
+        {
+          "title": "Paiements multi-méthodes",
+          "desc": "Acceptez les espèces, les cartes de crédit et de débit, les virements bancaires, l'argent mobile (MTN, Orange, Airtel) et les encaissements COD. Tous les types de paiement suivis en un seul endroit."
+        },
+        {
+          "title": "Génération automatique de factures",
+          "desc": "Les factures sont créées instantanément lorsqu’une expédition est réservée. Modèles personnalisés, numérotation automatique, calculs de taxes et génération de PDF intégrés."
+        },
+        {
+          "title": "Prise en charge multi-devises",
+          "desc": "Émettez des factures et traitez les paiements dans plusieurs devises. La conversion des devises est gérée automatiquement avec des taux de change configurables par itinéraire."
+        },
+        {
+          "title": "Paiements contre remboursement et fractionnés",
+          "desc": "Suivez les encaissements à la livraison auprès des chauffeurs et des succursales. Permettez aux clients de payer en utilisant des méthodes de paiement fractionnées sur un seul envoi."
+        },
+        {
+          "title": "Rapports sur les revenus et les résultats",
+          "desc": "Affichez les revenus par succursale, par itinéraire ou par agent. Générez des relevés de profits et pertes avec des plages de dates personnalisées et exportez-les instantanément vers Excel ou PDF."
+        },
+        {
+          "title": "Suivi des commissions des agents",
+          "desc": "Calculez et suivez automatiquement les commissions des agents en fonction de structures configurables. Consultez les performances de chaque agent et la répartition des commissions."
+        },
+        {
+          "title": "Soldes impayés",
+          "desc": "Suivez les soldes impayés des clients en temps réel. Définissez des limites de crédit, configurez les conditions de crédit et envoyez des rappels de paiement automatisés par e-mail ou SMS."
+        },
+        {
+          "title": "Gestion des remboursements",
+          "desc": "Traitez les remboursements et les annulations de paiements par rapport aux factures originales. Chaque remboursement est enregistré avec le motif, l'utilisateur et l'horodatage pour une piste d'audit complète."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Expédition réservée",
+          "desc": "Lorsqu'une expédition est créée, le système calcule les frais en fonction du prix de l'itinéraire, du poids, du niveau de service et des éventuels suppléments applicables."
+        },
+        {
+          "step": "02",
+          "title": "Facture générée",
+          "desc": "Une facture est automatiquement créée avec tous les détails de l'expédition, les taxes et les totaux. Il est envoyé par courrier électronique au client et disponible en téléchargement au format PDF."
+        },
+        {
+          "step": "03",
+          "title": "Paiement encaissé",
+          "desc": "Le paiement est enregistré sur la facture : espèces, carte, mobile money ou virement bancaire. Le reçu est imprimé ou envoyé par courrier électronique au client immédiatement."
+        },
+        {
+          "step": "04",
+          "title": "COD suivi",
+          "desc": "Pour les envois COD, la collecte est suivie par chauffeur. Une fois livré et collecté, le paiement est rapproché du dossier d'expédition."
+        },
+        {
+          "step": "05",
+          "title": "Rapports générés",
+          "desc": "Générez à tout moment des rapports de revenus, des relevés de commissions et des comparaisons de performances des agences. Exportez vers Excel, PDF ou CSV."
+        }
+      ],
+      "paymentMethods": [
+        {
+          "name": "Espèces",
+          "detail": "Walk-in and COD collection tracking"
+        },
+        {
+          "name": "Carte de crédit/débit",
+          "detail": "Card terminal and gateway processing"
+        },
+        {
+          "name": "Virement bancaire",
+          "detail": "Wire and direct bank payment logging"
+        },
+        {
+          "name": "Argent mobile",
+          "detail": "MTN, Orange, Airtel integrations"
+        },
+        {
+          "name": "Bande",
+          "detail": "Online payment gateway"
+        },
+        {
+          "name": "Paypal",
+          "detail": "International online payments"
+        },
+        {
+          "name": "MORUE",
+          "detail": "Cash on delivery with driver reconciliation"
+        },
+        {
+          "name": "Paiement fractionné",
+          "detail": "Multiple methods on a single invoice"
+        }
+      ],
+      "accountingIntegrations": [
+        {
+          "name": "Livres rapides",
+          "status": "Integration Ready",
+          "desc": "Synchronisez automatiquement les factures, les paiements et les données client avec QuickBooks."
+        },
+        {
+          "name": "Xéro",
+          "status": "Integration Ready",
+          "desc": "Exportez les documents financiers directement dans Xero pour la comptabilité et le reporting."
+        },
+        {
+          "name": "Exportation personnalisée",
+          "status": "Always Available",
+          "desc": "Exportez toutes les données financières vers Excel, CSV ou PDF pour les utiliser dans n'importe quel outil comptable."
+        }
+      ],
+      "reportTypes": [
+        "Rapports de revenus (quotidiens, hebdomadaires, mensuels)",
+        "Rapports de recouvrement des paiements",
+        "Soldes impayés par client",
+        "Comptes de profits et pertes",
+        "Rapports sur les commissions des agents",
+        "Comparaison des performances des succursales",
+        "Rapports de rapprochement contre remboursement",
+        "Rapports personnalisés sur la plage de dates"
+      ]
+    },
+    "fleet-management": {
+      "vehicleCapabilities": [
+        {
+          "title": "Immatriculation du véhicule",
+          "desc": "Enregistrez chaque véhicule de votre flotte avec le type, la capacité, la plaque d'immatriculation, le numéro d'immatriculation et la succursale attribuée. Fiche complète du véhicule accessible à tout moment."
+        },
+        {
+          "title": "Suivi de la capacité",
+          "desc": "Suivez la capacité de charge de chaque véhicule en poids et en volume. Évitez les surcharges en surveillant ce qui est assigné par rapport à ce que le véhicule peut transporter à chaque trajet."
+        },
+        {
+          "title": "Planification de l'entretien",
+          "desc": "Planifiez et suivez l’entretien du véhicule par kilométrage ou par date. Recevez des alertes avant la fin du service. Conservez un historique d’entretien complet par véhicule."
+        },
+        {
+          "title": "Suivi du carburant",
+          "desc": "Enregistrez les pleins de carburant par véhicule et suivez les coûts de carburant au fil du temps. Surveillez la consommation de carburant par itinéraire pour identifier les inefficacités et réduire les coûts d’exploitation."
+        },
+        {
+          "title": "Intégration du suivi GPS",
+          "desc": "Suivez l'emplacement en direct de chaque véhicule sur une carte interactive. Les gestionnaires voient la flotte complète en temps réel. Les clients voient leur expédition se diriger vers eux."
+        },
+        {
+          "title": "Mesures de performances",
+          "desc": "Surveillez les taux de réussite des livraisons, les pourcentages de ponctualité, la distance parcourue et la consommation de carburant par véhicule. Comparez les performances de votre flotte sur plusieurs itinéraires et périodes."
+        }
+      ],
+      "driverCapabilities": [
+        {
+          "title": "Profils de conducteur",
+          "desc": "Créez des profils détaillés pour chaque chauffeur avec les informations de contact, la succursale attribuée, les itinéraires actifs et l'état de livraison actuel."
+        },
+        {
+          "title": "Suivi des licences",
+          "desc": "Enregistrez les numéros de permis de conduire, les catégories de permis, les dates de délivrance et les dates d'expiration. Recevez des alertes lorsqu'une licence approche de son expiration."
+        },
+        {
+          "title": "Affectation d'itinéraire",
+          "desc": "Affectez des chauffeurs à des itinéraires ou des livraisons spécifiques. Les chauffeurs voient les expéditions qui leur sont assignées dans l'application mobile et peuvent gérer leur file d'attente tout au long de la journée."
+        },
+        {
+          "title": "Suivi des performances",
+          "desc": "Suivez les livraisons terminées, les taux de réussite, les délais de livraison moyens et les taux de confirmation client par chauffeur. Identifiez les plus performants et les moins performants."
+        },
+        {
+          "title": "Application mobile pour les conducteurs",
+          "desc": "Les conducteurs utilisent la PWA mobile de NTIGI sur n'importe quel smartphone. Consultez la file d'attente de livraison, accédez aux arrêts, numérisez les codes-barres, capturez des signatures et des photos. Fonctionne hors ligne."
+        },
+        {
+          "title": "Capture de POD",
+          "desc": "Les chauffeurs capturent la preuve de livraison directement depuis leur téléphone : signature du destinataire, photo du colis et localisation GPS. Le tout joint instantanément au dossier d’expédition."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Enregistrer le véhicule",
+          "desc": "Ajoutez le véhicule avec le type, la capacité, les détails d'immatriculation et la succursale attribuée. Le véhicule est immédiatement disponible pour l'affectation de l'itinéraire et du chauffeur."
+        },
+        {
+          "step": "02",
+          "title": "Créer un profil de conducteur",
+          "desc": "Ajoutez le pilote avec les détails de la licence et l'attribution de la succursale. Reliez le conducteur à son véhicule. Définissez leur rôle et leurs autorisations initiaux dans l'application mobile NTIGI."
+        },
+        {
+          "step": "03",
+          "title": "Attribuer à l'itinéraire",
+          "desc": "Affectez le chauffeur et le véhicule à un itinéraire de livraison ou à un trajet spécifique. Les envois apparaissent immédiatement dans la file d'attente du chauffeur sur son application mobile."
+        },
+        {
+          "step": "04",
+          "title": "Suivez en temps réel",
+          "desc": "La localisation GPS du véhicule est mise à jour en direct sur la carte de la flotte. Les gestionnaires voient chaque véhicule. Les clients voient le statut de leur expédition mis à jour au fur et à mesure que le chauffeur progresse."
+        },
+        {
+          "step": "05",
+          "title": "Examiner les performances",
+          "desc": "Après l'exécution, examinez les taux de réussite des livraisons, la consommation de carburant et la ponctualité par conducteur et par véhicule. Planifiez toute maintenance requise à partir du même tableau de bord."
+        }
+      ],
+      "vehicleRecord": [
+        {
+          "label": "Type de véhicule",
+          "desc": "Fourgonnette, camion, moto, vélo cargo ou type personnalisé"
+        },
+        {
+          "label": "Capacité de charge",
+          "desc": "Poids et volume maximum que le véhicule peut transporter"
+        },
+        {
+          "label": "Plaque d'immatriculation",
+          "desc": "Numéro d'enregistrement pour l'identification et la conformité"
+        },
+        {
+          "label": "Branche attribuée",
+          "desc": "Dans quelle branche ce véhicule opère"
+        },
+        {
+          "label": "Statut actuel",
+          "desc": "Actif, en maintenance, hors ligne ou mis hors service"
+        },
+        {
+          "label": "Historique d'entretien",
+          "desc": "Journal complet de toutes les dates de service, du travail effectué et des coûts"
+        },
+        {
+          "label": "Journal de carburant",
+          "desc": "Toutes les entrées de remplissage avec date, volume et coût"
+        },
+        {
+          "label": "Statut GPS",
+          "desc": "Localisation en direct et dernière position connue avec horodatage"
+        }
+      ],
+      "driverRecord": [
+        {
+          "label": "Nom complet et contact",
+          "desc": "Données personnelles pour l’identification et la communication"
+        },
+        {
+          "label": "Numéro de licence",
+          "desc": "Numéro de permis de conduire et catégories applicables"
+        },
+        {
+          "label": "Expiration de la licence",
+          "desc": "Date d'expiration avec alerte automatique avant renouvellement"
+        },
+        {
+          "label": "Véhicule attribué",
+          "desc": "Quel véhicule ce conducteur conduit actuellement"
+        },
+        {
+          "label": "Itinéraires assignés",
+          "desc": "Affectations d'itinéraires actives pour la période en cours"
+        },
+        {
+          "label": "Historique de livraison",
+          "desc": "Toutes les livraisons terminées avec horodatages et résultats"
+        },
+        {
+          "label": "Score de performance",
+          "desc": "Taux de réussite de livraison et pourcentage de ponctualité"
+        },
+        {
+          "label": "Accès aux applications mobiles",
+          "desc": "Identifiants de connexion et attribution de périphérique pour la PWA"
+        }
+      ],
+      "maintenanceAlerts": [
+        "La date d'échéance du service prévu approche",
+        "Intervalle d'entretien basé sur le kilométrage atteint",
+        "Expiration de la licence dans les 30 jours",
+        "Capacité du véhicule dépassée en mission",
+        "Consommation de carburant supérieure à la moyenne du parcours",
+        "Temps d'arrêt imprévu enregistré"
+      ]
+    },
+    "international-forwarding": {
+      "capabilities": [
+        {
+          "title": "Gestion des itinéraires multi-pays",
+          "desc": "Créez et gérez des itinéraires couvrant plusieurs pays avec des arrêts à plusieurs étapes, des points de transit et une tarification dynamique par corridor. Couvrez l’Afrique de l’Ouest jusqu’aux ports mondiaux avec un système unique."
+        },
+        {
+          "title": "Types d'envois internationaux",
+          "desc": "Gérez les envois internationaux standard, express, en vrac, de retour et COD. Capturez les détails de l’expéditeur et du destinataire au-delà des frontières avec une validation complète de l’adresse."
+        },
+        {
+          "title": "Documents douaniers",
+          "desc": "Générez automatiquement des factures commerciales, des listes de colisage, des certificats d'origine et des formulaires de déclaration en douane. Gérez les codes HS et calculez les droits et taxes par expédition."
+        },
+        {
+          "title": "Réseau d'agences partenaires",
+          "desc": "Connectez-vous avec des agences partenaires à l’étranger. Gérez les transferts intersuccursales, les structures de commissions et les règlements interagences à partir d’un seul tableau de bord."
+        },
+        {
+          "title": "Facturation multidevise",
+          "desc": "Émettez des factures dans plusieurs devises. Gérez les calculs de taxes et de TVA par juridiction avec la conversion automatique des devises et la génération de PDF."
+        },
+        {
+          "title": "Suivi GPS en temps réel",
+          "desc": "Suivez chaque envoi international en direct. Les clients reçoivent des notifications automatisées par SMS, e-mail et push à chaque mise à jour de statut tout au long de l'itinéraire."
+        },
+        {
+          "title": "Contrôle de conformité et de sanctions",
+          "desc": "Vérification intégrée de la conformité réglementaire, gestion des marchandises dangereuses, application des restrictions d'exportation/importation et contrôle de la liste des sanctions pour chaque expédition."
+        },
+        {
+          "title": "Analyse des revenus et des itinéraires",
+          "desc": "Surveillez les revenus par itinéraire, les rapports sur les commissions des agents, les comparaisons des performances des agences et les taux de réussite des livraisons, le tout exportable vers Excel ou PDF."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Réservez l'envoi",
+          "desc": "Créez un envoi international avec l'expéditeur, le destinataire, les détails du colis, l'itinéraire et le niveau de service. Le système génère instantanément un numéro de suivi et un reçu."
+        },
+        {
+          "step": "02",
+          "title": "Générer des documents",
+          "desc": "NTIGI produit automatiquement tous les documents douaniers requis : facture commerciale, liste de colisage, certificat d'origine, prêts à être soumis à la frontière."
+        },
+        {
+          "step": "03",
+          "title": "Attribuer au voyage/manifeste",
+          "desc": "Regroupez les expéditions dans un manifeste et attribuez-les à un voyage ou à un conteneur. Optimisez le chargement et imprimez le manifeste pour les transporteurs."
+        },
+        {
+          "step": "04",
+          "title": "Suivre au-delà des frontières",
+          "desc": "Chaque changement de statut : récupéré, en transit, à la douane, en livraison, livré, est enregistré et transmis au client en temps réel."
+        },
+        {
+          "step": "05",
+          "title": "Règlement et facturation",
+          "desc": "Une fois livré, générez les factures finales, traitez les paiements en devise locale ou étrangère et clôturez l'expédition avec une preuve de livraison."
+        }
+      ],
+      "complianceItems": [
+        "Gestion du code SH et calcul des droits",
+        "Génération de facture commerciale",
+        "Liste de colisage et certificat d'origine",
+        "Formulaires de déclaration en douane",
+        "Manutention de marchandises dangereuses",
+        "Vérification de la liste des sanctions",
+        "Contrôles des restrictions d'exportation/importation",
+        "Piste d'audit pour chaque action"
+      ],
+      "carrierIntegrations": [
+        {
+          "name": "DHL",
+          "type": "API Integration"
+        },
+        {
+          "name": "FedEx",
+          "type": "API Integration"
+        },
+        {
+          "name": "UPS",
+          "type": "API Integration"
+        },
+        {
+          "name": "Transporteurs locaux",
+          "type": "Custom APIs"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Envois traités quotidiennement"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Méthodes de manutention des marchandises"
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Langues prises en charge"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "Modules API"
+        }
+      ]
+    },
+    "inventory-control": {
+      "capabilities": [
+        {
+          "title": "Niveaux de stocks en temps réel",
+          "desc": "Voyez exactement combien de colis et quel poids sont actuellement détenus dans chaque entrepôt. Les quantités réservées, disponibles et en transit sont mises à jour dès qu'un mouvement se produit."
+        },
+        {
+          "title": "Suivi de l'emplacement des étagères et des bacs",
+          "desc": "Chaque colis dans votre entrepôt se voit attribuer une étagère et un bac spécifiques. Trouvez n'importe quel article instantanément en scannant son code-barres ou en effectuant une recherche par numéro de suivi."
+        },
+        {
+          "title": "Scanner le code-barres pour recevoir",
+          "desc": "Le personnel de l’entrepôt scanne les codes-barres des colis entrants au quai de réception. Chaque analyse enregistre le colis avec l'heure d'arrivée, le poids, les dimensions et l'emplacement du bac attribué."
+        },
+        {
+          "title": "Entrée et expédition des marchandises",
+          "desc": "Complétez les workflows de réception et d’expédition avec une piste d’audit complète. Chaque mouvement est enregistré avec quel membre du personnel l'a effectué et à quel horodatage."
+        },
+        {
+          "title": "Recherche et filtrage de titres",
+          "desc": "Recherchez dans l'intégralité de l'inventaire par numéro de suivi, code-barres, client, itinéraire ou type de colis. Les filtres avancés affinent les résultats par statut, plage de dates ou emplacement."
+        },
+        {
+          "title": "Historique des mouvements de stocks",
+          "desc": "Historique complet de chaque mouvement pour n'importe quel colis : reçu, déplacé, consolidé, expédié. Horodaté et lié au membre du personnel responsable."
+        },
+        {
+          "title": "Déclaration de colis perdu",
+          "desc": "Signalez les colis manquants directement depuis l'interface de stock. Recherchez dans la base de données des colis trouvés les objets perdus. Suivez l’état de l’enquête et les notes de résolution."
+        },
+        {
+          "title": "Exporter les rapports de stock",
+          "desc": "Exportez les niveaux de stock actuels, l'historique des mouvements et l'utilisation de l'entrepôt vers Excel ou CSV. Planifiez des rapports pour une livraison automatique à la direction."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Recevoir et numériser",
+          "desc": "Les colis entrants sont scannés au quai de réception. Chaque lecture de code-barres enregistre automatiquement l'article : poids, dimensions, exigences de manipulation et bac attribué."
+        },
+        {
+          "step": "02",
+          "title": "Attribuer un emplacement",
+          "desc": "Le système attribue un emplacement de rayon et de bac à chaque colis reçu. Le personnel confirme le placement. Le colis est désormais consultable et suivi au niveau de l'article."
+        },
+        {
+          "step": "03",
+          "title": "Surveiller les niveaux",
+          "desc": "Le tableau de bord en temps réel affiche la capacité disponible, le stock réservé, les articles en attente d'expédition et tous les colis signalés comme nécessitant une attention particulière ou manquant à l'emplacement prévu."
+        },
+        {
+          "step": "04",
+          "title": "Rechercher et localiser",
+          "desc": "N'importe quel colis peut être trouvé en quelques secondes en scannant son code-barres ou en recherchant par numéro de suivi, nom de client ou destination. L'emplacement du bac est affiché immédiatement."
+        },
+        {
+          "step": "05",
+          "title": "Expédition et mise à jour",
+          "desc": "Lorsque les colis quittent l'entrepôt, le personnel les scanne pour confirmer l'expédition. Les niveaux de stock sont mis à jour instantanément. Le mouvement est enregistré avec horodatage et personnel responsable."
+        }
+      ],
+      "stockRecord": [
+        {
+          "label": "Emplacement actuel",
+          "desc": "Position de l'entrepôt, de l'étagère et du bac du colis"
+        },
+        {
+          "label": "Poids du colis",
+          "desc": "Poids réel enregistré à la réception"
+        },
+        {
+          "label": "Dimensions",
+          "desc": "Longueur, largeur et hauteur pour le calcul volumétrique"
+        },
+        {
+          "label": "Étiquettes de manutention du fret",
+          "desc": "Fragile, périssable, dangereux ou l'une des 22 étiquettes"
+        },
+        {
+          "label": "Horodatage d'arrivée",
+          "desc": "Quand le colis a été reçu et par quel personnel"
+        },
+        {
+          "label": "Référence d'expédition",
+          "desc": "Lié à l'enregistrement d'expédition parent"
+        },
+        {
+          "label": "Destination",
+          "desc": "Itinéraire prévu et adresse de livraison"
+        },
+        {
+          "label": "Statut",
+          "desc": "En entrepôt, réservé à la consolidation ou expédié"
+        }
+      ],
+      "searchCapabilities": [
+        "Recherche par numéro de suivi ou code-barres",
+        "Filtrer par emplacement d'entrepôt",
+        "Filtrer par client ou expéditeur",
+        "Filtrer par plage de dates d'arrivée",
+        "Filtrer par itinéraire de destination",
+        "Filtrer par type de colis ou étiquette de manutention",
+        "Filtrer par statut actuel",
+        "Exporter les résultats filtrés vers Excel ou CSV"
+      ]
+    },
+    "multi-branch": {
+      "capabilities": [
+        {
+          "title": "Opérations multi-succursales",
+          "desc": "Exécutez n’importe quel nombre de succursales à partir d’un seul compte NTIGI. Chaque succursale fonctionne de manière indépendante avec ses propres expéditions, son personnel, ses clients et ses dossiers financiers."
+        },
+        {
+          "title": "Isolation des données au niveau de la succursale",
+          "desc": "Les agents de la succursale A ne peuvent pas voir les données de la succursale B, sauf autorisation explicite. Chaque enregistrement est limité à sa branche. Aucune fuite de données sur votre réseau."
+        },
+        {
+          "title": "Virements inter-succursales",
+          "desc": "Transférez les expéditions entre les succursales lorsque les itinéraires changent ou qu’une consolidation est nécessaire. Chaque transfert est enregistré avec l'origine, la destination, le motif et l'horodatage."
+        },
+        {
+          "title": "Règlements interprofessionnels",
+          "desc": "Suivez les obligations financières entre les succursales. Lorsque la succursale A confie une expédition à la succursale B, le montant du règlement est calculé et enregistré automatiquement."
+        },
+        {
+          "title": "Réseau d'agences partenaires",
+          "desc": "Intégrez des agences partenaires externes dans le cadre de votre réseau. Attribuez-leur des itinéraires, définissez des structures de commission et suivez leurs performances depuis le siège social."
+        },
+        {
+          "title": "200+ Permission Controls",
+          "desc": "Assign granular permissions at the user level across 200+ control points. Restrict who can create shipments, view finances, generate reports, or modify settings per branch."
+        },
+        {
+          "title": "Création de rôles personnalisés",
+          "desc": "Créez des rôles personnalisés au-delà de l'administrateur, du gestionnaire, de l'agent et du pilote. Définissez exactement ce que chaque rôle peut voir et faire dans les fonctionnalités, les branches et les types de données."
+        },
+        {
+          "title": "Rapports consolidés",
+          "desc": "Visualisez les performances de toutes les succursales à partir d’un seul tableau de bord. Comparez les revenus, les volumes d'expédition, les taux de réussite des livraisons et la productivité des agents à l'échelle du réseau."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Créer des succursales",
+          "desc": "Ajoutez chaque succursale avec son propre nom, son emplacement, ses coordonnées, ses heures d'ouverture et ses paramètres de devise. Chaque succursale est totalement indépendante dès le premier jour."
+        },
+        {
+          "step": "02",
+          "title": "Attribuer du personnel et des rôles",
+          "desc": "Ajoutez du personnel à chaque succursale et attribuez des rôles avec des autorisations spécifiques. Un responsable d’une succursale ne peut pas accéder à une autre à moins d’être explicitement configuré."
+        },
+        {
+          "step": "03",
+          "title": "Configurer les autorisations",
+          "desc": "Set granular permissions per role across 200+ control points. Financial access, shipment editing, report generation: every action is configurable."
+        },
+        {
+          "step": "04",
+          "title": "Connecter les partenaires",
+          "desc": "Intégrez des agences partenaires pour des itinéraires ou des régions spécifiques. Configurez les taux de commission, les contrats de service et la visibilité des données entre votre réseau et le leur."
+        },
+        {
+          "step": "05",
+          "title": "Surveiller depuis le siège social",
+          "desc": "Accédez à des rapports consolidés dans toutes les succursales et partenaires. Découvrez où le volume augmente, où les règlements sont en suspens et où les performances nécessitent une attention particulière."
+        }
+      ],
+      "rbacRoles": [
+        {
+          "role": "Admin",
+          "desc": "Accès complet à toutes les succursales, paramètres, finances et gestion des utilisateurs"
+        },
+        {
+          "role": "Manager",
+          "desc": "Gestion au niveau de la succursale avec un accès limité aux finances et à la configuration"
+        },
+        {
+          "role": "Agent",
+          "desc": "Création d'expéditions, gestion des clients et opérations en propre succursale uniquement"
+        },
+        {
+          "role": "Driver",
+          "desc": "File d'attente de livraison, navigation d'itinéraire, capture de POD et mises à jour de statut"
+        },
+        {
+          "role": "Customer",
+          "desc": "Propres expéditions, téléchargements de factures, suivi et historique des paiements"
+        },
+        {
+          "role": "Custom Role",
+          "desc": "Any combination of the 200+ permissions, built to your workflow"
+        }
+      ],
+      "permissionCategories": [
+        "Envoi créer, afficher, modifier, supprimer",
+        "Gestion des clients et contrôle du crédit",
+        "Accès financier et génération de rapports",
+        "Configuration et paramètres du système",
+        "Gestion des utilisateurs et des rôles",
+        "Opérations de manifeste et de voyage",
+        "Accès à l'entrepôt et à l'inventaire",
+        "Autorisation de transfert de succursale",
+        "Gestion des agences partenaires",
+        "Accès et exportation du journal d'audit"
+      ],
+      "settlementItems": [
+        {
+          "label": "Transfert d'enregistrement",
+          "desc": "Chaque transfert d'expédition inter-succursales est automatiquement enregistré"
+        },
+        {
+          "label": "Calcul du montant",
+          "desc": "Montants de règlement calculés à partir des tarifs interprofessionnels convenus"
+        },
+        {
+          "label": "Suivi exceptionnel",
+          "desc": "Consultez à tout moment toutes les obligations interprofessionnelles non réglées"
+        },
+        {
+          "label": "Rapports de règlement",
+          "desc": "Exporter l'historique des règlements par succursale, période ou partenaire"
+        },
+        {
+          "label": "Suivi des commissions",
+          "desc": "Commissions des agents et partenaires calculées et suivies par expédition"
+        },
+        {
+          "label": "Outils de réconciliation",
+          "desc": "Faites correspondre les paiements aux règlements et marquez les obligations comme compensées"
+        }
+      ],
+      "stats": [
+        {
+          "value": "200",
+          "suffix": "+",
+          "label": "Points de contrôle des autorisations"
+        },
+        {
+          "value": "99",
+          "suffix": "+",
+          "label": "Branches prises en charge"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Isolement des données"
+        },
+        {
+          "value": "0",
+          "suffix": "MS",
+          "label": "Rapports en temps réel"
+        }
+      ]
+    },
+    "proof-of-delivery": {
+      "capabilities": [
+        {
+          "title": "Capture de signatures",
+          "desc": "Les chauffeurs capturent la signature numérique du destinataire directement sur leur appareil mobile au point de livraison. La signature est stockée instantanément dans le dossier d’expédition."
+        },
+        {
+          "title": "Documents photographiques",
+          "desc": "Prenez des photos des colis livrés, des marchandises endommagées ou des lieux de livraison. Les photos sont téléchargées dans le dossier d'expédition et horodatées pour la résolution des litiges."
+        },
+        {
+          "title": "Suivi GPS en temps réel",
+          "desc": "Suivez l'emplacement de chaque chauffeur en direct pendant les livraisons. Les gestionnaires voient la flotte complète sur une carte. Les clients voient leur expédition arriver vers eux en temps réel."
+        },
+        {
+          "title": "Notifications client automatisées",
+          "desc": "Les clients reçoivent des notifications automatiques par SMS, e-mail et push à chaque étape de livraison : départ pour livraison, arrivée, livré. Aucune mise à jour manuelle nécessaire."
+        },
+        {
+          "title": "Lecture des codes-barres à la livraison",
+          "desc": "Les chauffeurs scannent les codes-barres des colis pour confirmer que le bon article est livré au bon destinataire. Empêche les incidents de livraison erronée avant qu’ils ne surviennent."
+        },
+        {
+          "title": "Historique des délais de livraison",
+          "desc": "Chaque mise à jour de statut est enregistrée avec l'horodatage, les coordonnées GPS et le conducteur qui a effectué l'action, de la prise en charge à la livraison."
+        },
+        {
+          "title": "Application mobile pour conducteur (PWA)",
+          "desc": "Les chauffeurs utilisent l'application mobile PWA de NTIGI pour gérer leur file d'attente de livraison, parcourir les itinéraires, scanner les codes-barres, capturer des signatures et des photos depuis n'importe quel smartphone."
+        },
+        {
+          "title": "Protection des litiges",
+          "desc": "Chaque livraison est appuyée par un dossier de preuve complet : signature, photos, localisation GPS, horodatage et identité du chauffeur. Résolvez les litiges clients en quelques secondes."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Attribuer au conducteur",
+          "desc": "Les expéditions sont attribuées à un chauffeur et apparaissent dans leur file d'attente de livraison sur l'application mobile. Le chauffeur reçoit une notification avec la liste de ramassage et de livraison du jour."
+        },
+        {
+          "step": "02",
+          "title": "Ramasser et numériser",
+          "desc": "Le chauffeur scanne le code-barres lors du ramassage pour confirmer qu'il a le bon colis. Le statut est mis à jour sur En transit et le client est automatiquement informé."
+        },
+        {
+          "step": "03",
+          "title": "Naviguer et arriver",
+          "desc": "Le chauffeur accède à l'adresse de livraison. La localisation GPS est suivie tout au long du parcours. Le statut est mis à jour en Sortie pour livraison lorsque le chauffeur est à proximité."
+        },
+        {
+          "step": "04",
+          "title": "Capturer le POD",
+          "desc": "A la porte, le chauffeur capte la signature du destinataire et prend une photo du colis livré. Les deux sont joints au dossier d’expédition en temps réel."
+        },
+        {
+          "step": "05",
+          "title": "Confirmer et fermer",
+          "desc": "La livraison est confirmée, le statut est mis à jour sur Livré et le client reçoit une notification instantanée. L’enregistrement POD complet est disponible en téléchargement immédiatement."
+        }
+      ],
+      "podRecord": [
+        {
+          "label": "Signature du destinataire",
+          "desc": "Signature numérique capturée sur l'appareil du conducteur"
+        },
+        {
+          "label": "Photos de livraison",
+          "desc": "Photos du colis et du lieu de livraison"
+        },
+        {
+          "label": "Coordonnées GPS",
+          "desc": "Lieu exact où la livraison a été confirmée"
+        },
+        {
+          "label": "Horodatage de livraison",
+          "desc": "Date et heure de confirmation de livraison"
+        },
+        {
+          "label": "Identité du conducteur",
+          "desc": "Quel chauffeur a effectué la livraison"
+        },
+        {
+          "label": "Journal d'analyse des codes-barres",
+          "desc": "Confirmation du scan du colis à la livraison"
+        }
+      ],
+      "notificationTypes": [
+        "Notification SMS de livraison",
+        "Mise à jour de l'heure d'arrivée estimée",
+        "Confirmation livrée avec horodatage",
+        "Confirmation de livraison des photos",
+        "Alerte de tentative de livraison échouée",
+        "Notification de livraison reprogrammée",
+        "Mises à jour de livraison WhatsApp",
+        "Notifications push (iOS et Android)"
+      ]
+    },
+    "returns": {
+      "capabilities": [
+        {
+          "title": "Création d'un envoi de retour",
+          "desc": "Créez des envois de retour avec tous les détails de l'expéditeur et du destinataire. Lié à l’expédition sortante d’origine pour un suivi complet du cycle de vie. Prend en charge tous les types de packages et méthodes de gestion."
+        },
+        {
+          "title": "22 étiquettes de manutention du fret",
+          "desc": "Appliquez l'une des 22 étiquettes de manutention du fret sur les envois retournés : fragiles, endommagés, dangereux, périssables, et plus encore. Les manutentionnaires voient exactement comment traiter les marchandises retournées."
+        },
+        {
+          "title": "Suivi des retours en temps réel",
+          "desc": "Suivez chaque expédition de retour en direct avec le GPS. Les clients et le personnel opérationnel voient le statut du retour depuis le ramassage jusqu'à l'arrivée à votre entrepôt ou point d'origine."
+        },
+        {
+          "title": "Code-barres et QR Code",
+          "desc": "Générez automatiquement des codes-barres et des codes QR pour chaque envoi de retour. Imprimez des étiquettes de retour sur demande. Scannez au moment du ramassage et de la réception pour confirmer la chaîne de possession."
+        },
+        {
+          "title": "Documents photographiques",
+          "desc": "Prenez des photos lors du ramassage pour documenter l’état des marchandises retournées. Des photos sont jointes au dossier de retour et protègent contre les litiges concernant les dommages."
+        },
+        {
+          "title": "Facture et remboursement automatiques",
+          "desc": "Générez automatiquement des factures de retour. Appliquez des remboursements ou des notes de crédit à la facture originale. Prise en charge multi-devises avec génération PDF complète."
+        },
+        {
+          "title": "Notifications clients",
+          "desc": "Les clients reçoivent des notifications automatiques par SMS, e-mail et push à chaque étape de leur retour : retrait confirmé, en transit, reçu et remboursement émis."
+        },
+        {
+          "title": "Déclaration des retours",
+          "desc": "Suivez les volumes de retour par itinéraire, les raisons du retour, le total des remboursements et les délais de traitement. Exportez des rapports vers Excel ou CSV pour les équipes opérationnelles et financières."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Retour demandé",
+          "desc": "Le client soumet une demande de retour via le portail ou votre agent en crée une directement. L'envoi d'origine est lié et le motif du retour est enregistré."
+        },
+        {
+          "step": "02",
+          "title": "Étiquette de retour émise",
+          "desc": "Une étiquette de retour avec code-barres est générée instantanément. Envoyé par e-mail au client ou imprimé par votre agent. Prêt à postuler immédiatement au colis."
+        },
+        {
+          "step": "03",
+          "title": "Colis ramassé",
+          "desc": "Le chauffeur scanne le code-barres de retour lors du ramassage et prend une photo de l'état du colis. Le statut est mis à jour sur En transit et le client est automatiquement informé."
+        },
+        {
+          "step": "04",
+          "title": "Reçu et inspecté",
+          "desc": "Lorsque le retour arrive à votre entrepôt, le personnel le remet en stock. L’état est enregistré avec des photos. Le retour est marqué comme reçu et la commande originale mise à jour."
+        },
+        {
+          "step": "05",
+          "title": "Remboursement traité",
+          "desc": "Un remboursement ou une note de crédit est appliqué à la facture originale. Le client reçoit une notification et la transaction est clôturée dans les registres financiers."
+        }
+      ],
+      "returnRecord": [
+        {
+          "label": "Lien d'expédition d'origine",
+          "desc": "Connecté à l'expédition sortante pour une vue complète du cycle de vie"
+        },
+        {
+          "label": "Raison du retour",
+          "desc": "Enregistré au moment de la demande pour le reporting et l'analyse"
+        },
+        {
+          "label": "État du colis",
+          "desc": "Documenté avec photo de ramassage et étiquettes de manipulation"
+        },
+        {
+          "label": "Horodatage de ramassage",
+          "desc": "Date et heure où le conducteur a récupéré le retour"
+        },
+        {
+          "label": "Identité du conducteur",
+          "desc": "Quel chauffeur s'est occupé du transfert de retour ?"
+        },
+        {
+          "label": "Numéro de suivi de retour",
+          "desc": "Référence unique pour ce retour"
+        },
+        {
+          "label": "Confirmation de réception",
+          "desc": "Scannez la confirmation lorsque le retour arrive à l'entrepôt"
+        },
+        {
+          "label": "Référence de remboursement",
+          "desc": "Avoir ou opération de remboursement lié"
+        }
+      ],
+      "returnTypes": [
+        {
+          "name": "Retour standard",
+          "desc": "Prise en charge programmée et retour à l'origine"
+        },
+        {
+          "name": "Retour express",
+          "desc": "Retour prioritaire avec fenêtre de ramassage plus rapide"
+        },
+        {
+          "name": "Retour de marchandises endommagées",
+          "desc": "Retour documenté avec photo"
+        },
+        {
+          "name": "Retour d'un mauvais article",
+          "desc": "Lié à l'envoi d'origine pour le rapprochement"
+        },
+        {
+          "name": "Livraison refusée",
+          "desc": "Colis retourné sans tentative de livraison"
+        },
+        {
+          "name": "Retour contre remboursement",
+          "desc": "Retour avec suivi d'inversion de la collecte COD"
+        }
+      ]
+    },
+    "route-optimization": {
+      "capabilities": [
+        {
+          "title": "Création d'itinéraires multi-étapes",
+          "desc": "Définissez des itinéraires avec plusieurs arrêts, points de cheminement et centres de transit. Chaque étape a sa propre distance, son temps de transit, ses tarifs et ses niveaux de service disponibles."
+        },
+        {
+          "title": "Gestion des arrêts et des emplacements",
+          "desc": "Créez et gérez des lieux de ramassage et de livraison avec les coordonnées GPS, la validation des adresses et la cartographie de la zone de couverture. Recherchez et attribuez des arrêts à n’importe quel itinéraire."
+        },
+        {
+          "title": "Estimation du temps de transit",
+          "desc": "Définissez et affichez les temps de transit prévus par segment d'itinéraire. Les clients et les agents voient les fenêtres d’arrivée estimées au moment de la réservation, et non après."
+        },
+        {
+          "title": "Tarification par itinéraire",
+          "desc": "Configurez des grilles tarifaires par itinéraire avec une tarification basée sur le poids, la zone et le poids dimensionnel. Appliquez des suppléments de niveau de service, des frais de carburant et des tarifs saisonniers."
+        },
+        {
+          "title": "Visualisation de carte interactive",
+          "desc": "Affichez les itinéraires, les arrêts et les livraisons actives sur des cartes interactives optimisées par Leaflet et OpenStreetMap. Visualisez les zones de couverture et les emplacements de livraison des clusters."
+        },
+        {
+          "title": "Calcul des distances",
+          "desc": "Calcul automatique de la distance et de la durée entre les arrêts à l'aide de l'API Google Maps. Les distances informent sur la tarification, les estimations du temps de transit et le suivi des coûts de carburant."
+        },
+        {
+          "title": "Affectation des véhicules aux itinéraires",
+          "desc": "Attribuez des véhicules enregistrés à des itinéraires spécifiques en fonction de la capacité, du type et de la disponibilité. Suivez quel véhicule emprunte quel itinéraire à tout moment."
+        },
+        {
+          "title": "Analyse des performances des itinéraires",
+          "desc": "Surveillez les volumes d’expédition par itinéraire, les taux de réussite des livraisons, les temps de transit moyens et les revenus par corridor. Identifiez instantanément les itinéraires peu performants."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Définir l'itinéraire",
+          "desc": "Créez un itinéraire avec l'origine, la destination et les arrêts intermédiaires. Définissez le nom de l'itinéraire, le type de transporteur, le temps de transit et les services disponibles sur ce corridor."
+        },
+        {
+          "step": "02",
+          "title": "Configurer la tarification",
+          "desc": "Définissez des grilles tarifaires pour l'itinéraire : tranches de poids, tarification par zone, tarifs par type de forfait, suppléments express et tarifs contractuels personnalisés pour des clients spécifiques."
+        },
+        {
+          "step": "03",
+          "title": "Attribuer des véhicules",
+          "desc": "Reliez les véhicules de votre flotte à l’itinéraire. Le système suit la capacité et garantit que le type de véhicule approprié correspond aux exigences de l'itinéraire."
+        },
+        {
+          "step": "04",
+          "title": "Attribuer des expéditions",
+          "desc": "Les agents sélectionnent l'itinéraire au moment de la réservation. Les expéditions sont regroupées par itinéraire pour l'expédition. Le système affiche la capacité disponible par exécution avant l'affectation."
+        },
+        {
+          "step": "05",
+          "title": "Suivi et rapport",
+          "desc": "Surveillez chaque expédition active sur l’itinéraire en temps réel. Créez des rapports sur l'utilisation des itinéraires, le succès des livraisons et la contribution aux revenus à tout moment."
+        }
+      ],
+      "routeAttributes": [
+        {
+          "label": "Origine et destination",
+          "desc": "Adresse complète avec coordonnées GPS pour chaque point final de l'itinéraire"
+        },
+        {
+          "label": "Arrêts intermédiaires",
+          "desc": "Waypoints configurables avec séquence et temps de transit par étape"
+        },
+        {
+          "label": "Planification d'itinéraire",
+          "desc": "Définir les jours de départ, les fréquences et les heures limites par itinéraire"
+        },
+        {
+          "label": "Niveaux de service",
+          "desc": "Options standard, express et de nuit par corridor d'itinéraire"
+        },
+        {
+          "label": "Distance et durée",
+          "desc": "Calculé automatiquement à partir de l'API Google Maps lors de la création de l'itinéraire"
+        },
+        {
+          "label": "Zone de couverture",
+          "desc": "Cartographie géographique des zones de retrait et de livraison par itinéraire"
+        }
+      ],
+      "mapFeatures": [
+        "Visualisation interactive d'itinéraires sur OpenStreetMap",
+        "Suivi de la localisation des véhicules et des conducteurs en temps réel",
+        "Cartographie des clusters de livraison pour les zones urbaines denses",
+        "Géolocalisation pour les règles de couverture basées sur des zones",
+        "Saisie automatique d'adresse optimisée par Google Maps",
+        "Géocodage et géocodage inversé pour tous les arrêts",
+        "Superposition d'itinéraire affichant le chemin complet à plusieurs étapes",
+        "Mouvement des expéditions vivantes pendant le transit"
+      ],
+      "pricingRules": [
+        {
+          "name": "Tarification basée sur le poids",
+          "desc": "Niveaux tarifaires par poids du colis avec des tranches configurables"
+        },
+        {
+          "name": "Tarification basée sur la zone",
+          "desc": "Différents tarifs en fonction des zones d'origine et de destination"
+        },
+        {
+          "name": "Poids dimensionnel",
+          "desc": "Calcul du poids volumétrique pour les colis surdimensionnés"
+        },
+        {
+          "name": "Tarifs de niveau de service",
+          "desc": "Tarification standard, express et de nuit par corridor"
+        },
+        {
+          "name": "Supplément carburant",
+          "desc": "Supplément carburant configurable appliqué par itinéraire ou globalement"
+        },
+        {
+          "name": "Tarifs saisonniers",
+          "desc": "Ajustez les tarifs pour les hautes saisons avec des règles limitées dans le temps"
+        },
+        {
+          "name": "Contrats à taux personnalisés",
+          "desc": "Les tarifs convenus spécifiques au client remplacent les tarifs par défaut"
+        },
+        {
+          "name": "Frais de traitement",
+          "desc": "Frais supplémentaires pour les types de marchandises spéciaux ou les services supplémentaires"
+        }
+      ]
+    },
+    "warehouse-management": {
+      "capabilities": [
+        {
+          "title": "Prise en charge de plusieurs entrepôts",
+          "desc": "Enregistrez et gérez n'importe quel nombre d'emplacements d'entrepôt à partir d'un seul compte NTIGI. Chaque entrepôt a son propre emplacement, sa capacité, son personnel affecté et ses dossiers opérationnels."
+        },
+        {
+          "title": "Emplacements des étagères et des bacs",
+          "desc": "Définissez les emplacements physiques des étagères et des bacs dans chaque entrepôt. Attribuez les marchandises entrantes à des positions spécifiques sur les étagères. Trouvez instantanément n'importe quel colis par son emplacement de bac."
+        },
+        {
+          "title": "Gestion des capacités",
+          "desc": "Suivez la capacité utilisée et disponible par entrepôt. Surveillez les niveaux de remplissage en fonction du poids et du volume pour éviter les surcharges et planifier efficacement les expéditions entrantes."
+        },
+        {
+          "title": "Suivi des stocks",
+          "desc": "Suivez les niveaux de stocks en temps réel. Visualisez ce qui se trouve actuellement dans l'entrepôt, ce qui est réservé aux expéditions sortantes et ce qui a été expédié."
+        },
+        {
+          "title": "Réception avec lecture de codes-barres",
+          "desc": "Le personnel scanne les codes-barres des colis à la réception pour confirmer chaque article entrant dans l'entrepôt. Les colis sont automatiquement enregistrés avec l'emplacement, le poids et l'heure d'arrivée."
+        },
+        {
+          "title": "Entrée et expédition des marchandises",
+          "desc": "Flux de travail complets de réception et d’expédition. Depuis l'arrivée d'un colis jusqu'à sa sortie de l'entrepôt, chaque mouvement est enregistré avec l'utilisateur et l'horodatage."
+        },
+        {
+          "title": "Consolidation et suivi des palettes",
+          "desc": "Regroupez les expéditions entrantes en lots de consolidation. Attribuez des colis aux palettes avec suivi du poids et des dimensions. Optimisez les chargements avant l’affectation des conteneurs."
+        },
+        {
+          "title": "Gestion des manifestes et des voyages",
+          "desc": "Générez des manifestes de voyage directement à partir des lots de consolidation de l'entrepôt. Attribuez-les aux conteneurs ou aux véhicules et suivez l'état du manifeste jusqu'au départ."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Configurer l'entrepôt",
+          "desc": "Configurez chaque entrepôt avec son nom, son emplacement, sa capacité et la disposition des étagères. Affectez du personnel d'entrepôt et configurez les types d'envois traités à cet emplacement."
+        },
+        {
+          "step": "02",
+          "title": "Recevoir des marchandises",
+          "desc": "Le personnel scanne les colis entrants au quai de réception. Chaque article est enregistré par rapport à son enregistrement d'expédition, se voit attribuer un emplacement en rayon et est marqué comme étant en entrepôt."
+        },
+        {
+          "step": "03",
+          "title": "Localiser et suivre",
+          "desc": "À tout moment, le personnel peut rechercher n'importe quel colis par son numéro de suivi ou son code-barres et voir immédiatement dans quelle étagère ou bac il se trouve et quand il est arrivé."
+        },
+        {
+          "step": "04",
+          "title": "Consolider pour l'expédition",
+          "desc": "Regroupez les colis se dirigeant vers la même destination dans un lot de consolidation. Affecter aux palettes, puis à un conteneur. Générez automatiquement le manifeste."
+        },
+        {
+          "step": "05",
+          "title": "Expédition et clôture",
+          "desc": "Lorsque le chargement part, confirmez l'expédition par colis. Les niveaux de stock sont mis à jour instantanément. Tous les enregistrements sont archivés avec une piste d'audit complète."
+        }
+      ],
+      "warehouseRecord": [
+        {
+          "label": "Nom et emplacement",
+          "desc": "Identifiant d'entrepôt avec coordonnées GPS et adresse"
+        },
+        {
+          "label": "Capacité totale",
+          "desc": "Poids et volume maximum que l'entrepôt peut contenir"
+        },
+        {
+          "label": "Occupation actuelle",
+          "desc": "Niveau de remplissage en temps réel par poids et volume"
+        },
+        {
+          "label": "Carte des étagères et des bacs",
+          "desc": "Disposition physique des emplacements de stockage au sein de l'entrepôt"
+        },
+        {
+          "label": "Personnel affecté",
+          "desc": "Quels utilisateurs peuvent exploiter et visualiser cet entrepôt"
+        },
+        {
+          "label": "Journal de réception",
+          "desc": "Toutes les marchandises reçues avec la date, la quantité et le personnel qui les a reçues"
+        },
+        {
+          "label": "Journal d'expédition",
+          "desc": "Toutes les marchandises expédiées avec destination, véhicule et heure de départ"
+        },
+        {
+          "label": "Stock actuel",
+          "desc": "Tous les colis actuellement dans l'entrepôt avec leurs emplacements de bacs"
+        }
+      ],
+      "stockFeatures": [
+        "Niveaux de stock en temps réel par entrepôt",
+        "Suivi des stocks réservés et disponibles",
+        "Recherche d'emplacement au niveau du paquet par code-barres",
+        "Horodatage d'arrivée et de départ sur chaque mouvement",
+        "Opérations de réception et d’expédition en vrac",
+        "Outils de déclaration et d'enquête sur les colis perdus",
+        "Lecture de codes-barres via PWA mobile pour le personnel de l'entrepôt",
+        "Exporter les rapports boursiers vers Excel ou CSV"
+      ],
+      "jsx": {
+        "h1_0_part1": "Gestion de",
+        "h1_0_part2": "l'entrepôt",
+        "p_0": "Gérez plusieurs entrepôts avec le suivi de l'emplacement des étagères et des bacs, la réception par lecture de codes-barres, les niveaux de stock en temps réel, la consolidation et les opérations d'expédition complètes. Fonctionne entièrement hors ligne.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Multi",
+        "stat_label_0": "Gestion multi-entrepôt",
+        "stat_display_1": "Temps réel",
+        "stat_label_1": "Suivi des stocks",
+        "stat_display_2": "Code-barres",
+        "stat_label_2": "Lecture à la réception",
+        "stat_display_3": "Hors ligne",
+        "stat_label_3": "Fonctionne sans réseau",
+        "h2_0": "Contrôles complets de l'entrepôt",
+        "p_1": "NTIGI gère chaque étape de la gestion de l'entrepôt, de la configuration et de la réception à la localisation des articles, à la consolidation des lots et à l'expédition sortante.",
+        "h2_1": "De la réception à l'expédition",
+        "p_2": "Un flux opérationnel clair en temps réel pour l'entrepôt qui maintient vos stocks en mouvement et vos dossiers précis.",
+        "h3_0": "Ce que contient chaque dossier d'entrepôt",
+        "p_3": "Chaque emplacement d'entrepôt dans votre réseau dispose d'un tableau de bord complet et isolé pour les opérations locales et les rapports du siège social.",
+        "h3_1": "Suivi et contrôle intégrés des stocks",
+        "p_4": "Gardez un œil sur chaque colis grâce au suivi précis du statut des stocks, à la lecture mobile des codes-barres et à des outils de rapport instantanés.",
+        "h2_2": "Pour qui cela est conçu",
+        "h4_0": "Gestionnaires d'entrepôt",
+        "p_5": "Configurez la disposition des étagères, surveillez les taux d'occupation en poids et en volume, affectez le personnel et supervisez les flux de travail quotidiens de réception et d'expédition.",
+        "h4_1": "Opérateurs logistiques",
+        "p_6": "Scannez les articles entrants pour vérifier la réception, localisez instantanément les colis sur la carte de l'entrepôt et constituez des chargements de consolidation optimisés.",
+        "h4_2": "Centres de distribution",
+        "p_7": "Coordonnez les opérations de cross-docking, gérez les stocks de transit à volume élevé et générez les manifestes de voyage des conteneurs sortants.",
+        "h2_3": "Solutions connexes",
+        "related_title_0": "Consolidation & Manifestes",
+        "related_desc_0": "Regroupez les expéditions par voyage, optimisez les chargements de conteneurs et générez des manifestes conformes pour les douanes.",
+        "related_title_1": "Inventaire & Contrôle des stocks",
+        "related_desc_1": "Suivez les enregistrements de stock au niveau de l'article, effectuez des inventaires et gérez les transferts sur l'ensemble de votre réseau de distribution.",
+        "related_title_2": "Douanes & Conformité",
+        "related_desc_2": "Générez des factures commerciales, gérez les codes SH et effectuez des contrôles de sanctions avant l'expédition.",
+        "learn_more": "En savoir plus",
+        "h2_4_part1": "Prêt à optimiser vos",
+        "h2_4_part2": "opérations d'entrepôt ?",
+        "p_8": "Découvrez comment NTIGI gère plusieurs entrepôts, la lecture de codes-barres et le suivi des stocks pour votre équipe lors d'une démonstration en direct avec notre équipe."
+      }
+    }
   }
 }

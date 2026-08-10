@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import { useTranslations } from "next-intl";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "@/i18n/navigation";
@@ -28,60 +29,26 @@ import {
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-const capabilities = [
-  { icon: Stack, title: "Shipment Grouping", desc: "Group multiple individual shipments into a single consolidated load. Reduce per-unit shipping costs and optimize container utilization across routes." },
-  { icon: Cube, title: "Container Management", desc: "Track and manage containers by type, capacity, and assigned voyage. Monitor fill levels and assign shipments to containers with load optimization." },
-  { icon: Package, title: "Pallet Tracking", desc: "Assign shipments to pallets, track pallet weights, dimensions, and positions within containers. Full visibility from warehouse to port." },
-  { icon: ClipboardText, title: "Manifest Generation", desc: "Create voyage manifests automatically from consolidated shipment data. Print or export manifests for carriers, customs, and port authorities." },
-  { icon: Boat, title: "Voyage Management", desc: "Schedule and manage voyages with vessel details, departure and arrival ports, and estimated transit times. Assign manifests to voyages in one step." },
-  { icon: ArrowsLeftRight, title: "Load Optimization", desc: "Maximize container utilization with load planning tools. Visualize how packages fit together by weight and volume before finalizing the load." },
-  { icon: Barcode, title: "Barcode Scanning", desc: "Scan package barcodes at receiving and dispatch to verify every item in a consolidation. Reduce manual entry errors and speed up cargo processing." },
-  { icon: ChartLine, title: "Manifest Status Tracking", desc: "Track manifests through every stage: open, in-progress, submitted, closed. Close and finalize manifests with a single action when the voyage departs." },
-];
 
-const workflow = [
-  { step: "01", title: "Receive Shipments", desc: "Incoming shipments are received at the warehouse and scanned into the system. Each package is logged with weight, dimensions, and handling requirements." },
-  { step: "02", title: "Group for Consolidation", desc: "Select shipments heading to the same destination or via the same route. Group them into a consolidation batch for a specific voyage." },
-  { step: "03", title: "Assign to Container", desc: "Assign the consolidated batch to a container or pallet. Load optimization shows available capacity and suggests the most efficient arrangement." },
-  { step: "04", title: "Generate Manifest", desc: "NTIGI auto-produces the voyage manifest with all shipment details, weights, package counts, and customs information ready for the carrier." },
-  { step: "05", title: "Close & Dispatch", desc: "Close the manifest when loading is complete. The voyage status updates, customers are notified, and all records are archived with a full audit trail." },
-];
 
-const manifestFeatures = [
-  "Auto-generated from shipment data",
-  "Includes all package and weight details",
-  "Customs-ready documentation",
-  "PDF export for carriers and authorities",
-  "Batch printing support",
-  "Manifest versioning and history",
-  "Status tracking: open, submitted, closed",
-  "Finalize with single action",
-];
 
-const voyageDetails = [
-  { label: "Vessel Name", desc: "Assign a vessel or transport identifier to each voyage" },
-  { label: "Departure Port", desc: "Origin port with GPS coordinates and location details" },
-  { label: "Arrival Port", desc: "Destination port with expected delivery window" },
-  { label: "Transit Time", desc: "Estimated transit duration per route configuration" },
-  { label: "Manifest Count", desc: "Number of manifests assigned to the voyage" },
-  { label: "Shipment Count", desc: "Total packages across all manifests in the voyage" },
-];
 
-const stats = [
-  { value: 100, suffix: "K+", label: "Shipments per day" },
-  { value: 22, suffix: "+", label: "Cargo handling tags" },
-  { value: 30, suffix: "+", label: "API modules" },
-  { value: 100, suffix: "%", label: "Offline capable" },
-];
 
-function CountUp({ target, suffix }: { target: number; suffix: string }) {
+
+
+
+
+
+function CountUp({ target, suffix }: { target: number | string; suffix: string }) {
+  const numericTarget = typeof target === "string" ? parseFloat(target) || 0 : target;
+
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!isInView) return;
     let start = 0;
-    const end = target;
+    const end = numericTarget;
     const duration = 2000;
     const increment = end / (duration / 16);
     const timer = setInterval(() => {
@@ -90,7 +57,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
       else { setCount(Math.floor(start)); }
     }, 16);
     return () => clearInterval(timer);
-  }, [isInView, target]);
+  }, [isInView, numericTarget]);
   return (
     <div ref={ref} className="text-2xl font-bold text-blue-500 font-sans">
       {count}{suffix}
@@ -143,6 +110,135 @@ function ConsoleFrame({
 }
 
 export default function Consolidation() {
+  const t = useTranslations("Solutions.consolidation");
+  const capabilities = [
+    {
+      icon: Stack,
+      title: t("capabilities.0.title"),
+      desc: t("capabilities.0.desc"),
+    },
+    {
+      icon: Cube,
+      title: t("capabilities.1.title"),
+      desc: t("capabilities.1.desc"),
+    },
+    {
+      icon: Package,
+      title: t("capabilities.2.title"),
+      desc: t("capabilities.2.desc"),
+    },
+    {
+      icon: ClipboardText,
+      title: t("capabilities.3.title"),
+      desc: t("capabilities.3.desc"),
+    },
+    {
+      icon: Boat,
+      title: t("capabilities.4.title"),
+      desc: t("capabilities.4.desc"),
+    },
+    {
+      icon: ArrowsLeftRight,
+      title: t("capabilities.5.title"),
+      desc: t("capabilities.5.desc"),
+    },
+    {
+      icon: Barcode,
+      title: t("capabilities.6.title"),
+      desc: t("capabilities.6.desc"),
+    },
+    {
+      icon: ChartLine,
+      title: t("capabilities.7.title"),
+      desc: t("capabilities.7.desc"),
+    },
+  ];
+  const workflow = [
+    {
+      step: "01",
+      title: t("workflow.0.title"),
+      desc: t("workflow.0.desc"),
+    },
+    {
+      step: "02",
+      title: t("workflow.1.title"),
+      desc: t("workflow.1.desc"),
+    },
+    {
+      step: "03",
+      title: t("workflow.2.title"),
+      desc: t("workflow.2.desc"),
+    },
+    {
+      step: "04",
+      title: t("workflow.3.title"),
+      desc: t("workflow.3.desc"),
+    },
+    {
+      step: "05",
+      title: t("workflow.4.title"),
+      desc: t("workflow.4.desc"),
+    },
+  ];
+  const manifestFeatures = [
+    t("manifestFeatures.0"),
+    t("manifestFeatures.1"),
+    t("manifestFeatures.2"),
+    t("manifestFeatures.3"),
+    t("manifestFeatures.4"),
+    t("manifestFeatures.5"),
+    t("manifestFeatures.6"),
+    t("manifestFeatures.7"),
+  ];
+  const voyageDetails = [
+    {
+      label: t("voyageDetails.0.label"),
+      desc: t("voyageDetails.0.desc"),
+    },
+    {
+      label: t("voyageDetails.1.label"),
+      desc: t("voyageDetails.1.desc"),
+    },
+    {
+      label: t("voyageDetails.2.label"),
+      desc: t("voyageDetails.2.desc"),
+    },
+    {
+      label: t("voyageDetails.3.label"),
+      desc: t("voyageDetails.3.desc"),
+    },
+    {
+      label: t("voyageDetails.4.label"),
+      desc: t("voyageDetails.4.desc"),
+    },
+    {
+      label: t("voyageDetails.5.label"),
+      desc: t("voyageDetails.5.desc"),
+    },
+  ];
+  const stats = [
+    {
+      value: "100",
+      suffix: "K+",
+      label: t("stats.0.label"),
+    },
+    {
+      value: "22",
+      suffix: "+",
+      label: t("stats.1.label"),
+    },
+    {
+      value: "30",
+      suffix: "+",
+      label: t("stats.2.label"),
+    },
+    {
+      value: "100",
+      suffix: "%",
+      label: t("stats.3.label"),
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -155,19 +251,17 @@ export default function Consolidation() {
 
               <AnimatedSection className="space-y-5">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Consolidation<br /><span className="text-blue-500">& Manifests</span>
+                  {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                 </h1>
-                <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-md">
-                  Group shipments, manage containers, generate voyage manifests, and track every load from warehouse floor to port departure all in one offline-first system.
-                </p>
+                <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-md">{t("jsx.p_0")}</p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                  <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                 </div>
               </AnimatedSection>
 
               <div className="hidden md:block">
-                <ConsoleFrame label="NTIGI_OS // CONSOLIDATION.sh" status="LIVE" delay={0.25}>
+                <ConsoleFrame label={t("jsx.terminal_label_0")} status={t("jsx.status_live")} delay={0.25}>
                   <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                     <Image
                       src="/ntigidashboard.png"
@@ -211,10 +305,8 @@ export default function Consolidation() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Everything from Grouping to Departure</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                Full consolidation operations in one system from receiving individual packages through to closing the voyage manifest.
-              </p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {capabilities.map((cap, index) => (
@@ -233,10 +325,8 @@ export default function Consolidation() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Receiving to Voyage Departure</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                A clear five-step consolidation process every action tracked, every document generated automatically.
-              </p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -260,14 +350,12 @@ export default function Consolidation() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Manifest & Voyage Inside NTIGI</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">
-                From auto-generating a manifest from your consolidation batch to tracking a voyage from port to port all inside one screen.
-              </p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_3")}</p>
             </AnimatedSection>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <ConsoleFrame label="NTIGI // MANIFEST_GEN.sh" status="READY" delay={0.1}>
+              <ConsoleFrame label={t("jsx.terminal_label_1")} status={t("jsx.status_ready")} delay={0.1}>
                 <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                   <Image
                     src="/shipmentlistHome.png"
@@ -286,11 +374,11 @@ export default function Consolidation() {
                 </div>
                 <div className="px-4 py-3 border-t border-border-custom bg-[var(--console-header)]/60 flex items-center gap-2">
                   <ListChecks className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Auto-generated manifest with all shipment, weight &amp; customs data</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.terminal_desc_1")}</span>
                 </div>
               </ConsoleFrame>
 
-              <ConsoleFrame label="NTIGI // VOYAGE_TRACKER.sh" status="LIVE" delay={0.2}>
+              <ConsoleFrame label={t("jsx.terminal_label_2")} status={t("jsx.status_live")} delay={0.2}>
                 <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
                   <Image
                     src="/ntigidashboard.png"
@@ -309,7 +397,7 @@ export default function Consolidation() {
                 </div>
                 <div className="px-4 py-3 border-t border-border-custom bg-[var(--console-header)]/60 flex items-center gap-2">
                   <Boat className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Voyage record with vessel, ports, manifests &amp; shipment totals</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.terminal_desc_2")}</span>
                 </div>
               </ConsoleFrame>
             </div>
@@ -318,11 +406,9 @@ export default function Consolidation() {
               <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <ListChecks className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Manifest Management</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_0")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Manifests are generated automatically from the shipments in your consolidation. No manual data entry the system builds the document from the booking record.
-                </p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
                 <div className="space-y-2 pt-1">
                   {manifestFeatures.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.05 }} className="flex items-center gap-2">
@@ -336,11 +422,9 @@ export default function Consolidation() {
               <AnimatedSection direction="right" className="bg-[var(--console-bg)] border border-border-custom p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Boat className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Voyage Record Details</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                  Each voyage captures the full operational picture vessel, ports, timelines, and all associated manifests and shipments.
-                </p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="space-y-3 pt-1">
                   {voyageDetails.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.08 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -357,7 +441,7 @@ export default function Consolidation() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
             </AnimatedSection>
 
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
@@ -377,8 +461,8 @@ export default function Consolidation() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Ocean Freight Operators</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Consolidate LCL shipments into full containers. Generate Bills of Lading and port manifests directly from NTIGI.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_0")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_6")}</p>
                 </div>
               </AnimatedSection>
 
@@ -398,8 +482,8 @@ export default function Consolidation() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Warehouse Operators</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Manage goods-in with barcode scanning, assign to consolidation batches by destination, and track every pallet from shelf to dispatch dock.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_1")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_7")}</p>
                 </div>
               </AnimatedSection>
 
@@ -420,8 +504,8 @@ export default function Consolidation() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Consolidators</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Bundle last-mile courier packages into route-based consolidations for dispatch vehicles. Reduce trips, increase delivery density per run.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_2")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_8")}</p>
                 </div>
               </AnimatedSection>
 
@@ -432,20 +516,20 @@ export default function Consolidation() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_4")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "International Forwarding", desc: "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.", href: "/solutions/international-forwarding" },
-                { title: "Customs & Compliance", desc: "Auto-generate customs documentation and run compliance screening on every consolidated shipment.", href: "/solutions/customs-compliance" },
-                { title: "Warehouse Management", desc: "Manage shelf locations, stock levels, receiving, and dispatch within your warehouse operations.", href: "/solutions/warehouse" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/international-forwarding" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/customs-compliance" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/warehouse" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -469,14 +553,12 @@ export default function Consolidation() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Streamline Your<br /><span className="text-blue-500">Consolidation Operations?</span>
+                {t("jsx.h2_5_part1")}<br /><span className="text-blue-500">{t("jsx.h2_5_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">
-                See how NTIGI manages your consolidation workflow from warehouse receiving to voyage departure in a live walkthrough with our team.
-              </p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

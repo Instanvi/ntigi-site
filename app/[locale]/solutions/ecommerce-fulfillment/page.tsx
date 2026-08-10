@@ -14,6 +14,7 @@ import {
   CurrencyDollar, MapPin, ChartLine, CheckCircle, Receipt,
   ShoppingBag, Storefront, Globe, Barcode,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
@@ -153,6 +154,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function EcommerceFulfillment() {
+  const t = useTranslations("Solutions.ecommerce-fulfillment");
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -27,6 +27,7 @@ import {
   Terminal,
 } from "@phosphor-icons/react";
 import BackgroundGrid from "@/components/BackgroundGrid";
+import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
@@ -142,6 +143,7 @@ function ConsoleFrame({
 }
 
 export default function InternationalForwarding() {
+    const t = useTranslations("Solutions.customs-compliance");
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />

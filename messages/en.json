@@ -22,41 +22,107 @@
     },
     "solutions": {
       "forwarders": {
-        "intlForwarding": { "name": "International Forwarding", "desc": "End-to-end forwarding operations with multi-leg routing and agency networks." },
-        "customs": { "name": "Customs & Compliance", "desc": "Automated declarations, duty calculations, and regulatory document generation." },
-        "consolidation": { "name": "Consolidation & Manifests", "desc": "Group shipments, manage containers, and generate voyage manifests." },
-        "multiBranch": { "name": "Multi-Branch Network", "desc": "Inter-branch transfers, settlements, and role-based data isolation." }
+        "intlForwarding": {
+          "name": "International Forwarding",
+          "desc": "End-to-end forwarding operations with multi-leg routing and agency networks."
+        },
+        "customs": {
+          "name": "Customs & Compliance",
+          "desc": "Automated declarations, duty calculations, and regulatory document generation."
+        },
+        "consolidation": {
+          "name": "Consolidation & Manifests",
+          "desc": "Group shipments, manage containers, and generate voyage manifests."
+        },
+        "multiBranch": {
+          "name": "Multi-Branch Network",
+          "desc": "Inter-branch transfers, settlements, and role-based data isolation."
+        }
       },
       "courier": {
-        "routeOpt": { "name": "Route Optimization", "desc": "AI-powered planning for delivery times, fuel savings, and fleet efficiency." },
-        "fleet": { "name": "Fleet & Driver Management", "desc": "Vehicle registration, maintenance schedules, and driver mobile app." },
-        "pod": { "name": "Proof of Delivery", "desc": "Signature capture, photo documentation, and real-time GPS tracking." },
-        "finance": { "name": "Finance & Billing", "desc": "Cash, card, mobile money, COD tracking, and automated invoicing." }
+        "routeOpt": {
+          "name": "Route Optimization",
+          "desc": "AI-powered planning for delivery times, fuel savings, and fleet efficiency."
+        },
+        "fleet": {
+          "name": "Fleet & Driver Management",
+          "desc": "Vehicle registration, maintenance schedules, and driver mobile app."
+        },
+        "pod": {
+          "name": "Proof of Delivery",
+          "desc": "Signature capture, photo documentation, and real-time GPS tracking."
+        },
+        "finance": {
+          "name": "Finance & Billing",
+          "desc": "Cash, card, mobile money, COD tracking, and automated invoicing."
+        }
       },
       "warehouse": {
-        "wms": { "name": "Warehouse Management", "desc": "Multi-warehouse support with shelf locations, capacity, and stock tracking." },
-        "inventory": { "name": "Inventory & Stock Control", "desc": "Real-time stock levels, receiving, dispatch, and bin management." },
-        "consolidationHub": { "name": "Consolidation Hub", "desc": "Pallet tracking, load optimization, and container manifest workflows." }
+        "wms": {
+          "name": "Warehouse Management",
+          "desc": "Multi-warehouse support with shelf locations, capacity, and stock tracking."
+        },
+        "inventory": {
+          "name": "Inventory & Stock Control",
+          "desc": "Real-time stock levels, receiving, dispatch, and bin management."
+        },
+        "consolidationHub": {
+          "name": "Consolidation Hub",
+          "desc": "Pallet tracking, load optimization, and container manifest workflows."
+        }
       },
       "ecommerce": {
-        "fulfillment": { "name": "Fulfillment Operations", "desc": "High-volume order processing, bulk shipment creation, and tracking." },
-        "returns": { "name": "Returns Management", "desc": "Return shipment handling, refunds, and reverse logistics workflows." },
-        "portal": { "name": "Customer Portal", "desc": "Self-service booking, tracking, invoice downloads, and payment history." }
+        "fulfillment": {
+          "name": "Fulfillment Operations",
+          "desc": "High-volume order processing, bulk shipment creation, and tracking."
+        },
+        "returns": {
+          "name": "Returns Management",
+          "desc": "Return shipment handling, refunds, and reverse logistics workflows."
+        },
+        "portal": {
+          "name": "Customer Portal",
+          "desc": "Self-service booking, tracking, invoice downloads, and payment history."
+        }
       }
     },
     "platform": {
-      "overview": { "name": "Platform Overview", "desc": "A unified view of how NTIGI connects your entire logistics operation." },
-      "pricing": { "name": "Pricing", "desc": "Transparent pricing for teams of all sizes. No hidden fees." },
-      "demo": { "name": "Request a Demo", "desc": "See NTIGI in action with a personalized walkthrough." }
+      "overview": {
+        "name": "Platform Overview",
+        "desc": "A unified view of how NTIGI connects your entire logistics operation."
+      },
+      "pricing": {
+        "name": "Pricing",
+        "desc": "Transparent pricing for teams of all sizes. No hidden fees."
+      },
+      "demo": {
+        "name": "Request a Demo",
+        "desc": "See NTIGI in action with a personalized walkthrough."
+      }
     },
     "resources": {
-      "docs": { "name": "Documentation", "desc": "Comprehensive guides for users, admins, and developers." },
-      "contact": { "name": "Contact Us", "desc": "Reach our team for sales, support, or partnerships." }
+      "docs": {
+        "name": "Documentation",
+        "desc": "Comprehensive guides for users, admins, and developers."
+      },
+      "contact": {
+        "name": "Contact Us",
+        "desc": "Reach our team for sales, support, or partnerships."
+      }
     },
     "company": {
-      "about": { "name": "About NTIGI", "desc": "Our mission to modernize global logistics with offline-first technology." },
-      "careers": { "name": "Careers", "desc": "Engineering, sales, support, and logistics specialist roles." },
-      "blog": { "name": "Blog", "desc": "Insights on logistics tech, compliance, and industry trends." }
+      "about": {
+        "name": "About NTIGI",
+        "desc": "Our mission to modernize global logistics with offline-first technology."
+      },
+      "careers": {
+        "name": "Careers",
+        "desc": "Engineering, sales, support, and logistics specialist roles."
+      },
+      "blog": {
+        "name": "Blog",
+        "desc": "Insights on logistics tech, compliance, and industry trends."
+      }
     }
   },
   "Hero": {
@@ -85,26 +151,68 @@
     "sectionTitle2": "Unified Logistics Control.",
     "sectionDesc": "Manage every step of global forwardings, client transactions, and warehouse transfers on a secure, offline-first ecosystem.",
     "items": {
-      "manifest": { "title": "Manifest & Voyage Management", "desc": "Complete control over maritime cargo manifests, voyage planning, and vessel tracking with real-time updates." },
-      "shipment": { "title": "Shipment Management", "desc": "End-to-end shipment tracking from origin to destination with automated status updates and notifications." },
-      "crm": { "title": "Client CRM Integration", "desc": "Comprehensive CRM with granular permission levels, customer self-service, and contract tiering." },
-      "route": { "title": "Route Optimization", "desc": "Intelligent corridor planning and multi-leg tracking for optimal transit speeds and route costs." },
-      "warehouse": { "title": "Warehouse Operations", "desc": "Integrated storage capacity tracking, shelf allocations, and receipt/dispatch documentation." },
-      "finance": { "title": "Finance & Billing", "desc": "Automated billing templates, split payment operations, and multi-currency exchange tracking." },
-      "analytics": { "title": "Real-Time Analytics", "desc": "Consolidated operational performance reporting and visual analytics grids." },
-      "compliance": { "title": "Enterprise Compliance", "desc": "Role-based visibility, complete activity trails, and secure JWT/OTP validations." },
-      "offline": { "title": "Offline-First Syncing", "desc": "Input and query data without internet connections. Auto-sync updates dynamically when online." },
-      "cloud": { "title": "Seamless Cloud Access", "desc": "Secure browser-based console and Progressive Web Application (PWA) on any device." },
-      "continuous": { "title": "Continuous Operation", "desc": "Browser-level caching ensures cargo management operations never stall due to network downtime." },
-      "customs": { "title": "Customs & Compliances", "desc": "Automated commercial invoicing, HS code searches, and export rule screening." }
+      "manifest": {
+        "title": "Manifest & Voyage Management",
+        "desc": "Complete control over maritime cargo manifests, voyage planning, and vessel tracking with real-time updates."
+      },
+      "shipment": {
+        "title": "Shipment Management",
+        "desc": "End-to-end shipment tracking from origin to destination with automated status updates and notifications."
+      },
+      "crm": {
+        "title": "Client CRM Integration",
+        "desc": "Comprehensive CRM with granular permission levels, customer self-service, and contract tiering."
+      },
+      "route": {
+        "title": "Route Optimization",
+        "desc": "Intelligent corridor planning and multi-leg tracking for optimal transit speeds and route costs."
+      },
+      "warehouse": {
+        "title": "Warehouse Operations",
+        "desc": "Integrated storage capacity tracking, shelf allocations, and receipt/dispatch documentation."
+      },
+      "finance": {
+        "title": "Finance & Billing",
+        "desc": "Automated billing templates, split payment operations, and multi-currency exchange tracking."
+      },
+      "analytics": {
+        "title": "Real-Time Analytics",
+        "desc": "Consolidated operational performance reporting and visual analytics grids."
+      },
+      "compliance": {
+        "title": "Enterprise Compliance",
+        "desc": "Role-based visibility, complete activity trails, and secure JWT/OTP validations."
+      },
+      "offline": {
+        "title": "Offline-First Syncing",
+        "desc": "Input and query data without internet connections. Auto-sync updates dynamically when online."
+      },
+      "cloud": {
+        "title": "Seamless Cloud Access",
+        "desc": "Secure browser-based console and Progressive Web Application (PWA) on any device."
+      },
+      "continuous": {
+        "title": "Continuous Operation",
+        "desc": "Browser-level caching ensures cargo management operations never stall due to network downtime."
+      },
+      "customs": {
+        "title": "Customs & Compliances",
+        "desc": "Automated commercial invoicing, HS code searches, and export rule screening."
+      }
     }
   },
   "Platform": {
     "section1Title1": "Access Anywhere,",
     "section1Title2": "Work Everywhere",
     "section1Desc": "NTIGI provides seamless access across all your primary business channels. Whether in the regional branch office or on the road, your logistics databases remain perfectly updated.",
-    "webApp": { "title": "Web Application", "desc": "Full-featured web interface accessible securely from any modern desktop or laptop browser." },
-    "mobileApp": { "title": "Mobile Web & PWA", "desc": "Progressive Web Application (PWA) with local caching optimized for mobile and tablet tracking." },
+    "webApp": {
+      "title": "Web Application",
+      "desc": "Full-featured web interface accessible securely from any modern desktop or laptop browser."
+    },
+    "mobileApp": {
+      "title": "Mobile Web & PWA",
+      "desc": "Progressive Web Application (PWA) with local caching optimized for mobile and tablet tracking."
+    },
     "explorePlatform": "Explore Platform",
     "section2Title1": "Never Stop Working,",
     "section2Title2": "Even Offline",
@@ -183,5 +291,1968 @@
     "label": "Language",
     "en": "EN",
     "fr": "FR"
+  },
+  "Solutions": {
+    "consolidation": {
+      "capabilities": [
+        {
+          "title": "Shipment Grouping",
+          "desc": "Group multiple individual shipments into a single consolidated load. Reduce per-unit shipping costs and optimize container utilization across routes."
+        },
+        {
+          "title": "Container Management",
+          "desc": "Track and manage containers by type, capacity, and assigned voyage. Monitor fill levels and assign shipments to containers with load optimization."
+        },
+        {
+          "title": "Pallet Tracking",
+          "desc": "Assign shipments to pallets, track pallet weights, dimensions, and positions within containers. Full visibility from warehouse to port."
+        },
+        {
+          "title": "Manifest Generation",
+          "desc": "Create voyage manifests automatically from consolidated shipment data. Print or export manifests for carriers, customs, and port authorities."
+        },
+        {
+          "title": "Voyage Management",
+          "desc": "Schedule and manage voyages with vessel details, departure and arrival ports, and estimated transit times. Assign manifests to voyages in one step."
+        },
+        {
+          "title": "Load Optimization",
+          "desc": "Maximize container utilization with load planning tools. Visualize how packages fit together by weight and volume before finalizing the load."
+        },
+        {
+          "title": "Barcode Scanning",
+          "desc": "Scan package barcodes at receiving and dispatch to verify every item in a consolidation. Reduce manual entry errors and speed up cargo processing."
+        },
+        {
+          "title": "Manifest Status Tracking",
+          "desc": "Track manifests through every stage: open, in-progress, submitted, closed. Close and finalize manifests with a single action when the voyage departs."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Receive Shipments",
+          "desc": "Incoming shipments are received at the warehouse and scanned into the system. Each package is logged with weight, dimensions, and handling requirements."
+        },
+        {
+          "step": "02",
+          "title": "Group for Consolidation",
+          "desc": "Select shipments heading to the same destination or via the same route. Group them into a consolidation batch for a specific voyage."
+        },
+        {
+          "step": "03",
+          "title": "Assign to Container",
+          "desc": "Assign the consolidated batch to a container or pallet. Load optimization shows available capacity and suggests the most efficient arrangement."
+        },
+        {
+          "step": "04",
+          "title": "Generate Manifest",
+          "desc": "NTIGI auto-produces the voyage manifest with all shipment details, weights, package counts, and customs information ready for the carrier."
+        },
+        {
+          "step": "05",
+          "title": "Close & Dispatch",
+          "desc": "Close the manifest when loading is complete. The voyage status updates, customers are notified, and all records are archived with a full audit trail."
+        }
+      ],
+      "manifestFeatures": [
+        "Auto-generated from shipment data",
+        "Includes all package and weight details",
+        "Customs-ready documentation",
+        "PDF export for carriers and authorities",
+        "Batch printing support",
+        "Manifest versioning and history",
+        "Status tracking: open, submitted, closed",
+        "Finalize with single action"
+      ],
+      "voyageDetails": [
+        {
+          "label": "Vessel Name",
+          "desc": "Assign a vessel or transport identifier to each voyage"
+        },
+        {
+          "label": "Departure Port",
+          "desc": "Origin port with GPS coordinates and location details"
+        },
+        {
+          "label": "Arrival Port",
+          "desc": "Destination port with expected delivery window"
+        },
+        {
+          "label": "Transit Time",
+          "desc": "Estimated transit duration per route configuration"
+        },
+        {
+          "label": "Manifest Count",
+          "desc": "Number of manifests assigned to the voyage"
+        },
+        {
+          "label": "Shipment Count",
+          "desc": "Total packages across all manifests in the voyage"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Shipments per day"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Cargo handling tags"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "API modules"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Offline capable"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Consolidation",
+        "h1_0_part2": "& Manifests",
+        "p_0": "Group shipments, manage containers, generate voyage manifests, and track every load from warehouse floor to port departure all in one offline-first system.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "terminal_label_0": "NTIGI_OS // CONSOLIDATION.sh",
+        "terminal_label_1": "NTIGI // MANIFEST_GEN.sh",
+        "terminal_label_2": "NTIGI // VOYAGE_TRACKER.sh",
+        "terminal_desc_1": "Auto-generated manifest with all shipment, weight & customs data",
+        "terminal_desc_2": "Voyage record with vessel, ports, manifests & shipment totals",
+        "status_live": "LIVE",
+        "status_ready": "READY",
+        "h2_0": "Everything from Grouping to Departure",
+        "p_1": "Full consolidation operations in one system from receiving individual packages through to closing the voyage manifest.",
+        "h2_1": "From Receiving to Voyage Departure",
+        "p_2": "A clear five-step consolidation process every action tracked, every document generated automatically.",
+        "h2_2": "Manifest & Voyage Inside NTIGI",
+        "p_3": "From auto-generating a manifest from your consolidation batch to tracking a voyage from port to port all inside one screen.",
+        "h3_0": "Manifest Management",
+        "p_4": "Manifests are generated automatically from the shipments in your consolidation. No manual data entry the system builds the document from the booking record.",
+        "h3_1": "Voyage Record Details",
+        "p_5": "Each voyage captures the full operational picture vessel, ports, timelines, and all associated manifests and shipments.",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Ocean Freight Operators",
+        "p_6": "Consolidate LCL shipments into full containers. Generate Bills of Lading and port manifests directly from NTIGI.",
+        "h4_1": "Warehouse Operators",
+        "p_7": "Manage goods-in with barcode scanning, assign to consolidation batches by destination, and track every pallet from shelf to dispatch dock.",
+        "h4_2": "Courier Consolidators",
+        "p_8": "Bundle last-mile courier packages into route-based consolidations for dispatch vehicles. Reduce trips, increase delivery density per run.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "International Forwarding",
+        "related_desc_0": "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.",
+        "related_title_1": "Customs & Compliance",
+        "related_desc_1": "Auto-generate customs documentation and run compliance screening on every consolidated shipment.",
+        "related_title_2": "Warehouse Management",
+        "related_desc_2": "Manage shelf locations, stock levels, receiving, and dispatch within your warehouse operations.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Streamline Your",
+        "h2_5_part2": "Consolidation Operations?",
+        "p_9": "See how NTIGI manages your consolidation workflow from warehouse receiving to voyage departure in a live walkthrough with our team."
+      }
+    },
+    "consolidation-hub": {
+      "capabilities": [
+        {
+          "title": "Pallet Tracking",
+          "desc": "Assign individual packages to pallets with full weight and dimension tracking. Each pallet has its own record showing current load, assigned container, and departure status."
+        },
+        {
+          "title": "Container Fill Optimization",
+          "desc": "Visualize available container capacity before finalizing a load. The system shows weight and volume utilization and flags containers that are over or under capacity."
+        },
+        {
+          "title": "Load Planning",
+          "desc": "Plan how packages are arranged across pallets and containers. Organize by destination, route, or shipment type to minimize handling time at discharge ports."
+        },
+        {
+          "title": "Barcode Scan to Consolidate",
+          "desc": "Warehouse staff scan barcodes at the consolidation station to assign packages to consolidation batches. Each scan is logged with timestamp and operator identity."
+        },
+        {
+          "title": "Manifest Workflows",
+          "desc": "Generate voyage manifests automatically from consolidation batch data. Manifests include all package details, weights, dimensions, and customs information for carriers."
+        },
+        {
+          "title": "Voyage Assignment",
+          "desc": "Assign consolidation batches to voyages in one step. Track the voyage from manifest creation through departure confirmation and arrival at destination port."
+        },
+        {
+          "title": "Warehouse Location Integration",
+          "desc": "Consolidated cargo stays linked to its warehouse shelf and bin location until dispatch. Staff always know where any item is in the warehouse during the consolidation process."
+        },
+        {
+          "title": "Hub Performance Reports",
+          "desc": "Monitor consolidation volumes, container fill rates, average dwell time per shipment, and departure schedules. Export reports for operations and management teams."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Receive at Hub",
+          "desc": "Incoming shipments arrive at the consolidation hub and are scanned into the system. Each package is assigned a bin location and flagged for its destination consolidation batch."
+        },
+        {
+          "step": "02",
+          "title": "Sort and Group",
+          "desc": "Packages are sorted by destination route and grouped into consolidation batches. The system shows how many packages are ready for each batch and their combined weight."
+        },
+        {
+          "step": "03",
+          "title": "Assign to Pallets",
+          "desc": "Staff scan packages to assign them to pallets. Load optimization tracks remaining capacity and alerts when a pallet reaches its weight or volume limit."
+        },
+        {
+          "step": "04",
+          "title": "Load into Containers",
+          "desc": "Pallets are assigned to containers. The system shows container fill levels and confirms the load is within capacity before the manifest is generated."
+        },
+        {
+          "step": "05",
+          "title": "Generate and Dispatch",
+          "desc": "Manifest is produced automatically. Staff confirm loading is complete and close the manifest. The voyage status updates and the consolidation batch is dispatched."
+        }
+      ],
+      "manifestFeatures": [
+        "Auto-generated from consolidation batch data",
+        "All package weights and dimensions included",
+        "Customs-ready with HS codes and declared values",
+        "PDF export for carriers and port authorities",
+        "Batch printing for multi-manifest operations",
+        "Manifest versioning and amendment history",
+        "Status tracking: open, submitted, closed",
+        "Finalize with single confirmation action"
+      ],
+      "palletRecord": [
+        {
+          "label": "Pallet ID",
+          "desc": "Unique identifier linked to barcode and QR code for scanning"
+        },
+        {
+          "label": "Total Weight",
+          "desc": "Combined actual weight of all packages on the pallet"
+        },
+        {
+          "label": "Volume Used",
+          "desc": "Calculated cubic volume against pallet capacity limit"
+        },
+        {
+          "label": "Package Count",
+          "desc": "Number of individual packages assigned to this pallet"
+        },
+        {
+          "label": "Assigned Container",
+          "desc": "Which container this pallet has been loaded into"
+        },
+        {
+          "label": "Destination",
+          "desc": "Target route and delivery destination for the pallet"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Shipments per day"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Cargo handling tags"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "API modules"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Offline capable"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Consolidation",
+        "h1_0_part2": "Hub",
+        "p_0": "Pallet tracking, load optimization, and container manifest workflows for warehouse consolidation operations. Every package tracked from receiving through to voyage departure in one offline-first system.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "h2_0": "Full Consolidation Hub Control",
+        "p_1": "Every step from receiving shipments at the hub to loading the final container and generating the voyage manifest, tracked and automated.",
+        "h2_1": "From Hub Receiving to Voyage Dispatch",
+        "p_2": "A clear five-step hub consolidation cycle from the moment freight arrives to when the container departs.",
+        "h3_0": "Manifest Generation",
+        "p_3": "Voyage manifests are produced automatically from consolidation batch data. No re-entering information. The manifest pulls directly from the shipment and pallet records.",
+        "h3_1": "What Every Pallet Record Contains",
+        "p_4": "Each pallet in the hub has a complete operational record. Staff can locate, weigh, and dispatch any pallet without guesswork.",
+        "h2_2": "Hub Operations Inside NTIGI",
+        "p_5": "The consolidation batch view and operations dashboard your warehouse team uses from the hub floor every day.",
+        "caption_0": "Consolidation batch view packages grouped by destination and pallet",
+        "caption_1": "Hub operations dashboard container fill rates and voyage status",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Ocean Freight Consolidators",
+        "p_6": "Receive LCL cargo from multiple shippers, sort by port of destination, load into FCL containers, and generate Bills of Lading and port manifests in one workflow.",
+        "h4_1": "Transit Warehouse Hubs",
+        "p_7": "Manage high-volume receiving from multiple origins. Sort, palletize, and load outbound containers while tracking every package through barcode scanning at each stage.",
+        "h4_2": "Regional Distribution Centers",
+        "p_8": "Consolidate last-mile deliveries from a central hub into route-based loads. Maximize vehicle capacity and reduce the number of runs with load optimization tools.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Warehouse Management",
+        "related_desc_0": "Configure warehouse shelf and bin locations, manage capacity, and run full receiving and dispatch operations that feed into the consolidation hub.",
+        "related_title_1": "Inventory and Stock Control",
+        "related_desc_1": "Track every package at item level with barcode scanning and real-time stock updates that integrate directly with consolidation batch assignments.",
+        "related_title_2": "Customs and Compliance",
+        "related_desc_2": "Generate customs documentation for consolidated shipments and run compliance screening before the manifest is submitted to port authorities.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Optimize Your",
+        "h2_5_part2": "Consolidation Hub?",
+        "p_9": "See how NTIGI handles pallet tracking, load optimization, and manifest generation for your consolidation hub in a live walkthrough with our team."
+      }
+    },
+    "customer-portal": {
+      "capabilities": [
+        {
+          "title": "Self-Service Shipment Booking",
+          "desc": "Customers book shipments directly through the portal without calling an agent. Select route, package type, service level, and confirm pricing before submitting."
+        },
+        {
+          "title": "Real-Time Shipment Tracking",
+          "desc": "Every customer can track their own shipments live. Status updates from picked up through to delivered, with GPS-backed location data at each stage."
+        },
+        {
+          "title": "Invoice Downloads",
+          "desc": "Customers access and download PDF invoices for all their shipments directly from the portal. No need to contact an agent for billing documents."
+        },
+        {
+          "title": "Payment History",
+          "desc": "Full payment history is visible to each customer: every payment made, every outstanding balance, and every invoice status in one place."
+        },
+        {
+          "title": "Profile Management",
+          "desc": "Customers update their own contact details, addresses, and notification preferences without staff involvement. Changes are reflected across all their shipments instantly."
+        },
+        {
+          "title": "Automated Notifications",
+          "desc": "Customers receive automatic SMS, email, push, and WhatsApp notifications at every shipment milestone. Configured by the customer, not by your agents."
+        },
+        {
+          "title": "Public Tracking Portal",
+          "desc": "Any shipment can be tracked publicly by entering the tracking number. No login required. Share the tracking link with anyone who needs visibility on a shipment."
+        },
+        {
+          "title": "Mobile App Access",
+          "desc": "The full customer portal is accessible as a mobile PWA. Customers install it once from their browser and access it like a native app on any device."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Customer Registers",
+          "desc": "Customers register or are created in the system by your agents. They receive login credentials and access their personalized portal immediately."
+        },
+        {
+          "step": "02",
+          "title": "Books a Shipment",
+          "desc": "The customer selects route, package details, and service level. Pricing is calculated automatically from your configured rate cards. No agent needed."
+        },
+        {
+          "step": "03",
+          "title": "Receives Confirmation",
+          "desc": "A booking confirmation is sent automatically via email and SMS with the tracking number, cost summary, and estimated delivery window."
+        },
+        {
+          "step": "04",
+          "title": "Tracks in Real Time",
+          "desc": "The customer follows their shipment through the portal or public tracking link. Each status update triggers an automatic notification to their preferred channel."
+        },
+        {
+          "step": "05",
+          "title": "Downloads Invoice",
+          "desc": "Once delivered, the customer downloads their PDF invoice from the portal. Outstanding balances and payment history are always visible in their account."
+        }
+      ],
+      "customerFeatures": [
+        {
+          "label": "Shipment Booking",
+          "desc": "Book new shipments without contacting an agent"
+        },
+        {
+          "label": "Live Tracking",
+          "desc": "GPS-backed status updates for every shipment"
+        },
+        {
+          "label": "Invoice Downloads",
+          "desc": "PDF invoices available at any time"
+        },
+        {
+          "label": "Payment History",
+          "desc": "Full transaction and balance history"
+        },
+        {
+          "label": "Profile Updates",
+          "desc": "Manage contact details and preferences"
+        },
+        {
+          "label": "Notification Settings",
+          "desc": "Choose SMS, email, WhatsApp, or push alerts"
+        },
+        {
+          "label": "Return Requests",
+          "desc": "Initiate return shipments from the portal"
+        },
+        {
+          "label": "Mobile PWA",
+          "desc": "Works on any smartphone without an app store"
+        }
+      ],
+      "notificationTypes": [
+        "Shipment booked confirmation",
+        "Package picked up notification",
+        "In-transit status updates",
+        "Out for delivery alert",
+        "Delivered confirmation with timestamp",
+        "Proof of delivery photo and signature",
+        "Invoice generated notification",
+        "Payment received confirmation"
+      
+      ],
+      "jsx": {
+        "h1_0_part1": "Customer",
+        "h1_0_part2": "Portal",
+        "p_0": "Give every client their own self-service portal. Book shipments, track deliveries in real time, download invoices, and manage their profile from any device. No agent calls required.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Self-Service",
+        "stat_label_0": "Shipment booking",
+        "stat_display_1": "Real-Time",
+        "stat_label_1": "GPS tracking",
+        "stat_display_2": "Mobile",
+        "stat_label_2": "PWA access",
+        "stat_display_3": "Auto",
+        "stat_label_3": "Notifications",
+        "h2_0": "Everything Customers Need Without Calling You",
+        "p_1": "The customer portal handles every common client request automatically, reducing support calls and improving the customer experience.",
+        "h2_1": "From Registration to Delivered",
+        "p_2": "The complete customer journey from first login to delivery confirmation, without a single agent interaction needed.",
+        "h3_0": "What Each Customer Can Do",
+        "p_3": "Every client gets a secure, personalized portal showing only their own shipments, invoices, and payment history.",
+        "h3_1": "Automated Notification Events",
+        "p_4": "Every shipment event triggers an automatic notification via the customer's preferred channel. No manual sending by your staff.",
+        "h3_2": "Mobile PWA Access",
+        "p_5": "Customers access the full portal from any smartphone without downloading an app. Open the browser, log in, and add to home screen. Available on iOS and Android. Works even with intermittent connectivity.",
+        "p_5_desc": "Supports English, French, Chinese, and German out of the box with more languages ready to add.",
+        "h2_2": "Who Benefits Most",
+        "h4_0": "E-commerce Businesses",
+        "p_6": "Give your online shoppers the tracking experience they expect. Real-time notifications, delivery photos, and a clean tracking page branded to your logistics operation.",
+        "h4_1": "Frequent Business Shippers",
+        "p_7": "Business clients who ship daily can manage their own bookings, monitor outstanding balances, and download invoices for accounting without needing your staff.",
+        "h4_2": "Returns Management",
+        "p_8": "Customers submit return shipment requests through the portal. Your team reviews and approves. The return is created, tracked, and invoiced automatically.",
+        "h2_3": "Related Solutions",
+        "related_title_0": "Proof of Delivery",
+        "related_desc_0": "Signature capture and photo confirmation sent directly to the customer via the portal after every delivery.",
+        "related_title_1": "Finance and Billing",
+        "related_desc_1": "Invoices generated at booking are immediately available for customer download in the portal.",
+        "related_title_2": "International Forwarding",
+        "related_desc_2": "International clients track multi-leg shipments and receive customs status updates through the portal.",
+        "learn_more": "Learn more",
+        "h2_4_part1": "Ready to Give Customers",
+        "h2_4_part2": "Full Self-Service?",
+        "p_9": "See how NTIGI's customer portal handles bookings, tracking, invoicing, and notifications for your clients in a live walkthrough."
+      }
+    },
+    "customs-compliance": {
+      "capabilities": [
+        {
+          "title": "Commercial Invoice Generation",
+          "desc": "Auto-generate compliant commercial invoices for every international shipment. Pre-filled with shipper, receiver, commodity details, HS codes, and declared values."
+        },
+        {
+          "title": "Packing List & Certificate of Origin",
+          "desc": "Produce packing lists and certificates of origin directly from shipment data. No re-entering information, documents pull from the booking record."
+        },
+        {
+          "title": "HS Code Management",
+          "desc": "Search and assign Harmonized System codes to packages. System validates codes and calculates applicable duties and taxes per destination country."
+        },
+        {
+          "title": "Duty & Tax Calculation",
+          "desc": "Automatically compute customs duties, VAT, and applicable import taxes based on HS codes, declared values, and destination regulations."
+        },
+        {
+          "title": "Dangerous Goods Handling",
+          "desc": "Flag and classify dangerous goods per IATA and IMDG regulations. Ensure correct documentation and handling instructions are attached to every relevant shipment."
+        },
+        {
+          "title": "Sanction List Screening",
+          "desc": "Screen senders and receivers against international sanctions lists before shipment processing. Block or flag restricted entities automatically."
+        },
+        {
+          "title": "Export / Import Restriction Checks",
+          "desc": "Validate every shipment against country-level export and import restriction databases. Catch prohibited items before they reach the border."
+        },
+        {
+          "title": "Audit Trail & Compliance Logs",
+          "desc": "Every document generated, status changed, and decision made is logged with user, timestamp, and reason, providing a complete exportable compliance audit trail."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Create Shipment",
+          "desc": "Enter package details, sender, receiver, and commodity information. System prompts for HS codes and declared value at the point of booking."
+        },
+        {
+          "step": "02",
+          "title": "Auto Compliance Check",
+          "desc": "System screens against sanctions lists and restriction databases in real time. Flagged shipments are held for review before processing continues."
+        },
+        {
+          "step": "03",
+          "title": "Generate Documents",
+          "desc": "One click produces commercial invoice, packing list, certificate of origin, and customs declaration form, all pre-populated and formatted for submission."
+        },
+        {
+          "step": "04",
+          "title": "Calculate Duties",
+          "desc": "Duties, VAT, and import taxes are computed using HS codes and destination country rules. Totals appear on the invoice and can be passed to the client."
+        },
+        {
+          "step": "05",
+          "title": "Submit & Archive",
+          "desc": "Submit documentation to customs authorities. All records are archived with full audit trail, searchable, exportable, and retained per your data policy."
+        }
+      ],
+      "documentTypes": [
+        {
+          "name": "Commercial Invoice",
+          "desc": "Legally required export document with full shipment and valuation details"
+        },
+        {
+          "name": "Packing List",
+          "desc": "Detailed breakdown of all items, weights, and dimensions per package"
+        },
+        {
+          "name": "Certificate of Origin",
+          "desc": "Certifies where goods were manufactured for tariff preference purposes"
+        },
+        {
+          "name": "Customs Declaration",
+          "desc": "Formal declaration submitted to customs authorities for clearance"
+        },
+        {
+          "name": "Airway Bill / Bill of Lading",
+          "desc": "Transport contract between shipper and carrier with full shipment details"
+        },
+        {
+          "name": "Dangerous Goods Declaration",
+          "desc": "IATA/IMDG-compliant declaration for hazardous materials"
+        }
+      ],
+      "complianceChecks": [
+        "Sanctions list screening (OFAC, UN, EU)",
+        "Export/import restriction validation",
+        "Prohibited items checking",
+        "Dangerous goods classification",
+        "HS code validation per destination",
+        "Dual-use goods identification",
+        "Country embargo verification",
+        "GDPR-compliant data retention"
+      ],
+      "stats": [
+        {
+          "value": "200",
+          "suffix": "+",
+          "label": "Permission control points"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Audit trail coverage"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "API modules"
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Languages supported"
+        }
+      ],
+      "jsx": {
+        "h1_0_part1": "Customs &",
+        "h1_0_part2": "Compliance",
+        "p_0": "Automate customs documentation, HS code management, duty calculations, and regulatory compliance checks, all built directly into the NTIGI shipment workflow.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "terminal_label_0": "NTIGI_OS // COMPLIANCE_CHECK.sh",
+        "status_live": "LIVE",
+        "status_ready": "READY",
+        "h2_0": "Built for Compliant Global Trade",
+        "p_1": "Every compliance requirement handled automatically, from document generation to regulatory screening, before the shipment moves.",
+        "h2_1": "From Booking to Clearance",
+        "p_2": "Compliance is embedded in the shipment workflow, not a separate step that slows you down.",
+        "h3_0": "Documents Generated",
+        "p_3": "All required customs documents are produced directly from the shipment record, no separate system, no re-entry of data.",
+        "h3_1": "Automated Compliance Checks",
+        "p_4": "Every shipment runs through a full compliance screening stack before processing, automatically, without manual intervention.",
+        "h3_2": "Enterprise-Grade Security",
+        "p_5": "All compliance data is protected with AES-256 encryption at rest and TLS 1.3 in transit. Role-based access control ensures only authorized staff can view or modify sensitive customs records.",
+        "p_5_desc": "Complete audit trail with user, timestamp, and action recorded on every document change.",
+        "h2_2": "See It in Action",
+        "p_6": "Live compliance screening at booking and auto-generated customs documents all inside the same screen.",
+        "terminal_label_1": "NTIGI // SANCTIONS_SCREEN.sh",
+        "terminal_label_2": "NTIGI // CUSTOMS_DOCS.sh",
+        "terminal_desc_1": "Real-time sanctions and restriction screening at point of booking",
+        "terminal_desc_2": "Commercial invoice, packing list & certificate generated in one click",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Customs Brokers",
+        "p_7": "Handle multiple client accounts with document generation, HS code lookup, and duty calculation built in. Reduce manual paperwork and clearance time.",
+        "h4_1": "Freight Forwarders",
+        "p_8": "Embed compliance directly into your international forwarding workflow. Documents are generated at the point of booking, not as an afterthought.",
+        "h4_2": "Compliance Teams",
+        "p_9": "Full audit trail, exportable compliance logs, and screening records for every shipment. Built-in GDPR tools and configurable data retention policies.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "International Forwarding",
+        "related_desc_0": "Manage cross-border shipments, multi-leg routes, and partner agency networks end to end.",
+        "related_title_1": "Consolidation & Manifests",
+        "related_desc_1": "Group shipments into voyages, manage containers, and generate manifests for customs submission.",
+        "related_title_2": "Finance & Billing",
+        "related_desc_2": "Issue multi-currency invoices with duties and taxes automatically calculated per jurisdiction.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Automate Your",
+        "h2_5_part2": "Customs Operations?",
+        "p_10": "See how NTIGI handles documentation, screening, and duty calculations for your specific trade lanes in a live walkthrough with our team."
+      }
+    },
+    "ecommerce-fulfillment": {
+      "capabilities": [
+        {
+          "title": "Bulk Shipment Creation",
+          "desc": "Process hundreds of orders in one operation. Create shipments individually or import in bulk. Each order gets its own tracking number, label, and receipt automatically."
+        },
+        {
+          "title": "Real-Time Order Tracking",
+          "desc": "Every online shopper can track their order in real time via the public tracking portal or customer portal. No login required for the public tracking page."
+        },
+        {
+          "title": "Automated Customer Notifications",
+          "desc": "Shoppers receive automatic SMS, email, push, and WhatsApp notifications at every delivery milestone. Configured once by your operations team, runs automatically."
+        },
+        {
+          "title": "REST API for Store Integration",
+          "desc": "Connect your online store directly to NTIGI via the REST API. Orders placed on your platform trigger shipment creation in NTIGI automatically without manual entry."
+        },
+        {
+          "title": "Returns Management",
+          "desc": "Customers initiate returns through the portal. Return labels are generated automatically. Every return is tracked, photographed, and reconciled against the original order."
+        },
+        {
+          "title": "COD Management",
+          "desc": "Track cash on delivery collections per driver across every route. Automatic reconciliation when orders are delivered and paid. Full COD reporting per client and per run."
+        },
+        {
+          "title": "Automatic Invoice Generation",
+          "desc": "Invoices are created the moment a shipment is booked. PDF generation, email delivery, and download access for customers in the portal from day one."
+        },
+        {
+          "title": "Barcode and Label Printing",
+          "desc": "Generate and print shipping labels with barcodes and QR codes for every order. Batch print entire dispatch runs. Scan labels at pickup and delivery."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Order Received",
+          "desc": "Your online store sends order data to NTIGI via the REST API or your agent creates shipments manually. Each order is processed into a shipment record instantly."
+        },
+        {
+          "step": "02",
+          "title": "Label Printed",
+          "desc": "A shipping label with barcode is generated and printed. The customer receives an order confirmation with tracking number via SMS and email automatically."
+        },
+        {
+          "step": "03",
+          "title": "Dispatched and Tracked",
+          "desc": "The package is assigned to a driver and route. The customer can track live. Automated notifications fire at each status update without any manual intervention."
+        },
+        {
+          "step": "04",
+          "title": "Delivered and Confirmed",
+          "desc": "Driver captures signature and delivery photo. Delivery confirmation is sent to the customer. COD payment is recorded if applicable. Invoice is closed."
+        },
+        {
+          "step": "05",
+          "title": "Returns Processed",
+          "desc": "If a return is requested, the customer gets a label automatically. The return is tracked back to your warehouse and a credit note or refund is issued."
+        }
+      ],
+      "apiCapabilities": [
+        "Create shipments via REST API",
+        "Bulk shipment creation endpoints",
+        "Real-time tracking webhooks",
+        "Status update callbacks to your store",
+        "Label and barcode generation API",
+        "Invoice and receipt retrieval",
+        "Customer notification triggers",
+        "COD status and reconciliation"
+      ],
+      "notificationTriggers": [
+        {
+          "event": "Order Confirmed",
+          "channel": "Email + SMS"
+        },
+        {
+          "event": "Package Picked Up",
+          "channel": "SMS + Push"
+        },
+        {
+          "event": "In Transit Update",
+          "channel": "SMS"
+        },
+        {
+          "event": "Out for Delivery",
+          "channel": "SMS + WhatsApp"
+        },
+        {
+          "event": "Delivered",
+          "channel": "Email + SMS + Push"
+        },
+        {
+          "event": "Delivery Photo",
+          "channel": "Email"
+        },
+        {
+          "event": "Return Initiated",
+          "channel": "Email + SMS"
+        },
+        {
+          "event": "Refund Issued",
+          "channel": "Email"
+        }
+      ],
+      "apiLines": [
+        {
+          "delay": "0",
+          "color": "text-foreground/40",
+          "text": "POST /api/v1/shipments"
+        },
+        {
+          "delay": "320",
+          "color": "text-green-400",
+          "id": "SHP-29471"
+        },
+        {
+          "delay": "640",
+          "color": "text-foreground/40",
+          "text": "POST /api/v1/shipments"
+        },
+        {
+          "delay": "960",
+          "color": "text-green-400",
+          "id": "SHP-29472"
+        },
+        {
+          "delay": "1280",
+          "color": "text-blue-400",
+          "text": "GET  /api/v1/shipments/SHP-29471/label"
+        },
+        {
+          "delay": "1600",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  label.pdf  [barcode attached]"
+        },
+        {
+          "delay": "1920",
+          "color": "text-yellow-400",
+          "tracking": "true"
+        },
+        {
+          "delay": "2240",
+          "color": "text-foreground/40",
+          "text": "GET  /api/v1/shipments?status=in_transit"
+        },
+        {
+          "delay": "2560",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  [ 847 shipments ]"
+        },
+        {
+          "delay": "2880",
+          "color": "text-blue-400",
+          "text": "POST /api/v1/notifications/bulk"
+        },
+        {
+          "delay": "3200",
+          "color": "text-green-400",
+          "text": "â†’ 200 OK  sent: 847  failed: 0"
+        }
+      ]
+    },
+    "finance": {
+      "capabilities": [
+        {
+          "title": "Multi-Method Payments",
+          "desc": "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place."
+        },
+        {
+          "title": "Automatic Invoice Generation",
+          "desc": "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in."
+        },
+        {
+          "title": "Multi-Currency Support",
+          "desc": "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route."
+        },
+        {
+          "title": "COD & Split Payments",
+          "desc": "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment."
+        },
+        {
+          "title": "Revenue & P&L Reports",
+          "desc": "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly."
+        },
+        {
+          "title": "Agent Commission Tracking",
+          "desc": "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns."
+        },
+        {
+          "title": "Outstanding Balances",
+          "desc": "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS."
+        },
+        {
+          "title": "Refund Management",
+          "desc": "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Shipment Booked",
+          "desc": "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges."
+        },
+        {
+          "step": "02",
+          "title": "Invoice Generated",
+          "desc": "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download."
+        },
+        {
+          "step": "03",
+          "title": "Payment Collected",
+          "desc": "Payment is recorded against the invoice: cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately."
+        },
+        {
+          "step": "04",
+          "title": "COD Tracked",
+          "desc": "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record."
+        },
+        {
+          "step": "05",
+          "title": "Reports Generated",
+          "desc": "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV."
+        }
+      ],
+      "paymentMethods": [
+        {
+          "name": "Cash",
+          "detail": "Walk-in and COD collection tracking"
+        },
+        {
+          "name": "Credit / Debit Card",
+          "detail": "Card terminal and gateway processing"
+        },
+        {
+          "name": "Bank Transfer",
+          "detail": "Wire and direct bank payment logging"
+        },
+        {
+          "name": "Mobile Money",
+          "detail": "MTN, Orange, Airtel integrations"
+        },
+        {
+          "name": "Stripe",
+          "detail": "Online payment gateway"
+        },
+        {
+          "name": "PayPal",
+          "detail": "International online payments"
+        },
+        {
+          "name": "COD",
+          "detail": "Cash on delivery with driver reconciliation"
+        },
+        {
+          "name": "Split Payment",
+          "detail": "Multiple methods on a single invoice"
+        }
+      ],
+      "accountingIntegrations": [
+        {
+          "name": "QuickBooks",
+          "status": "Integration Ready",
+          "desc": "Sync invoices, payments, and client data to QuickBooks automatically."
+        },
+        {
+          "name": "Xero",
+          "status": "Integration Ready",
+          "desc": "Export financial records directly into Xero for accounting and reporting."
+        },
+        {
+          "name": "Custom Export",
+          "status": "Always Available",
+          "desc": "Export any financial data to Excel, CSV, or PDF for use in any accounting tool."
+        }
+      ],
+      "reportTypes": [
+        "Revenue reports (daily, weekly, monthly)",
+        "Payment collection reports",
+        "Outstanding balances by client",
+        "Profit and loss statements",
+        "Agent commission reports",
+        "Branch performance comparison",
+        "COD reconciliation reports",
+        "Custom date range reports"
+      ]
+    },
+    "fleet-management": {
+      "vehicleCapabilities": [
+        {
+          "title": "Vehicle Registration",
+          "desc": "Register every vehicle in your fleet with type, capacity, license plate, registration number, and assigned branch. Full vehicle record accessible at any time."
+        },
+        {
+          "title": "Capacity Tracking",
+          "desc": "Track the load capacity of each vehicle by weight and volume. Prevent over-loading by monitoring what is assigned versus what the vehicle can carry on each run."
+        },
+        {
+          "title": "Maintenance Scheduling",
+          "desc": "Schedule and track vehicle maintenance by mileage or date. Receive alerts before service is due. Keep a complete maintenance history per vehicle."
+        },
+        {
+          "title": "Fuel Tracking",
+          "desc": "Log fuel fill-ups per vehicle and track fuel costs over time. Monitor fuel consumption per route to identify inefficiencies and reduce operating costs."
+        },
+        {
+          "title": "GPS Tracking Integration",
+          "desc": "Track every vehicle's live location on an interactive map. Managers see the full fleet in real time. Customers see their shipment moving toward them."
+        },
+        {
+          "title": "Performance Metrics",
+          "desc": "Monitor delivery success rates, on-time percentages, distance covered, and fuel efficiency per vehicle. Compare fleet performance across routes and periods."
+        }
+      ],
+      "driverCapabilities": [
+        {
+          "title": "Driver Profiles",
+          "desc": "Create detailed profiles for every driver with contact information, assigned branch, active routes, and current delivery status."
+        },
+        {
+          "title": "License Tracking",
+          "desc": "Record driver license numbers, license categories, issue dates, and expiry dates. Receive alerts when a license is approaching expiry."
+        },
+        {
+          "title": "Route Assignment",
+          "desc": "Assign drivers to specific routes or delivery runs. Drivers see their assigned shipments in the mobile app and can manage their queue throughout the day."
+        },
+        {
+          "title": "Performance Tracking",
+          "desc": "Track deliveries completed, success rates, average delivery times, and customer confirmation rates per driver. Identify top performers and underperformers."
+        },
+        {
+          "title": "Mobile App for Drivers",
+          "desc": "Drivers use NTIGI's mobile PWA on any smartphone. View delivery queue, navigate to stops, scan barcodes, capture signatures and photos. Works offline."
+        },
+        {
+          "title": "POD Capture",
+          "desc": "Drivers capture proof of delivery directly from their phone: recipient signature, photo of the package, and GPS location. All attached to the shipment record instantly."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Register Vehicle",
+          "desc": "Add the vehicle with type, capacity, registration details, and assigned branch. The vehicle is immediately available for route and driver assignment."
+        },
+        {
+          "step": "02",
+          "title": "Create Driver Profile",
+          "desc": "Add the driver with license details and branch assignment. Link the driver to their vehicle. Set their initial role and permissions in the NTIGI mobile app."
+        },
+        {
+          "step": "03",
+          "title": "Assign to Route",
+          "desc": "Assign the driver and vehicle to a delivery route or specific run. Shipments appear in the driver's queue on their mobile app immediately."
+        },
+        {
+          "step": "04",
+          "title": "Track in Real Time",
+          "desc": "The vehicle GPS location updates live on the fleet map. Managers see every vehicle. Customers see their shipment status update as the driver progresses."
+        },
+        {
+          "step": "05",
+          "title": "Review Performance",
+          "desc": "After the run, review delivery success rates, fuel usage, and on-time performance per driver and vehicle. Schedule any required maintenance from the same dashboard."
+        }
+      ],
+      "vehicleRecord": [
+        {
+          "label": "Vehicle Type",
+          "desc": "Van, truck, motorcycle, cargo bike, or custom type"
+        },
+        {
+          "label": "Load Capacity",
+          "desc": "Maximum weight and volume the vehicle can carry"
+        },
+        {
+          "label": "License Plate",
+          "desc": "Registration number for identification and compliance"
+        },
+        {
+          "label": "Assigned Branch",
+          "desc": "Which branch this vehicle operates from"
+        },
+        {
+          "label": "Current Status",
+          "desc": "Active, in maintenance, offline, or decommissioned"
+        },
+        {
+          "label": "Maintenance History",
+          "desc": "Full log of all service dates, work done, and costs"
+        },
+        {
+          "label": "Fuel Log",
+          "desc": "All fill-up entries with date, volume, and cost"
+        },
+        {
+          "label": "GPS Status",
+          "desc": "Live location and last known position with timestamp"
+        }
+      ],
+      "driverRecord": [
+        {
+          "label": "Full Name and Contact",
+          "desc": "Personal details for identification and communication"
+        },
+        {
+          "label": "License Number",
+          "desc": "Driver license number and applicable categories"
+        },
+        {
+          "label": "License Expiry",
+          "desc": "Expiry date with automated alert before renewal"
+        },
+        {
+          "label": "Assigned Vehicle",
+          "desc": "Which vehicle this driver is currently operating"
+        },
+        {
+          "label": "Assigned Routes",
+          "desc": "Active route assignments for the current period"
+        },
+        {
+          "label": "Delivery History",
+          "desc": "All deliveries completed with timestamps and outcomes"
+        },
+        {
+          "label": "Performance Score",
+          "desc": "Delivery success rate and on-time percentage"
+        },
+        {
+          "label": "Mobile App Access",
+          "desc": "Login credentials and device assignment for the PWA"
+        }
+      ],
+      "maintenanceAlerts": [
+        "Scheduled service due date approaching",
+        "Mileage-based service interval reached",
+        "License expiry within 30 days",
+        "Vehicle capacity exceeded on assignment",
+        "Fuel consumption above route average",
+        "Unscheduled downtime recorded"
+      ]
+    },
+    "international-forwarding": {
+      "capabilities": [
+        {
+          "title": "Multi-Country Route Management",
+          "desc": "Create and manage routes spanning multiple countries with multi-leg stops, transit points, and dynamic pricing per corridor. Cover West Africa to global ports with a single system."
+        },
+        {
+          "title": "International Shipment Types",
+          "desc": "Handle standard, express, bulk, return, and COD international shipments. Capture sender and receiver details across borders with full address validation."
+        },
+        {
+          "title": "Customs Documentation",
+          "desc": "Auto-generate commercial invoices, packing lists, certificates of origin, and customs declaration forms. Manage HS codes and calculate duties and taxes per shipment."
+        },
+        {
+          "title": "Partner Agency Network",
+          "desc": "Connect with partner agencies abroad. Manage inter-branch transfers, commission structures, and inter-agency settlements all from a single dashboard."
+        },
+        {
+          "title": "Multi-Currency Invoicing",
+          "desc": "Issue invoices in multiple currencies. Handle tax and VAT calculations per jurisdiction with automatic currency conversion and PDF generation."
+        },
+        {
+          "title": "Real-Time GPS Tracking",
+          "desc": "Track every international shipment live. Customers receive automated SMS, email, and push notifications at each status update along the route."
+        },
+        {
+          "title": "Compliance & Sanctions Screening",
+          "desc": "Built-in regulatory compliance checking, dangerous goods handling, export/import restriction enforcement, and sanctions list screening on every shipment."
+        },
+        {
+          "title": "Revenue & Route Analytics",
+          "desc": "Monitor revenue per route, agent commission reports, branch performance comparisons, and delivery success rates all exportable to Excel or PDF."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Book the Shipment",
+          "desc": "Create an international shipment with sender, receiver, package details, route, and service level. System generates a tracking number and receipt instantly."
+        },
+        {
+          "step": "02",
+          "title": "Generate Documents",
+          "desc": "NTIGI auto-produces all required customs documentation: commercial invoice, packing list, certificate of origin, ready for border submission."
+        },
+        {
+          "step": "03",
+          "title": "Assign to Voyage/Manifest",
+          "desc": "Group shipments into a manifest and assign to a voyage or container. Optimize load and print the manifest for carriers."
+        },
+        {
+          "step": "04",
+          "title": "Track Across Borders",
+          "desc": "Every status change: picked up, in transit, at customs, out for delivery, delivered, is logged and pushed to the customer in real time."
+        },
+        {
+          "step": "05",
+          "title": "Settle & Invoice",
+          "desc": "Once delivered, generate final invoices, process payments in local or foreign currency, and close the shipment with proof of delivery."
+        }
+      ],
+      "complianceItems": [
+        "HS code management and duty calculation",
+        "Commercial invoice generation",
+        "Packing list and certificate of origin",
+        "Customs declaration forms",
+        "Dangerous goods handling",
+        "Sanction list screening",
+        "Export/import restriction checks",
+        "Audit trail for every action"
+      ],
+      "carrierIntegrations": [
+        {
+          "name": "DHL",
+          "type": "API Integration"
+        },
+        {
+          "name": "FedEx",
+          "type": "API Integration"
+        },
+        {
+          "name": "UPS",
+          "type": "API Integration"
+        },
+        {
+          "name": "Local Carriers",
+          "type": "Custom APIs"
+        }
+      ],
+      "stats": [
+        {
+          "value": "100",
+          "suffix": "K+",
+          "label": "Shipments processed daily"
+        },
+        {
+          "value": "22",
+          "suffix": "+",
+          "label": "Cargo handling methods"
+        },
+        {
+          "value": "4",
+          "suffix": "",
+          "label": "Languages supported"
+        },
+        {
+          "value": "30",
+          "suffix": "+",
+          "label": "API modules"
+        }
+      ]
+    },
+    "inventory-control": {
+      "capabilities": [
+        {
+          "title": "Real-Time Stock Levels",
+          "desc": "See exactly how many packages and how much weight is currently held in each warehouse. Reserved, available, and in-transit quantities updated the moment any movement occurs."
+        },
+        {
+          "title": "Shelf and Bin Location Tracking",
+          "desc": "Every package in your warehouse is assigned a specific shelf and bin. Find any item instantly by scanning its barcode or searching by tracking number."
+        },
+        {
+          "title": "Barcode Scan to Receive",
+          "desc": "Warehouse staff scan incoming package barcodes at the receiving dock. Each scan logs the package with arrival time, weight, dimensions, and assigned bin location."
+        },
+        {
+          "title": "Goods-In and Dispatch",
+          "desc": "Complete receiving and dispatch workflows with full audit trail. Every movement logged with which staff member performed it and at what timestamp."
+        },
+        {
+          "title": "Stock Search and Filtering",
+          "desc": "Search the entire inventory by tracking number, barcode, client, route, or package type. Advanced filters narrow results by status, date range, or location."
+        },
+        {
+          "title": "Stock Movement History",
+          "desc": "Full history of every movement for any package: received, moved, consolidated, dispatched. Timestamped and linked to the staff member responsible."
+        },
+        {
+          "title": "Lost Parcel Reporting",
+          "desc": "Report missing packages directly from the stock interface. Search the found parcels database to match lost items. Track investigation status and resolution notes."
+        },
+        {
+          "title": "Export Stock Reports",
+          "desc": "Export current stock levels, movement history, and warehouse utilization to Excel or CSV. Schedule reports for automatic delivery to management."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Receive and Scan",
+          "desc": "Incoming packages are scanned at the receiving dock. Each barcode scan logs the item automatically: weight, dimensions, handling requirements, and assigned bin."
+        },
+        {
+          "step": "02",
+          "title": "Assign Location",
+          "desc": "The system assigns a shelf and bin location to each received package. Staff confirm placement. The package is now searchable and tracked at item level."
+        },
+        {
+          "step": "03",
+          "title": "Monitor Levels",
+          "desc": "Real-time dashboard shows available capacity, reserved stock, items awaiting dispatch, and any packages flagged for attention or missing from expected location."
+        },
+        {
+          "step": "04",
+          "title": "Search and Locate",
+          "desc": "Any package can be found in seconds by scanning its barcode or searching by tracking number, client name, or destination. Bin location is displayed immediately."
+        },
+        {
+          "step": "05",
+          "title": "Dispatch and Update",
+          "desc": "When packages leave the warehouse, staff scan to confirm dispatch. Stock levels update instantly. The movement is recorded with timestamp and responsible staff."
+        }
+      ],
+      "stockRecord": [
+        {
+          "label": "Current Location",
+          "desc": "Warehouse, shelf, and bin position of the package"
+        },
+        {
+          "label": "Package Weight",
+          "desc": "Actual weight logged at receiving"
+        },
+        {
+          "label": "Dimensions",
+          "desc": "Length, width, and height for volumetric calculation"
+        },
+        {
+          "label": "Cargo Handling Tags",
+          "desc": "Fragile, Perishable, Hazardous, or any of 22 tags"
+        },
+        {
+          "label": "Arrival Timestamp",
+          "desc": "When the package was received and by which staff"
+        },
+        {
+          "label": "Shipment Reference",
+          "desc": "Linked to the parent shipment record"
+        },
+        {
+          "label": "Destination",
+          "desc": "Intended route and delivery address"
+        },
+        {
+          "label": "Status",
+          "desc": "In warehouse, reserved for consolidation, or dispatched"
+        }
+      ],
+      "searchCapabilities": [
+        "Search by tracking number or barcode",
+        "Filter by warehouse location",
+        "Filter by client or shipper",
+        "Filter by arrival date range",
+        "Filter by destination route",
+        "Filter by package type or handling tag",
+        "Filter by current status",
+        "Export filtered results to Excel or CSV"
+      ]
+    },
+    "multi-branch": {
+      "capabilities": [
+        {
+          "title": "Multi-Branch Operations",
+          "desc": "Run any number of branches from a single NTIGI account. Each branch operates independently with its own shipments, staff, clients, and financial records."
+        },
+        {
+          "title": "Branch-Level Data Isolation",
+          "desc": "Agents at Branch A cannot see Branch B data unless explicitly granted. Every record is scoped to its branch. No data leakage across your network."
+        },
+        {
+          "title": "Inter-Branch Transfers",
+          "desc": "Transfer shipments between branches when routes change or consolidation is needed. Every transfer is logged with origin, destination, reason, and timestamp."
+        },
+        {
+          "title": "Inter-Branch Settlements",
+          "desc": "Track financial obligations between branches. When Branch A hands off a shipment to Branch B, the settlement amount is calculated and recorded automatically."
+        },
+        {
+          "title": "Partner Agency Network",
+          "desc": "Onboard external partner agencies as part of your network. Assign them routes, set commission structures, and track their performance from head office."
+        },
+        {
+          "title": "200+ Permission Controls",
+          "desc": "Assign granular permissions at the user level across 200+ control points. Restrict who can create shipments, view finances, generate reports, or modify settings per branch."
+        },
+        {
+          "title": "Custom Role Creation",
+          "desc": "Create custom roles beyond Admin, Manager, Agent, and Driver. Define exactly what each role can see and do across features, branches, and data types."
+        },
+        {
+          "title": "Consolidated Reporting",
+          "desc": "View performance across all branches from a single dashboard. Compare revenue, shipment volumes, delivery success rates, and agent productivity network-wide."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Create Branches",
+          "desc": "Add each branch with its own name, location, contact details, business hours, and currency settings. Each branch is fully independent from day one."
+        },
+        {
+          "step": "02",
+          "title": "Assign Staff & Roles",
+          "desc": "Add staff to each branch and assign roles with specific permissions. A manager at one branch cannot access another unless explicitly configured."
+        },
+        {
+          "step": "03",
+          "title": "Configure Permissions",
+          "desc": "Set granular permissions per role across 200+ control points. Financial access, shipment editing, report generation: every action is configurable."
+        },
+        {
+          "step": "04",
+          "title": "Connect Partners",
+          "desc": "Onboard partner agencies for specific routes or regions. Configure commission rates, service agreements, and data visibility between your network and theirs."
+        },
+        {
+          "step": "05",
+          "title": "Monitor from Head Office",
+          "desc": "Access consolidated reporting across all branches and partners. See where volume is growing, where settlements are outstanding, and where performance needs attention."
+        }
+      ],
+      "rbacRoles": [
+        {
+          "role": "Admin",
+          "desc": "Full access to all branches, settings, financials, and user management"
+        },
+        {
+          "role": "Manager",
+          "desc": "Branch-level management with limited financial and config access"
+        },
+        {
+          "role": "Agent",
+          "desc": "Shipment creation, client management, and own branch operations only"
+        },
+        {
+          "role": "Driver",
+          "desc": "Delivery queue, route navigation, POD capture, and status updates"
+        },
+        {
+          "role": "Customer",
+          "desc": "Own shipments, invoice downloads, tracking, and payment history"
+        },
+        {
+          "role": "Custom Role",
+          "desc": "Any combination of the 200+ permissions, built to your workflow"
+        }
+      ],
+      "permissionCategories": [
+        "Shipment create, view, edit, delete",
+        "Client management and credit control",
+        "Financial access and report generation",
+        "System configuration and settings",
+        "User and role management",
+        "Manifest and voyage operations",
+        "Warehouse and inventory access",
+        "Branch transfer authorization",
+        "Partner agency management",
+        "Audit log access and export"
+      ],
+      "settlementItems": [
+        {
+          "label": "Transfer Recording",
+          "desc": "Every inter-branch shipment handoff is logged automatically"
+        },
+        {
+          "label": "Amount Calculation",
+          "desc": "Settlement amounts computed from agreed inter-branch rates"
+        },
+        {
+          "label": "Outstanding Tracking",
+          "desc": "View all unsettled inter-branch obligations at any time"
+        },
+        {
+          "label": "Settlement Reports",
+          "desc": "Export settlement history by branch, period, or partner"
+        },
+        {
+          "label": "Commission Tracking",
+          "desc": "Agent and partner commissions calculated and tracked per shipment"
+        },
+        {
+          "label": "Reconciliation Tools",
+          "desc": "Match payments to settlements and mark obligations as cleared"
+        }
+      ],
+      "stats": [
+        {
+          "value": "200",
+          "suffix": "+",
+          "label": "Permission control points"
+        },
+        {
+          "value": "99",
+          "suffix": "+",
+          "label": "Branches supported"
+        },
+        {
+          "value": "100",
+          "suffix": "%",
+          "label": "Data isolation"
+        },
+        {
+          "value": "0",
+          "suffix": "ms",
+          "label": "Real-Time reporting"
+        }
+      ]
+    },
+    "proof-of-delivery": {
+      "capabilities": [
+        {
+          "title": "Signature Capture",
+          "desc": "Drivers capture the recipient's digital signature directly on their mobile device at the point of delivery. Signature is stored against the shipment record instantly."
+        },
+        {
+          "title": "Photo Documentation",
+          "desc": "Capture photos of delivered packages, damaged goods, or delivery locations. Photos are uploaded to the shipment record and timestamped for dispute resolution."
+        },
+        {
+          "title": "Real-Time GPS Tracking",
+          "desc": "Track every driver's location live during delivery runs. Managers see the full fleet on a map. Customers see their shipment moving toward them in real time."
+        },
+        {
+          "title": "Automated Customer Notifications",
+          "desc": "Customers receive automatic SMS, email, and push notifications at each delivery milestone: out for delivery, arrived, delivered. No manual updates needed."
+        },
+        {
+          "title": "Barcode Scanning at Delivery",
+          "desc": "Drivers scan package barcodes to confirm the correct item is being delivered to the correct recipient. Prevents wrong-delivery incidents before they happen."
+        },
+        {
+          "title": "Delivery Timeline History",
+          "desc": "Every status update is logged with timestamp, GPS coordinates, and the driver who performed the action, from picked up through to delivered."
+        },
+        {
+          "title": "Driver Mobile App (PWA)",
+          "desc": "Drivers use NTIGI's mobile PWA app to manage their delivery queue, navigate routes, scan barcodes, capture signatures and photos from any smartphone."
+        },
+        {
+          "title": "Dispute Protection",
+          "desc": "Every delivery is backed by a complete evidence record: signature, photos, GPS location, timestamp, and driver identity. Resolve client disputes in seconds."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Assign to Driver",
+          "desc": "Shipments are assigned to a driver and appear in their delivery queue on the mobile app. The driver receives a notification with the day's pickup and delivery list."
+        },
+        {
+          "step": "02",
+          "title": "Pick Up & Scan",
+          "desc": "Driver scans the barcode at pickup to confirm they have the correct package. Status updates to In Transit and the customer is notified automatically."
+        },
+        {
+          "step": "03",
+          "title": "Navigate & Arrive",
+          "desc": "Driver navigates to the delivery address. GPS location is tracked throughout the route. Status updates to Out for Delivery when the driver is nearby."
+        },
+        {
+          "step": "04",
+          "title": "Capture POD",
+          "desc": "At the door, the driver captures the recipient's signature and takes a photo of the delivered package. Both are attached to the shipment record in real time."
+        },
+        {
+          "step": "05",
+          "title": "Confirm & Close",
+          "desc": "Delivery is confirmed, status updates to Delivered, and the customer receives instant notification. The full POD record is available for download immediately."
+        }
+      ],
+      "podRecord": [
+        {
+          "label": "Recipient Signature",
+          "desc": "Digital signature captured on driver's device"
+        },
+        {
+          "label": "Delivery Photos",
+          "desc": "Photos of the package and delivery location"
+        },
+        {
+          "label": "GPS Coordinates",
+          "desc": "Exact location where delivery was confirmed"
+        },
+        {
+          "label": "Delivery Timestamp",
+          "desc": "Date and time of delivery confirmation"
+        },
+        {
+          "label": "Driver Identity",
+          "desc": "Which driver completed the delivery"
+        },
+        {
+          "label": "Barcode Scan Log",
+          "desc": "Package scan confirmation at delivery"
+        }
+      ],
+      "notificationTypes": [
+        "Out for delivery SMS notification",
+        "Estimated arrival time update",
+        "Delivered confirmation with timestamp",
+        "Photo delivery confirmation",
+        "Failed delivery attempt alert",
+        "Rescheduled delivery notification",
+        "WhatsApp delivery updates",
+        "Push notifications (iOS and Android)"
+      ]
+    },
+    "returns": {
+      "capabilities": [
+        {
+          "title": "Return Shipment Creation",
+          "desc": "Create return shipments with full sender and receiver details. Linked to the original outbound shipment for complete lifecycle tracking. Supports all package types and handling methods."
+        },
+        {
+          "title": "22 Cargo Handling Tags",
+          "desc": "Apply any of 22 cargo handling tags to return shipments: Fragile, Damaged, Hazardous, Perishable, and more. Handlers see exactly how to treat returning goods."
+        },
+        {
+          "title": "Real-Time Return Tracking",
+          "desc": "Track every return shipment live with GPS. Customers and operations staff see the return status from pickup to arrival at your warehouse or origin point."
+        },
+        {
+          "title": "Barcode and QR Code",
+          "desc": "Auto-generate barcodes and QR codes for every return shipment. Print return labels on demand. Scan at pickup and receipt to confirm chain of custody."
+        },
+        {
+          "title": "Photo Documentation",
+          "desc": "Capture photos at pickup to document the condition of returned goods. Photos attach to the return record and protect against disputes over damage."
+        },
+        {
+          "title": "Automatic Invoice and Refund",
+          "desc": "Generate return invoices automatically. Apply refunds or credit notes against the original invoice. Multi-currency support with full PDF generation."
+        },
+        {
+          "title": "Customer Notifications",
+          "desc": "Customers receive automatic SMS, email, and push notifications at each stage of their return: pickup confirmed, in transit, received, and refund issued."
+        },
+        {
+          "title": "Returns Reporting",
+          "desc": "Track return volumes per route, return reasons, refund totals, and processing times. Export reports to Excel or CSV for operations and finance teams."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Return Requested",
+          "desc": "Customer submits a return request through the portal or your agent creates one directly. The original shipment is linked and the return reason is recorded."
+        },
+        {
+          "step": "02",
+          "title": "Return Label Issued",
+          "desc": "A return shipping label with barcode is generated instantly. Emailed to the customer or printed by your agent. Ready to apply to the package immediately."
+        },
+        {
+          "step": "03",
+          "title": "Package Picked Up",
+          "desc": "Driver scans the return barcode at pickup and captures a photo of the package condition. Status updates to In Transit and the customer is notified automatically."
+        },
+        {
+          "step": "04",
+          "title": "Received and Inspected",
+          "desc": "When the return arrives at your warehouse, staff scan it back into stock. Condition is logged with photos. The return is marked as received and the original order updated."
+        },
+        {
+          "step": "05",
+          "title": "Refund Processed",
+          "desc": "A refund or credit note is applied against the original invoice. The customer receives a notification and the transaction is closed in the financial records."
+        }
+      ],
+      "returnRecord": [
+        {
+          "label": "Original Shipment Link",
+          "desc": "Connected to the outbound shipment for full lifecycle view"
+        },
+        {
+          "label": "Return Reason",
+          "desc": "Recorded at request time for reporting and analysis"
+        },
+        {
+          "label": "Package Condition",
+          "desc": "Documented with pickup photo and handling tags"
+        },
+        {
+          "label": "Pickup Timestamp",
+          "desc": "Date and time driver collected the return"
+        },
+        {
+          "label": "Driver Identity",
+          "desc": "Which driver handled the return pickup"
+        },
+        {
+          "label": "Return Tracking Number",
+          "desc": "Unique reference for this return shipment"
+        },
+        {
+          "label": "Receipt Confirmation",
+          "desc": "Scan confirmation when return arrives at warehouse"
+        },
+        {
+          "label": "Refund Reference",
+          "desc": "Linked credit note or refund transaction"
+        }
+      ],
+      "returnTypes": [
+        {
+          "name": "Standard Return",
+          "desc": "Scheduled pickup and return to origin"
+        },
+        {
+          "name": "Express Return",
+          "desc": "Priority return with faster pickup window"
+        },
+        {
+          "name": "Damaged Goods Return",
+          "desc": "Condition-documented return with photo evidence"
+        },
+        {
+          "name": "Wrong Item Return",
+          "desc": "Linked to original shipment for reconciliation"
+        },
+        {
+          "name": "Refused Delivery",
+          "desc": "Package returned without delivery attempted"
+        },
+        {
+          "name": "COD Return",
+          "desc": "Return with COD collection reversal tracking"
+        }
+      ]
+    },
+    "route-optimization": {
+      "capabilities": [
+        {
+          "title": "Multi-Leg Route Creation",
+          "desc": "Define routes with multiple stops, waypoints, and transit hubs. Each leg has its own distance, transit time, pricing, and available service levels."
+        },
+        {
+          "title": "Stop & Location Management",
+          "desc": "Create and manage pickup and delivery locations with GPS coordinates, address validation, and coverage area mapping. Search and assign stops to any route."
+        },
+        {
+          "title": "Transit Time Estimation",
+          "desc": "Set and display expected transit times per route segment. Customers and agents see estimated arrival windows at booking time, not after."
+        },
+        {
+          "title": "Pricing Per Route",
+          "desc": "Configure rate cards per route with weight-based, zone-based, and dimensional weight pricing. Apply service level surcharges, fuel fees, and seasonal rates."
+        },
+        {
+          "title": "Interactive Map Visualization",
+          "desc": "View routes, stops, and active deliveries on interactive maps powered by Leaflet and OpenStreetMap. Visualize coverage areas and cluster delivery locations."
+        },
+        {
+          "title": "Distance Calculation",
+          "desc": "Automatic distance and duration calculation between stops using Google Maps API. Distances inform pricing, transit time estimates, and fuel cost tracking."
+        },
+        {
+          "title": "Vehicle Assignment to Routes",
+          "desc": "Assign registered vehicles to specific routes based on capacity, type, and availability. Track which vehicle is running which route at any point in time."
+        },
+        {
+          "title": "Route Performance Analytics",
+          "desc": "Monitor shipment volumes per route, delivery success rates, average transit times, and revenue per corridor. Identify underperforming routes instantly."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Define the Route",
+          "desc": "Create a route with origin, destination, and intermediate stops. Set the route name, carrier type, transit time, and which services are available on this corridor."
+        },
+        {
+          "step": "02",
+          "title": "Configure Pricing",
+          "desc": "Set rate cards for the route: weight bands, zone pricing, package type rates, express surcharges, and any custom contract rates for specific clients."
+        },
+        {
+          "step": "03",
+          "title": "Assign Vehicles",
+          "desc": "Link vehicles from your fleet to the route. The system tracks capacity and ensures the right vehicle type is matched to the route requirements."
+        },
+        {
+          "step": "04",
+          "title": "Assign Shipments",
+          "desc": "Agents select the route at booking time. Shipments are grouped by route for dispatch. The system shows available capacity per run before assignment."
+        },
+        {
+          "step": "05",
+          "title": "Track and Report",
+          "desc": "Monitor every active shipment on the route in real time. Report on route utilization, delivery success, and revenue contribution at any time."
+        }
+      ],
+      "routeAttributes": [
+        {
+          "label": "Origin and Destination",
+          "desc": "Full address with GPS coordinates for each route endpoint"
+        },
+        {
+          "label": "Intermediate Stops",
+          "desc": "Configurable waypoints with sequence and transit time per leg"
+        },
+        {
+          "label": "Route Scheduling",
+          "desc": "Set departure days, frequencies, and cutoff times per route"
+        },
+        {
+          "label": "Service Levels",
+          "desc": "Standard, express, and overnight options per route corridor"
+        },
+        {
+          "label": "Distance and Duration",
+          "desc": "Auto-calculated from Google Maps API at route creation"
+        },
+        {
+          "label": "Coverage Area",
+          "desc": "Geographic mapping of pickup and delivery zones per route"
+        }
+      ],
+      "mapFeatures": [
+        "Interactive route visualization on OpenStreetMap",
+        "Real-time vehicle and driver location tracking",
+        "Delivery cluster mapping for dense urban areas",
+        "Geofencing for zone-based coverage rules",
+        "Address autocomplete powered by Google Maps",
+        "Geocoding and reverse geocoding for all stops",
+        "Route overlay showing full multi-leg path",
+        "Live shipment movement during transit"
+      ],
+      "pricingRules": [
+        {
+          "name": "Weight-Based Pricing",
+          "desc": "Rate tiers by package weight with configurable bands"
+        },
+        {
+          "name": "Zone-Based Pricing",
+          "desc": "Different rates based on origin and destination zones"
+        },
+        {
+          "name": "Dimensional Weight",
+          "desc": "Volumetric weight calculation for oversized packages"
+        },
+        {
+          "name": "Service Level Rates",
+          "desc": "Standard, express, and overnight pricing per corridor"
+        },
+        {
+          "name": "Fuel Surcharge",
+          "desc": "Configurable fuel surcharge applied per route or globally"
+        },
+        {
+          "name": "Seasonal Pricing",
+          "desc": "Adjust rates for peak seasons with time-bound rules"
+        },
+        {
+          "name": "Custom Rate Contracts",
+          "desc": "Client-specific agreed rates override default pricing"
+        },
+        {
+          "name": "Handling Fees",
+          "desc": "Additional fees for special cargo types or extra services"
+        }
+      ]
+    },
+    "warehouse-management": {
+      "capabilities": [
+        {
+          "title": "Multiple Warehouse Support",
+          "desc": "Register and manage any number of warehouse locations from a single NTIGI account. Each warehouse has its own location, capacity, assigned staff, and operational records."
+        },
+        {
+          "title": "Shelf and Bin Locations",
+          "desc": "Define physical shelf and bin locations within each warehouse. Assign incoming goods to specific shelf positions. Find any package by its bin location instantly."
+        },
+        {
+          "title": "Capacity Management",
+          "desc": "Track used and available capacity per warehouse. Monitor fill levels by weight and volume to prevent over-loading and plan incoming shipments effectively."
+        },
+        {
+          "title": "Stock Tracking",
+          "desc": "Track stock levels in real time. View what is currently in the warehouse, what is reserved for outgoing shipments, and what has been dispatched."
+        },
+        {
+          "title": "Receiving with Barcode Scanning",
+          "desc": "Staff scan package barcodes at receiving to confirm every item entering the warehouse. Packages are automatically logged with location, weight, and arrival timestamp."
+        },
+        {
+          "title": "Goods-In and Dispatch",
+          "desc": "Full receiving and dispatch workflows. From the moment a package arrives to when it leaves the warehouse, every movement is recorded with user and timestamp."
+        },
+        {
+          "title": "Consolidation and Pallet Tracking",
+          "desc": "Group incoming shipments into consolidation batches. Assign packages to pallets with weight and dimension tracking. Optimize loads before container assignment."
+        },
+        {
+          "title": "Manifest and Voyage Management",
+          "desc": "Generate voyage manifests directly from warehouse consolidation batches. Assign to containers or vehicles and track manifest status through to departure."
+        }
+      ],
+      "workflow": [
+        {
+          "step": "01",
+          "title": "Configure Warehouse",
+          "desc": "Set up each warehouse with its name, location, capacity, and shelf layout. Assign warehouse staff and configure which shipment types are handled at that location."
+        },
+        {
+          "step": "02",
+          "title": "Receive Goods",
+          "desc": "Staff scan incoming packages at the receiving dock. Each item is logged against its shipment record, assigned a shelf location, and marked as in-warehouse."
+        },
+        {
+          "step": "03",
+          "title": "Locate and Track",
+          "desc": "At any time, staff can search for any package by its tracking number or barcode and immediately see which shelf or bin it is in and when it arrived."
+        },
+        {
+          "step": "04",
+          "title": "Consolidate for Dispatch",
+          "desc": "Group packages heading to the same destination into a consolidation batch. Assign to pallets, then to a container. Generate the manifest automatically."
+        },
+        {
+          "step": "05",
+          "title": "Dispatch and Close",
+          "desc": "When the load departs, confirm dispatch per package. Stock levels update instantly. All records are archived with a full audit trail."
+        }
+      ],
+      "warehouseRecord": [
+        {
+          "label": "Name and Location",
+          "desc": "Warehouse identifier with GPS coordinates and address"
+        },
+        {
+          "label": "Total Capacity",
+          "desc": "Maximum weight and volume the warehouse can hold"
+        },
+        {
+          "label": "Current Occupancy",
+          "desc": "Real-time fill level by weight and volume"
+        },
+        {
+          "label": "Shelf and Bin Map",
+          "desc": "Physical layout of storage positions within the warehouse"
+        },
+        {
+          "label": "Assigned Staff",
+          "desc": "Which users can operate and view this warehouse"
+        },
+        {
+          "label": "Receiving Log",
+          "desc": "All goods received with date, quantity, and staff who received"
+        },
+        {
+          "label": "Dispatch Log",
+          "desc": "All goods dispatched with destination, vehicle, and departure time"
+        },
+        {
+          "label": "Current Stock",
+          "desc": "All packages currently in the warehouse with their bin locations"
+        }
+      ],
+      "stockFeatures": [
+        "Real-time stock levels per warehouse",
+        "Reserved versus available stock tracking",
+        "Package-level location search by barcode",
+        "Arrival and departure timestamp on every movement",
+        "Bulk receiving and dispatch operations",
+        "Lost parcel reporting and investigation tools",
+        "Barcode scanning via mobile PWA for warehouse staff",
+        "Export stock reports to Excel or CSV"
+      ],
+      "jsx": {
+        "h1_0_part1": "Warehouse",
+        "h1_0_part2": "Management",
+        "p_0": "Manage multiple warehouses with shelf and bin location tracking, barcode-scan receiving, real-time stock levels, consolidation, and complete dispatch operations. Works fully offline.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Multi",
+        "stat_label_0": "Warehouse support",
+        "stat_display_1": "Real-Time",
+        "stat_label_1": "Stock tracking",
+        "stat_display_2": "Barcode",
+        "stat_label_2": "Scan to receive",
+        "stat_display_3": "Offline",
+        "stat_label_3": "First support",
+        "h2_0": "Complete Warehouse Controls",
+        "p_1": "NTIGI handles every stage of warehouse management from configuration and receiving to item location, batch consolidation, and outbound dispatch.",
+        "h2_1": "From Receiving to Dispatch",
+        "p_2": "A clear five-step warehouse operational flow that keeps your inventory moving and your records accurate.",
+        "h3_0": "What Every Warehouse Record Contains",
+        "p_3": "Each warehouse location in your network has a comprehensive, isolated dashboard for local operations and head-office reporting.",
+        "h3_1": "Built-In Stock Tracking & Control",
+        "p_4": "Keep tabs on every package with granular stock status tracking, mobile barcode scanning, and instant reporting tools.",
+        "h2_2": "Who This Is Built For",
+        "h4_0": "Warehouse Managers",
+        "p_5": "Configure shelf layouts, monitor occupancy rates by weight and volume, assign staff, and oversee daily receiving and dispatch workflows.",
+        "h4_1": "Logistics Operators",
+        "p_6": "Scan incoming items to verify receipt, locate packages instantly on the warehouse map, and build optimized consolidation loads.",
+        "h4_2": "Distribution Centers",
+        "p_7": "Coordinate cross-docking operations, manage high-volume transit stock, and generate outbound container voyage manifests.",
+        "h2_3": "Related Solutions",
+        "related_title_0": "Consolidation & Manifests",
+        "related_desc_0": "Group shipments into voyages, optimize container loads, and generate compliant customs manifests.",
+        "related_title_1": "Inventory & Stock Control",
+        "related_desc_1": "Track item-level stock records, run counts, and manage transfers across your distribution network.",
+        "related_title_2": "Customs & Compliance",
+        "related_desc_2": "Generate commercial invoices, manage HS codes, and run sanctions screening before dispatch.",
+        "learn_more": "Learn more",
+        "h2_4_part1": "Ready to Optimize Your",
+        "h2_4_part2": "Warehouse Operations?",
+        "p_8": "See how NTIGI handles multiple warehouses, barcode scanning, and inventory tracking for your team in a live walkthrough with our team."
+      }
+    }
   }
 }

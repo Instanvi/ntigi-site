@@ -14,6 +14,7 @@ import {
   IdentificationCard, DeviceMobile, CheckCircle, ShieldCheck,
   ClipboardText, Gauge, Warning, UsersThree, Buildings,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
@@ -93,6 +94,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function FleetManagement() {
+    const t = useTranslations("Solutions.customs-compliance");
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
