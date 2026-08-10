@@ -1,24 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "./ui/Button";
 import { ArrowRight, Laptop, DeviceMobile, HardDrive, WifiHigh } from "@phosphor-icons/react";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-const featureList = [
-  { icon: Laptop, title: "Web Application", desc: "Full-featured web interface accessible securely from any modern desktop or laptop browser." },
-  { icon: DeviceMobile, title: "Mobile Web & PWA", desc: "Progressive Web Application (PWA) with local caching optimized for mobile and tablet tracking." },
-];
-
-const offlineItems = [
-  "Create and manage cargo files without internet",
-  "Access local cached transaction lists",
-  "Automatic background sync queue when network returns",
-];
-
 export default function PlatformOverview() {
+  const t = useTranslations("Platform");
+
+  const featureList = [
+    { icon: Laptop,       title: t("webApp.title"),    desc: t("webApp.desc")    },
+    { icon: DeviceMobile, title: t("mobileApp.title"), desc: t("mobileApp.desc") },
+  ];
+
+  const offlineItems = [
+    t("offlineItems.item1"),
+    t("offlineItems.item2"),
+    t("offlineItems.item3"),
+  ];
+
   return (
     <section className="w-full py-20 bg-background border-t border-border-custom">
       <div className="mx-auto max-w-7xl px-6 md:px-8">
@@ -33,12 +36,12 @@ export default function PlatformOverview() {
             className="space-y-5"
           >
             <h2 className="text-2xl md:text-4xl font-extrabold text-foreground leading-tight uppercase">
-              Access Anywhere,
+              {t("section1Title1")}
               <br />
-              <span className="text-[#3b82f6]">Work Everywhere</span>
+              <span className="text-[#3b82f6]">{t("section1Title2")}</span>
             </h2>
             <p className="text-sm text-foreground/70 leading-relaxed font-medium">
-              NTIGI provides seamless access across all your primary business channels. Whether in the regional branch office or on the road, your logistics databases remain perfectly updated.
+              {t("section1Desc")}
             </p>
 
             <div className="space-y-4 pt-2">
@@ -64,7 +67,7 @@ export default function PlatformOverview() {
 
             <div className="pt-4">
               <Button variant="outline" size="lg" href="/platform" className="text-sm uppercase tracking-wider">
-                Explore Platform
+                {t("explorePlatform")}
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </Button>
             </div>
@@ -81,7 +84,7 @@ export default function PlatformOverview() {
               <Image src="/ship.jpeg" alt="NTIGI Platform Overview" fill className="object-cover opacity-90 dark:opacity-85" />
               <div className="absolute inset-0 bg-gradient-to-tr from-background/70 to-transparent" />
               <div className="absolute bottom-3 left-3 bg-background border border-border-custom px-2.5 py-1 text-[9px] text-[#3b82f6] rounded-none font-bold">
-                VESSEL_LOC_MONITOR: ON
+                {t("console.vesselMonitor")}
               </div>
             </div>
           </motion.div>
@@ -100,9 +103,9 @@ export default function PlatformOverview() {
               <div className="flex items-center justify-between border-b border-border-custom pb-2 text-[9px] text-foreground/60">
                 <div className="flex items-center gap-1.5 font-bold">
                   <HardDrive className="h-3.5 w-3.5 text-blue-500" />
-                  <span>LOCAL_STORAGE_SYNC</span>
+                  <span>{t("console.storageSync")}</span>
                 </div>
-                <span className="text-green-600 dark:text-green-400 uppercase tracking-widest font-bold">100% OFFLINE ACTIVE</span>
+                <span className="text-green-600 dark:text-green-400 uppercase tracking-widest font-bold">{t("console.offlineActive")}</span>
               </div>
 
               <div className="my-6 text-center space-y-3">
@@ -114,16 +117,16 @@ export default function PlatformOverview() {
                   <WifiHigh className="w-7 h-7" />
                 </motion.div>
                 <div>
-                  <div className="text-4xl font-extrabold text-foreground tracking-tight">INDEXED_DB</div>
-                  <div className="text-[9px] font-bold text-foreground/45 uppercase tracking-widest mt-1">Ready for offline transaction writes</div>
+                  <div className="text-4xl font-extrabold text-foreground tracking-tight">{t("console.indexedDb")}</div>
+                  <div className="text-[9px] font-bold text-foreground/45 uppercase tracking-widest mt-1">{t("console.readyForWrites")}</div>
                 </div>
               </div>
 
               <div className="border-t border-border-custom pt-2 flex items-center justify-between text-[8px] text-foreground/50">
-                <span>QUEUE SIZE: 0 pending</span>
+                <span>{t("console.queueSize")}</span>
                 <span className="flex items-center gap-1 text-green-600 dark:text-green-400 font-bold">
-                  <span className="w-1.5 h-1.5 rounded-none bg-green-500 animate-ping" />
-                  SYNC PROTOCOL STANDBY
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping" />
+                  {t("console.syncStandby")}
                 </span>
               </div>
             </div>
@@ -137,12 +140,12 @@ export default function PlatformOverview() {
             className="order-1 md:order-2 space-y-5"
           >
             <h2 className="text-2xl md:text-4xl font-extrabold text-foreground leading-tight uppercase">
-              Never Stop Working,
+              {t("section2Title1")}
               <br />
-              <span className="text-[#3b82f6]">Even Offline</span>
+              <span className="text-[#3b82f6]">{t("section2Title2")}</span>
             </h2>
             <p className="text-sm text-foreground/70 leading-relaxed font-medium">
-              Our offline-first architecture leverages browser IndexedDB capabilities. Save shipments, sign deliveries, and perform audits without cellular or internet coverage.
+              {t("section2Desc")}
             </p>
 
             <div className="space-y-2.5 pt-2 text-sm text-foreground/80">
@@ -163,7 +166,7 @@ export default function PlatformOverview() {
 
             <div className="pt-4">
               <Button variant="outline" size="lg" href="/platform" className="text-sm uppercase tracking-wider">
-                Learn More
+                {t("learnMore")}
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </Button>
             </div>

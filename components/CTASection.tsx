@@ -1,18 +1,12 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { Button } from "./ui/Button";
 import { ArrowRight, CalendarBlank } from "@phosphor-icons/react";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
-
-const stats = [
-  { value: 99.9, suffix: "%", label: "Uptime SLA" },
-  { value: 24, suffix: "/7", label: "Support" },
-  { value: 100, suffix: "K+", label: "Daily Shipments" },
-  { value: 100, suffix: "%", label: "Offline Capable" },
-];
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -46,6 +40,15 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function CTASection() {
+  const t = useTranslations("CTA");
+
+  const stats = [
+    { value: 99.9, suffix: "%", labelKey: "stats.uptime"    },
+    { value: 24,   suffix: "/7", labelKey: "stats.support"   },
+    { value: 100,  suffix: "K+", labelKey: "stats.shipments" },
+    { value: 100,  suffix: "%",  labelKey: "stats.offline"   },
+  ];
+
   return (
     <section className="w-full py-20 bg-background border-t border-border-custom text-foreground relative overflow-hidden noise-overlay">
       <div className="absolute inset-0 bg-radial-[circle_at_center,var(--primary-glow),transparent_70%]" />
@@ -58,24 +61,15 @@ export default function CTASection() {
           transition={{ duration: 0.7, ease: easeOutExpo }}
           className="space-y-6"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.5, ease: easeOutExpo }}
-            className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-none"
-          >
-            GET STARTED
-          </motion.span>
 
           <h2 className="text-2xl md:text-4xl font-extrabold text-foreground leading-tight uppercase">
-            Ready to Transform Your
+            {t("title1")}
             <br />
-            <span className="text-[#3b82f6]">Logistics Operations?</span>
+            <span className="text-[#3b82f6]">{t("title2")}</span>
           </h2>
 
           <p className="text-sm text-foreground/70 max-w-2xl mx-auto leading-relaxed font-medium">
-            Join leading freight forwarders and shipping companies using NTIGI to centralize their databases and scale operations.
+            {t("desc")}
           </p>
 
           <motion.div
@@ -87,15 +81,14 @@ export default function CTASection() {
           >
             <Button variant="secondary" size="lg" href="/demo" className="px-6 py-3 text-xs">
               <CalendarBlank className="mr-1.5 h-4 w-4" />
-              Schedule a Demo
+              {t("scheduleDemo")}
             </Button>
             <Button variant="outline" size="lg" href="/company" className="px-6 py-3 text-xs">
-              Contact Sales
+              {t("contactSales")}
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Button>
           </motion.div>
 
-          {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +99,9 @@ export default function CTASection() {
             {stats.map((stat, i) => (
               <div key={i} className="p-4 bg-primary/5 border border-border-custom rounded-none text-center">
                 <CountUp target={stat.value} suffix={stat.suffix} />
-                <div className="text-[9px] font-bold text-foreground/50 uppercase tracking-widest mt-1">{stat.label}</div>
+                <div className="text-[9px] font-bold text-foreground/50 uppercase tracking-widest mt-1">
+                  {t(stat.labelKey as any)}
+                </div>
               </div>
             ))}
           </motion.div>

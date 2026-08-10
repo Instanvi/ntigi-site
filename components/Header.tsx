@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect, ElementType } from "react";
-import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import Logo from "./Logo";
 import {
   Globe,
@@ -28,11 +30,7 @@ import {
   SquaresFour,
   Tag,
   PlayCircle,
-  Code,
   BookOpen,
-  Headset,
-  Star,
-  Handshake,
   Envelope,
   Building,
   Briefcase,
@@ -43,6 +41,11 @@ import { Button } from "./ui/Button";
 import MegaMenu from "./MegaMenu";
 
 export default function Header() {
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [isDark, setIsDark] = useState(false);
@@ -71,61 +74,61 @@ export default function Header() {
     }
   };
 
+  const switchLocale = (next: string) => {
+    router.replace(pathname, { locale: next });
+  };
+
   /* ─── Solutions ─── */
   const solutionTabs = [
-    { id: "forwarders", label: "Freight Forwarders", icon: Airplane },
-    { id: "courier", label: "Courier & Delivery", icon: Truck },
-    { id: "warehouse", label: "Warehouse Operators", icon: Warehouse },
-    { id: "ecommerce", label: "E-commerce", icon: ShoppingCart },
+    { id: "forwarders", label: t("solutionTabs.forwarders"), icon: Airplane },
+    { id: "courier",    label: t("solutionTabs.courier"),    icon: Truck },
+    { id: "warehouse",  label: t("solutionTabs.warehouse"),  icon: Warehouse },
+    { id: "ecommerce",  label: t("solutionTabs.ecommerce"),  icon: ShoppingCart },
   ];
 
   const solutionItems: Record<string, { name: string; desc: string; href: string; icon: ElementType }[]> = {
     forwarders: [
-      { name: "International Forwarding", desc: "End-to-end forwarding operations with multi-leg routing and agency networks.", href: "/solutions/international-forwarding", icon: AirplaneTilt },
-      { name: "Customs & Compliance", desc: "Automated declarations, duty calculations, and regulatory document generation.", href: "/solutions/customs-compliance", icon: ShieldCheck },
-      { name: "Consolidation & Manifests", desc: "Group shipments, manage containers, and generate voyage manifests.", href: "/solutions/consolidation", icon: Stack },
-      { name: "Multi-Branch Network", desc: "Inter-branch transfers, settlements, and role-based data isolation.", href: "/solutions/multi-branch", icon: Buildings },
+      { name: t("solutions.forwarders.intlForwarding.name"), desc: t("solutions.forwarders.intlForwarding.desc"), href: "/solutions/international-forwarding", icon: AirplaneTilt },
+      { name: t("solutions.forwarders.customs.name"),        desc: t("solutions.forwarders.customs.desc"),        href: "/solutions/customs-compliance",        icon: ShieldCheck },
+      { name: t("solutions.forwarders.consolidation.name"),  desc: t("solutions.forwarders.consolidation.desc"),  href: "/solutions/consolidation",             icon: Stack },
+      { name: t("solutions.forwarders.multiBranch.name"),    desc: t("solutions.forwarders.multiBranch.desc"),    href: "/solutions/multi-branch",              icon: Buildings },
     ],
     courier: [
-      { name: "Route Optimization", desc: "AI-powered planning for delivery times, fuel savings, and fleet efficiency.", href: "/solutions/route-optimization", icon: MapPinLine },
-      { name: "Fleet & Driver Management", desc: "Vehicle registration, maintenance schedules, and driver mobile app.", href: "/solutions/fleet-management", icon: Truck },
-      { name: "Proof of Delivery", desc: "Signature capture, photo documentation, and real-time GPS tracking.", href: "/solutions/proof-of-delivery", icon: CheckCircle },
-      { name: "Finance & Billing", desc: "Cash, card, mobile money, COD tracking, and automated invoicing.", href: "/solutions/finance-billing", icon: CreditCard },
+      { name: t("solutions.courier.routeOpt.name"), desc: t("solutions.courier.routeOpt.desc"), href: "/solutions/route-optimization", icon: MapPinLine },
+      { name: t("solutions.courier.fleet.name"),    desc: t("solutions.courier.fleet.desc"),    href: "/solutions/fleet-management",   icon: Truck },
+      { name: t("solutions.courier.pod.name"),      desc: t("solutions.courier.pod.desc"),      href: "/solutions/proof-of-delivery",  icon: CheckCircle },
+      { name: t("solutions.courier.finance.name"),  desc: t("solutions.courier.finance.desc"),  href: "/solutions/finance-billing",    icon: CreditCard },
     ],
     warehouse: [
-      { name: "Warehouse Management", desc: "Multi-warehouse support with shelf locations, capacity, and stock tracking.", href: "/solutions/warehouse-management", icon: Warehouse },
-      { name: "Inventory & Stock Control", desc: "Real-time stock levels, receiving, dispatch, and bin management.", href: "/solutions/inventory-control", icon: Cube },
-      { name: "Consolidation Hub", desc: "Pallet tracking, load optimization, and container manifest workflows.", href: "/solutions/consolidation-hub", icon: ArrowsInLineHorizontal },
+      { name: t("solutions.warehouse.wms.name"),              desc: t("solutions.warehouse.wms.desc"),              href: "/solutions/warehouse-management", icon: Warehouse },
+      { name: t("solutions.warehouse.inventory.name"),        desc: t("solutions.warehouse.inventory.desc"),        href: "/solutions/inventory-control",    icon: Cube },
+      { name: t("solutions.warehouse.consolidationHub.name"), desc: t("solutions.warehouse.consolidationHub.desc"), href: "/solutions/consolidation-hub",    icon: ArrowsInLineHorizontal },
     ],
     ecommerce: [
-      { name: "Fulfillment Operations", desc: "High-volume order processing, bulk shipment creation, and tracking.", href: "/solutions/ecommerce-fulfillment", icon: Package },
-      { name: "Returns Management", desc: "Return shipment handling, refunds, and reverse logistics workflows.", href: "/solutions/returns", icon: ArrowUUpLeft },
-      { name: "Customer Portal", desc: "Self-service booking, tracking, invoice downloads, and payment history.", href: "/solutions/customer-portal", icon: UserCircle },
+      { name: t("solutions.ecommerce.fulfillment.name"), desc: t("solutions.ecommerce.fulfillment.desc"), href: "/solutions/ecommerce-fulfillment", icon: Package },
+      { name: t("solutions.ecommerce.returns.name"),     desc: t("solutions.ecommerce.returns.desc"),     href: "/solutions/returns",               icon: ArrowUUpLeft },
+      { name: t("solutions.ecommerce.portal.name"),      desc: t("solutions.ecommerce.portal.desc"),      href: "/solutions/customer-portal",       icon: UserCircle },
     ],
   };
 
   /* ─── Platform ─── */
   const platformItems = [
-    { name: "Platform Overview", desc: "A unified view of how NTIGI connects your entire logistics operation.", href: "/platform", icon: SquaresFour },
-    { name: "Pricing", desc: "Transparent pricing for teams of all sizes. No hidden fees.", href: "/pricing", icon: Tag },
-    { name: "Request a Demo", desc: "See NTIGI in action with a personalized walkthrough.", href: "/demo", icon: PlayCircle },
- /* { name: "API & Developers", desc: "REST API, webhooks, SDKs, and integration guides.", href: "/developers", icon: Code }, */
+    { name: t("platform.overview.name"), desc: t("platform.overview.desc"), href: "/platform",  icon: SquaresFour },
+    { name: t("platform.pricing.name"),  desc: t("platform.pricing.desc"),  href: "/pricing",   icon: Tag },
+    { name: t("platform.demo.name"),     desc: t("platform.demo.desc"),     href: "/demo",      icon: PlayCircle },
   ];
 
   /* ─── Resources ─── */
   const resourceItems = [
-    { name: "Documentation", desc: "Comprehensive guides for users, admins, and developers.", href: "/docs", icon: BookOpen },
-  /*  { name: "Support Center", desc: "Searchable knowledge base and troubleshooting guides.", href: "/support", icon: Headset }, */
-  /*  { name: "Customer Stories", desc: "How freight forwarders and couriers scale with NTIGI.", href: "/resources/stories", icon: Star }, */
-  /*  { name: "Partner Network", desc: "Explore our global network of agencies and integrators.", href: "/partners", icon: Handshake }, */
-    { name: "Contact Us", desc: "Reach our team for sales, support, or partnerships.", href: "/contact", icon: Envelope },
+    { name: t("resources.docs.name"),    desc: t("resources.docs.desc"),    href: "/docs",    icon: BookOpen },
+    { name: t("resources.contact.name"), desc: t("resources.contact.desc"), href: "/contact", icon: Envelope },
   ];
 
   /* ─── Company ─── */
   const companyItems = [
-    { name: "About NTIGI", desc: "Our mission to modernize global logistics with offline-first technology.", href: "/company", icon: Building },
-    { name: "Careers", desc: "Engineering, sales, support, and logistics specialist roles.", href: "/careers", icon: Briefcase },
-    { name: "Blog", desc: "Insights on logistics tech, compliance, and industry trends.", href: "/blog", icon: Article },
+    { name: t("company.about.name"),   desc: t("company.about.desc"),   href: "/company",  icon: Building },
+    { name: t("company.careers.name"), desc: t("company.careers.desc"), href: "/careers",  icon: Briefcase },
+    { name: t("company.blog.name"),    desc: t("company.blog.desc"),    href: "/blog",      icon: Article },
   ];
 
   const toggleMobileSection = (section: string) => {
@@ -143,14 +146,15 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          <MegaMenu label="Solutions" tabs={solutionTabs} items={solutionItems} />
-          <MegaMenu label="Platform" items={platformItems} />
-          <MegaMenu label="Resources" items={resourceItems} />
-          <MegaMenu label="Company" items={companyItems} />
+          <MegaMenu label={t("nav.solutions")} tabs={solutionTabs} items={solutionItems} />
+          <MegaMenu label={t("nav.platform")}  items={platformItems} />
+          <MegaMenu label={t("nav.resources")} items={resourceItems} />
+          <MegaMenu label={t("nav.company")}   items={companyItems} />
         </nav>
 
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-5">
+          {/* Theme toggle */}
           <button
             onClick={toggleTheme}
             className="text-foreground/70 hover:text-foreground transition-colors cursor-pointer p-1 rounded-none border border-border-custom hover:bg-primary/5"
@@ -160,16 +164,31 @@ export default function Header() {
           </button>
 
           <Button variant="outline" href="https://new.ntigi.cm/login" className="px-4 py-1.5 text-[11px]">
-            My Account
+            {t("myAccount")}
           </Button>
 
           <Button variant="primary" size="sm" href="/demo" className="px-4 py-1.5 text-[11px]">
-            Demo
+            {t("demo")}
           </Button>
 
-          <div className="flex items-center gap-1 text-[11px] text-foreground/70 hover:text-foreground cursor-pointer">
+          {/* Language switcher */}
+          <div className="flex items-center gap-1 text-[11px] text-foreground/70">
             <Globe className="h-3.5 w-3.5" />
-            <span>EN</span>
+            <button
+              onClick={() => switchLocale("en")}
+              className={`px-1 cursor-pointer transition-colors ${locale === "en" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+            <span className="text-foreground/30">|</span>
+            <button
+              onClick={() => switchLocale("fr")}
+              className={`px-1 cursor-pointer transition-colors ${locale === "fr" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+              aria-label="Passer en français"
+            >
+              FR
+            </button>
           </div>
         </div>
 
@@ -193,7 +212,7 @@ export default function Header() {
               onClick={() => toggleMobileSection("solutions")}
               className="w-full flex items-center justify-between py-3 text-xs font-bold tracking-wider uppercase text-foreground/80"
             >
-              Solutions
+              {t("nav.solutions")}
               <CaretDown className={`h-3 w-3 transition-transform ${mobileExpanded === "solutions" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "solutions" && (
@@ -229,7 +248,7 @@ export default function Header() {
               onClick={() => toggleMobileSection("platform")}
               className="w-full flex items-center justify-between py-3 text-xs font-bold tracking-wider uppercase text-foreground/80"
             >
-              Platform
+              {t("nav.platform")}
               <CaretDown className={`h-3 w-3 transition-transform ${mobileExpanded === "platform" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "platform" && (
@@ -255,7 +274,7 @@ export default function Header() {
               onClick={() => toggleMobileSection("resources")}
               className="w-full flex items-center justify-between py-3 text-xs font-bold tracking-wider uppercase text-foreground/80"
             >
-              Resources
+              {t("nav.resources")}
               <CaretDown className={`h-3 w-3 transition-transform ${mobileExpanded === "resources" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "resources" && (
@@ -281,7 +300,7 @@ export default function Header() {
               onClick={() => toggleMobileSection("company")}
               className="w-full flex items-center justify-between py-3 text-xs font-bold tracking-wider uppercase text-foreground/80"
             >
-              Company
+              {t("nav.company")}
               <CaretDown className={`h-3 w-3 transition-transform ${mobileExpanded === "company" ? "rotate-180" : ""}`} />
             </button>
             {mobileExpanded === "company" && (
@@ -301,15 +320,34 @@ export default function Header() {
             )}
           </div>
 
-          {/* Theme toggle */}
+          {/* Theme + Language row */}
           <div className="flex justify-between items-center py-3 border-b border-border-custom/50">
-            <span className="text-xs text-foreground/60 uppercase font-bold tracking-wider">Theme</span>
-            <button
-              onClick={toggleTheme}
-              className="text-foreground p-1.5 rounded-none border border-border-custom hover:bg-primary/5 transition-colors"
-            >
-              {isDark ? <Sun className="h-4 w-4 text-yellow-400" /> : <Moon className="h-4 w-4 text-blue-500" />}
-            </button>
+            <span className="text-xs text-foreground/60 uppercase font-bold tracking-wider">{t("theme")}</span>
+            <div className="flex items-center gap-3">
+              {/* Language switcher mobile */}
+              <div className="flex items-center gap-1 text-[11px] text-foreground/70">
+                <Globe className="h-3.5 w-3.5" />
+                <button
+                  onClick={() => switchLocale("en")}
+                  className={`px-1 cursor-pointer transition-colors ${locale === "en" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+                >
+                  EN
+                </button>
+                <span className="text-foreground/30">|</span>
+                <button
+                  onClick={() => switchLocale("fr")}
+                  className={`px-1 cursor-pointer transition-colors ${locale === "fr" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+                >
+                  FR
+                </button>
+              </div>
+              <button
+                onClick={toggleTheme}
+                className="text-foreground p-1.5 rounded-none border border-border-custom hover:bg-primary/5 transition-colors"
+              >
+                {isDark ? <Sun className="h-4 w-4 text-yellow-400" /> : <Moon className="h-4 w-4 text-blue-500" />}
+              </button>
+            </div>
           </div>
 
           {/* CTAs */}
@@ -320,7 +358,7 @@ export default function Header() {
               className="w-full text-center py-2.5 text-xs font-bold"
               onClick={() => setIsOpen(false)}
             >
-              My Account
+              {t("myAccount")}
             </Button>
             <Button
               variant="primary"
@@ -328,7 +366,7 @@ export default function Header() {
               className="w-full text-center py-2.5 text-xs font-bold"
               onClick={() => setIsOpen(false)}
             >
-              Demo
+              {t("demo")}
             </Button>
           </div>
         </div>

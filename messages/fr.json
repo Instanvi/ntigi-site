@@ -1,0 +1,187 @@
+{
+  "Metadata": {
+    "title": "NTIGI Logistique",
+    "description": "Ntigi transforme les chaînes d'approvisionnement mondiales, offrant un logiciel de logistique et de fret avancé, hors ligne en priorité, pour des opérations rationalisées et sans frontières.",
+    "keywords": "logiciel chaîne d'approvisionnement, logiciel transit international, logiciel dédouanement, logiciel logistique mondiale, logiciel réservation fret, Ntigi, logiciel cargo, logiciel logistique"
+  },
+  "Header": {
+    "myAccount": "Mon Compte",
+    "demo": "Démo",
+    "theme": "Thème",
+    "nav": {
+      "solutions": "Solutions",
+      "platform": "Plateforme",
+      "resources": "Ressources",
+      "company": "Entreprise"
+    },
+    "solutionTabs": {
+      "forwarders": "Transitaires",
+      "courier": "Coursier & Livraison",
+      "warehouse": "Opérateurs d'Entrepôt",
+      "ecommerce": "E-commerce"
+    },
+    "solutions": {
+      "forwarders": {
+        "intlForwarding": { "name": "Transit International", "desc": "Opérations de transit de bout en bout avec routage multi-étapes et réseaux d'agences." },
+        "customs": { "name": "Douanes & Conformité", "desc": "Déclarations automatisées, calculs de droits et génération de documents réglementaires." },
+        "consolidation": { "name": "Consolidation & Manifestes", "desc": "Regrouper les expéditions, gérer les conteneurs et générer les manifestes de voyage." },
+        "multiBranch": { "name": "Réseau Multi-Agences", "desc": "Transferts inter-agences, règlements et isolation des données par rôle." }
+      },
+      "courier": {
+        "routeOpt": { "name": "Optimisation des Itinéraires", "desc": "Planification assistée par IA pour les délais de livraison, les économies de carburant et l'efficacité de la flotte." },
+        "fleet": { "name": "Gestion Flotte & Chauffeurs", "desc": "Immatriculation des véhicules, plannings de maintenance et application mobile chauffeur." },
+        "pod": { "name": "Preuve de Livraison", "desc": "Capture de signature, documentation photo et suivi GPS en temps réel." },
+        "finance": { "name": "Finance & Facturation", "desc": "Espèces, carte, mobile money, suivi COD et facturation automatisée." }
+      },
+      "warehouse": {
+        "wms": { "name": "Gestion d'Entrepôt", "desc": "Support multi-entrepôts avec emplacements en rayons, capacité et suivi des stocks." },
+        "inventory": { "name": "Contrôle des Stocks", "desc": "Niveaux de stock en temps réel, réception, expédition et gestion des emplacements." },
+        "consolidationHub": { "name": "Hub de Consolidation", "desc": "Suivi des palettes, optimisation des charges et flux de travail des manifestes de conteneurs." }
+      },
+      "ecommerce": {
+        "fulfillment": { "name": "Opérations de Fulfillment", "desc": "Traitement des commandes à volume élevé, création d'expéditions en masse et suivi." },
+        "returns": { "name": "Gestion des Retours", "desc": "Traitement des expéditions retour, remboursements et flux logistique inversé." },
+        "portal": { "name": "Portail Client", "desc": "Réservation en libre-service, suivi, téléchargement de factures et historique des paiements." }
+      }
+    },
+    "platform": {
+      "overview": { "name": "Aperçu de la Plateforme", "desc": "Une vue unifiée de la façon dont NTIGI connecte l'ensemble de vos opérations logistiques." },
+      "pricing": { "name": "Tarification", "desc": "Tarification transparente pour les équipes de toutes tailles. Aucun frais caché." },
+      "demo": { "name": "Demander une Démo", "desc": "Découvrez NTIGI en action lors d'une démonstration personnalisée." }
+    },
+    "resources": {
+      "docs": { "name": "Documentation", "desc": "Guides complets pour les utilisateurs, administrateurs et développeurs." },
+      "contact": { "name": "Nous Contacter", "desc": "Rejoignez notre équipe pour les ventes, le support ou les partenariats." }
+    },
+    "company": {
+      "about": { "name": "À Propos de NTIGI", "desc": "Notre mission de moderniser la logistique mondiale avec une technologie hors ligne en priorité." },
+      "careers": { "name": "Carrières", "desc": "Rôles en ingénierie, ventes, support et spécialistes logistique." },
+      "blog": { "name": "Blog", "desc": "Perspectives sur la technologie logistique, la conformité et les tendances du secteur." }
+    }
+  },
+  "Hero": {
+    "headline1": "Le système d'exploitation pour",
+    "headline2": "la logistique mondiale",
+    "subheadline": "Unifiez votre chaîne d'approvisionnement de bout en bout sur une plateforme intelligente. Web, bureau et mobile synchronisés, tous hors ligne en priorité.",
+    "ctaDemo": ">>> Initialiser la Démo",
+    "ctaSpecs": "Voir les Spécifications",
+    "terminal": {
+      "title": "NTIGI_OS // SUIVI_ITINÉRAIRE.sh",
+      "syncActive": "SYNC: ACTIVE",
+      "line1": "NTIGI v4.2.1-SÉCURISÉ",
+      "line2": "Connexion aux bases de données mondiales...",
+      "line3": "✓ Synchronisation BD locale: OK",
+      "line4": "Manifeste chargé: V-9932L",
+      "line5": "Port: Rotterdam",
+      "line6": "Lat: 4.0863° N",
+      "line7": "Lon: 9.6644° E",
+      "line8": ">> Optimisation en cours...",
+      "line9": "Coût itinéraire: -14.2%",
+      "cacheActive": ">> CACHE LOCAL ACTIF"
+    }
+  },
+  "Features": {
+    "sectionTitle1": "Une Seule Base de Données.",
+    "sectionTitle2": "Contrôle Logistique Unifié.",
+    "sectionDesc": "Gérez chaque étape des transits internationaux, des transactions clients et des transferts d'entrepôt sur un écosystème sécurisé, hors ligne en priorité.",
+    "items": {
+      "manifest": { "title": "Gestion des Manifestes & Voyages", "desc": "Contrôle complet des manifestes de fret maritime, planification des voyages et suivi des navires en temps réel." },
+      "shipment": { "title": "Gestion des Expéditions", "desc": "Suivi des expéditions de bout en bout, de l'origine à la destination, avec mises à jour automatiques et notifications." },
+      "crm": { "title": "Intégration CRM Client", "desc": "CRM complet avec niveaux de permissions granulaires, libre-service client et niveaux de contrats." },
+      "route": { "title": "Optimisation des Itinéraires", "desc": "Planification de corridors intelligente et suivi multi-étapes pour des vitesses de transit et des coûts d'itinéraires optimaux." },
+      "warehouse": { "title": "Opérations d'Entrepôt", "desc": "Suivi intégré de la capacité de stockage, allocations de rayons et documentation de réception/expédition." },
+      "finance": { "title": "Finance & Facturation", "desc": "Modèles de facturation automatisés, opérations de paiement fractionné et suivi des échanges multi-devises." },
+      "analytics": { "title": "Analytique en Temps Réel", "desc": "Rapports de performance opérationnelle consolidés et grilles d'analyse visuelle." },
+      "compliance": { "title": "Conformité Entreprise", "desc": "Visibilité basée sur les rôles, pistes d'activités complètes et validations JWT/OTP sécurisées." },
+      "offline": { "title": "Synchronisation Hors Ligne", "desc": "Saisissez et interrogez des données sans connexion internet. Synchronisation automatique dynamique lors de la reconnexion." },
+      "cloud": { "title": "Accès Cloud Transparent", "desc": "Console basée sur navigateur sécurisée et Application Web Progressive (PWA) sur n'importe quel appareil." },
+      "continuous": { "title": "Opération Continue", "desc": "La mise en cache au niveau du navigateur garantit que les opérations de gestion du fret ne s'arrêtent jamais en cas de panne réseau." },
+      "customs": { "title": "Douanes & Conformités", "desc": "Facturation commerciale automatisée, recherches de codes SH et contrôle des règles d'exportation." }
+    }
+  },
+  "Platform": {
+    "section1Title1": "Accès Partout,",
+    "section1Title2": "Travaillez Partout",
+    "section1Desc": "NTIGI offre un accès transparent sur tous vos canaux d'affaires principaux. Que vous soyez dans l'agence régionale ou en déplacement, vos bases de données logistiques restent parfaitement à jour.",
+    "webApp": { "title": "Application Web", "desc": "Interface web complète accessible en toute sécurité depuis n'importe quel navigateur de bureau ou portable moderne." },
+    "mobileApp": { "title": "Web Mobile & PWA", "desc": "Application Web Progressive (PWA) avec mise en cache locale optimisée pour le suivi sur mobile et tablette." },
+    "explorePlatform": "Explorer la Plateforme",
+    "section2Title1": "Ne Jamais Arrêter de Travailler,",
+    "section2Title2": "Même Hors Ligne",
+    "section2Desc": "Notre architecture hors ligne en priorité exploite les capacités IndexedDB du navigateur. Enregistrez des expéditions, signez des livraisons et effectuez des audits sans couverture cellulaire ou internet.",
+    "offlineItems": {
+      "item1": "Créez et gérez des fichiers cargo sans internet",
+      "item2": "Accédez aux listes de transactions en cache local",
+      "item3": "File d'attente de synchronisation en arrière-plan automatique lorsque le réseau revient"
+    },
+    "learnMore": "En Savoir Plus",
+    "console": {
+      "storageSync": "SYNC_STOCKAGE_LOCAL",
+      "offlineActive": "100% HORS LIGNE ACTIF",
+      "indexedDb": "BASE_INDEXÉE",
+      "readyForWrites": "Prêt pour les écritures hors ligne",
+      "queueSize": "FILE D'ATTENTE: 0 en attente",
+      "syncStandby": "PROTOCOLE SYNC EN VEILLE",
+      "vesselMonitor": "SURVEILLANCE_NAVIRE: ACTIVE"
+    }
+  },
+  "Blog": {
+    "badge": "ACTUALITÉS & GUIDES",
+    "title1": "Perspectives Logistiques &",
+    "title2": "Mises à Jour Conformité",
+    "desc": "Lisez des briefings professionnels sur les règles d'expédition, la coordination des itinéraires et les mises à jour de la chaîne d'approvisionnement.",
+    "seeAll": "Voir tous les articles",
+    "loading": ">> CHARGEMENT_ACTUALITÉS",
+    "readArticle": "Lire l'article"
+  },
+  "CTA": {
+    "badge": "COMMENCER",
+    "title1": "Prêt à Transformer Vos",
+    "title2": "Opérations Logistiques?",
+    "desc": "Rejoignez les principaux transitaires et compagnies maritimes qui utilisent NTIGI pour centraliser leurs bases de données et faire évoluer leurs opérations.",
+    "scheduleDemo": "Planifier une Démo",
+    "contactSales": "Contacter les Ventes",
+    "stats": {
+      "uptime": "SLA de Disponibilité",
+      "support": "Support",
+      "shipments": "Expéditions Quotidiennes",
+      "offline": "Capable Hors Ligne"
+    }
+  },
+  "Footer": {
+    "solutions": "Solutions",
+    "platform": "Plateforme",
+    "resources": "Ressources",
+    "company": "Entreprise",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Abonnez-vous pour les dernières mises à jour sur les nouvelles fonctionnalités de NTIGI, les success stories de nos clients et les perspectives.",
+    "emailPlaceholder": "ADRESSE EMAIL*",
+    "signUp": "S'inscrire maintenant",
+    "links": {
+      "intlForwarding": "Transit International",
+      "customs": "Douanes & Conformité",
+      "warehouse": "Gestion d'Entrepôt",
+      "courier": "Coursier & Livraison",
+      "ecommerce": "Fulfillment E-commerce",
+      "finance": "Finance & Facturation",
+      "platformOverview": "Aperçu de la Plateforme",
+      "pricing": "Tarification",
+      "requestDemo": "Demander une Démo",
+      "docs": "Documentation",
+      "support": "Centre de Support",
+      "contact": "Nous Contacter",
+      "about": "À Propos de NTIGI",
+      "careers": "Carrières",
+      "blog": "Blog"
+    },
+    "copyright": "© {year} NTIGI. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "cookies": "Paramètres des Cookies"
+  },
+  "LanguageSwitcher": {
+    "label": "Langue",
+    "en": "EN",
+    "fr": "FR"
+  }
+}

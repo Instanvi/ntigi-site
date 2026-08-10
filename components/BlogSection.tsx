@@ -1,18 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ArrowRight, Calendar, Clock } from "@phosphor-icons/react";
 import { blogArticles, BlogPost } from "@/app/blog/blogData";
 
 export default function BlogSection() {
+  const t = useTranslations("Blog");
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [sectionActive, setSectionActive] = useState(false);
 
   useEffect(() => {
-    // Scroll reveal trigger
     const handleScroll = () => {
       const el = document.getElementById("blog-section");
       if (!el) return;
@@ -24,7 +25,6 @@ export default function BlogSection() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    // Fetch dynamic posts from our api route
     async function loadPosts() {
       try {
         const res = await fetch("/api/blog");
@@ -48,7 +48,7 @@ export default function BlogSection() {
   }, []);
 
   return (
-    <section 
+    <section
       id="blog-section"
       className={`w-full py-20 bg-background border-t border-border-custom font-mono transition-all duration-700 transform translate-y-4 opacity-0 ${
         sectionActive ? "translate-y-0 opacity-100" : ""
@@ -58,16 +58,13 @@ export default function BlogSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-border-custom bg-primary/5 text-blue-500 text-[10px] uppercase tracking-wider rounded-none">
-              NEWS & GUIDES
-            </span>
             <h2 className="text-2xl md:text-3.5xl font-extrabold text-foreground leading-tight uppercase font-sans">
-              Logistics Insights &
+              {t("title1")}
               <br />
-              <span className="text-[#3b82f6]">Compliance Updates</span>
+              <span className="text-[#3b82f6]">{t("title2")}</span>
             </h2>
             <p className="text-xs text-foreground/70 font-sans leading-relaxed">
-              Read professional briefings on shipping rules, routes coordination, and supply chain updates.
+              {t("desc")}
             </p>
           </div>
           <div>
@@ -75,7 +72,7 @@ export default function BlogSection() {
               href="/blog"
               className="inline-flex items-center gap-1.5 px-4 py-2 border border-border-custom text-foreground/80 hover:border-foreground hover:text-foreground rounded-none text-xs font-bold uppercase tracking-wider transition-all"
             >
-              See all articles
+              {t("seeAll")}
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
@@ -84,7 +81,7 @@ export default function BlogSection() {
         {/* Blog Post Cards Grid */}
         {loading ? (
           <div className="text-center py-12 text-xs text-foreground/50">
-            <span className="cursor-blink">&gt;&gt; FETCHING_NEWS_FEEDS</span>
+            <span className="cursor-blink">{t("loading")}</span>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-custom bg-primary/[0.01]">
@@ -96,7 +93,6 @@ export default function BlogSection() {
                   className="group flex flex-col justify-between border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/40 transition-all duration-200 p-6 min-h-[420px] relative overflow-hidden"
                 >
                   <div>
-                    {/* Top bar with index */}
                     <div className="flex items-center justify-between mb-4">
                       <span className="bg-primary/5 border border-border-custom text-[#3b82f6] text-[9px] font-bold px-2 py-0.5 rounded-none uppercase tracking-wider">
                         {post.category}
@@ -106,7 +102,6 @@ export default function BlogSection() {
                       </span>
                     </div>
 
-                    {/* Thumbnail container */}
                     <div className="relative aspect-[16/10] w-full bg-[var(--console-bg)] overflow-hidden rounded-none border border-border-custom mb-4">
                       <Image
                         src={post.image}
@@ -116,7 +111,6 @@ export default function BlogSection() {
                       />
                     </div>
 
-                    {/* Info Content */}
                     <div className="space-y-2">
                       <div className="flex items-center gap-3 text-[10px] text-foreground/50 font-bold font-mono">
                         <span className="flex items-center gap-1">
@@ -143,12 +137,11 @@ export default function BlogSection() {
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center text-xs font-bold text-blue-500 hover:text-blue-600 gap-1 group/btn"
                     >
-                      Read article
+                      {t("readArticle")}
                       <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
 
-                  {/* Snappy bottom border bar */}
                   <div className="absolute left-0 bottom-0 w-full h-[1.5px] bg-[#3b82f6] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                 </article>
               );

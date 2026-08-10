@@ -1,27 +1,42 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Button } from "./ui/Button";
 import BackgroundGrid from "./BackgroundGrid";
 import FloatingShapes from "./animations/FloatingShapes";
 import { Terminal } from "@phosphor-icons/react";
 
-const terminalLines = [
-  { text: "NTIGI v4.2.1-SECURE", color: "text-foreground/80 font-bold" },
-  { text: "Connecting global databases...", color: "text-blue-500 dark:text-blue-400" },
-  { text: "✓ Syncing local DB: OK", color: "text-green-600 dark:text-green-400" },
-  { text: "Manifest loaded: V-9932L", color: "text-foreground/75" },
-  { text: "Port: Rotterdam", color: "text-foreground/60" },
-  { text: "Lat: 51.9244° N", color: "text-foreground/60" },
-  { text: "Lon: 4.4777° E", color: "text-foreground/60" },
-  { text: ">> Running optimization...", color: "text-yellow-600 dark:text-yellow-400" },
-  { text: "Route cost: -14.2%", color: "text-blue-600 dark:text-blue-300" },
-];
-
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
+// Colors stay hardcoded — only the text content is translated
+const terminalColors = [
+  "text-foreground/80 font-bold",
+  "text-blue-500 dark:text-blue-400",
+  "text-green-600 dark:text-green-400",
+  "text-foreground/75",
+  "text-foreground/60",
+  "text-foreground/60",
+  "text-foreground/60",
+  "text-yellow-600 dark:text-yellow-400",
+  "text-blue-600 dark:text-blue-300",
+];
+
+const terminalKeys = [
+  "terminal.line1",
+  "terminal.line2",
+  "terminal.line3",
+  "terminal.line4",
+  "terminal.line5",
+  "terminal.line6",
+  "terminal.line7",
+  "terminal.line8",
+  "terminal.line9",
+] as const;
+
 export default function HeroSection() {
+  const t = useTranslations("Hero");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -89,10 +104,10 @@ export default function HeroSection() {
           variants={item}
           className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight max-w-4xl uppercase"
         >
-          The operating system for
+          {t("headline1")}
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-[#263071] to-[#3b82f6] dark:from-blue-400 dark:via-indigo-200 dark:to-white animate-text-shimmer">
-            global logistics
+            {t("headline2")}
           </span>
         </motion.h1>
 
@@ -101,16 +116,16 @@ export default function HeroSection() {
           variants={item}
           className="mx-auto max-w-2xl text-sm md:text-base text-foreground/70 dark:text-gray-400 leading-relaxed normal-case"
         >
-          Unify your end-to-end supply chain on one intelligent platform. Web, desktop, and mobile all synchronized, all offline-first.
+          {t("subheadline")}
         </motion.p>
 
         {/* CTAs */}
         <motion.div variants={item} className="pt-2 flex flex-wrap gap-4 justify-center">
           <Button variant="primary" size="lg" href="/demo" className="px-6 py-3 text-sm uppercase tracking-wider">
-            &gt;&gt;&gt; Initialize Demo
+            {t("ctaDemo")}
           </Button>
           <Button variant="outline" size="lg" href="#features" className="px-6 py-3 text-sm uppercase tracking-wider">
-            View Specs
+            {t("ctaSpecs")}
           </Button>
         </motion.div>
 
@@ -134,12 +149,12 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center gap-1 pl-2 border-l border-border-custom">
                   <Terminal className="h-3 w-3 text-[#3b82f6]" />
-                  <span className="tracking-wider">NTIGI_OS // ROUTE_MONITOR.sh</span>
+                  <span className="tracking-wider">{t("terminal.title")}</span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
-                <span className="tracking-wider text-[#3b82f6]">SYNC: ACTIVE</span>
+                <span className="tracking-wider text-[#3b82f6]">{t("terminal.syncActive")}</span>
               </div>
             </motion.div>
 
@@ -147,15 +162,15 @@ export default function HeroSection() {
               {/* Terminal */}
               <div className="md:col-span-1 border-r border-border-custom p-4 text-left text-[9px] leading-5 text-foreground/50 flex flex-col justify-between bg-[var(--console-header)]/40">
                 <div className="space-y-1">
-                  {terminalLines.map((line, i) => (
+                  {terminalKeys.map((key, i) => (
                     <motion.p
-                      key={i}
+                      key={key}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1.1 + i * 0.06, duration: 0.35, ease: easeOutExpo }}
-                      className={line.color}
+                      className={terminalColors[i]}
                     >
-                      {line.text}
+                      {t(key)}
                     </motion.p>
                   ))}
                 </div>
@@ -166,7 +181,7 @@ export default function HeroSection() {
                   className="pt-4 border-t border-border-custom text-[8px] text-foreground/45"
                 >
                   <p>CPU: 12.4% | MEM: 4.8 GB</p>
-                  <p className="text-green-600 dark:text-green-500 font-bold">&gt;&gt; LOCAL CACHE ACTIVE</p>
+                  <p className="text-green-600 dark:text-green-500 font-bold">{t("terminal.cacheActive")}</p>
                 </motion.div>
               </div>
 

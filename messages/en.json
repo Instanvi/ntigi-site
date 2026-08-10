@@ -1,0 +1,187 @@
+{
+  "Metadata": {
+    "title": "NTIGI Logistics",
+    "description": "Ntigi transforms supply chains worldwide, offering advanced offline-first logistics and cargo software for streamlined, borderless operations.",
+    "keywords": "supply chain software, Freight forwarding software, customs clearance software, global logistics software, Freight booking software, Ntigi, cargo software, logistics software"
+  },
+  "Header": {
+    "myAccount": "My Account",
+    "demo": "Demo",
+    "theme": "Theme",
+    "nav": {
+      "solutions": "Solutions",
+      "platform": "Platform",
+      "resources": "Resources",
+      "company": "Company"
+    },
+    "solutionTabs": {
+      "forwarders": "Freight Forwarders",
+      "courier": "Courier & Delivery",
+      "warehouse": "Warehouse Operators",
+      "ecommerce": "E-commerce"
+    },
+    "solutions": {
+      "forwarders": {
+        "intlForwarding": { "name": "International Forwarding", "desc": "End-to-end forwarding operations with multi-leg routing and agency networks." },
+        "customs": { "name": "Customs & Compliance", "desc": "Automated declarations, duty calculations, and regulatory document generation." },
+        "consolidation": { "name": "Consolidation & Manifests", "desc": "Group shipments, manage containers, and generate voyage manifests." },
+        "multiBranch": { "name": "Multi-Branch Network", "desc": "Inter-branch transfers, settlements, and role-based data isolation." }
+      },
+      "courier": {
+        "routeOpt": { "name": "Route Optimization", "desc": "AI-powered planning for delivery times, fuel savings, and fleet efficiency." },
+        "fleet": { "name": "Fleet & Driver Management", "desc": "Vehicle registration, maintenance schedules, and driver mobile app." },
+        "pod": { "name": "Proof of Delivery", "desc": "Signature capture, photo documentation, and real-time GPS tracking." },
+        "finance": { "name": "Finance & Billing", "desc": "Cash, card, mobile money, COD tracking, and automated invoicing." }
+      },
+      "warehouse": {
+        "wms": { "name": "Warehouse Management", "desc": "Multi-warehouse support with shelf locations, capacity, and stock tracking." },
+        "inventory": { "name": "Inventory & Stock Control", "desc": "Real-time stock levels, receiving, dispatch, and bin management." },
+        "consolidationHub": { "name": "Consolidation Hub", "desc": "Pallet tracking, load optimization, and container manifest workflows." }
+      },
+      "ecommerce": {
+        "fulfillment": { "name": "Fulfillment Operations", "desc": "High-volume order processing, bulk shipment creation, and tracking." },
+        "returns": { "name": "Returns Management", "desc": "Return shipment handling, refunds, and reverse logistics workflows." },
+        "portal": { "name": "Customer Portal", "desc": "Self-service booking, tracking, invoice downloads, and payment history." }
+      }
+    },
+    "platform": {
+      "overview": { "name": "Platform Overview", "desc": "A unified view of how NTIGI connects your entire logistics operation." },
+      "pricing": { "name": "Pricing", "desc": "Transparent pricing for teams of all sizes. No hidden fees." },
+      "demo": { "name": "Request a Demo", "desc": "See NTIGI in action with a personalized walkthrough." }
+    },
+    "resources": {
+      "docs": { "name": "Documentation", "desc": "Comprehensive guides for users, admins, and developers." },
+      "contact": { "name": "Contact Us", "desc": "Reach our team for sales, support, or partnerships." }
+    },
+    "company": {
+      "about": { "name": "About NTIGI", "desc": "Our mission to modernize global logistics with offline-first technology." },
+      "careers": { "name": "Careers", "desc": "Engineering, sales, support, and logistics specialist roles." },
+      "blog": { "name": "Blog", "desc": "Insights on logistics tech, compliance, and industry trends." }
+    }
+  },
+  "Hero": {
+    "headline1": "The operating system for",
+    "headline2": "global logistics",
+    "subheadline": "Unify your end-to-end supply chain on one intelligent platform. Web, desktop, and mobile all synchronized, all offline-first.",
+    "ctaDemo": ">>> Initialize Demo",
+    "ctaSpecs": "View Specs",
+    "terminal": {
+      "title": "NTIGI_OS // ROUTE_MONITOR.sh",
+      "syncActive": "SYNC: ACTIVE",
+      "line1": "NTIGI v4.2.1-SECURE",
+      "line2": "Connecting global databases...",
+      "line3": "✓ Syncing local DB: OK",
+      "line4": "Manifest loaded: V-9932L",
+      "line5": "Port: Rotterdam",
+      "line6": "Lat: 4.0863° N",
+      "line7": "Lon: 9.6644° E",
+      "line8": ">> Running optimization...",
+      "line9": "Route cost: -14.2%",
+      "cacheActive": ">> LOCAL CACHE ACTIVE"
+    }
+  },
+  "Features": {
+    "sectionTitle1": "One Database.",
+    "sectionTitle2": "Unified Logistics Control.",
+    "sectionDesc": "Manage every step of global forwardings, client transactions, and warehouse transfers on a secure, offline-first ecosystem.",
+    "items": {
+      "manifest": { "title": "Manifest & Voyage Management", "desc": "Complete control over maritime cargo manifests, voyage planning, and vessel tracking with real-time updates." },
+      "shipment": { "title": "Shipment Management", "desc": "End-to-end shipment tracking from origin to destination with automated status updates and notifications." },
+      "crm": { "title": "Client CRM Integration", "desc": "Comprehensive CRM with granular permission levels, customer self-service, and contract tiering." },
+      "route": { "title": "Route Optimization", "desc": "Intelligent corridor planning and multi-leg tracking for optimal transit speeds and route costs." },
+      "warehouse": { "title": "Warehouse Operations", "desc": "Integrated storage capacity tracking, shelf allocations, and receipt/dispatch documentation." },
+      "finance": { "title": "Finance & Billing", "desc": "Automated billing templates, split payment operations, and multi-currency exchange tracking." },
+      "analytics": { "title": "Real-Time Analytics", "desc": "Consolidated operational performance reporting and visual analytics grids." },
+      "compliance": { "title": "Enterprise Compliance", "desc": "Role-based visibility, complete activity trails, and secure JWT/OTP validations." },
+      "offline": { "title": "Offline-First Syncing", "desc": "Input and query data without internet connections. Auto-sync updates dynamically when online." },
+      "cloud": { "title": "Seamless Cloud Access", "desc": "Secure browser-based console and Progressive Web Application (PWA) on any device." },
+      "continuous": { "title": "Continuous Operation", "desc": "Browser-level caching ensures cargo management operations never stall due to network downtime." },
+      "customs": { "title": "Customs & Compliances", "desc": "Automated commercial invoicing, HS code searches, and export rule screening." }
+    }
+  },
+  "Platform": {
+    "section1Title1": "Access Anywhere,",
+    "section1Title2": "Work Everywhere",
+    "section1Desc": "NTIGI provides seamless access across all your primary business channels. Whether in the regional branch office or on the road, your logistics databases remain perfectly updated.",
+    "webApp": { "title": "Web Application", "desc": "Full-featured web interface accessible securely from any modern desktop or laptop browser." },
+    "mobileApp": { "title": "Mobile Web & PWA", "desc": "Progressive Web Application (PWA) with local caching optimized for mobile and tablet tracking." },
+    "explorePlatform": "Explore Platform",
+    "section2Title1": "Never Stop Working,",
+    "section2Title2": "Even Offline",
+    "section2Desc": "Our offline-first architecture leverages browser IndexedDB capabilities. Save shipments, sign deliveries, and perform audits without cellular or internet coverage.",
+    "offlineItems": {
+      "item1": "Create and manage cargo files without internet",
+      "item2": "Access local cached transaction lists",
+      "item3": "Automatic background sync queue when network returns"
+    },
+    "learnMore": "Learn More",
+    "console": {
+      "storageSync": "LOCAL_STORAGE_SYNC",
+      "offlineActive": "100% OFFLINE ACTIVE",
+      "indexedDb": "INDEXED_DB",
+      "readyForWrites": "Ready for offline transaction writes",
+      "queueSize": "QUEUE SIZE: 0 pending",
+      "syncStandby": "SYNC PROTOCOL STANDBY",
+      "vesselMonitor": "VESSEL_LOC_MONITOR: ON"
+    }
+  },
+  "Blog": {
+    "badge": "NEWS & GUIDES",
+    "title1": "Logistics Insights &",
+    "title2": "Compliance Updates",
+    "desc": "Read professional briefings on shipping rules, routes coordination, and supply chain updates.",
+    "seeAll": "See all articles",
+    "loading": ">> FETCHING_NEWS_FEEDS",
+    "readArticle": "Read article"
+  },
+  "CTA": {
+    "badge": "GET STARTED",
+    "title1": "Ready to Transform Your",
+    "title2": "Logistics Operations?",
+    "desc": "Join leading freight forwarders and shipping companies using NTIGI to centralize their databases and scale operations.",
+    "scheduleDemo": "Schedule a Demo",
+    "contactSales": "Contact Sales",
+    "stats": {
+      "uptime": "Uptime SLA",
+      "support": "Support",
+      "shipments": "Daily Shipments",
+      "offline": "Offline Capable"
+    }
+  },
+  "Footer": {
+    "solutions": "Solutions",
+    "platform": "Platform",
+    "resources": "Resources",
+    "company": "Company",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe for the latest updates on new NTIGI functionality, success stories from our customers, and insights.",
+    "emailPlaceholder": "EMAIL ADDRESS*",
+    "signUp": "Sign up now",
+    "links": {
+      "intlForwarding": "International Forwarding",
+      "customs": "Customs & Compliance",
+      "warehouse": "Warehouse Management",
+      "courier": "Courier & Delivery",
+      "ecommerce": "E-commerce Fulfillment",
+      "finance": "Finance & Billing",
+      "platformOverview": "Platform Overview",
+      "pricing": "Pricing",
+      "requestDemo": "Request a Demo",
+      "docs": "Documentation",
+      "support": "Support Center",
+      "contact": "Contact Us",
+      "about": "About NTIGI",
+      "careers": "Careers",
+      "blog": "Blog"
+    },
+    "copyright": "© {year} NTIGI. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "en": "EN",
+    "fr": "FR"
+  }
+}
