@@ -13,61 +13,7 @@ import {
   GasPump, CurrencyDollar, CheckCircle, ChartLine,
   UsersThree, Buildings, Globe, ArrowsLeftRight, Receipt,
 } from "@phosphor-icons/react";
-
-const pricingFactors = [
-  { icon: Scales, title: "Package Weight", desc: "Rates are calculated by actual weight. Define weight bands with different prices per kilogram or per fixed band. Heavier shipments move to higher tiers automatically.", example: "0 to 5 kg: base rate / 5 to 20 kg: mid rate / 20 kg plus: bulk rate" },
-  { icon: Ruler, title: "Dimensions and Volume", desc: "Volumetric weight is calculated from package dimensions. The system automatically applies the higher of actual weight or volumetric weight.", example: "Oversized light packages are billed by cubic volume, not just mass" },
-  { icon: MapPin, title: "Route and Zone", desc: "Each route has its own rate card. Zone-based pricing groups origins and destinations into pricing zones. Cross-zone shipments apply the configured inter-zone rate.", example: "Zone A to Zone A: local rate / Zone A to Zone B: regional rate" },
-  { icon: Package, title: "Package Type", desc: "Different rates apply to envelopes, parcels, boxes, and pallets. Each package type has configurable base rates, size restrictions, and weight limits.", example: "Envelope: flat rate / Standard box: weight-based / Pallet: volume-based" },
-  { icon: Clock, title: "Service Level", desc: "Standard, express, same-day, next-day, and overnight service levels each carry their own rate multiplier or fixed surcharge applied on top of the base route rate.", example: "Standard: base / Express: base + 30% / Same-day: base + 60%" },
-  { icon: GasPump, title: "Fuel Surcharge", desc: "Apply a configurable fuel surcharge as a percentage or fixed amount per shipment. Update it globally or per route to reflect changing fuel costs.", example: "Current surcharge: configured per route or network-wide" },
-  { icon: Tag, title: "Handling Fees", desc: "Apply additional charges for special handling requirements: fragile, perishable, hazardous, oversized, or white glove service. Mapped to 22 cargo handling tags.", example: "Fragile handling: +5 / Hazardous: +15 / White glove: +25" },
-  { icon: CurrencyDollar, title: "Duties and Taxes", desc: "For international shipments, customs duties and VAT are calculated per HS code and destination country. Added to the invoice automatically at booking.", example: "HS code + destination = applicable duty rate applied to declared value" },
-];
-
-const howItWorks = [
-  { step: "01", title: "You Set the Rates", desc: "Your operations team configures rate cards in NTIGI for each route, service level, weight band, and package type. Rates are yours to control and update at any time." },
-  { step: "02", title: "Agent Books a Shipment", desc: "When an agent creates a shipment, they select the route, package type, weight, dimensions, and service level. NTIGI calculates the charge automatically." },
-  { step: "03", title: "System Calculates the Price", desc: "The pricing engine applies the matching rate card: base rate, service level multiplier, fuel surcharge, handling fees, and any applicable duties or taxes." },
-  { step: "04", title: "Invoice is Generated", desc: "An invoice is produced instantly with all charges broken down. Sent to the client automatically by email with full PDF and receipt generation." },
-  { step: "05", title: "Client Pays", desc: "Payment is collected via cash, card, mobile money, bank transfer, or COD. Multi-currency is supported. The system records payment and closes the invoice." },
-];
-
-const clientContracts = [
-  { label: "Custom Rate Contracts", desc: "Set agreed rates for specific clients that override standard pricing" },
-  { label: "Frequent Shipper Discounts", desc: "Apply volume discounts to clients who ship regularly" },
-  { label: "Credit Limits", desc: "Set maximum outstanding balances before shipments are blocked" },
-  { label: "Credit Terms", desc: "Configure payment periods for account clients" },
-  { label: "Custom Pricing Tiers", desc: "Group clients into pricing tiers with different rate structures" },
-  { label: "Seasonal Rate Adjustments", desc: "Override rates during peak periods with time-bound rules" },
-];
-
-const quotationFeatures = [
-  "Instant quote generation before booking",
-  "Multi-service level comparison on one screen",
-  "Save and share quotes with clients",
-  "Convert quotes directly to bookings",
-  "Quote history per client",
-  "Email quotes as PDF to customers",
-];
-
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and agent-collected" },
-  { name: "Card", detail: "Credit and debit processing" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel" },
-  { name: "Bank Transfer", detail: "Wire and direct bank" },
-  { name: "COD", detail: "Driver collects at delivery" },
-  { name: "Split Payment", detail: "Multiple methods per invoice" },
-];
-
-const platformItems = [
-  "Based on number of users and branches",
-  "Based on monthly shipment volume",
-  "Cloud, on-premise, or hybrid deployment",
-  "30-day free trial available",
-  "Dedicated onboarding and training",
-  "Custom enterprise agreements available",
-];
+import { useTranslations } from "next-intl";
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -88,49 +34,114 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function Pricing() {
+  const t = useTranslations("Pricing");
+
+  const pricingFactors = [
+    { icon: Scales,        title: t("factors.0.title"), desc: t("factors.0.desc"), example: t("factors.0.example") },
+    { icon: Ruler,         title: t("factors.1.title"), desc: t("factors.1.desc"), example: t("factors.1.example") },
+    { icon: MapPin,        title: t("factors.2.title"), desc: t("factors.2.desc"), example: t("factors.2.example") },
+    { icon: Package,       title: t("factors.3.title"), desc: t("factors.3.desc"), example: t("factors.3.example") },
+    { icon: Clock,         title: t("factors.4.title"), desc: t("factors.4.desc"), example: t("factors.4.example") },
+    { icon: GasPump,       title: t("factors.5.title"), desc: t("factors.5.desc"), example: t("factors.5.example") },
+    { icon: Tag,           title: t("factors.6.title"), desc: t("factors.6.desc"), example: t("factors.6.example") },
+    { icon: CurrencyDollar,title: t("factors.7.title"), desc: t("factors.7.desc"), example: t("factors.7.example") },
+  ];
+
+  const howItWorks = [
+    { step: "01", title: t("howItWorks.0.title"), desc: t("howItWorks.0.desc") },
+    { step: "02", title: t("howItWorks.1.title"), desc: t("howItWorks.1.desc") },
+    { step: "03", title: t("howItWorks.2.title"), desc: t("howItWorks.2.desc") },
+    { step: "04", title: t("howItWorks.3.title"), desc: t("howItWorks.3.desc") },
+    { step: "05", title: t("howItWorks.4.title"), desc: t("howItWorks.4.desc") },
+  ];
+
+  const clientContracts = [
+    { label: t("clientContracts.0.label"), desc: t("clientContracts.0.desc") },
+    { label: t("clientContracts.1.label"), desc: t("clientContracts.1.desc") },
+    { label: t("clientContracts.2.label"), desc: t("clientContracts.2.desc") },
+    { label: t("clientContracts.3.label"), desc: t("clientContracts.3.desc") },
+    { label: t("clientContracts.4.label"), desc: t("clientContracts.4.desc") },
+    { label: t("clientContracts.5.label"), desc: t("clientContracts.5.desc") },
+  ];
+
+  const quotationFeatures = [
+    t("quotationFeatures.0"),
+    t("quotationFeatures.1"),
+    t("quotationFeatures.2"),
+    t("quotationFeatures.3"),
+    t("quotationFeatures.4"),
+    t("quotationFeatures.5"),
+  ];
+
+  const paymentMethods = [
+    { name: t("paymentMethods.0.name"), detail: t("paymentMethods.0.detail") },
+    { name: t("paymentMethods.1.name"), detail: t("paymentMethods.1.detail") },
+    { name: t("paymentMethods.2.name"), detail: t("paymentMethods.2.detail") },
+    { name: t("paymentMethods.3.name"), detail: t("paymentMethods.3.detail") },
+    { name: t("paymentMethods.4.name"), detail: t("paymentMethods.4.detail") },
+    { name: t("paymentMethods.5.name"), detail: t("paymentMethods.5.detail") },
+  ];
+
+  const platformItems = [
+    t("platformItems.0"),
+    t("platformItems.1"),
+    t("platformItems.2"),
+    t("platformItems.3"),
+    t("platformItems.4"),
+    t("platformItems.5"),
+  ];
+
+  const businessModels = [
+    { icon: Globe,      title: t("businessModels.0.title"), desc: t("businessModels.0.desc") },
+    { icon: Buildings,  title: t("businessModels.1.title"), desc: t("businessModels.1.desc") },
+    { icon: ChartLine,  title: t("businessModels.2.title"), desc: t("businessModels.2.desc") },
+  ];
+
+  const related = [
+    { title: t("related.0.title"), desc: t("related.0.desc"), href: "/solutions/finance" },
+    { title: t("related.1.title"), desc: t("related.1.desc"), href: "/solutions/route-optimization" },
+    { title: t("related.2.title"), desc: t("related.2.desc"), href: "/solutions/international-forwarding" },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
 
+        {/* HERO */}
         <section className="relative min-h-[500px] border-b border-border-custom overflow-hidden noise-overlay flex items-stretch">
           <div className="mx-auto max-w-7xl w-full px-6 md:px-8 py-20 flex items-center relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center w-full">
               <AnimatedSection className="space-y-4">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Usage-Based<br /><span className="text-blue-500">Payment</span>
+                  {t("hero.h1_part1")}<br /><span className="text-blue-500">{t("hero.h1_part2")}</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                  NTIGI does not charge flat monthly subscription fees. Your clients pay based on what they send or receive: package weight, dimensions, route, service level, and handling requirements. You configure the rates. NTIGI calculates and invoices automatically.
+                  {t("hero.subtitle")}
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("hero.demoButton")}</Button>
+                  <Button variant="outline" href="/contact" size="lg">{t("hero.salesButton")}</Button>
                 </div>
               </AnimatedSection>
             </div>
           </div>
           <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/2 z-0">
-            <Image
-              src="/payment.jpg"
-              alt="Logistics transport and shipping"
-              fill
-              className="object-cover"
-              priority
-            />
+            <Image src="/payment.jpg" alt="Logistics transport and shipping" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--console-header)] via-[var(--console-header)]/40 to-transparent pointer-events-none" />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
+        {/* STATS BAR */}
         <section className="border-b border-border-custom bg-[var(--console-bg)]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-border-custom">
               {[
-                { display: "Pay Per", label: "Shipment sent or received" },
-                { display: "Custom", label: "Rate cards per route" },
-                { display: "Auto", label: "Invoice on every booking" },
-                { display: "Multi", label: "Currency support" },
+                { display: t("stats.0.display"), label: t("stats.0.label") },
+                { display: t("stats.1.display"), label: t("stats.1.label") },
+                { display: t("stats.2.display"), label: t("stats.2.label") },
+                { display: t("stats.3.display"), label: t("stats.3.label") },
               ].map((stat, i) => (
                 <AnimatedSection key={i} delay={i * 0.1} className="p-6 border-r border-b md:border-b-0 border-border-custom text-center">
                   <div className="text-2xl font-bold text-blue-500 font-sans">{stat.display}</div>
@@ -141,11 +152,12 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* PRICING FACTORS */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">What Determines the Cost of a Shipment</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Each shipment is priced by combining the relevant factors below. You configure all of them. Your rates, your rules, your margins.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("factorsSection.title")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("factorsSection.subtitle")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {pricingFactors.map((item, index) => (
@@ -164,11 +176,12 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* HOW IT WORKS */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Booking to Payment</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Pricing is embedded in the shipment workflow. The moment a booking is created, the price is calculated and the invoice is ready.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("howItWorksSection.title")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("howItWorksSection.subtitle")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -185,14 +198,15 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* CLIENT PRICING + QUOTATION + PAYMENTS */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
                 <UsersThree className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Client-Specific Pricing</h3>
+                <h3 className="text-md font-bold uppercase tracking-wider">{t("clientPricingSection.title")}</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Not every client pays the same rate. NTIGI gives you the tools to price each client relationship correctly, from one-time senders to high-volume account customers.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("clientPricingSection.subtitle")}</p>
               <div className="space-y-3 pt-1">
                 {clientContracts.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -210,9 +224,9 @@ export default function Pricing() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Receipt className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Instant Quotation Generator</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("quotationSection.title")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Before any booking is made, agents and customers can generate an instant price quote based on the shipment details. Compare service levels side by side.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("quotationSection.subtitle")}</p>
                 <div className="space-y-2 pt-1">
                   {quotationFeatures.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="flex items-center gap-2">
@@ -225,9 +239,9 @@ export default function Pricing() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <ArrowsLeftRight className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Payment Methods Accepted</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("paymentsSection.title")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every payment method your clients use is supported. Configure which are active per branch.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("paymentsSection.subtitle")}</p>
                 <div className="grid grid-cols-2 gap-3 pt-1">
                   {paymentMethods.map((method, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.07 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -241,17 +255,14 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* BUSINESS MODELS */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Built for Every Logistics Business Model</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("businessModelsSection.title")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
-              {[
-                { icon: Globe, title: "Freight Forwarders", desc: "Price international shipments by weight, route, and service level. Apply duties and taxes automatically at booking. Issue multi-currency invoices to clients in any country." },
-                { icon: Buildings, title: "Courier Companies", desc: "Set city-by-city delivery rates. Offer standard and express tiers. Collect cash or mobile money on delivery. Auto-reconcile COD collections across all drivers." },
-                { icon: ChartLine, title: "Logistics Operators", desc: "Manage warehouse handling fees, consolidation charges, voyage costs, and agent commissions. Every cost attached to every shipment, tracked and reported." },
-              ].map((item, i) => (
+              {businessModels.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.12} className="p-6 border-r border-b border-border-custom space-y-3 hover:bg-primary/[0.04] transition-all">
                   <div className="p-2 w-9 h-9 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                     <item.icon className="h-4.5 w-4.5" />
@@ -264,12 +275,13 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* CUSTOM PRICING PANEL */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="bg-[var(--console-bg)] border border-border-custom rounded-none p-8 md:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
               <div className="space-y-4 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Custom Pricing for Your Operation</h2>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">NTIGI platform access is priced based on your operation size, shipment volume, number of users, required features, and deployment model. We build a plan around your business, not a one-size tier.</p>
+                <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("customPricingPanel.title")}</h2>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("customPricingPanel.subtitle")}</p>
                 <div className="space-y-2 pt-1">
                   {platformItems.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.06 }} className="flex items-center gap-2">
@@ -280,47 +292,39 @@ export default function Pricing() {
                 </div>
               </div>
               <div className="hidden lg:block relative border border-border-custom overflow-hidden group min-h-[300px]">
-                <Image
-                  src="/image3.jpg"
-                  alt="Logistics warehouse operations"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <Image src="/image3.jpg" alt="Logistics warehouse operations" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-bg)]/80 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="space-y-4 flex flex-col justify-center">
                 <div className="border border-border-custom p-6 space-y-3">
-                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Get a Custom Quote</h3>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Tell our team about your operation. We will prepare a pricing proposal based on your branch count, shipment volumes, and deployment requirements.</p>
-                  <Button variant="primary" href="/demo" size="lg" className="w-full">Request a Demo</Button>
+                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">{t("customPricingPanel.quoteTitle")}</h3>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("customPricingPanel.quoteDesc")}</p>
+                  <Button variant="primary" href="/demo" size="lg" className="w-full">{t("customPricingPanel.demoButton")}</Button>
                 </div>
                 <div className="border border-border-custom p-6 space-y-3">
-                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Talk to Sales</h3>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Speak directly with our team about your requirements and get answers to pricing questions the same day.</p>
-                  <Button variant="outline" href="/contact" size="lg" className="w-full">Contact Sales</Button>
+                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">{t("customPricingPanel.salesTitle")}</h3>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("customPricingPanel.salesDesc")}</p>
+                  <Button variant="outline" href="/contact" size="lg" className="w-full">{t("customPricingPanel.salesButton")}</Button>
                 </div>
               </div>
             </AnimatedSection>
           </div>
         </section>
 
+        {/* RELATED */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("relatedSection.title")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
-              {[
-                { title: "Finance and Billing", desc: "Manage invoices, payment collection, COD reconciliation, agent commissions, and financial reporting across all branches.", href: "/solutions/finance" },
-                { title: "Route Optimization", desc: "Configure the rate cards, service levels, and zone pricing that feed into every shipment cost calculation.", href: "/solutions/route-optimization" },
-                { title: "International Forwarding", desc: "Multi-currency invoicing, duty calculations, and partner agency commission structures for cross-border operations.", href: "/solutions/international-forwarding" },
-              ].map((sol, i) => (
+              {related.map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("learnMore")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -329,30 +333,27 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="relative py-24 border-b border-border-custom overflow-hidden noise-overlay">
           <div className="absolute inset-0 -z-10">
-            <Image
-              src="/image1.jpg"
-              alt="Logistics solutions background"
-              fill
-              className="object-cover object-center"
-            />
+            <Image src="/image1.jpg" alt="Logistics solutions background" fill className="object-cover object-center" />
             <div className="absolute inset-0 bg-background/85" />
           </div>
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Start Pricing<br /><span className="text-blue-500">Your Shipments Correctly?</span>
+                {t("cta.h2_part1")}<br /><span className="text-blue-500">{t("cta.h2_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI's pricing engine handles your rate cards, service levels, and automatic invoicing in a live walkthrough with our team.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("cta.subtitle")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("cta.demoButton")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("cta.salesButton")}</Button>
               </div>
             </AnimatedSection>
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-20" />
         </section>
+
       </main>
       <Footer />
     </div>

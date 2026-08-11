@@ -147,6 +147,16 @@ html {
     transition-duration: 0.01ms !important;
   }
 
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -24;
+      }
+    }
+  
+    .animate-dash {
+      animation: dash linear infinite;
+    }
+
     /* ─── Abstract Background Animations ─── */
     @keyframes grid-draw {
       0% {

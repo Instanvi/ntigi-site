@@ -292,6 +292,594 @@
     "en": "EN",
     "fr": "FR"
   },
+  "Pricing": {
+    "hero": {
+      "h1_part1": "Paiement",
+      "h1_part2": "à l'Usage",
+      "subtitle": "NTIGI ne facture pas d'abonnements mensuels fixes. Vos clients paient en fonction de ce qu'ils envoient ou reçoivent : poids du colis, dimensions, itinéraire, niveau de service et exigences de manutention. Vous configurez les tarifs. NTIGI calcule et facture automatiquement.",
+      "demoButton": "Demander une Démo",
+      "salesButton": "Contacter les Ventes"
+    },
+    "stats": [
+      { "display": "Par Envoi", "label": "Expédition envoyée ou reçue" },
+      { "display": "Personnalisé", "label": "Grilles tarifaires par itinéraire" },
+      { "display": "Auto",      "label": "Facture à chaque réservation" },
+      { "display": "Multi",     "label": "Prise en charge multi-devises" }
+    ],
+    "factorsSection": {
+      "title": "Ce qui Détermine le Coût d'une Expédition",
+      "subtitle": "Chaque expédition est tarifée en combinant les facteurs ci-dessous. Vous les configurez tous. Vos tarifs, vos règles, vos marges."
+    },
+    "factors": [
+      { "title": "Poids du Colis",          "desc": "Les tarifs sont calculés au poids réel. Définissez des tranches de poids avec des prix différents par kilogramme ou par tranche fixe. Les colis plus lourds passent automatiquement aux tranches supérieures.",                    "example": "0 à 5 kg : tarif de base / 5 à 20 kg : tarif intermédiaire / plus de 20 kg : tarif en vrac" },
+      { "title": "Dimensions et Volume",    "desc": "Le poids volumétrique est calculé à partir des dimensions du colis. Le système applique automatiquement le plus élevé entre le poids réel et le poids volumétrique.",                                                          "example": "Les colis volumineux légers sont facturés au volume cubique, pas seulement à la masse" },
+      { "title": "Itinéraire et Zone",      "desc": "Chaque itinéraire a sa propre grille tarifaire. La tarification par zones regroupe les origines et destinations en zones de prix. Les expéditions inter-zones appliquent le tarif inter-zone configuré.",               "example": "Zone A vers Zone A : tarif local / Zone A vers Zone B : tarif régional" },
+      { "title": "Type de Colis",           "desc": "Des tarifs différents s'appliquent aux enveloppes, colis, boîtes et palettes. Chaque type de colis a des tarifs de base, restrictions de taille et limites de poids configurables.",                                      "example": "Enveloppe : tarif fixe / Boîte standard : basé sur le poids / Palette : basé sur le volume" },
+      { "title": "Niveau de Service",       "desc": "Les niveaux de service standard, express, jour même, lendemain et nuit ont chacun leur propre multiplicateur de tarif ou supplément fixe appliqué par-dessus le tarif de base de l'itinéraire.",                          "example": "Standard : base / Express : base + 30% / Jour même : base + 60%" },
+      { "title": "Surcharge Carburant",     "desc": "Appliquez une surcharge carburant configurable en pourcentage ou montant fixe par expédition. Mettez-la à jour globalement ou par itinéraire pour refléter l'évolution des coûts du carburant.",                          "example": "Surcharge actuelle : configurée par itinéraire ou à l'échelle du réseau" },
+      { "title": "Frais de Manutention",    "desc": "Appliquez des frais supplémentaires pour les exigences spéciales : fragile, périssable, dangereux, surdimensionné ou service gants blancs. Mappé sur 22 étiquettes de manutention.",                                     "example": "Manutention fragile : +5 / Dangereux : +15 / Gants blancs : +25" },
+      { "title": "Droits et Taxes",         "desc": "Pour les expéditions internationales, les droits de douane et la TVA sont calculés par code SH et pays de destination. Ajoutés automatiquement à la facture lors de la réservation.",                                       "example": "Code SH + destination = taux de droit applicable à la valeur déclarée" }
+    ],
+    "howItWorksSection": {
+      "title": "De la Réservation au Paiement",
+      "subtitle": "La tarification est intégrée dans le flux de travail d'expédition. Dès qu'une réservation est créée, le prix est calculé et la facture est prête."
+    },
+    "howItWorks": [
+      { "title": "Vous Définissez les Tarifs",        "desc": "Votre équipe opérationnelle configure les grilles tarifaires dans NTIGI pour chaque itinéraire, niveau de service, tranche de poids et type de colis. Les tarifs sont sous votre contrôle et modifiables à tout moment." },
+      { "title": "L'Agent Réserve une Expédition",   "desc": "Lorsqu'un agent crée une expédition, il sélectionne l'itinéraire, le type de colis, le poids, les dimensions et le niveau de service. NTIGI calcule automatiquement les frais." },
+      { "title": "Le Système Calcule le Prix",       "desc": "Le moteur de tarification applique la grille tarifaire correspondante : tarif de base, multiplicateur de niveau de service, surcharge carburant, frais de manutention et droits ou taxes applicables." },
+      { "title": "La Facture est Générée",           "desc": "Une facture est produite instantanément avec tous les frais détaillés. Envoyée automatiquement au client par e-mail avec génération complète de PDF et de reçu." },
+      { "title": "Le Client Paie",                  "desc": "Le paiement est collecté en espèces, carte, mobile money, virement bancaire ou contre-remboursement. Le multi-devises est pris en charge. Le système enregistre le paiement et clôture la facture." }
+    ],
+    "clientPricingSection": {
+      "title": "Tarification Spécifique au Client",
+      "subtitle": "Tous les clients ne paient pas le même tarif. NTIGI vous donne les outils pour tarifer correctement chaque relation client, des expéditeurs ponctuels aux clients grands comptes à fort volume."
+    },
+    "clientContracts": [
+      { "label": "Contrats Tarifaires Personnalisés", "desc": "Définissez des tarifs convenus pour des clients spécifiques qui remplacent la tarification standard" },
+      { "label": "Remises Expéditeurs Fréquents",     "desc": "Appliquez des remises sur volume aux clients qui expédient régulièrement" },
+      { "label": "Limites de Crédit",                 "desc": "Définissez les soldes impayés maximum avant que les expéditions soient bloquées" },
+      { "label": "Conditions de Crédit",              "desc": "Configurez les délais de paiement pour les clients en compte" },
+      { "label": "Niveaux de Tarification Personnalisés", "desc": "Regroupez les clients dans des niveaux tarifaires avec des structures de tarifs différentes" },
+      { "label": "Ajustements Tarifaires Saisonniers","desc": "Remplacez les tarifs pendant les périodes de pointe avec des règles à durée limitée" }
+    ],
+    "quotationSection": {
+      "title": "Générateur de Devis Instantané",
+      "subtitle": "Avant toute réservation, les agents et les clients peuvent générer un devis de prix instantané basé sur les détails de l'expédition. Comparez les niveaux de service côte à côte."
+    },
+    "quotationFeatures": [
+      "Génération de devis instantanée avant réservation",
+      "Comparaison multi-niveaux de service sur un seul écran",
+      "Enregistrer et partager les devis avec les clients",
+      "Convertir les devis directement en réservations",
+      "Historique des devis par client",
+      "Envoyer les devis en PDF par e-mail aux clients"
+    ],
+    "paymentsSection": {
+      "title": "Modes de Paiement Acceptés",
+      "subtitle": "Tous les modes de paiement utilisés par vos clients sont pris en charge. Configurez ceux qui sont actifs par agence."
+    },
+    "paymentMethods": [
+      { "name": "Espèces",           "detail": "Collecte en agence ou à domicile" },
+      { "name": "Carte",             "detail": "Traitement crédit et débit" },
+      { "name": "Mobile Money",      "detail": "MTN, Orange, Airtel" },
+      { "name": "Virement Bancaire", "detail": "Virement et paiement bancaire direct" },
+      { "name": "Contre-remboursement", "detail": "Le chauffeur collecte à la livraison" },
+      { "name": "Paiement Fractionné","detail": "Plusieurs méthodes par facture" }
+    ],
+    "businessModelsSection": {
+      "title": "Conçu pour Chaque Modèle Logistique"
+    },
+    "businessModels": [
+      { "title": "Transitaires",            "desc": "Tarifiez les expéditions internationales par poids, itinéraire et niveau de service. Appliquez automatiquement les droits et taxes à la réservation. Émettez des factures multi-devises aux clients dans n'importe quel pays." },
+      { "title": "Sociétés de Coursier",    "desc": "Définissez des tarifs de livraison ville par ville. Proposez des niveaux standard et express. Collectez en espèces ou en mobile money à la livraison. Réconciliez automatiquement les collectes contre-remboursement pour tous les chauffeurs." },
+      { "title": "Opérateurs Logistiques", "desc": "Gérez les frais de manutention en entrepôt, les frais de consolidation, les coûts de voyage et les commissions d'agents. Chaque coût attaché à chaque expédition, suivi et rapporté." }
+    ],
+    "customPricingPanel": {
+      "title": "Tarification Personnalisée pour Votre Opération",
+      "subtitle": "L'accès à la plateforme NTIGI est tarifé selon la taille de votre opération, le volume d'expéditions, le nombre d'utilisateurs, les fonctionnalités requises et le modèle de déploiement. Nous construisons un plan autour de votre activité, pas un niveau unique.",
+      "quoteTitle": "Obtenir un Devis Personnalisé",
+      "quoteDesc": "Parlez à notre équipe de votre opération. Nous préparerons une proposition tarifaire basée sur votre nombre d'agences, vos volumes d'expéditions et vos exigences de déploiement.",
+      "demoButton": "Demander une Démo",
+      "salesTitle": "Parler aux Ventes",
+      "salesDesc": "Parlez directement à notre équipe de vos besoins et obtenez des réponses aux questions tarifaires le jour même.",
+      "salesButton": "Contacter les Ventes"
+    },
+    "platformItems": [
+      "Basé sur le nombre d'utilisateurs et d'agences",
+      "Basé sur le volume mensuel d'expéditions",
+      "Déploiement cloud, sur site ou hybride",
+      "Essai gratuit de 30 jours disponible",
+      "Onboarding et formation dédiés",
+      "Accords entreprise personnalisés disponibles"
+    ],
+    "relatedSection": {
+      "title": "Solutions Associées"
+    },
+    "related": [
+      { "title": "Finance et Facturation",      "desc": "Gérez les factures, la collecte des paiements, la réconciliation des contre-remboursements, les commissions d'agents et les rapports financiers dans toutes les agences." },
+      { "title": "Optimisation des Itinéraires","desc": "Configurez les grilles tarifaires, les niveaux de service et la tarification par zones qui alimentent chaque calcul de coût d'expédition." },
+      { "title": "Transit International",       "desc": "Facturation multi-devises, calculs de droits et structures de commissions d'agences partenaires pour les opérations transfrontalières." }
+    ],
+    "learnMore": "En savoir plus",
+    "cta": {
+      "h2_part1": "Prêt à Tarifer Correctement",
+      "h2_part2": "Vos Expéditions ?",
+      "subtitle": "Découvrez comment le moteur de tarification de NTIGI gère vos grilles tarifaires, niveaux de service et facturation automatique lors d'une présentation en direct avec notre équipe.",
+      "demoButton": "Demander une Démo",
+      "salesButton": "Contacter les Ventes"
+    }
+  },
+  "PlatformPage": {
+    "hero": {
+      "h1_part1": "Une Plateforme",
+      "h1_part2": "Trois Façons de Travailler",
+      "subtitle": "Accédez à vos opérations logistiques depuis n'importe où. Tableau de bord web pour les managers, application bureau pour les stations, application mobile pour les chauffeurs — tous synchronisés en temps réel."
+    },
+    "accessSection": {
+      "title": "Accès de Partout"
+    },
+    "access": [
+      {
+        "title": "Tableau de Bord Web",
+        "desc": "Centre de commande complet accessible depuis n'importe quel navigateur. Suivez les expéditions, gérez les équipes, générez des rapports et supervisez l'intégralité de votre réseau en temps réel."
+      },
+      {
+        "title": "Application Bureau",
+        "desc": "Application Windows rapide pour les stations de coursier. Créez des expéditions en quelques secondes, imprimez les étiquettes instantanément et travaillez hors-ligne avec synchronisation automatique en arrière-plan."
+      },
+      {
+        "title": "Application Mobile",
+        "desc": "Outils terrain pour les chauffeurs et agents. Scannez des codes-barres, mettez à jour le statut de livraison, capturez les preuves de livraison et naviguez sur les itinéraires depuis votre téléphone."
+      }
+    ],
+    "offlineSection": {
+      "title": "Fonctionne Sans Internet"
+    },
+    "offline": [
+      {
+        "title": "Stockage Local",
+        "desc": "Créez des expéditions, gérez des clients, traitez des paiements, tout ça sans internet. Données stockées en toute sécurité sur votre appareil."
+      },
+      {
+        "title": "Synchronisation Automatique",
+        "desc": "Les modifications se synchronisent automatiquement en arrière-plan à la reconnexion. Ne vous inquiétez plus des envois manuels ni des pertes de données."
+      },
+      {
+        "title": "Mises à Jour Rapides",
+        "desc": "Seules les nouvelles modifications sont téléchargées, économisant la bande passante. Traitez des centaines d'expéditions, synchronisez en quelques secondes."
+      },
+      {
+        "title": "Sécurité des Données",
+        "desc": "Plusieurs couches de sauvegarde garantissent que rien n'est jamais perdu, même lors de pannes de courant ou de défaillances réseau."
+      }
+    ],
+    "enterpriseSection": {
+      "title": "Capacités Entreprise"
+    },
+    "enterprise": [
+      {
+        "title": "Rapidité",
+        "items": [
+          "Pages chargées en moins de 2 secondes",
+          "Traitement de 100 000+ expéditions par jour",
+          "Mises à jour de statut en temps réel",
+          "Recherche instantanée sur toutes les données"
+        ]
+      },
+      {
+        "title": "Sécurité",
+        "items": [
+          "Chiffrement de niveau bancaire",
+          "Connexion sécurisée avec support 2FA",
+          "Pistes d'audit d'activité complètes",
+          "Contrôle d'accès basé sur les rôles"
+        ]
+      },
+      {
+        "title": "Intégration",
+        "items": [
+          "Connexion aux systèmes existants",
+          "Import/export via Excel/CSV",
+          "Impression d'étiquettes et reçus",
+          "Notifications WhatsApp & SMS"
+        ]
+      }
+    ],
+    "cta": {
+      "h2_part1": "Prêt à le Voir",
+      "h2_part2": "En Action ?",
+      "subtitle": "Réservez une présentation en direct et voyez comment NTIGI fonctionne sur web, bureau et mobile pour votre opération spécifique.",
+      "demoButton": "Demander une Démo",
+      "salesButton": "Contacter les Ventes"
+    }
+  },
+  "BlogPage": {
+    "hero": {
+      "h1_part1": "Blog Logistique",
+      "h1_part2": "& Actualités",
+      "subtitle": "Conseils de référence sur la conformité des matières dangereuses, les droits de douane et la gestion des corridors de fret mondial."
+    },
+    "search": {
+      "placeholder": "Rechercher des articles..."
+    },
+    "categories": {
+      "all": "Tous",
+      "guides": "Guides",
+      "routes": "Itinéraires",
+      "customs": "Douanes",
+      "compliance": "Conformité"
+    },
+    "noResults": "Aucune entrée ne correspond à vos critères de filtre",
+    "readArticle": "Lire l'article"
+  },
+  "Company": {
+    "hero": {
+      "h1_part1": "Connecter les Réseaux",
+      "h1_part2": "Logistiques Mondiaux",
+      "subtitle": "Développer des logiciels de fret hors-ligne en priorité pour sécuriser les opérations de chaîne d'approvisionnement sans frontières pour les transitaires et agents de coursier à l'échelle mondiale."
+    },
+    "mission": {
+      "label": "NOTRE MISSION",
+      "text": "Simplifier le commerce international en concevant des systèmes d'expédition robustes et sans interruption. Nous résolvons les défis d'infrastructure locale avec une fiabilité cloud-native afin que les agences logistiques puissent traiter les expéditions en continu."
+    },
+    "vision": {
+      "label": "NOTRE VISION",
+      "text": "Construire le système d'exploitation fondamental pour les canaux d'expédition africains et mondiaux, apportant une transparence totale, un dédouanement automatisé et une distribution instantanée d'étiquettes à chaque agence de coursier."
+    },
+    "principlesSection": {
+      "title": "Nos Principes Fondamentaux"
+    },
+    "principles": [
+      {
+        "title": "Scalabilité Mondiale",
+        "desc": "Systèmes multi-langues et multi-agences adaptables pour gérer des réseaux d'expédition de toute taille à travers les frontières."
+      },
+      {
+        "title": "Souveraineté des Données",
+        "desc": "Architectures de bases de données hors-ligne en priorité protégeant les enregistrements transactionnels et sécurisant le suivi des agences."
+      },
+      {
+        "title": "Stabilité Opérationnelle",
+        "desc": "Conçu pour fonctionner en continu lors des perturbations réseau locales, en empêchant les doublons de saisie de données."
+      }
+    ],
+    "milestonesSection": {
+      "title": "Jalons & Histoire"
+    },
+    "milestones": [
+      {
+        "year": "2024",
+        "title": "Fondation API",
+        "desc": "Lancement de la bêta du Ntigi Shipping Engine pour coordonner les routes de fret en Afrique de l'Ouest."
+      },
+      {
+        "year": "2025",
+        "title": "Moteur Hors-Ligne",
+        "desc": "Déploiement de systèmes de suivi à base de données locale pour les agents travaillant dans des zones à faible connectivité."
+      },
+      {
+        "year": "2026",
+        "title": "Expansion Mondiale",
+        "desc": "Intégration des systèmes de dépôt douanier mondial et création du siège de Chicago."
+      }
+    ],
+    "teamSection": {
+      "title": "Équipe Dirigeante"
+    },
+    "team": [
+      {
+        "initials": "ASJ",
+        "name": "Amahnui ST James",
+        "role": "Directeur Général",
+        "bio": "Pilotant l'expansion stratégique et les paradigmes d'ingénierie à travers le réseau logistique Ntigi."
+      }
+    ]
+  },
+  "Careers": {
+    "hero": {
+      "h1_part1": "Construire l'avenir du",
+      "h1_part2": "Commerce Sans Frontières",
+      "subtitle": "Nous sommes une équipe d'ingénieurs logiciels, d'experts en logistique et de développeurs Fintech travaillant à l'échelle mondiale pour simplifier le commerce international. Rejoignez-nous et façonnez la façon dont les marchandises circulent dans le monde entier."
+    },
+    "benefitsSection": {
+      "title": "Pourquoi travailler avec nous ?"
+    },
+    "benefits": [
+      {
+        "title": "Mobilité Mondiale",
+        "description": "Travaillez en mode remote-first depuis n'importe où dans le monde, ou collaborez depuis l'un de nos hubs à Douala, Londres ou Chicago."
+      },
+      {
+        "title": "Couverture Complète",
+        "description": "Assurance santé, dentaire et voyage premium prise en charge directement par notre support de marque intégré."
+      },
+      {
+        "title": "Croissance & Apprentissage",
+        "description": "Une allocation annuelle de formation pour des cours, conférences ou livres afin de rester à la pointe de l'ingénierie et de la tech logistique."
+      },
+      {
+        "title": "Environnement de Travail Moderne",
+        "description": "Un budget matériel pour équiper votre bureau à domicile avec des laptops, écrans et accessoires haut de gamme pour travailler efficacement."
+      }
+    ],
+    "departments": {
+      "all": "Tous",
+      "engineering": "Ingénierie",
+      "product": "Produit",
+      "operations": "Opérations",
+      "marketing": "Marketing"
+    },
+    "jobsSection": {
+      "title": "Trouvez votre poste",
+      "noOpenings": "AUCUN POSTE ACTUELLEMENT DISPONIBLE DANS CETTE SECTION",
+      "applyButton": "Postuler"
+    },
+    "jobs": [
+      {
+        "title": "Ingénieur Full-Stack Senior (React / Next.js / Go)",
+        "department": "Engineering",
+        "location": "Douala, Cameroun (Hybride) / Remote",
+        "type": "Temps Plein",
+        "description": "Concevoir et développer les composants clés des API Ntigi Shipping Tech et des backends d'intégration de transporteurs haute performance."
+      },
+      {
+        "title": "Développeur Mobile Lead (React Native / iOS & Android)",
+        "department": "Engineering",
+        "location": "Remote (Mondial)",
+        "type": "Temps Plein",
+        "description": "Prendre en charge l'expérience de checkout mobile et les cartes de suivi de hub localisées dans l'application d'expédition grand public."
+      },
+      {
+        "title": "Chef de Produit Chaîne d'Approvisionnement",
+        "department": "Product",
+        "location": "Douala, Cameroun / Hybride",
+        "type": "Temps Plein",
+        "description": "Définir les exigences produit pour nos systèmes automatisés de dédouanement et coordonner les intégrations avec les transporteurs internationaux."
+      },
+      {
+        "title": "Spécialiste en Intégration Logistique",
+        "department": "Operations",
+        "location": "Yaoundé, Cameroun / Hybride",
+        "type": "Temps Plein",
+        "description": "Aider les clients entreprises à intégrer les API Ntigi dans leurs systèmes d'entrepôt et orchestrer les canaux de dispatch des transporteurs."
+      },
+      {
+        "title": "Directeur Marketing & Marque Mondiale",
+        "department": "Marketing",
+        "location": "Londres, UK / Hybride",
+        "type": "Temps Plein",
+        "description": "Concevoir et exécuter la stratégie de communication pour NTIGI Global, en coordonnant les campagnes à travers toutes les agences principales."
+      }
+    ]
+  },
+  "Contact": {
+    "hero": {
+      "h1_part1": "Contactez",
+      "h1_part2": "Notre Équipe",
+      "subtitle": "Contactez-nous pour les tarifs, l'accès à l'API, les installations personnalisées, le support technique ou les discussions de partenariat. Notre équipe répond dans un délai d'un jour ouvrable."
+    },
+    "reasons": [
+      {
+        "title": "Ventes et Tarification",
+        "desc": "Obtenez une proposition tarifaire personnalisée selon la taille de votre opération, le nombre d'agences et le volume d'expéditions."
+      },
+      {
+        "title": "Support Technique",
+        "desc": "Assistance pour la configuration, les intégrations et le dépannage sur toutes les plateformes NTIGI."
+      },
+      {
+        "title": "Partenariats",
+        "desc": "Discutez des partenariats de réseau d'agences, des partenariats d'intégration ou des accords de revendeur."
+      },
+      {
+        "title": "Renseignements Généraux",
+        "desc": "Questions sur les capacités de NTIGI, les options de déploiement ou les programmes de formation d'équipe."
+      }
+    ],
+    "officesSection": {
+      "title": "Emplacements des Bureaux",
+      "subtitle": "Trois bureaux en Afrique, en Europe et en Amérique du Nord, couvrant tous les principaux corridors logistiques."
+    },
+    "offices": [
+      {
+        "city": "Douala",
+        "country": "Cameroun",
+        "role": "Siège Social Mondial",
+        "address": "4e étage, Bonaberi, Douala",
+        "phone": "+237 233 44 55 66",
+        "email": "douala@ntigi.com",
+        "hours": "Lun à Ven : 8h00 à 17h00 (GMT+1)"
+      },
+      {
+        "city": "Londres",
+        "country": "Royaume-Uni",
+        "role": "Hub des Opérations Européennes",
+        "address": "30 St Mary Axe, Londres, EC3A 8BF",
+        "phone": "+44 20 7946 0958",
+        "email": "london@ntigi.com",
+        "hours": "Lun à Ven : 9h00 à 18h00 (GMT)"
+      },
+      {
+        "city": "Chicago",
+        "country": "États-Unis",
+        "role": "Siège Amérique du Nord",
+        "address": "233 S Wacker Drive, Chicago, IL 60606",
+        "phone": "+1 312 555 0199",
+        "email": "chicago@ntigi.com",
+        "hours": "Lun à Ven : 9h00 à 17h00 (CST)"
+      }
+    ],
+    "form": {
+      "heading": "Envoyez-Nous un Message",
+      "subheading": "Remplissez le formulaire et notre équipe vous répondra dans un délai d'un jour ouvrable.",
+      "fullName": "Nom Complet",
+      "fullNamePlaceholder": "Votre nom complet",
+      "workEmail": "E-mail Professionnel",
+      "workEmailPlaceholder": "nom@entreprise.com",
+      "companyName": "Nom de l'Entreprise",
+      "companyNamePlaceholder": "Votre entreprise",
+      "subject": "Sujet",
+      "subjectOptions": {
+        "general": "Renseignement Général",
+        "sales": "Ventes et Tarification",
+        "support": "Support Technique",
+        "api": "Demande d'Accès API",
+        "partnership": "Partenariat",
+        "demo": "Demander une Démo"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Décrivez la taille de vos agences, vos besoins ou votre question...",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "successTitle": "Message Envoyé",
+      "successDesc": "Votre message a bien été reçu. Un membre de l'équipe NTIGI vous répondra dans un délai d'un jour ouvrable.",
+      "sendAnother": "Envoyer un Autre Message"
+    },
+    "cta": {
+      "title": "Vous Préférez Voir d'Abord ?",
+      "subtitle": "Réservez une démo en direct et notre équipe vous présentera NTIGI pour votre opération spécifique.",
+      "demoButton": "Demander une Démo",
+      "pricingButton": "Voir les Tarifs"
+    }
+  },
+  "Docs": {
+    "hero": {
+      "h1_part1": "Ressources & Assistance",
+      "h1_part2": "Pour la Plateforme NTIGI",
+      "subtitle": "Tutoriels vidéo, documentation et ressources d'assistance pour maîtriser la plateforme logistique NTIGI."
+    },
+    "videosSection": {
+      "title": "Tutoriels Vidéo",
+      "subtitle": "Regardez et apprenez à utiliser les fonctionnalités de la plateforme NTIGI"
+    },
+    "videoFallback": "Votre navigateur ne prend pas en charge la balise vidéo.",
+    "librarySection": {
+      "title": "Bibliothèque de Documentation",
+      "subtitle": "Guides complets et documentation technique"
+    },
+    "faqSection": {
+      "title": "Questions Fréquemment Posées",
+      "subtitle": "Questions courantes sur la plateforme NTIGI"
+    },
+    "tutorials": [
+      {
+        "title": "Démarrer avec NTIGI",
+        "description": "Présentation complète couvrant la configuration, la première expédition et les bases du suivi",
+        "duration": "15:30"
+      },
+      {
+        "title": "Mode Hors-Ligne & Synchronisation",
+        "description": "Travailler sans internet et synchronisation automatique des données",
+        "duration": "8:45"
+      },
+      {
+        "title": "Opérations Multi-Agences",
+        "description": "Gestion des itinéraires, des agences et des transferts inter-agences",
+        "duration": "12:20"
+      },
+      {
+        "title": "Entrepôt & Consolidation",
+        "description": "Création de manifestes, gestion des voyages et regroupement de cargaisons",
+        "duration": "10:15"
+      }
+    ],
+    "docSections": [
+      {
+        "title": "Premiers Pas",
+        "items": [
+          "Guide de démarrage rapide",
+          "Guide d'installation",
+          "Présentation de la première expédition",
+          "Rôles et autorisations utilisateurs"
+        ]
+      },
+      {
+        "title": "Fonctionnalités Principales",
+        "items": [
+          "Création et suivi d'expéditions",
+          "Gestion des clients et partenaires",
+          "Configuration des itinéraires et du réseau",
+          "Tarification et devis"
+        ]
+      },
+      {
+        "title": "Sujets Avancés",
+        "items": [
+          "Douanes et conformité",
+          "Gestion de flotte et chauffeurs",
+          "Système de messagerie en temps réel",
+          "Architecture hors-ligne en priorité"
+        ]
+      },
+      {
+        "title": "Documentation API",
+        "items": [
+          "Référence API REST (30+ modules)",
+          "Authentification et jetons JWT",
+          "Webhooks et notifications d'événements",
+          "Exemples SDK et extraits de code"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "NTIGI fonctionne-t-il hors-ligne ?",
+        "a": "Oui. NTIGI dispose d'une architecture hors-ligne en priorité. Créez des expéditions, gérez des clients et effectuez des opérations sans internet. Les données se synchronisent automatiquement à la reconnexion."
+      },
+      {
+        "q": "Quelles plateformes sont prises en charge ?",
+        "a": "Web (tous les navigateurs modernes), Bureau (Windows 10/11) et Mobile (PWA pour iOS & Android). Toutes les plateformes se synchronisent en temps réel."
+      },
+      {
+        "q": "Combien d'utilisateurs le système peut-il gérer ?",
+        "a": "Conçu pour une échelle entreprise : 10 000+ utilisateurs simultanés, 100 000+ expéditions par jour, 1 000+ requêtes API par seconde."
+      },
+      {
+        "q": "Quelles intégrations sont disponibles ?",
+        "a": "Passerelles de paiement (Stripe, PayPal, Mobile Money), transporteurs (DHL, FedEx, UPS), SMS (Twilio), Email (Resend) et stockage cloud (Cloudinary)."
+      },
+      {
+        "q": "Comment la sécurité des données est-elle gérée ?",
+        "a": "Chiffrement AES-256 au repos, TLS 1.3 en transit, authentification JWT, contrôle d'accès basé sur les rôles et pistes d'audit complètes."
+      }
+    ]
+  },
+  "Demo": {
+    "hero": {
+      "h1_part1": "Demander une",
+      "h1_part2": "Démo en Direct",
+      "subtitle": "Découvrez comment notre plateforme cloud hors-ligne simplifie les voyages maritimes, la conformité douanière et les flux de distribution de colis."
+    },
+    "success": {
+      "title": "Demande Reçue !",
+      "desc": "Merci de l'intérêt que vous portez à NTIGI. L'un de nos spécialistes en optimisation logistique vous contactera pour planifier une présentation en direct de notre plateforme web et PWA mobile.",
+      "backButton": "Retour à l'Accueil"
+    },
+    "form": {
+      "heading": "Découvrir NTIGI",
+      "subheading": "Remplissez le formulaire ci-dessous et notre équipe vous contactera pour planifier une démonstration personnalisée.",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Jean",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Dupont",
+      "email": "E-mail Professionnel",
+      "emailPlaceholder": "jean.dupont@logistique.com",
+      "company": "Nom de l'Entreprise",
+      "companyPlaceholder": "Transitaires Mondiaux",
+      "operationsArea": "Domaine d'Activité Principal",
+      "operationsAreaPlaceholder": "Sélectionnez un domaine...",
+      "operationsAreaOptions": {
+        "freight": "Transit Maritime & Aérien",
+        "courier": "Coursier & Livraison du Dernier Kilomètre",
+        "warehouse": "Gestion d'Entrepôt & Consolidation",
+        "other": "Autres Services Logistiques"
+      },
+      "notes": "Exigences Particulières / Remarques",
+      "notesPlaceholder": "Parlez-nous du nombre de vos agences, de vos besoins d'intégration ou de vos défis liés aux opérations hors-ligne...",
+      "submitButton": "Planifier Ma Démo en Direct"
+    }
+  },
   "Solutions": {
     "consolidation": {
       "capabilities": [
@@ -936,6 +1524,55 @@
       }
     },
     "ecommerce-fulfillment": {
+      "jsx": {
+        "h1_0_part1": "Fulfillment",
+        "h1_0_part2": "E-commerce",
+        "p_0": "Connectez votre boutique en ligne à NTIGI via l'API REST. Traitez des commandes en masse, automatisez les notifications clients, gérez les encaissements COD et gérez les retours depuis une seule plateforme logistique.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "En masse",
+        "stat_label_0": "Traitement des commandes",
+        "stat_display_1": "API",
+        "stat_label_1": "Intégration boutique",
+        "stat_display_2": "Auto",
+        "stat_label_2": "Notifications",
+        "stat_display_3": "Temps réel",
+        "stat_label_3": "Suivi GPS",
+        "h2_0": "Tout ce dont votre opération e-commerce a besoin",
+        "p_1": "De la réception des commandes à la confirmation de livraison, NTIGI gère l'intégralité du cycle de fulfillment pour les entreprises e-commerce de toutes tailles.",
+        "h2_1": "De la commande passée à la livraison",
+        "p_2": "Un cycle de fulfillment en cinq étapes où chaque action est automatisée, suivie et visible pour votre équipe et vos clients.",
+        "h3_0": "Intégration API REST",
+        "p_3": "Connectez votre plateforme e-commerce, marketplace ou système de boutique personnalisé directement à NTIGI. Les commandes entrent automatiquement et les données de suivi retournent vers votre vitrine.",
+        "h3_1": "Événements de notification automatisés",
+        "p_4": "Chaque événement de livraison déclenche une notification automatique au client via son canal préféré. Aucune intervention du personnel requise.",
+        "h3_2": "COD pour les boutiques en ligne",
+        "p_5": "De nombreux clients e-commerce en Afrique de l'Ouest et dans d'autres marchés préfèrent le paiement à la livraison. NTIGI suit la collecte COD par chauffeur, rapproche par commande et signale les totaux COD en souffrance à tout moment.",
+        "p_5_desc": "Commandes COD suivies de l'expédition à la collecte et au rapprochement automatiquement.",
+        "h2_2": "La plateforme utilisée par votre équipe",
+        "p_6": "Gestion des commandes en masse et tableau de bord que vos agents et gestionnaires voient chaque jour.",
+        "caption_0": "Liste des commandes en masse tous les envois, statuts et suivis en une seule vue",
+        "caption_1": "Tableau de bord opérationnel volume, revenus et indicateurs de livraison en direct",
+        "h2_3": "Pour qui c'est conçu",
+        "h4_0": "Détaillants en ligne",
+        "p_7": "Traitez des centaines de commandes par jour avec la création en masse, l'impression automatique d'étiquettes et le suivi en temps réel pour chaque client. Intégrez votre boutique via API et éliminez la saisie manuelle.",
+        "h4_1": "Vendeurs sur marketplace",
+        "p_8": "Fulfillment des commandes de plusieurs marketplaces via un seul compte NTIGI. Dossiers clients séparés par marketplace, rapports combinés pour votre équipe financière.",
+        "h4_2": "E-commerce transfrontalier",
+        "p_9": "Expédiez à l'international avec les documents douaniers générés automatiquement. Facturation multi-devises, calculs de droits et suivi du checkout à la porte à travers les frontières.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Portail client",
+        "related_desc_0": "Vos acheteurs en ligne suivent leurs commandes, téléchargent des factures et soumettent des retours via un portail libre-service aux couleurs de votre opération.",
+        "related_title_1": "Gestion des retours",
+        "related_desc_1": "Gérez les retours clients à grande échelle avec des étiquettes de retour automatiques, une documentation photo et un traitement des remboursements.",
+        "related_title_2": "Preuve de livraison",
+        "related_desc_2": "Donnez aux clients une confirmation de livraison avec signature, photo et coordonnées GPS envoyées automatiquement après chaque dépôt.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à développer votre",
+        "h2_5_part2": "fulfillment e-commerce ?",
+        "p_10": "Découvrez comment NTIGI se connecte à votre boutique en ligne et gère votre cycle commande-livraison complet lors d'une présentation en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Création d'envois groupés",
@@ -1100,6 +1737,50 @@
       ]
     },
     "finance": {
+      "jsx": {
+        "h1_0_part1": "Finance",
+        "h1_0_part2": "& Facturation",
+        "p_0": "Acceptez tous les modes de paiement, générez automatiquement des factures, suivez les commissions, gérez les soldes en cours et produisez des rapports financiers, le tout intégré directement dans le flux logistique NTIGI.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "8+",
+        "stat_label_0": "Modes de paiement",
+        "stat_display_1": "Multi",
+        "stat_label_1": "Devises supportées",
+        "stat_display_2": "100%",
+        "stat_label_2": "Piste d'audit",
+        "stat_display_3": "Excel/PDF",
+        "stat_label_3": "Formats d'export",
+        "h2_0": "Contrôle financier complet",
+        "p_1": "Chaque opération financière, de la collecte des paiements aux exports comptables, intégrée dans votre flux logistique.",
+        "h2_1": "De la réservation au règlement",
+        "p_2": "La finance est intégrée dans le cycle de vie de l'expédition. Aucun système de facturation séparé nécessaire.",
+        "h3_0": "Modes de paiement acceptés",
+        "p_3": "Chaque mode de paiement utilisé par vos clients est pris en charge. Configurez les méthodes actives par agence et par niveau de service.",
+        "h3_1": "Rapports financiers",
+        "p_4": "Tous les rapports dont vous avez besoin, disponibles instantanément avec des plages de dates personnalisées et un export en un clic.",
+        "h3_2": "Intégrations comptables",
+        "p_5": "Connectez vos outils comptables existants ou exportez vers n'importe quelle plateforme en utilisant des formats standard.",
+        "h2_2": "Pour qui c'est conçu",
+        "h4_0": "Transitaires",
+        "p_6": "Facturez dans plusieurs devises, suivez les soldes en cours auprès des clients internationaux et synchronisez les données financières avec QuickBooks ou Xero en fin de mois.",
+        "h4_1": "Réseaux de coursiers",
+        "p_7": "Rapprochez les encaissements COD auprès de 20+ chauffeurs quotidiennement, calculez automatiquement les commissions des agents et consultez les performances de revenus par agence en temps réel.",
+        "h4_2": "Équipes financières",
+        "p_8": "Définissez des limites de crédit, recevez des rappels automatiques de paiement en retard, consultez les relevés P&L par période et exportez tout rapport pour des audits externes.",
+        "h2_3": "Solutions connexes",
+        "related_title_0": "Transit international",
+        "related_desc_0": "Gérez les expéditions transfrontalières avec une tarification multi-devises et le suivi des commissions des agences partenaires.",
+        "related_title_1": "Gestion des clients",
+        "related_desc_1": "Suivez les soldes clients, les limites de crédit, les niveaux de tarification personnalisés et l'historique des expéditions dans une seule base de données.",
+        "related_title_2": "Douanes & Conformité",
+        "related_desc_2": "Calculez automatiquement les droits et taxes par code SH et destination pour une facturation internationale précise.",
+        "learn_more": "En savoir plus",
+        "h2_4_part1": "Prêt à prendre le contrôle de",
+        "h2_4_part2": "vos finances logistiques ?",
+        "p_9": "Découvrez comment NTIGI gère la facturation, les paiements, les commissions et les exports comptables pour votre opération lors d'une démo en direct."
+      },
       "capabilities": [
         {
           "title": "Paiements multi-méthodes",
@@ -1224,6 +1905,56 @@
       ]
     },
     "fleet-management": {
+      "jsx": {
+        "h1_0_part1": "Gestion de la flotte",
+        "h1_0_part2": "et des chauffeurs",
+        "p_0": "Enregistrez et suivez chaque véhicule, gérez les profils des chauffeurs et la conformité des permis, surveillez les localisations GPS en temps réel, planifiez la maintenance et mesurez les performances sur l'ensemble de votre opération de livraison.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Temps réel",
+        "stat_label_0": "Suivi GPS de la flotte",
+        "stat_display_1": "Complet",
+        "stat_label_1": "Historique de maintenance",
+        "stat_display_2": "Mobile",
+        "stat_label_2": "Application PWA chauffeur",
+        "stat_display_3": "100%",
+        "stat_label_3": "Capture de preuve de livraison",
+        "h2_0": "Contrôle complet des véhicules",
+        "p_1": "Chaque véhicule de votre opération enregistré, suivi, maintenu et rapporté depuis une seule plateforme.",
+        "h2_1": "Suivi complet du cycle de vie des chauffeurs",
+        "p_2": "De l'intégration aux performances quotidiennes : chaque dossier de chauffeur, permis, itinéraire et résultat de livraison géré en un seul endroit.",
+        "h2_2": "De l'enregistrement aux opérations quotidiennes",
+        "p_3": "Un processus clair en cinq étapes pour intégrer un nouveau véhicule ou chauffeur et le rendre opérationnel dès le premier jour.",
+        "h3_0": "Ce que contient chaque dossier véhicule",
+        "p_4": "Chaque véhicule dispose d'un dossier opérationnel complet. Chaque détail nécessaire pour dispatcher, maintenir et rapporter sur ce véhicule est en un seul endroit.",
+        "h3_1": "Ce que contient chaque dossier chauffeur",
+        "p_5": "Dossiers complets des chauffeurs depuis les données personnelles et la conformité des permis jusqu'aux performances quotidiennes et l'historique des livraisons.",
+        "h3_2": "Alertes proactives",
+        "p_6": "NTIGI surveille automatiquement votre flotte et la conformité des chauffeurs et vous alerte avant que les problèmes ne surviennent.",
+        "h2_3": "Dans la plateforme",
+        "p_7": "Vue d'ensemble de la flotte et gestion des expéditions dans le même système que vos chauffeurs utilisent chaque jour.",
+        "caption_0": "Vue d'ensemble de la flotte statut des véhicules et positions GPS",
+        "caption_1": "File d'attente de livraison du chauffeur expéditions assignées à l'itinéraire",
+        "h2_4": "Pour qui c'est conçu",
+        "h4_0": "Sociétés de coursiers en ville",
+        "p_8": "Gérez 10 à 100 chauffeurs quotidiennement. Suivez chaque véhicule sur une carte en direct, assignez automatiquement les expéditions aux chauffeurs et consultez les performances de livraison en fin de journée.",
+        "h4_1": "Opérateurs de transport de fret",
+        "p_9": "Suivez les poids lourds sur de longs itinéraires interurbains. Surveillez la consommation de carburant par trajet, planifiez l'entretien par kilométrage et assurez la conformité des permis pour tous les chauffeurs commerciaux.",
+        "h4_2": "Réseaux logistiques multi-agences",
+        "p_10": "Chaque agence gère sa propre flotte indépendamment tandis que le siège social voit les performances à l'échelle du réseau. Comparez l'utilisation des véhicules et la productivité des chauffeurs dans tous les sites.",
+        "h2_5": "Solutions connexes",
+        "related_title_0": "Optimisation des itinéraires",
+        "related_desc_0": "Assignez vos véhicules et chauffeurs enregistrés à des itinéraires optimisés avec calcul des distances, temps de transit et suivi en temps réel.",
+        "related_title_1": "Preuve de livraison",
+        "related_desc_1": "Vos chauffeurs capturent signatures, photos et confirmation GPS à chaque arrêt en utilisant la même application mobile NTIGI.",
+        "related_title_2": "Réseau multi-agences",
+        "related_desc_2": "Gérez les flottes de plusieurs agences avec isolation des données par agence et rapports consolidés au siège social.",
+        "learn_more": "En savoir plus",
+        "h2_6_part1": "Prêt à prendre le contrôle",
+        "h2_6_part2": "de votre flotte ?",
+        "p_11": "Découvrez comment NTIGI gère vos véhicules, chauffeurs et performances de livraison lors d'une présentation en direct avec notre équipe."
+      },
       "vehicleCapabilities": [
         {
           "title": "Immatriculation du véhicule",
@@ -1381,6 +2112,52 @@
       ]
     },
     "international-forwarding": {
+      "jsx": {
+        "h1_0_part1": "Transit",
+        "h1_0_part2": "International",
+        "p_0": "Gérez les expéditions transfrontalières, la documentation douanière, la facturation multi-devises et les réseaux d'agences partenaires depuis une seule plateforme hors-ligne conçue pour les transitaires internationaux.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "terminal_label_0": "NTIGI_OS // INTL_SHIPMENTS.sh",
+        "status_live": "LIVE",
+        "status_ready": "PRÊT",
+        "h2_0": "Tout ce dont un transitaire mondial a besoin",
+        "p_1": "De la réservation à la livraison finale, chaque outil intégré dans une seule plateforme qui fonctionne même sans internet.",
+        "h2_1": "Comment fonctionne le transit international",
+        "p_2": "Un processus clair en cinq étapes de la réservation au règlement, entièrement traçable à chaque étape.",
+        "h3_0": "Douanes & Conformité",
+        "p_3": "NTIGI gère automatiquement chaque document et contrôle de conformité requis pour le dédouanement des expéditions internationales, dès la réservation.",
+        "h3_1": "Intégrations Transporteurs",
+        "p_4": "Connectez-vous aux transporteurs mondiaux pour la comparaison des tarifs, la génération d'étiquettes et le suivi, le tout dans NTIGI.",
+        "h3_2": "Fonctionnement Hors-Ligne",
+        "p_5": "Créez des expéditions internationales, émettez des documents et mettez à jour les statuts même sans connexion internet. Les données se synchronisent automatiquement dès le retour de la connectivité. Zéro perte de données, aucune saisie en double.",
+        "p_5_note": "Essentiel pour les agents opérant dans les zones portuaires d'Afrique de l'Ouest avec une connectivité intermittente.",
+        "h2_2": "Découvrez-le en action",
+        "p_6": "De la génération automatique des documents douaniers à la réservation jusqu'au suivi d'une expédition en direct à travers les frontières, tout sur un seul écran.",
+        "terminal_label_1": "NTIGI // CUSTOMS_DOCS.sh",
+        "terminal_label_2": "NTIGI // SHIPMENT_BOOKING.sh",
+        "terminal_desc_1": "Documentation douanière générée automatiquement au moment de la réservation",
+        "terminal_desc_2": "Création d'expédition transfrontalière avec sélection de l'itinéraire multi-étapes",
+        "h2_3": "Conçu pour les transitaires multi-agences",
+        "h4_0": "Plusieurs agences",
+        "p_7": "Gérez des agences distinctes avec isolation des données, permissions au niveau de l'agence et rapports consolidés au niveau supérieur. Chaque agence ne voit que ce dont elle a besoin.",
+        "h4_1": "Agences partenaires",
+        "p_8": "Intégrez des agences partenaires aux points d'origine et de destination. Suivez les commissions, les règlements inter-agences et les performances des partenaires depuis un seul endroit.",
+        "h4_2": "Visibilité totale",
+        "p_9": "Tableaux de bord KPI en temps réel, rapports d'utilisation des itinéraires et taux de réussite des livraisons. Exportez tout rapport vers Excel, PDF ou CSV à tout moment.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Douanes & Conformité",
+        "related_desc_0": "Centralisez les opérations commerciales mondiales et automatisez la documentation de conformité à chaque frontière.",
+        "related_title_1": "Gestion d'entrepôt",
+        "related_desc_1": "Rationalisez les opérations de réception à l'expédition avec la consolidation, le suivi des palettes et la génération de manifestes.",
+        "related_title_2": "Finance & Facturation",
+        "related_desc_2": "Traitez les paiements dans plusieurs devises, générez des factures et gérez les commissions des agents.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à simplifier vos",
+        "h2_5_part2": "opérations internationales ?",
+        "p_10": "Réservez une présentation en direct avec notre équipe. Nous vous montrerons comment NTIGI gère votre flux de travail de transit de bout en bout."
+      },
       "capabilities": [
         {
           "title": "Gestion des itinéraires multi-pays",
@@ -1494,6 +2271,55 @@
       ]
     },
     "inventory-control": {
+      "jsx": {
+        "h1_0_part1": "Inventaire et",
+        "h1_0_part2": "contrôle des stocks",
+        "p_0": "Suivez chaque colis au niveau de l'article dans tous vos entrepôts. Scan de code-barres à la réception, assignez des positions d'étagère et de bac, surveillez les niveaux de stock en temps réel et localisez n'importe quel colis en quelques secondes.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Niveau article",
+        "stat_label_0": "Suivi des stocks",
+        "stat_display_1": "Code-barres",
+        "stat_label_1": "Scanner pour localiser",
+        "stat_display_2": "Temps réel",
+        "stat_label_2": "Mises à jour des niveaux",
+        "stat_display_3": "100%",
+        "stat_label_3": "Audit des mouvements",
+        "h2_0": "Visibilité complète sur chaque colis",
+        "p_1": "Du moment où un colis entre dans votre entrepôt jusqu'à sa sortie, chaque détail est suivi et consultable.",
+        "h2_1": "Du quai d'arrivée à l'expédition",
+        "p_2": "Un flux de travail clair en cinq étapes couvrant chaque mouvement de stock du moment de l'arrivée des marchandises à leur départ.",
+        "h3_0": "Ce que contient chaque dossier d'article en stock",
+        "p_3": "Chaque colis dans le système porte un dossier complet au niveau de l'article. Rien n'est suivi uniquement au niveau du lot.",
+        "h3_1": "Capacités de recherche et de filtrage",
+        "p_4": "Trouvez n'importe quel colis dans tous vos entrepôts en quelques secondes en utilisant plusieurs options de recherche et de filtrage.",
+        "h3_2": "Fonctionne hors ligne sur le sol de l'entrepôt",
+        "p_5": "Le personnel d'entrepôt utilise la PWA mobile NTIGI pour scanner des codes-barres, réceptionner des marchandises et mettre à jour les stocks n'importe où dans le bâtiment, y compris dans les zones sans signal. Toutes les actions se mettent en file d'attente et se synchronisent au retour de la connectivité.",
+        "p_5_desc": "Fonctionne sur n'importe quel appareil Android ou iOS via le navigateur. Aucune installation d'application requise.",
+        "h2_2": "Vue des stocks dans NTIGI",
+        "p_6": "Chaque article, chaque bac, chaque mouvement visible depuis un seul écran de tableau de bord.",
+        "terminal_label_0": "NTIGI // INVENTORY_DASHBOARD.sh",
+        "terminal_desc_0": "Niveaux de stock en temps réel, emplacements des bacs, historique des mouvements et capacité par entrepôt",
+        "h2_3": "Pour qui c'est conçu",
+        "h4_0": "Opérateurs multi-entrepôts",
+        "p_7": "Gérez les stocks dans plusieurs entrepôts depuis un tableau de bord. Chaque entrepôt dispose de cartes de bacs et de niveaux de stock indépendants. Le siège social voit tout.",
+        "h4_1": "Hubs de transit",
+        "p_8": "Réception à volume élevé avec lecture de codes-barres au quai. Triez les marchandises entrantes par destination, assignez aux lots de consolidation et suivez le temps de séjour pour chaque colis.",
+        "h4_2": "Responsables des opérations",
+        "p_9": "Visibilité en temps réel sur les niveaux de stock, l'utilisation des capacités et l'historique des mouvements sans avoir besoin de parcourir le sol de l'entrepôt. Exportez des rapports pour les parties prenantes à la demande.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Gestion d'entrepôt",
+        "related_desc_0": "Configurez les emplacements d'entrepôt, créez des cartes d'étagères, gérez la capacité et exécutez des opérations complètes de réception et d'expédition.",
+        "related_title_1": "Consolidation et manifestes",
+        "related_desc_1": "Regroupez les articles en stock dans des lots de consolidation, assignez aux conteneurs et générez des manifestes de voyage pour l'expédition.",
+        "related_title_2": "Douanes et conformité",
+        "related_desc_2": "Effectuez des contrôles de conformité et générez la documentation douanière pour les stocks détenus sous cautionnement ou en attente de dédouanement à l'exportation.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt pour une visibilité totale",
+        "h2_5_part2": "sur vos stocks ?",
+        "p_10": "Découvrez comment NTIGI suit chaque colis au niveau de l'article dans tous vos entrepôts lors d'une présentation en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Niveaux de stocks en temps réel",
@@ -1601,6 +2427,50 @@
       ]
     },
     "multi-branch": {
+      "jsx": {
+        "h1_0_part1": "Réseau",
+        "h1_0_part2": "multi-agences",
+        "p_0": "Gérez un nombre illimité d'agences et d'agences partenaires depuis une seule plateforme. Isolation complète des données entre agences, 200 points de contrôle des permissions, transferts inter-agences, règlements et rapports consolidés à l'échelle du réseau.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "200+",
+        "stat_label_0": "Points de contrôle des permissions",
+        "stat_display_1": "Illimité",
+        "stat_label_1": "Agences prises en charge",
+        "stat_display_2": "100%",
+        "stat_label_2": "Isolation des données",
+        "stat_display_3": "Temps réel",
+        "stat_label_3": "Rapports réseau",
+        "h2_0": "Gérez l'ensemble de votre réseau depuis une seule plateforme",
+        "p_1": "Chaque agence, chaque partenaire, chaque agent. Entièrement connecté, entièrement isolé, entièrement visible depuis le siège social.",
+        "h2_1": "D'une seule agence à un réseau complet",
+        "p_2": "Commencez avec une agence et développez-vous en un réseau multi-pays complet sans changer de plateforme ni migrer les données.",
+        "h3_0": "Contrôle d'accès basé sur les rôles",
+        "p_3": "Chaque utilisateur de votre réseau opère dans son rôle assigné. Les rôles prédéfinis couvrent toutes les opérations standard. Les rôles personnalisés vous permettent de définir exactement ce que chaque personne peut faire.",
+        "h3_1": "Catégories de permissions",
+        "p_4": "Plus de 200 points de permission individuels couvrent chaque domaine de la plateforme. Accordez ou restreignez l'accès au niveau de détail le plus fin.",
+        "h3_2": "Règlements inter-agences",
+        "p_5": "Chaque transfert entre agences crée une obligation financière traçable. Les règlements sont suivis, rapprochés et reportables à tout moment.",
+        "h2_2": "Pour qui c'est conçu",
+        "h4_0": "Transitaires internationaux",
+        "p_6": "Gérez des agences dans plusieurs pays avec une isolation complète des données. Le siège social voit tout. Chaque agence ne voit que ce qui la concerne. Les règlements de commissions se font automatiquement.",
+        "h4_1": "Réseaux de coursiers régionaux",
+        "p_7": "Gérez les agences des villes et des communes depuis un seul compte. Les agents de chaque site traitent leurs propres expéditions tandis que les gestionnaires opérationnels voient l'ensemble du tableau régional.",
+        "h4_2": "Partenariats d'agences",
+        "p_8": "Intégrez des agences tierces en tant que partenaires dans votre réseau. Assignez-leur des itinéraires spécifiques, définissez des taux de commission et suivez les transferts d'expéditions avec une piste d'audit financière complète.",
+        "h2_3": "Solutions connexes",
+        "related_title_0": "Transit international",
+        "related_desc_0": "Gérez les expéditions transfrontalières dans votre réseau multi-agences avec le routage multi-étapes et la coordination des agences partenaires.",
+        "related_title_1": "Finance & Facturation",
+        "related_desc_1": "Suivez les règlements inter-agences, les commissions des agents et les performances financières par agence en un seul endroit.",
+        "related_title_2": "Consolidation & Manifestes",
+        "related_desc_2": "Regroupez et transférez les expéditions entre agences pour la consolidation avec suivi complet des manifestes et des voyages.",
+        "learn_more": "En savoir plus",
+        "h2_4_part1": "Prêt à développer votre",
+        "h2_4_part2": "réseau logistique ?",
+        "p_9": "Découvrez comment NTIGI gère les opérations multi-agences, les permissions et les règlements inter-agences pour la structure spécifique de votre réseau lors d'une présentation en direct."
+      },
       "capabilities": [
         {
           "title": "Opérations multi-succursales",
@@ -1750,6 +2620,55 @@
       ]
     },
     "proof-of-delivery": {
+      "jsx": {
+        "h1_0_part1": "Preuve de",
+        "h1_0_part2": "livraison",
+        "p_0": "Capturez signatures, photos, coordonnées GPS et horodatages de livraison sur chaque expédition. Protégez votre entreprise des litiges et donnez aux clients une visibilité en temps réel du dispatch à la porte.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "100%",
+        "stat_label_0": "Preuve de livraison",
+        "stat_display_1": "Temps réel",
+        "stat_label_1": "Suivi GPS",
+        "stat_display_2": "22+",
+        "stat_label_2": "Étiquettes de manutention",
+        "stat_display_3": "Mobile",
+        "stat_label_3": "Application PWA chauffeur",
+        "h2_0": "Preuve complète de livraison du dernier kilomètre",
+        "p_1": "Chaque livraison appuyée par un dossier de preuve complet. Chaque client informé. Chaque chauffeur équipé des outils dont il a besoin.",
+        "h2_1": "Du dispatch à la livraison confirmée",
+        "p_2": "Un processus en cinq étapes qui maintient chauffeurs, gestionnaires et clients alignés dès le moment où un colis quitte l'entrepôt.",
+        "h3_0": "Ce que contient chaque dossier POD",
+        "p_3": "Chaque confirmation de livraison génère un dossier de preuve complet et inviolable stocké contre l'expédition, récupérable à tout moment par les gestionnaires ou les clients.",
+        "h3_1": "Notifications clients",
+        "p_4": "Les clients restent informés à chaque étape sans que votre personnel n'intervienne. Toutes les notifications sont automatisées et envoyées via le canal préféré du client.",
+        "h3_2": "Application mobile chauffeur",
+        "p_5": "Les chauffeurs utilisent la PWA mobile de NTIGI sur n'importe quel appareil Android ou iOS. Aucun téléchargement d'application requis. Ouvrez le navigateur, connectez-vous et commencez à livrer. L'application fonctionne hors ligne et se synchronise au retour de la connectivité.",
+        "p_5_note": "Essentiel pour les chauffeurs dans les zones à faible couverture réseau. Toutes les données POD sont capturées hors ligne et synchronisées automatiquement.",
+        "h2_2": "Dans l'application chauffeur",
+        "p_6": "Chaque chauffeur voit sa file d'attente, navigue vers les arrêts et soumet le POD depuis cet écran sur n'importe quel smartphone, en ligne ou hors ligne.",
+        "terminal_label_0": "NTIGI // DRIVER_APP.sh",
+        "terminal_desc_0": "File d'attente de livraison du chauffeur scanner, naviguer, capturer le POD depuis n'importe quel smartphone",
+        "h2_3": "Pour qui c'est conçu",
+        "h4_0": "Services de coursiers locaux",
+        "p_7": "Suivez 20 à 50 chauffeurs quotidiennement avec GPS en direct. Capturez signatures et photos à chaque dépôt. Résolvez les litiges clients avec des preuves horodatées en quelques minutes.",
+        "h4_1": "Fulfillment e-commerce",
+        "p_8": "Offrez aux acheteurs en ligne l'expérience de livraison qu'ils attendent. Suivi en temps réel, notifications automatisées et confirmation photo accessible depuis leur page de commande.",
+        "h4_2": "Réseaux de livraison de fret",
+        "p_9": "Gérez des tournées de livraison multi-arrêts pour le fret en vrac. Chaque arrêt obtient son propre dossier POD, maintenant clients, agents et équipes opérationnelles alignés sans paperasse.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Optimisation des itinéraires",
+        "related_desc_0": "Planifiez et optimisez les itinéraires de livraison afin que les chauffeurs passent moins de temps à naviguer et plus de temps à livrer.",
+        "related_title_1": "Gestion flotte & chauffeurs",
+        "related_desc_1": "Gérez les affectations de véhicules, les profils des chauffeurs, le suivi des permis et les indicateurs de performance de votre flotte.",
+        "related_title_2": "Finance & Facturation",
+        "related_desc_2": "Collectez les paiements COD à la livraison, rapprochez les encaissements par chauffeur et générez automatiquement les reçus de livraison.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à protéger chaque",
+        "h2_5_part2": "livraison que vous effectuez ?",
+        "p_10": "Découvrez comment NTIGI capture signatures, photos et preuves GPS pour chaque livraison lors d'une présentation en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Capture de signatures",
@@ -1849,6 +2768,55 @@
       ]
     },
     "returns": {
+      "jsx": {
+        "h1_0_part1": "Gestion des",
+        "h1_0_part2": "retours",
+        "p_0": "Gérez les expéditions de retour avec le même suivi, la même documentation et la même automatisation que les livraisons sortantes. De la génération d'étiquettes de retour au traitement des remboursements, chaque étape gérée dans NTIGI.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Complet",
+        "stat_label_0": "Cycle de vie du retour",
+        "stat_display_1": "Auto",
+        "stat_label_1": "Traitement des remboursements",
+        "stat_display_2": "Temps réel",
+        "stat_label_2": "Suivi GPS",
+        "stat_display_3": "Photo",
+        "stat_label_3": "Preuve d'état",
+        "h2_0": "Logistique inverse intégrée dans NTIGI",
+        "p_1": "Les retours utilisent la même plateforme, les mêmes flux de travail et le même suivi que les expéditions sortantes. Aucun système séparé nécessaire.",
+        "h2_1": "De la demande de retour au remboursement",
+        "p_2": "Un cycle de vie de retour en cinq étapes où chaque action est suivie, documentée et communiquée automatiquement.",
+        "h3_0": "Ce que contient chaque dossier de retour",
+        "p_3": "Chaque retour est un dossier opérationnel complet lié à son expédition sortante d'origine. Chaque partie peut voir l'intégralité de l'historique du retour à tout moment.",
+        "h3_1": "Types de retours pris en charge",
+        "p_4": "Chaque scénario de retour que votre opération gère est couvert dans NTIGI avec le flux de travail et la documentation appropriés.",
+        "h3_2": "Rapprochement financier",
+        "p_5": "Les retours sont entièrement rapprochés de la facture d'origine. Notes de crédit, remboursements et remboursements partiels tous pris en charge. Les retours multi-devises sont gérés automatiquement avec génération PDF et envoi par e-mail.",
+        "p_5_note": "Les factures de retour et les dossiers de remboursement sont disponibles dans le portail client dès qu'ils sont traités.",
+        "h2_2": "Les retours dans NTIGI",
+        "p_6": "Les expéditions de retour sont créées, suivies et clôturées dans la même liste d'expéditions que vos agents utilisent chaque jour.",
+        "terminal_label_0": "NTIGI // RETURNS_VIEW.sh",
+        "terminal_desc_0": "Expéditions de retour suivies aux côtés des sortantes dans le même flux de travail",
+        "h2_3": "Pour qui c'est conçu",
+        "h4_0": "Fulfillment e-commerce",
+        "p_7": "Gérez les retours d'acheteurs en ligne à grande échelle. Les clients initient les retours via le portail, reçoivent automatiquement une étiquette et suivent le retour jusqu'à la confirmation du remboursement.",
+        "h4_1": "Services de coursiers",
+        "p_8": "Gérez les livraisons refusées et les retours d'adresse incorrecte dans vos tournées quotidiennes. Les retours sont créés, expédiés et suivis en utilisant la même application mobile chauffeur.",
+        "h4_2": "Logistique B2B",
+        "p_9": "Traitez des expéditions de retour en masse de clients professionnels avec des notes de crédit émises automatiquement contre leur compte. Rapports complets de volumes de retours par client et par itinéraire.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Portail client",
+        "related_desc_0": "Les clients soumettent des demandes de retour et suivent les retours en temps réel via leur portail libre-service.",
+        "related_title_1": "Preuve de livraison",
+        "related_desc_1": "Les chauffeurs capturent photos et signatures lors du ramassage du retour pour documenter l'état du colis à la collecte.",
+        "related_title_2": "Finance et facturation",
+        "related_desc_2": "Factures de retour, notes de crédit et traitement des remboursements gérés automatiquement et liés à la transaction d'origine.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à gérer les retours",
+        "h2_5_part2": "sans les maux de tête ?",
+        "p_10": "Découvrez comment NTIGI gère l'intégralité de votre cycle de vie de retour de la demande au remboursement lors d'une présentation en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Création d'un envoi de retour",
@@ -1972,6 +2940,53 @@
       ]
     },
     "route-optimization": {
+      "jsx": {
+        "h1_0_part1": "Optimisation",
+        "h1_0_part2": "des itinéraires",
+        "p_0": "Créez et gérez des itinéraires multi-étapes avec gestion des arrêts, estimation des temps de transit, tarification par zone, suivi GPS en temps réel et visualisation cartographique interactive.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Multi-étapes",
+        "stat_label_0": "Support des itinéraires",
+        "stat_display_1": "Temps réel",
+        "stat_label_1": "Suivi GPS",
+        "stat_display_2": "11+",
+        "stat_label_2": "Types de règles tarifaires",
+        "stat_display_3": "100%",
+        "stat_label_3": "Compatible hors ligne",
+        "h2_0": "Contrôle complet des itinéraires et du réseau",
+        "p_1": "Chaque aspect de votre réseau de livraison configuré, tarifé, suivi et rapporté depuis une seule plateforme.",
+        "h2_1": "De la configuration de l'itinéraire au suivi en direct",
+        "p_2": "Un processus clair en cinq étapes qui amène un nouveau corridor de la définition à un itinéraire de livraison pleinement opérationnel.",
+        "h3_0": "Ce que contient chaque itinéraire",
+        "p_3": "Chaque itinéraire est un dossier opérationnel complet. Chaque information dont les agents ont besoin pour réserver, tarifer et dispatcher une expédition est attachée à l'itinéraire.",
+        "h3_1": "Fonctionnalités cartes et localisation",
+        "p_4": "Propulsé par Leaflet avec OpenStreetMap et l'API Google Maps pour la résolution d'adresses, le calcul des distances et la visualisation du suivi en direct.",
+        "h3_2": "Accès aux itinéraires hors ligne",
+        "p_5": "Les données d'itinéraires se synchronisent avec les applications bureau et mobile pendant la connectivité et restent disponibles hors ligne. Les agents peuvent réserver des expéditions sur n'importe quel itinéraire sans connexion internet.",
+        "p_5_desc": "Fonctionne sur le web, l'application bureau Windows et la PWA mobile avec une parité hors ligne complète.",
+        "h2_2": "Chaque modèle de tarification dont votre itinéraire a besoin",
+        "p_6": "Configurez n'importe quelle combinaison de règles tarifaires par itinéraire. Mixez niveaux de poids, tarifs par zone, niveaux de service et contrats personnalisés sur le même corridor.",
+        "h2_3": "Pour qui c'est conçu",
+        "h4_0": "Réseaux de coursiers en ville",
+        "p_7": "Définissez des zones de livraison intra-urbaines avec cartographie en clusters, assignez des chauffeurs aux itinéraires de zones et suivez chaque véhicule sur une carte en direct tout au long de la journée de livraison.",
+        "h4_1": "Lignes de fret interurbaines",
+        "p_8": "Créez des itinéraires multi-étapes couvrant villes et frontières avec des temps de transit arrêt par arrêt. Tarifez chaque corridor séparément et rapportez les performances par ligne.",
+        "h4_2": "Réseaux d'agences",
+        "p_9": "Assignez des agences partenaires à des segments d'itinéraire spécifiques. Chaque agence gère son tronçon avec une visibilité complète sur ce qui arrive, quand et ce que cela devrait coûter.",
+        "h2_4": "Solutions connexes",
+        "related_title_0": "Gestion flotte et chauffeurs",
+        "related_desc_0": "Enregistrez les véhicules, suivez la maintenance et assignez les chauffeurs aux itinéraires que vous avez configurés.",
+        "related_title_1": "Preuve de livraison",
+        "related_desc_1": "Capturez signatures, photos et confirmation GPS à chaque arrêt le long de vos itinéraires de livraison.",
+        "related_title_2": "Finance et facturation",
+        "related_desc_2": "Appliquez directement les règles tarifaires de l'itinéraire aux factures. Chaque charge calculée à partir de la grille tarifaire de l'itinéraire au moment de la réservation.",
+        "learn_more": "En savoir plus",
+        "h2_5_part1": "Prêt à construire votre",
+        "h2_5_part2": "réseau de livraison ?",
+        "p_10": "Découvrez comment NTIGI gère vos corridors d'itinéraires, réseaux d'arrêts et structures tarifaires lors d'une présentation en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Création d'itinéraires multi-étapes",
@@ -2105,6 +3120,48 @@
       ]
     },
     "warehouse-management": {
+      "jsx": {
+        "h1_0_part1": "Gestion de",
+        "h1_0_part2": "l'entrepôt",
+        "p_0": "Gérez plusieurs entrepôts avec le suivi des emplacements d'étagères et de bacs, la réception par lecture de codes-barres, les niveaux de stock en temps réel, la consolidation et les opérations d'expédition complètes. Fonctionne entièrement hors ligne.",
+        "Button_0": "Demander une démo",
+        "Button_1": "Explorer la plateforme",
+        "Button_3": "Parler à un conseiller",
+        "stat_display_0": "Multi",
+        "stat_label_0": "Gestion multi-entrepôt",
+        "stat_display_1": "Temps réel",
+        "stat_label_1": "Suivi des stocks",
+        "stat_display_2": "Code-barres",
+        "stat_label_2": "Lecture à la réception",
+        "stat_display_3": "Hors ligne",
+        "stat_label_3": "Fonctionne sans réseau",
+        "h2_0": "Contrôles complets de l'entrepôt",
+        "p_1": "NTIGI gère chaque étape de la gestion de l'entrepôt, de la configuration et de la réception à la localisation des articles, à la consolidation des lots et à l'expédition sortante.",
+        "h2_1": "De la réception à l'expédition",
+        "p_2": "Un flux opérationnel clair en cinq étapes qui maintient vos stocks en mouvement et vos dossiers précis.",
+        "h3_0": "Ce que contient chaque dossier d'entrepôt",
+        "p_3": "Chaque emplacement d'entrepôt dans votre réseau dispose d'un tableau de bord complet et isolé pour les opérations locales et les rapports du siège social.",
+        "h3_1": "Suivi et contrôle intégrés des stocks",
+        "p_4": "Gardez un œil sur chaque colis grâce au suivi précis du statut des stocks, à la lecture mobile des codes-barres et à des outils de rapport instantanés.",
+        "h2_2": "Pour qui c'est conçu",
+        "h4_0": "Gestionnaires d'entrepôt",
+        "p_5": "Configurez la disposition des étagères, surveillez les taux d'occupation en poids et en volume, affectez le personnel et supervisez les flux de travail quotidiens de réception et d'expédition.",
+        "h4_1": "Opérateurs logistiques",
+        "p_6": "Scannez les articles entrants pour vérifier la réception, localisez instantanément les colis sur la carte de l'entrepôt et constituez des chargements de consolidation optimisés.",
+        "h4_2": "Centres de distribution",
+        "p_7": "Coordonnez les opérations de cross-docking, gérez les stocks de transit à volume élevé et générez les manifestes de voyage des conteneurs sortants.",
+        "h2_3": "Solutions connexes",
+        "related_title_0": "Consolidation & Manifestes",
+        "related_desc_0": "Regroupez les expéditions par voyage, optimisez les chargements de conteneurs et générez des manifestes conformes pour les douanes.",
+        "related_title_1": "Inventaire & Contrôle des stocks",
+        "related_desc_1": "Suivez les enregistrements de stock au niveau de l'article, effectuez des inventaires et gérez les transferts sur l'ensemble de votre réseau de distribution.",
+        "related_title_2": "Douanes & Conformité",
+        "related_desc_2": "Générez des factures commerciales, gérez les codes SH et effectuez des contrôles de sanctions avant l'expédition.",
+        "learn_more": "En savoir plus",
+        "h2_4_part1": "Prêt à optimiser vos",
+        "h2_4_part2": "opérations d'entrepôt ?",
+        "p_8": "Découvrez comment NTIGI gère plusieurs entrepôts, la lecture de codes-barres et le suivi des stocks pour votre équipe lors d'une démonstration en direct avec notre équipe."
+      },
       "capabilities": [
         {
           "title": "Prise en charge de plusieurs entrepôts",

@@ -6,30 +6,65 @@ import Image from "next/image";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import { motion } from "framer-motion";
 import { Book, Question } from "@phosphor-icons/react";
-
-const tutorials = [
-  { title: "Getting Started with NTIGI", description: "Complete walkthrough covering setup, first shipment, and tracking basics", duration: "15:30" },
-  { title: "Offline Mode & Sync", description: "Working without internet and automatic data synchronization", duration: "8:45" },
-  { title: "Multi-Branch Operations", description: "Managing routes, agencies, and inter-branch transfers", duration: "12:20" },
-  { title: "Warehouse & Consolidation", description: "Manifest creation, voyage management, and cargo grouping", duration: "10:15" },
-];
-
-const documentationSections = [
-  { title: "Getting Started", items: ["Quick start guide", "Installation guide", "First shipment walkthrough", "User roles and permissions"] },
-  { title: "Core Features", items: ["Shipment creation and tracking", "Client and customer management", "Route and network configuration", "Pricing and quotations"] },
-  { title: "Advanced Topics", items: ["Customs and compliance", "Fleet and driver management", "Real-time messaging system", "Offline-first architecture"] },
-  { title: "API Documentation", items: ["REST API reference (30+ modules)", "Authentication and JWT tokens", "Webhooks and event notifications", "SDK examples and code samples"] },
-];
-
-const faqs = [
-  { q: "Does NTIGI work offline?", a: "Yes. NTIGI has offline-first architecture. Create shipments, manage clients, and perform operations without internet. Data syncs automatically when reconnected." },
-  { q: "What platforms are supported?", a: "Web (all modern browsers), Desktop (Windows 10/11), and Mobile (PWA for iOS & Android). All platforms sync in real-time." },
-  { q: "How many users can the system handle?", a: "Built for enterprise scale: 10,000+ concurrent users, 100,000+ shipments per day, 1,000+ API requests per second." },
-  { q: "What integrations are available?", a: "Payment gateways (Stripe, PayPal, Mobile Money), shipping carriers (DHL, FedEx, UPS), SMS (Twilio), Email (Resend), and cloud storage (Cloudinary)." },
-  { q: "How is data security handled?", a: "AES-256 encryption at rest, TLS 1.3 in transit, JWT authentication, role-based access control, and complete audit trails." },
-];
+import { useTranslations } from "next-intl";
 
 export default function Resources() {
+  const t = useTranslations("Docs");
+
+  const tutorials = [
+    { title: t("tutorials.0.title"), description: t("tutorials.0.description"), duration: t("tutorials.0.duration") },
+    { title: t("tutorials.1.title"), description: t("tutorials.1.description"), duration: t("tutorials.1.duration") },
+    { title: t("tutorials.2.title"), description: t("tutorials.2.description"), duration: t("tutorials.2.duration") },
+    { title: t("tutorials.3.title"), description: t("tutorials.3.description"), duration: t("tutorials.3.duration") },
+  ];
+
+  const documentationSections = [
+    {
+      title: t("docSections.0.title"),
+      items: [
+        t("docSections.0.items.0"),
+        t("docSections.0.items.1"),
+        t("docSections.0.items.2"),
+        t("docSections.0.items.3"),
+      ],
+    },
+    {
+      title: t("docSections.1.title"),
+      items: [
+        t("docSections.1.items.0"),
+        t("docSections.1.items.1"),
+        t("docSections.1.items.2"),
+        t("docSections.1.items.3"),
+      ],
+    },
+    {
+      title: t("docSections.2.title"),
+      items: [
+        t("docSections.2.items.0"),
+        t("docSections.2.items.1"),
+        t("docSections.2.items.2"),
+        t("docSections.2.items.3"),
+      ],
+    },
+    {
+      title: t("docSections.3.title"),
+      items: [
+        t("docSections.3.items.0"),
+        t("docSections.3.items.1"),
+        t("docSections.3.items.2"),
+        t("docSections.3.items.3"),
+      ],
+    },
+  ];
+
+  const faqs = [
+    { q: t("faqs.0.q"), a: t("faqs.0.a") },
+    { q: t("faqs.1.q"), a: t("faqs.1.a") },
+    { q: t("faqs.2.q"), a: t("faqs.2.a") },
+    { q: t("faqs.3.q"), a: t("faqs.3.a") },
+    { q: t("faqs.4.q"), a: t("faqs.4.a") },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -40,10 +75,10 @@ export default function Resources() {
             <div className="grid md:grid-cols-2 gap-12 items-center w-full">
               <AnimatedSection className="space-y-4">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Resources &amp; Support<br /><span className="text-blue-500">For NTIGI Platform</span>
+                  {t("hero.h1_part1")}<br /><span className="text-blue-500">{t("hero.h1_part2")}</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                  Video tutorials, documentation, and support resources to help you master the NTIGI logistics platform.
+                  {t("hero.subtitle")}
                 </p>
               </AnimatedSection>
             </div>
@@ -64,8 +99,8 @@ export default function Resources() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12">
-              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Video Tutorials</h2>
-              <p className="text-sm text-foreground/60 font-sans mt-2">Watch and learn how to use NTIGI platform features</p>
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">{t("videosSection.title")}</h2>
+              <p className="text-sm text-foreground/60 font-sans mt-2">{t("videosSection.subtitle")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {tutorials.map((tutorial, idx) => (
@@ -73,7 +108,7 @@ export default function Resources() {
                   <div className="relative aspect-video bg-black">
                     <video controls className="w-full h-full" preload="metadata">
                       <source src="/hero.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
+                      {t("videoFallback")}
                     </video>
                     <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded-none">
                       <span className="text-xs text-white font-bold">{tutorial.duration}</span>
@@ -92,8 +127,8 @@ export default function Resources() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Documentation Library</h2>
-              <p className="text-sm text-foreground/60 font-sans mt-2">Comprehensive guides and technical documentation</p>
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">{t("librarySection.title")}</h2>
+              <p className="text-sm text-foreground/60 font-sans mt-2">{t("librarySection.subtitle")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom">
               {documentationSections.map((section, idx) => (
@@ -118,8 +153,8 @@ export default function Resources() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-4xl px-6 md:px-8">
             <AnimatedSection className="text-center mb-12">
-              <h2 className="text-2xl font-bold font-sans uppercase mt-3">Frequently Asked Questions</h2>
-              <p className="text-sm text-foreground/60 font-sans mt-2">Common questions about NTIGI platform</p>
+              <h2 className="text-2xl font-bold font-sans uppercase mt-3">{t("faqSection.title")}</h2>
+              <p className="text-sm text-foreground/60 font-sans mt-2">{t("faqSection.subtitle")}</p>
             </AnimatedSection>
             <div className="space-y-4">
               {faqs.map((faq, idx) => (

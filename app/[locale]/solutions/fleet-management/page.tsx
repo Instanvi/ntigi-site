@@ -18,63 +18,6 @@ import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-const vehicleCapabilities = [
-  { icon: Truck, title: "Vehicle Registration", desc: "Register every vehicle in your fleet with type, capacity, license plate, registration number, and assigned branch. Full vehicle record accessible at any time." },
-  { icon: Gauge, title: "Capacity Tracking", desc: "Track the load capacity of each vehicle by weight and volume. Prevent over-loading by monitoring what is assigned versus what the vehicle can carry on each run." },
-  { icon: Wrench, title: "Maintenance Scheduling", desc: "Schedule and track vehicle maintenance by mileage or date. Receive alerts before service is due. Keep a complete maintenance history per vehicle." },
-  { icon: GasPump, title: "Fuel Tracking", desc: "Log fuel fill-ups per vehicle and track fuel costs over time. Monitor fuel consumption per route to identify inefficiencies and reduce operating costs." },
-  { icon: MapPin, title: "GPS Tracking Integration", desc: "Track every vehicle's live location on an interactive map. Managers see the full fleet in real time. Customers see their shipment moving toward them." },
-  { icon: ChartLine, title: "Performance Metrics", desc: "Monitor delivery success rates, on-time percentages, distance covered, and fuel efficiency per vehicle. Compare fleet performance across routes and periods." },
-];
-
-const driverCapabilities = [
-  { icon: User, title: "Driver Profiles", desc: "Create detailed profiles for every driver with contact information, assigned branch, active routes, and current delivery status." },
-  { icon: IdentificationCard, title: "License Tracking", desc: "Record driver license numbers, license categories, issue dates, and expiry dates. Receive alerts when a license is approaching expiry." },
-  { icon: ClipboardText, title: "Route Assignment", desc: "Assign drivers to specific routes or delivery runs. Drivers see their assigned shipments in the mobile app and can manage their queue throughout the day." },
-  { icon: ChartLine, title: "Performance Tracking", desc: "Track deliveries completed, success rates, average delivery times, and customer confirmation rates per driver. Identify top performers and underperformers." },
-  { icon: DeviceMobile, title: "Mobile App for Drivers", desc: "Drivers use NTIGI's mobile PWA on any smartphone. View delivery queue, navigate to stops, scan barcodes, capture signatures and photos. Works offline." },
-  { icon: ShieldCheck, title: "POD Capture", desc: "Drivers capture proof of delivery directly from their phone: recipient signature, photo of the package, and GPS location. All attached to the shipment record instantly." },
-];
-
-const workflow = [
-  { step: "01", title: "Register Vehicle", desc: "Add the vehicle with type, capacity, registration details, and assigned branch. The vehicle is immediately available for route and driver assignment." },
-  { step: "02", title: "Create Driver Profile", desc: "Add the driver with license details and branch assignment. Link the driver to their vehicle. Set their initial role and permissions in the NTIGI mobile app." },
-  { step: "03", title: "Assign to Route", desc: "Assign the driver and vehicle to a delivery route or specific run. Shipments appear in the driver's queue on their mobile app immediately." },
-  { step: "04", title: "Track in Real Time", desc: "The vehicle GPS location updates live on the fleet map. Managers see every vehicle. Customers see their shipment status update as the driver progresses." },
-  { step: "05", title: "Review Performance", desc: "After the run, review delivery success rates, fuel usage, and on-time performance per driver and vehicle. Schedule any required maintenance from the same dashboard." },
-];
-
-const vehicleRecord = [
-  { label: "Vehicle Type", desc: "Van, truck, motorcycle, cargo bike, or custom type" },
-  { label: "Load Capacity", desc: "Maximum weight and volume the vehicle can carry" },
-  { label: "License Plate", desc: "Registration number for identification and compliance" },
-  { label: "Assigned Branch", desc: "Which branch this vehicle operates from" },
-  { label: "Current Status", desc: "Active, in maintenance, offline, or decommissioned" },
-  { label: "Maintenance History", desc: "Full log of all service dates, work done, and costs" },
-  { label: "Fuel Log", desc: "All fill-up entries with date, volume, and cost" },
-  { label: "GPS Status", desc: "Live location and last known position with timestamp" },
-];
-
-const driverRecord = [
-  { label: "Full Name and Contact", desc: "Personal details for identification and communication" },
-  { label: "License Number", desc: "Driver license number and applicable categories" },
-  { label: "License Expiry", desc: "Expiry date with automated alert before renewal" },
-  { label: "Assigned Vehicle", desc: "Which vehicle this driver is currently operating" },
-  { label: "Assigned Routes", desc: "Active route assignments for the current period" },
-  { label: "Delivery History", desc: "All deliveries completed with timestamps and outcomes" },
-  { label: "Performance Score", desc: "Delivery success rate and on-time percentage" },
-  { label: "Mobile App Access", desc: "Login credentials and device assignment for the PWA" },
-];
-
-const maintenanceAlerts = [
-  "Scheduled service due date approaching",
-  "Mileage-based service interval reached",
-  "License expiry within 30 days",
-  "Vehicle capacity exceeded on assignment",
-  "Fuel consumption above route average",
-  "Unscheduled downtime recorded",
-];
-
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -94,7 +37,60 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function FleetManagement() {
-    const t = useTranslations("Solutions.customs-compliance");
+  const t = useTranslations("Solutions.fleet-management");
+
+  const vehicleCapabilities = [
+    { icon: Truck, title: t("vehicleCapabilities.0.title"), desc: t("vehicleCapabilities.0.desc") },
+    { icon: Gauge, title: t("vehicleCapabilities.1.title"), desc: t("vehicleCapabilities.1.desc") },
+    { icon: Wrench, title: t("vehicleCapabilities.2.title"), desc: t("vehicleCapabilities.2.desc") },
+    { icon: GasPump, title: t("vehicleCapabilities.3.title"), desc: t("vehicleCapabilities.3.desc") },
+    { icon: MapPin, title: t("vehicleCapabilities.4.title"), desc: t("vehicleCapabilities.4.desc") },
+    { icon: ChartLine, title: t("vehicleCapabilities.5.title"), desc: t("vehicleCapabilities.5.desc") },
+  ];
+
+  const driverCapabilities = [
+    { icon: User, title: t("driverCapabilities.0.title"), desc: t("driverCapabilities.0.desc") },
+    { icon: IdentificationCard, title: t("driverCapabilities.1.title"), desc: t("driverCapabilities.1.desc") },
+    { icon: ClipboardText, title: t("driverCapabilities.2.title"), desc: t("driverCapabilities.2.desc") },
+    { icon: ChartLine, title: t("driverCapabilities.3.title"), desc: t("driverCapabilities.3.desc") },
+    { icon: DeviceMobile, title: t("driverCapabilities.4.title"), desc: t("driverCapabilities.4.desc") },
+    { icon: ShieldCheck, title: t("driverCapabilities.5.title"), desc: t("driverCapabilities.5.desc") },
+  ];
+
+  const workflow = [
+    { step: "01", title: t("workflow.0.title"), desc: t("workflow.0.desc") },
+    { step: "02", title: t("workflow.1.title"), desc: t("workflow.1.desc") },
+    { step: "03", title: t("workflow.2.title"), desc: t("workflow.2.desc") },
+    { step: "04", title: t("workflow.3.title"), desc: t("workflow.3.desc") },
+    { step: "05", title: t("workflow.4.title"), desc: t("workflow.4.desc") },
+  ];
+
+  const vehicleRecord = [
+    { label: t("vehicleRecord.0.label"), desc: t("vehicleRecord.0.desc") },
+    { label: t("vehicleRecord.1.label"), desc: t("vehicleRecord.1.desc") },
+    { label: t("vehicleRecord.2.label"), desc: t("vehicleRecord.2.desc") },
+    { label: t("vehicleRecord.3.label"), desc: t("vehicleRecord.3.desc") },
+    { label: t("vehicleRecord.4.label"), desc: t("vehicleRecord.4.desc") },
+    { label: t("vehicleRecord.5.label"), desc: t("vehicleRecord.5.desc") },
+    { label: t("vehicleRecord.6.label"), desc: t("vehicleRecord.6.desc") },
+    { label: t("vehicleRecord.7.label"), desc: t("vehicleRecord.7.desc") },
+  ];
+
+  const driverRecord = [
+    { label: t("driverRecord.0.label"), desc: t("driverRecord.0.desc") },
+    { label: t("driverRecord.1.label"), desc: t("driverRecord.1.desc") },
+    { label: t("driverRecord.2.label"), desc: t("driverRecord.2.desc") },
+    { label: t("driverRecord.3.label"), desc: t("driverRecord.3.desc") },
+    { label: t("driverRecord.4.label"), desc: t("driverRecord.4.desc") },
+    { label: t("driverRecord.5.label"), desc: t("driverRecord.5.desc") },
+    { label: t("driverRecord.6.label"), desc: t("driverRecord.6.desc") },
+    { label: t("driverRecord.7.label"), desc: t("driverRecord.7.desc") },
+  ];
+
+  const maintenanceAlerts = [
+    t("maintenanceAlerts.0"), t("maintenanceAlerts.1"), t("maintenanceAlerts.2"),
+    t("maintenanceAlerts.3"), t("maintenanceAlerts.4"), t("maintenanceAlerts.5"),
+  ];
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
@@ -109,7 +105,7 @@ export default function FleetManagement() {
             {/* Left: full-height image */}
             <div className="relative hidden md:block">
               <Image
-                src="/trucks.jpg"
+                src="/bus.jpg"
                 alt="Fleet operations at port"
                 fill
                 className="object-cover object-center"
@@ -123,14 +119,14 @@ export default function FleetManagement() {
             <div className="relative bg-[var(--console-header)] py-20 px-8 md:px-12 flex items-center z-10">
               <AnimatedSection className="space-y-5 max-w-lg">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Fleet and Driver<br /><span className="text-blue-500">Management</span>
+                  {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                 </h1>
                 <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                  Register and track every vehicle, manage driver profiles and license compliance, monitor GPS locations in real time, schedule maintenance, and measure performance across your entire delivery operation.
+                  {t("jsx.p_0")}
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                  <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                 </div>
               </AnimatedSection>
             </div>
@@ -143,10 +139,10 @@ export default function FleetManagement() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t-2 border-t-blue-500/20 border-border-custom">
               {[
-                { display: "Real-Time", label: "GPS fleet tracking" },
-                { display: "Full", label: "Maintenance history" },
-                { display: "Mobile", label: "PWA driver app" },
-                { display: "100%", label: "POD evidence capture" },
+                { display: t("jsx.stat_display_0"), label: t("jsx.stat_label_0") },
+                { display: t("jsx.stat_display_1"), label: t("jsx.stat_label_1") },
+                { display: t("jsx.stat_display_2"), label: t("jsx.stat_label_2") },
+                { display: t("jsx.stat_display_3"), label: t("jsx.stat_label_3") },
               ].map((stat, i) => (
                 <AnimatedSection key={i} delay={i * 0.1} className="p-6 border-r border-b md:border-b-0 border-border-custom text-center">
                   <div className="text-2xl font-bold text-blue-500 font-sans">{stat.display}</div>
@@ -161,8 +157,8 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Complete Vehicle Control</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every vehicle in your operation registered, tracked, maintained, and reported from a single platform.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-custom bg-primary/[0.01]">
               {vehicleCapabilities.map((item, index) => (
@@ -182,8 +178,8 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Full Driver Lifecycle Tracking</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">From onboarding to daily performance: every driver record, license, route, and delivery outcome managed in one place.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-custom bg-background">
               {driverCapabilities.map((item, index) => (
@@ -203,8 +199,8 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Registration to Daily Operations</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">A clear five-step process for onboarding a new vehicle or driver and getting them operational on the first day.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_3")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -231,9 +227,9 @@ export default function FleetManagement() {
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
                 <Truck className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">What Every Vehicle Record Contains</h3>
+                <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_0")}</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Each vehicle has a complete operational record. Every detail needed to dispatch, maintain, and report on that vehicle is in one place.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
               <div className="space-y-3 pt-1">
                 {vehicleRecord.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -251,9 +247,9 @@ export default function FleetManagement() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <User className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">What Every Driver Record Contains</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Complete driver records from personal details and license compliance through to daily performance and delivery history.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="space-y-2 pt-1">
                   {driverRecord.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="flex items-start gap-2">
@@ -269,9 +265,9 @@ export default function FleetManagement() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Warning className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Proactive Alerts</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_2")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">NTIGI watches your fleet and driver compliance automatically and alerts you before problems occur.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_6")}</p>
                 <div className="space-y-2 pt-1">
                   {maintenanceAlerts.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.07 }} className="flex items-center gap-2">
@@ -288,8 +284,8 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Inside the Platform</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Fleet overview and shipment management in the same system your drivers use every day.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_7")}</p>
             </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
               <motion.div
@@ -303,7 +299,7 @@ export default function FleetManagement() {
                 </div>
                 <div className="px-4 py-3 bg-[var(--console-header)] border-t border-border-custom flex items-center gap-2">
                   <Truck className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Fleet overview vehicle status and GPS positions</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.caption_0")}</span>
                 </div>
               </motion.div>
 
@@ -318,7 +314,7 @@ export default function FleetManagement() {
                 </div>
                 <div className="px-4 py-3 bg-[var(--console-header)] border-t border-border-custom flex items-center gap-2">
                   <User className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
-                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">Driver delivery queue shipments assigned to route</span>
+                  <span className="text-[11px] text-foreground/60 tracking-wider uppercase">{t("jsx.caption_1")}</span>
                 </div>
               </motion.div>
             </div>
@@ -329,58 +325,42 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_4")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
-
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
                   <Image src="/image4.webp" alt="City courier delivery operations" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <Truck className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><Truck className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">City Courier Companies</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Manage 10 to 100 drivers daily. Track every vehicle on a live map, assign shipments to drivers automatically, and review delivery performance at the end of each day.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_0")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_8")}</p>
                 </div>
               </AnimatedSection>
-
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
                   <Image src="/image2.jpg" alt="Freight transport on long-haul routes" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <Buildings className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><Buildings className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Transport Operators</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Track heavy vehicles on long inter-city routes. Monitor fuel consumption per trip, schedule servicing by mileage, and ensure license compliance for all commercial drivers.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_1")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
                 </div>
               </AnimatedSection>
-
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
                   <Image src="/image3.jpg" alt="Multi-branch logistics network" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <UsersThree className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><UsersThree className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Multi-Branch Logistics Networks</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Each branch manages its own fleet independently while head office sees network-wide performance. Compare vehicle utilization and driver productivity across all locations.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_2")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_10")}</p>
                 </div>
               </AnimatedSection>
-
             </div>
           </div>
         </section>
@@ -389,20 +369,20 @@ export default function FleetManagement() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_5")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "Route Optimization", desc: "Assign your registered vehicles and drivers to optimized routes with distance calculation, transit times, and real-time tracking.", href: "/solutions/route-optimization" },
-                { title: "Proof of Delivery", desc: "Your drivers capture signatures, photos, and GPS confirmation at every stop using the same NTIGI mobile app.", href: "/solutions/proof-of-delivery" },
-                { title: "Multi-Branch Network", desc: "Manage fleets across multiple branches with branch-level data isolation and consolidated head-office reporting.", href: "/solutions/multi-branch" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/route-optimization" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/proof-of-delivery" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/multi-branch" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -426,12 +406,12 @@ export default function FleetManagement() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control<br /><span className="text-blue-500">of Your Fleet?</span>
+                {t("jsx.h2_6_part1")}<br /><span className="text-blue-500">{t("jsx.h2_6_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI manages your vehicles, drivers, and delivery performance in a live walkthrough with our team.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_11")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

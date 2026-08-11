@@ -11,8 +11,11 @@ import {
   Envelope, Phone, MapPin, Clock, CheckCircle,
   ChatCircle, Users, Wrench, CurrencyDollar,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
+  const t = useTranslations("Contact");
+
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", company: "", subject: "general", message: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -31,16 +34,28 @@ export default function ContactPage() {
   };
 
   const offices = [
-    { city: "Douala", country: "Cameroon", role: "Global Headquarters", address: "4 etage, Bonaberi, Douala", phone: "+237 233 44 55 66", email: "douala@ntigi.com", hours: "Mon to Fri: 8:00 AM to 5:00 PM (GMT+1)" },
-    { city: "London", country: "United Kingdom", role: "European Operations Hub", address: "30 St Mary Axe, London, EC3A 8BF", phone: "+44 20 7946 0958", email: "london@ntigi.com", hours: "Mon to Fri: 9:00 AM to 6:00 PM (GMT)" },
-    { city: "Chicago", country: "United States", role: "North American Headquarters", address: "233 S Wacker Drive, Chicago, IL 60606", phone: "+1 312 555 0199", email: "chicago@ntigi.com", hours: "Mon to Fri: 9:00 AM to 5:00 PM (CST)" },
+    {
+      city: t("offices.0.city"), country: t("offices.0.country"), role: t("offices.0.role"),
+      address: t("offices.0.address"), phone: t("offices.0.phone"),
+      email: t("offices.0.email"), hours: t("offices.0.hours"),
+    },
+    {
+      city: t("offices.1.city"), country: t("offices.1.country"), role: t("offices.1.role"),
+      address: t("offices.1.address"), phone: t("offices.1.phone"),
+      email: t("offices.1.email"), hours: t("offices.1.hours"),
+    },
+    {
+      city: t("offices.2.city"), country: t("offices.2.country"), role: t("offices.2.role"),
+      address: t("offices.2.address"), phone: t("offices.2.phone"),
+      email: t("offices.2.email"), hours: t("offices.2.hours"),
+    },
   ];
 
   const contactReasons = [
-    { icon: CurrencyDollar, title: "Sales and Pricing", desc: "Get a custom pricing proposal based on your operation size, branch count, and shipment volume." },
-    { icon: Wrench, title: "Technical Support", desc: "Support for setup, configuration, integrations, and troubleshooting across all NTIGI platforms." },
-    { icon: Users, title: "Partnerships", desc: "Discuss agency network partnerships, integration partnerships, or reseller agreements." },
-    { icon: ChatCircle, title: "General Enquiries", desc: "Questions about NTIGI's capabilities, deployment options, or team training programs." },
+    { icon: CurrencyDollar, title: t("reasons.0.title"), desc: t("reasons.0.desc") },
+    { icon: Wrench,         title: t("reasons.1.title"), desc: t("reasons.1.desc") },
+    { icon: Users,          title: t("reasons.2.title"), desc: t("reasons.2.desc") },
+    { icon: ChatCircle,     title: t("reasons.3.title"), desc: t("reasons.3.desc") },
   ];
 
   return (
@@ -48,32 +63,28 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow pt-16">
 
+        {/* HERO */}
         <section className="relative min-h-[500px] border-b border-border-custom overflow-hidden noise-overlay flex items-stretch">
           <div className="mx-auto max-w-7xl w-full px-6 md:px-8 py-20 flex items-center relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center w-full">
               <AnimatedSection className="space-y-4">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Get in Touch<br /><span className="text-blue-500">with Our Team</span>
+                  {t("hero.h1_part1")}<br /><span className="text-blue-500">{t("hero.h1_part2")}</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                  Reach out for pricing, API access, custom branch installations, technical support, or partnership discussions. Our team responds within one business day.
+                  {t("hero.subtitle")}
                 </p>
               </AnimatedSection>
             </div>
           </div>
           <div className="hidden md:block absolute top-0 right-0 bottom-0 w-1/2 z-0">
-            <Image
-              src="/image2.jpg"
-              alt="Global logistics support team"
-              fill
-              className="object-cover"
-              priority
-            />
+            <Image src="/image2.jpg" alt="Global logistics support team" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--console-header)] via-[var(--console-header)]/40 to-transparent pointer-events-none" />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
+        {/* CONTACT REASON PILLS */}
         <section className="border-b border-border-custom bg-[var(--console-bg)]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-border-custom">
@@ -90,12 +101,15 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* OFFICES + FORM */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-12 gap-8">
+
+            {/* Offices */}
             <div className="md:col-span-7 space-y-6">
               <AnimatedSection direction="left">
-                <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Corporate Locations</h2>
-                <p className="text-sm text-foreground/70 font-sans font-medium leading-relaxed mt-2">Three offices across Africa, Europe, and North America, covering all major logistics trade lanes.</p>
+                <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("officesSection.title")}</h2>
+                <p className="text-sm text-foreground/70 font-sans font-medium leading-relaxed mt-2">{t("officesSection.subtitle")}</p>
               </AnimatedSection>
               <div className="grid grid-cols-1 gap-0 border-t border-l border-border-custom bg-primary/[0.01]">
                 {offices.map((office, index) => (
@@ -115,27 +129,28 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Contact Form */}
             <AnimatedSection direction="right" className="md:col-span-5">
               <div className="bg-[var(--console-bg)] rounded-none p-6 border border-border-custom space-y-5">
                 <div className="border-b border-border-custom pb-4 space-y-1">
-                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Send Us a Message</h3>
-                  <p className="text-sm text-foreground/60 font-sans font-medium">Fill in the form and our team will respond within one business day.</p>
+                  <h3 className="text-md font-bold uppercase tracking-wider text-foreground">{t("form.heading")}</h3>
+                  <p className="text-sm text-foreground/60 font-sans font-medium">{t("form.subheading")}</p>
                 </div>
                 {status === "success" ? (
                   <div className="text-center py-10 space-y-4">
                     <div className="mx-auto w-12 h-12 rounded-none bg-[var(--console-bg)] border border-border-custom text-blue-500 flex items-center justify-center">
                       <CheckCircle className="h-6 w-6" />
                     </div>
-                    <h3 className="text-md font-bold uppercase tracking-wider text-foreground">Message Sent</h3>
-                    <p className="text-sm text-foreground/70 font-sans font-medium leading-relaxed">Your message has been received. An NTIGI team member will respond within one business day.</p>
-                    <Button variant="outline" size="lg" onClick={() => setStatus("idle")} className="w-full">Send Another Message</Button>
+                    <h3 className="text-md font-bold uppercase tracking-wider text-foreground">{t("form.successTitle")}</h3>
+                    <p className="text-sm text-foreground/70 font-sans font-medium leading-relaxed">{t("form.successDesc")}</p>
+                    <Button variant="outline" size="lg" onClick={() => setStatus("idle")} className="w-full">{t("form.sendAnother")}</Button>
                   </div>
                 ) : (
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     {[
-                      { label: "Full Name", name: "name", type: "text", placeholder: "Your full name" },
-                      { label: "Work Email", name: "email", type: "email", placeholder: "name@company.com" },
-                      { label: "Company Name", name: "company", type: "text", placeholder: "Your company" },
+                      { label: t("form.fullName"),    name: "name",    type: "text",  placeholder: t("form.fullNamePlaceholder") },
+                      { label: t("form.workEmail"),   name: "email",   type: "email", placeholder: t("form.workEmailPlaceholder") },
+                      { label: t("form.companyName"), name: "company", type: "text",  placeholder: t("form.companyNamePlaceholder") },
                     ].map((field) => (
                       <div key={field.name}>
                         <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{field.label}</label>
@@ -143,22 +158,22 @@ export default function ContactPage() {
                       </div>
                     ))}
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Subject</label>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.subject")}</label>
                       <select name="subject" value={formData.subject} onChange={handleChange} className="w-full px-4 py-3 bg-background border border-border-custom rounded-none text-foreground text-sm focus:outline-none focus:border-blue-500 transition-colors">
-                        <option value="general">General Enquiry</option>
-                        <option value="sales">Sales and Pricing</option>
-                        <option value="support">Technical Support</option>
-                        <option value="api">API Access Request</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="demo">Request a Demo</option>
+                        <option value="general">{t("form.subjectOptions.general")}</option>
+                        <option value="sales">{t("form.subjectOptions.sales")}</option>
+                        <option value="support">{t("form.subjectOptions.support")}</option>
+                        <option value="api">{t("form.subjectOptions.api")}</option>
+                        <option value="partnership">{t("form.subjectOptions.partnership")}</option>
+                        <option value="demo">{t("form.subjectOptions.demo")}</option>
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Message</label>
-                      <textarea name="message" value={formData.message} onChange={handleChange} className="w-full px-4 py-3 bg-background border border-border-custom rounded-none text-foreground text-sm focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder="Describe your branch size, requirements, or question..." required />
+                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.message")}</label>
+                      <textarea name="message" value={formData.message} onChange={handleChange} className="w-full px-4 py-3 bg-background border border-border-custom rounded-none text-foreground text-sm focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder={t("form.messagePlaceholder")} required />
                     </div>
                     <Button type="submit" variant="primary" size="lg" className="w-full" disabled={status === "submitting"}>
-                      {status === "submitting" ? "Sending..." : "Send Message"}
+                      {status === "submitting" ? t("form.sending") : t("form.submit")}
                     </Button>
                   </form>
                 )}
@@ -167,30 +182,27 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* BOTTOM CTA */}
         <section className="relative py-24 border-b border-border-custom overflow-hidden noise-overlay">
           <div className="absolute inset-0 -z-10">
-            <Image
-              src="/ship.jpeg"
-              alt="Cargo ship transportation"
-              fill
-              className="object-cover object-center"
-            />
+            <Image src="/ship.jpeg" alt="Cargo ship transportation" fill className="object-cover object-center" />
             <div className="absolute inset-0 bg-background/85" />
           </div>
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2">
-                <h2 className="text-2xl font-extrabold uppercase font-sans tracking-tight leading-none">Prefer to See It First?</h2>
-                <p className="text-sm text-foreground/70 font-sans font-medium">Book a live demo and our team will walk you through NTIGI for your specific operation.</p>
+                <h2 className="text-2xl font-extrabold uppercase font-sans tracking-tight leading-none">{t("cta.title")}</h2>
+                <p className="text-sm text-foreground/70 font-sans font-medium">{t("cta.subtitle")}</p>
               </div>
               <div className="flex flex-wrap gap-3 flex-shrink-0">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/pricing" size="lg">View Pricing</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("cta.demoButton")}</Button>
+                <Button variant="outline" href="/pricing" size="lg">{t("cta.pricingButton")}</Button>
               </div>
             </AnimatedSection>
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-20" />
         </section>
+
       </main>
       <Footer />
     </div>

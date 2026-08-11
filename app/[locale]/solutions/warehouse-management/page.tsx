@@ -227,10 +227,6 @@ export default function WarehouseManagement() {
           </div>
         </section>
 
-        {/* PROOF SECTION Ã¢â‚¬â€ single full-width console frame above the detail cards.
-            Different from the 2-col pattern used on intl-forwarding/customs/consolidation.
-            One wide screenshot showing the warehouse/dashboard view, then the
-            warehouse record and stock tracking detail cards below. */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">

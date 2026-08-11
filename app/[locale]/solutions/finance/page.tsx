@@ -18,52 +18,7 @@ import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
-const capabilities = [
-  { icon: Cardholder, title: "Multi-Method Payments", desc: "Accept cash, credit and debit cards, bank transfers, mobile money (MTN, Orange, Airtel), and COD collections. All payment types tracked in one place." },
-  { icon: Receipt, title: "Automatic Invoice Generation", desc: "Invoices are created instantly when a shipment is booked. Custom templates, automatic numbering, tax calculations, and PDF generation built in." },
-  { icon: CurrencyDollar, title: "Multi-Currency Support", desc: "Issue invoices and process payments in multiple currencies. Currency conversion is handled automatically with configurable exchange rates per route." },
-  { icon: ArrowsCounterClockwise, title: "COD & Split Payments", desc: "Track cash on delivery collections across drivers and branches. Allow clients to pay using split payment methods across a single shipment." },
-  { icon: ChartLine, title: "Revenue & P&L Reports", desc: "View revenue by branch, route, or agent. Generate profit and loss statements with custom date ranges and export to Excel or PDF instantly." },
-  { icon: UsersThree, title: "Agent Commission Tracking", desc: "Calculate and track agent commissions automatically based on configurable structures. View individual agent performance and commission breakdowns." },
-  { icon: Bank, title: "Outstanding Balances", desc: "Track client outstanding balances in real time. Set credit limits, configure credit terms, and send automated payment reminders via email or SMS." },
-  { icon: FileText, title: "Refund Management", desc: "Process refunds and payment reversals against original invoices. Every refund is logged with reason, user, and timestamp for full audit trail." },
-];
-
-const workflow = [
-  { step: "01", title: "Shipment Booked", desc: "When a shipment is created, the system calculates the charge based on route pricing, weight, service level, and any applicable surcharges." },
-  { step: "02", title: "Invoice Generated", desc: "An invoice is automatically created with all shipment details, taxes, and totals. It is emailed to the client and available for PDF download." },
-  { step: "03", title: "Payment Collected", desc: "Payment is recorded against the invoice: cash, card, mobile money, or bank transfer. Receipt is printed or emailed to the client immediately." },
-  { step: "04", title: "COD Tracked", desc: "For COD shipments, collection is tracked per driver. Once delivered and collected, the payment is reconciled against the shipment record." },
-  { step: "05", title: "Reports Generated", desc: "At any time, generate revenue reports, commission statements, and branch performance comparisons. Export to Excel, PDF, or CSV." },
-];
-
-const paymentMethods = [
-  { name: "Cash", detail: "Walk-in and COD collection tracking" },
-  { name: "Credit / Debit Card", detail: "Card terminal and gateway processing" },
-  { name: "Bank Transfer", detail: "Wire and direct bank payment logging" },
-  { name: "Mobile Money", detail: "MTN, Orange, Airtel integrations" },
-  { name: "Stripe", detail: "Online payment gateway" },
-  { name: "PayPal", detail: "International online payments" },
-  { name: "COD", detail: "Cash on delivery with driver reconciliation" },
-  { name: "Split Payment", detail: "Multiple methods on a single invoice" },
-];
-
-const accountingIntegrations = [
-  { name: "QuickBooks", status: "Integration Ready", desc: "Sync invoices, payments, and client data to QuickBooks automatically." },
-  { name: "Xero", status: "Integration Ready", desc: "Export financial records directly into Xero for accounting and reporting." },
-  { name: "Custom Export", status: "Always Available", desc: "Export any financial data to Excel, CSV, or PDF for use in any accounting tool." },
-];
-
-const reportTypes = [
-  "Revenue reports (daily, weekly, monthly)",
-  "Payment collection reports",
-  "Outstanding balances by client",
-  "Profit and loss statements",
-  "Agent commission reports",
-  "Branch performance comparison",
-  "COD reconciliation reports",
-  "Custom date range reports",
-];
+  return (
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -120,8 +75,48 @@ function ConsoleFrame({ label, status, children, delay = 0 }: {
 }
 
 export default function Finance() {
-    const t = useTranslations("Solutions.finance");
-  return (
+  const t = useTranslations("Solutions.finance");
+
+  const capabilities = [
+    { icon: Cardholder, title: t("capabilities.0.title"), desc: t("capabilities.0.desc") },
+    { icon: Receipt, title: t("capabilities.1.title"), desc: t("capabilities.1.desc") },
+    { icon: CurrencyDollar, title: t("capabilities.2.title"), desc: t("capabilities.2.desc") },
+    { icon: ArrowsCounterClockwise, title: t("capabilities.3.title"), desc: t("capabilities.3.desc") },
+    { icon: ChartLine, title: t("capabilities.4.title"), desc: t("capabilities.4.desc") },
+    { icon: UsersThree, title: t("capabilities.5.title"), desc: t("capabilities.5.desc") },
+    { icon: Bank, title: t("capabilities.6.title"), desc: t("capabilities.6.desc") },
+    { icon: FileText, title: t("capabilities.7.title"), desc: t("capabilities.7.desc") },
+  ];
+
+  const workflow = [
+    { step: "01", title: t("workflow.0.title"), desc: t("workflow.0.desc") },
+    { step: "02", title: t("workflow.1.title"), desc: t("workflow.1.desc") },
+    { step: "03", title: t("workflow.2.title"), desc: t("workflow.2.desc") },
+    { step: "04", title: t("workflow.3.title"), desc: t("workflow.3.desc") },
+    { step: "05", title: t("workflow.4.title"), desc: t("workflow.4.desc") },
+  ];
+
+  const paymentMethods = [
+    { name: t("paymentMethods.0.name"), detail: t("paymentMethods.0.detail") },
+    { name: t("paymentMethods.1.name"), detail: t("paymentMethods.1.detail") },
+    { name: t("paymentMethods.2.name"), detail: t("paymentMethods.2.detail") },
+    { name: t("paymentMethods.3.name"), detail: t("paymentMethods.3.detail") },
+    { name: t("paymentMethods.4.name"), detail: t("paymentMethods.4.detail") },
+    { name: t("paymentMethods.5.name"), detail: t("paymentMethods.5.detail") },
+    { name: t("paymentMethods.6.name"), detail: t("paymentMethods.6.detail") },
+    { name: t("paymentMethods.7.name"), detail: t("paymentMethods.7.detail") },
+  ];
+
+  const accountingIntegrations = [
+    { name: t("accountingIntegrations.0.name"), status: t("accountingIntegrations.0.status"), desc: t("accountingIntegrations.0.desc") },
+    { name: t("accountingIntegrations.1.name"), status: t("accountingIntegrations.1.status"), desc: t("accountingIntegrations.1.desc") },
+    { name: t("accountingIntegrations.2.name"), status: t("accountingIntegrations.2.status"), desc: t("accountingIntegrations.2.desc") },
+  ];
+
+  const reportTypes = [
+    t("reportTypes.0"), t("reportTypes.1"), t("reportTypes.2"), t("reportTypes.3"),
+    t("reportTypes.4"), t("reportTypes.5"), t("reportTypes.6"), t("reportTypes.7"),
+  ];
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
@@ -132,14 +127,12 @@ export default function Finance() {
 
               <AnimatedSection className="space-y-5">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Finance<br /><span className="text-blue-500">& Billing</span>
+                  {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                 </h1>
-                <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-md">
-                  Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports, all built directly into the NTIGI logistics workflow.
-                </p>
+                <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-md">{t("jsx.p_0")}</p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                  <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                 </div>
               </AnimatedSection>
 
@@ -175,10 +168,10 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t-2 border-t-blue-500/20 border-border-custom">
               {[
-                { display: "8+", label: "Payment methods" },
-                { display: "Multi", label: "Currency support" },
-                { display: "100%", label: "Audit trail" },
-                { display: "Excel/PDF", label: "Export formats" },
+                { display: t("jsx.stat_display_0"), label: t("jsx.stat_label_0") },
+                { display: t("jsx.stat_display_1"), label: t("jsx.stat_label_1") },
+                { display: t("jsx.stat_display_2"), label: t("jsx.stat_label_2") },
+                { display: t("jsx.stat_display_3"), label: t("jsx.stat_label_3") },
               ].map((stat, i) => (
                 <AnimatedSection key={i} delay={i * 0.1} className="p-6 border-r border-b md:border-b-0 border-border-custom text-center">
                   <div className="text-2xl font-bold text-blue-500 font-sans">{stat.display}</div>
@@ -193,8 +186,8 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Complete Financial Control</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every financial operation from payment collection to accounting exports, integrated into your logistics workflow.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {capabilities.map((item, index) => (
@@ -214,8 +207,8 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Booking to Settlement</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Finance is embedded in the shipment lifecycle. No separate billing system needed.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -250,11 +243,11 @@ export default function Finance() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--console-bg)]/40 to-[var(--console-bg)]/90" />
                 <div className="absolute bottom-3 left-4 flex items-center gap-2">
                   <Coins className="w-4 h-4 text-blue-500" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-foreground">Payment Methods Accepted</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-foreground">{t("jsx.h3_0")}</span>
                 </div>
               </div>
               <div className="p-6 space-y-4">
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every payment method your clients use is supported. Configure which methods are active per branch and per service level.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_3")}</p>
                 <div className="grid grid-cols-2 gap-3 pt-1">
                   {paymentMethods.map((method, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -272,9 +265,9 @@ export default function Finance() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <ChartLine className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Financial Reports</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every report you need, available instantly with custom date ranges and one-click export.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
                 <div className="space-y-2 pt-1">
                   {reportTypes.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
@@ -288,9 +281,9 @@ export default function Finance() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <BookOpenText className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Accounting Integrations</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_2")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Connect your existing accounting tools or export to any platform using standard formats.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="space-y-3 pt-1">
                   {accountingIntegrations.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -313,58 +306,42 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
-
               <AnimatedSection delay={0} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/logisticsboss.jpg" alt="Freight forwarder finance operations" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/logisticsboss.jpg" alt={t("jsx.h4_0")} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <Buildings className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><Buildings className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Freight Forwarders</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_0")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_6")}</p>
                 </div>
               </AnimatedSection>
-
               <AnimatedSection delay={0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/image4.webp" alt="Courier network COD reconciliation" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/image4.webp" alt={t("jsx.h4_1")} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <UsersThree className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><UsersThree className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Courier Networks</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_1")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_7")}</p>
                 </div>
               </AnimatedSection>
-
               <AnimatedSection delay={0.24} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                 <div className="relative h-44 overflow-hidden border-b border-border-custom">
-                  <Image src="/ai.jpg" alt="Finance team reviewing reports" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/ai.jpg" alt={t("jsx.h4_2")} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--console-header)]/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-3 left-4">
-                    <div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center">
-                      <Bell className="h-3.5 w-3.5" />
-                    </div>
-                  </div>
+                  <div className="absolute bottom-3 left-4"><div className="p-1.5 w-7 h-7 rounded-none bg-[var(--console-bg)]/80 border border-blue-500/40 text-blue-500 flex items-center justify-center"><Bell className="h-3.5 w-3.5" /></div></div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Finance Teams</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_2")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_8")}</p>
                 </div>
               </AnimatedSection>
-
             </div>
           </div>
         </section>
@@ -373,20 +350,20 @@ export default function Finance() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "International Forwarding", desc: "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.", href: "/solutions/international-forwarding" },
-                { title: "Client Management", desc: "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.", href: "/solutions/client-management" },
-                { title: "Customs & Compliance", desc: "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.", href: "/solutions/customs-compliance" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/international-forwarding" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/client-management" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/customs-compliance" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -410,12 +387,12 @@ export default function Finance() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Take Control of<br /><span className="text-blue-500">Your Logistics Finances?</span>
+                {t("jsx.h2_4_part1")}<br /><span className="text-blue-500">{t("jsx.h2_4_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

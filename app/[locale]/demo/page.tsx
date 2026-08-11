@@ -7,8 +7,10 @@ import Image from "next/image";
 import { CheckCircle } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/Button";
 import AnimatedSection from "@/components/animations/AnimatedSection";
+import { useTranslations } from "next-intl";
 
 export default function RequestDemo() {
+  const t = useTranslations("Demo");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,10 +28,10 @@ export default function RequestDemo() {
             <div className="grid md:grid-cols-2 gap-12 items-center w-full">
               <AnimatedSection className="space-y-4">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Request a<br /><span className="text-blue-500">Live Demo</span>
+                  {t("hero.h1_part1")}<br /><span className="text-blue-500">{t("hero.h1_part2")}</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                  See how our offline-first cloud platform streamlines maritime voyages, customs compliance, and package dispatch workflows.
+                  {t("hero.subtitle")}
                 </p>
               </AnimatedSection>
             </div>
@@ -54,55 +56,55 @@ export default function RequestDemo() {
                 <div className="mx-auto w-16 h-16 bg-[var(--console-bg)] border border-border-custom rounded-none flex items-center justify-center text-blue-500">
                   <CheckCircle className="h-10 w-10 animate-bounce" />
                 </div>
-                <h2 className="text-2xl font-bold uppercase tracking-wider text-foreground">Request Received!</h2>
+                <h2 className="text-2xl font-bold uppercase tracking-wider text-foreground">{t("success.title")}</h2>
                 <p className="text-sm text-foreground/70 max-w-md mx-auto font-sans leading-relaxed font-medium">
-                  Thank you for your interest in NTIGI. One of our logistics optimization specialists will reach out to schedule a live walkthrough of our web and mobile PWA platform.
+                  {t("success.desc")}
                 </p>
                 <div className="pt-4">
-                  <Button variant="secondary" href="/">Return to Homepage</Button>
+                  <Button variant="secondary" href="/">{t("success.backButton")}</Button>
                 </div>
               </AnimatedSection>
             ) : (
               <AnimatedSection className="bg-[var(--console-bg)] border border-border-custom rounded-none p-8 md:p-12 space-y-8">
                 <div className="space-y-3">
-                  <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-foreground">Experience NTIGI</h2>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Fill out the form below and our team will contact you to schedule a personalized demonstration.</p>
+                  <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-foreground">{t("form.heading")}</h2>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("form.subheading")}</p>
                 </div>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">First Name</label>
-                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder="John" />
+                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.firstName")}</label>
+                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.firstNamePlaceholder")} />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Last Name</label>
-                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder="Doe" />
+                      <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.lastName")}</label>
+                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.lastNamePlaceholder")} />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Work Email</label>
-                    <input required type="email" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder="john.doe@logistics.com" />
+                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.email")}</label>
+                    <input required type="email" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.emailPlaceholder")} />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Company Name</label>
-                    <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder="Global Freight Forwarders" />
+                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.company")}</label>
+                    <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.companyPlaceholder")} />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Primary Operations Area</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.operationsArea")}</label>
                     <select required className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors">
-                      <option value="">Select industry area...</option>
-                      <option value="freight">Ocean & Air Freight Forwarding</option>
-                      <option value="courier">Courier & Last-Mile Delivery</option>
-                      <option value="warehouse">Warehouse Management & Consolidation</option>
-                      <option value="other">Other Logistics Services</option>
+                      <option value="">{t("form.operationsAreaPlaceholder")}</option>
+                      <option value="freight">{t("form.operationsAreaOptions.freight")}</option>
+                      <option value="courier">{t("form.operationsAreaOptions.courier")}</option>
+                      <option value="warehouse">{t("form.operationsAreaOptions.warehouse")}</option>
+                      <option value="other">{t("form.operationsAreaOptions.other")}</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">Special Requirements / Notes</label>
-                    <textarea className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder="Tell us about your branch count, integration needs, or offline operations challenges..."></textarea>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.notes")}</label>
+                    <textarea className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder={t("form.notesPlaceholder")}></textarea>
                   </div>
-                  <Button variant="secondary" className="w-full py-4 text-base font-bold">Schedule My Live Demo</Button>
+                  <Button variant="secondary" className="w-full py-4 text-base font-bold">{t("form.submitButton")}</Button>
                 </form>
               </AnimatedSection>
             )}

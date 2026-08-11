@@ -292,6 +292,594 @@
     "en": "EN",
     "fr": "FR"
   },
+  "Pricing": {
+    "hero": {
+      "h1_part1": "Usage-Based",
+      "h1_part2": "Payment",
+      "subtitle": "NTIGI does not charge flat monthly subscription fees. Your clients pay based on what they send or receive: package weight, dimensions, route, service level, and handling requirements. You configure the rates. NTIGI calculates and invoices automatically.",
+      "demoButton": "Request a Demo",
+      "salesButton": "Talk to Sales"
+    },
+    "stats": [
+      { "display": "Pay Per", "label": "Shipment sent or received" },
+      { "display": "Custom", "label": "Rate cards per route" },
+      { "display": "Auto",   "label": "Invoice on every booking" },
+      { "display": "Multi",  "label": "Currency support" }
+    ],
+    "factorsSection": {
+      "title": "What Determines the Cost of a Shipment",
+      "subtitle": "Each shipment is priced by combining the relevant factors below. You configure all of them. Your rates, your rules, your margins."
+    },
+    "factors": [
+      { "title": "Package Weight",        "desc": "Rates are calculated by actual weight. Define weight bands with different prices per kilogram or per fixed band. Heavier shipments move to higher tiers automatically.",                                  "example": "0 to 5 kg: base rate / 5 to 20 kg: mid rate / 20 kg plus: bulk rate" },
+      { "title": "Dimensions and Volume", "desc": "Volumetric weight is calculated from package dimensions. The system automatically applies the higher of actual weight or volumetric weight.",                                                         "example": "Oversized light packages are billed by cubic volume, not just mass" },
+      { "title": "Route and Zone",        "desc": "Each route has its own rate card. Zone-based pricing groups origins and destinations into pricing zones. Cross-zone shipments apply the configured inter-zone rate.",                              "example": "Zone A to Zone A: local rate / Zone A to Zone B: regional rate" },
+      { "title": "Package Type",          "desc": "Different rates apply to envelopes, parcels, boxes, and pallets. Each package type has configurable base rates, size restrictions, and weight limits.",                                             "example": "Envelope: flat rate / Standard box: weight-based / Pallet: volume-based" },
+      { "title": "Service Level",         "desc": "Standard, express, same-day, next-day, and overnight service levels each carry their own rate multiplier or fixed surcharge applied on top of the base route rate.",                               "example": "Standard: base / Express: base + 30% / Same-day: base + 60%" },
+      { "title": "Fuel Surcharge",        "desc": "Apply a configurable fuel surcharge as a percentage or fixed amount per shipment. Update it globally or per route to reflect changing fuel costs.",                                                 "example": "Current surcharge: configured per route or network-wide" },
+      { "title": "Handling Fees",         "desc": "Apply additional charges for special handling requirements: fragile, perishable, hazardous, oversized, or white glove service. Mapped to 22 cargo handling tags.",                                 "example": "Fragile handling: +5 / Hazardous: +15 / White glove: +25" },
+      { "title": "Duties and Taxes",      "desc": "For international shipments, customs duties and VAT are calculated per HS code and destination country. Added to the invoice automatically at booking.",                                           "example": "HS code + destination = applicable duty rate applied to declared value" }
+    ],
+    "howItWorksSection": {
+      "title": "From Booking to Payment",
+      "subtitle": "Pricing is embedded in the shipment workflow. The moment a booking is created, the price is calculated and the invoice is ready."
+    },
+    "howItWorks": [
+      { "title": "You Set the Rates",            "desc": "Your operations team configures rate cards in NTIGI for each route, service level, weight band, and package type. Rates are yours to control and update at any time." },
+      { "title": "Agent Books a Shipment",       "desc": "When an agent creates a shipment, they select the route, package type, weight, dimensions, and service level. NTIGI calculates the charge automatically." },
+      { "title": "System Calculates the Price", "desc": "The pricing engine applies the matching rate card: base rate, service level multiplier, fuel surcharge, handling fees, and any applicable duties or taxes." },
+      { "title": "Invoice is Generated",        "desc": "An invoice is produced instantly with all charges broken down. Sent to the client automatically by email with full PDF and receipt generation." },
+      { "title": "Client Pays",                 "desc": "Payment is collected via cash, card, mobile money, bank transfer, or COD. Multi-currency is supported. The system records payment and closes the invoice." }
+    ],
+    "clientPricingSection": {
+      "title": "Client-Specific Pricing",
+      "subtitle": "Not every client pays the same rate. NTIGI gives you the tools to price each client relationship correctly, from one-time senders to high-volume account customers."
+    },
+    "clientContracts": [
+      { "label": "Custom Rate Contracts",     "desc": "Set agreed rates for specific clients that override standard pricing" },
+      { "label": "Frequent Shipper Discounts","desc": "Apply volume discounts to clients who ship regularly" },
+      { "label": "Credit Limits",             "desc": "Set maximum outstanding balances before shipments are blocked" },
+      { "label": "Credit Terms",              "desc": "Configure payment periods for account clients" },
+      { "label": "Custom Pricing Tiers",      "desc": "Group clients into pricing tiers with different rate structures" },
+      { "label": "Seasonal Rate Adjustments", "desc": "Override rates during peak periods with time-bound rules" }
+    ],
+    "quotationSection": {
+      "title": "Instant Quotation Generator",
+      "subtitle": "Before any booking is made, agents and customers can generate an instant price quote based on the shipment details. Compare service levels side by side."
+    },
+    "quotationFeatures": [
+      "Instant quote generation before booking",
+      "Multi-service level comparison on one screen",
+      "Save and share quotes with clients",
+      "Convert quotes directly to bookings",
+      "Quote history per client",
+      "Email quotes as PDF to customers"
+    ],
+    "paymentsSection": {
+      "title": "Payment Methods Accepted",
+      "subtitle": "Every payment method your clients use is supported. Configure which are active per branch."
+    },
+    "paymentMethods": [
+      { "name": "Cash",         "detail": "Walk-in and agent-collected" },
+      { "name": "Card",         "detail": "Credit and debit processing" },
+      { "name": "Mobile Money", "detail": "MTN, Orange, Airtel" },
+      { "name": "Bank Transfer","detail": "Wire and direct bank" },
+      { "name": "COD",          "detail": "Driver collects at delivery" },
+      { "name": "Split Payment","detail": "Multiple methods per invoice" }
+    ],
+    "businessModelsSection": {
+      "title": "Built for Every Logistics Business Model"
+    },
+    "businessModels": [
+      { "title": "Freight Forwarders",   "desc": "Price international shipments by weight, route, and service level. Apply duties and taxes automatically at booking. Issue multi-currency invoices to clients in any country." },
+      { "title": "Courier Companies",    "desc": "Set city-by-city delivery rates. Offer standard and express tiers. Collect cash or mobile money on delivery. Auto-reconcile COD collections across all drivers." },
+      { "title": "Logistics Operators",  "desc": "Manage warehouse handling fees, consolidation charges, voyage costs, and agent commissions. Every cost attached to every shipment, tracked and reported." }
+    ],
+    "customPricingPanel": {
+      "title": "Custom Pricing for Your Operation",
+      "subtitle": "NTIGI platform access is priced based on your operation size, shipment volume, number of users, required features, and deployment model. We build a plan around your business, not a one-size tier.",
+      "quoteTitle": "Get a Custom Quote",
+      "quoteDesc": "Tell our team about your operation. We will prepare a pricing proposal based on your branch count, shipment volumes, and deployment requirements.",
+      "demoButton": "Request a Demo",
+      "salesTitle": "Talk to Sales",
+      "salesDesc": "Speak directly with our team about your requirements and get answers to pricing questions the same day.",
+      "salesButton": "Contact Sales"
+    },
+    "platformItems": [
+      "Based on number of users and branches",
+      "Based on monthly shipment volume",
+      "Cloud, on-premise, or hybrid deployment",
+      "30-day free trial available",
+      "Dedicated onboarding and training",
+      "Custom enterprise agreements available"
+    ],
+    "relatedSection": {
+      "title": "Related Solutions"
+    },
+    "related": [
+      { "title": "Finance and Billing",          "desc": "Manage invoices, payment collection, COD reconciliation, agent commissions, and financial reporting across all branches." },
+      { "title": "Route Optimization",           "desc": "Configure the rate cards, service levels, and zone pricing that feed into every shipment cost calculation." },
+      { "title": "International Forwarding",     "desc": "Multi-currency invoicing, duty calculations, and partner agency commission structures for cross-border operations." }
+    ],
+    "learnMore": "Learn more",
+    "cta": {
+      "h2_part1": "Ready to Start Pricing",
+      "h2_part2": "Your Shipments Correctly?",
+      "subtitle": "See how NTIGI's pricing engine handles your rate cards, service levels, and automatic invoicing in a live walkthrough with our team.",
+      "demoButton": "Request a Demo",
+      "salesButton": "Talk to Sales"
+    }
+  },
+  "PlatformPage": {
+    "hero": {
+      "h1_part1": "One Platform",
+      "h1_part2": "Three Ways to Work",
+      "subtitle": "Access your logistics operations from anywhere. Web dashboard for managers, desktop app for stations, mobile app for drivers all synchronized in real-time."
+    },
+    "accessSection": {
+      "title": "Access From Anywhere"
+    },
+    "access": [
+      {
+        "title": "Web Dashboard",
+        "desc": "Complete command center accessible from any browser. Track shipments, manage teams, generate reports, and oversee your entire network in real-time."
+      },
+      {
+        "title": "Desktop Application",
+        "desc": "Fast Windows app for courier stations. Create shipments in seconds, print labels instantly, and work completely offline with automatic background sync."
+      },
+      {
+        "title": "Mobile App",
+        "desc": "Field tools for drivers and agents. Scan barcodes, update delivery status, capture proof of delivery, and navigate routes all from your phone."
+      }
+    ],
+    "offlineSection": {
+      "title": "Works Without Internet"
+    },
+    "offline": [
+      {
+        "title": "Local Storage",
+        "desc": "Create shipments, manage clients, process payments all without internet. Data stored safely on your device."
+      },
+      {
+        "title": "Auto Sync",
+        "desc": "Changes sync automatically in the background when you reconnect. Never worry about manual uploads or data loss."
+      },
+      {
+        "title": "Fast Updates",
+        "desc": "Only new changes are uploaded, saving bandwidth. Process hundreds of shipments, sync in seconds."
+      },
+      {
+        "title": "Data Safety",
+        "desc": "Multiple backup layers ensure nothing is ever lost, even during power outages or network failures."
+      }
+    ],
+    "enterpriseSection": {
+      "title": "Enterprise-Grade Capabilities"
+    },
+    "enterprise": [
+      {
+        "title": "Speed",
+        "items": [
+          "Pages load in under 2 seconds",
+          "Process 100,000+ shipments daily",
+          "Real-time status updates",
+          "Instant search across all data"
+        ]
+      },
+      {
+        "title": "Security",
+        "items": [
+          "Bank-level encryption",
+          "Secure login with 2FA support",
+          "Complete activity audit trails",
+          "Role-based access control"
+        ]
+      },
+      {
+        "title": "Integration",
+        "items": [
+          "Connect to existing systems",
+          "Import/export via Excel/CSV",
+          "Print labels and receipts",
+          "WhatsApp & SMS notifications"
+        ]
+      }
+    ],
+    "cta": {
+      "h2_part1": "Ready to See It",
+      "h2_part2": "In Action?",
+      "subtitle": "Book a live walkthrough and see how NTIGI works across web, desktop, and mobile for your specific operation.",
+      "demoButton": "Request a Demo",
+      "salesButton": "Talk to Sales"
+    }
+  },
+  "BlogPage": {
+    "hero": {
+      "h1_part1": "Logistics Intelligence",
+      "h1_part2": "Blog",
+      "subtitle": "Industry-leading guidance on dangerous goods compliance, customs duties, and global freight corridor management."
+    },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "categories": {
+      "all": "All",
+      "guides": "Guides",
+      "routes": "Routes",
+      "customs": "Customs",
+      "compliance": "Compliance"
+    },
+    "noResults": "No entries matching your filter criteria",
+    "readArticle": "Read article"
+  },
+  "Company": {
+    "hero": {
+      "h1_part1": "Connecting Global",
+      "h1_part2": "Logistics Networks",
+      "subtitle": "Building offline-first cargo software to secure borderless supply chain operations for freight forwarders and courier agents globally."
+    },
+    "mission": {
+      "label": "OUR MISSION",
+      "text": "To simplify international commerce by engineering robust, zero-downtime shipping systems. We resolve local infrastructure challenges with cloud-native reliability so logistics agencies can process shipments continuously."
+    },
+    "vision": {
+      "label": "OUR VISION",
+      "text": "To build the foundational operating system for African and global shipping channels, bringing complete transparency, automated customs clearance, and instant label distribution to every courier branch."
+    },
+    "principlesSection": {
+      "title": "Our Core Principles"
+    },
+    "principles": [
+      {
+        "title": "Global Scalability",
+        "desc": "Adaptable multi-language and multi-branch systems to manage shipping networks of any size across borders."
+      },
+      {
+        "title": "Data Sovereignty",
+        "desc": "Offline-first database architectures protecting transactional records and keeping agency tracking secure."
+      },
+      {
+        "title": "Operational Stability",
+        "desc": "Engineered to work continuously during local network disruptions, preventing data entry duplication."
+      }
+    ],
+    "milestonesSection": {
+      "title": "Milestones & History"
+    },
+    "milestones": [
+      {
+        "year": "2024",
+        "title": "API Foundation",
+        "desc": "Launched Ntigi Shipping Engine beta to coordinate West African freight routes."
+      },
+      {
+        "year": "2025",
+        "title": "Offline-First Engine",
+        "desc": "Deployed local-database tracking systems for agents working in low-connectivity areas."
+      },
+      {
+        "year": "2026",
+        "title": "Global Expansion",
+        "desc": "Integrated global custom clearance filing systems and established Chicago headquarters."
+      }
+    ],
+    "teamSection": {
+      "title": "Executive Team"
+    },
+    "team": [
+      {
+        "initials": "ASJ",
+        "name": "Amahnui ST James",
+        "role": "Chief Executive Officer",
+        "bio": "Leading strategic expansion and engineering paradigms across the Ntigi logistics network."
+      }
+    ]
+  },
+  "Careers": {
+    "hero": {
+      "h1_part1": "Build the future of",
+      "h1_part2": "Borderless Trade",
+      "subtitle": "We are a team of software engineers, logistics experts, and Fintech builders working globally to streamline international commerce. Join us and shape how cargo moves around the world."
+    },
+    "benefitsSection": {
+      "title": "Why work with us?"
+    },
+    "benefits": [
+      {
+        "title": "Global Mobility",
+        "description": "Work remote-first from anywhere in the world, or collaborate from one of our corporate hubs in Douala, London, or Chicago."
+      },
+      {
+        "title": "Comprehensive Coverage",
+        "description": "Premium health, dental, and travel insurance coverage powered directly by our integrated brand support."
+      },
+      {
+        "title": "Growth & Learning",
+        "description": "An annual learning stipend for courses, conferences, or books to help you stay ahead in engineering and supply chain tech."
+      },
+      {
+        "title": "Modern Work Setup",
+        "description": "A hardware budget to set up your home office with top-tier laptops, screens, and accessories to work efficiently."
+      }
+    ],
+    "departments": {
+      "all": "All",
+      "engineering": "Engineering",
+      "product": "Product",
+      "operations": "Operations",
+      "marketing": "Marketing"
+    },
+    "jobsSection": {
+      "title": "Find your role",
+      "noOpenings": "NO OPENINGS CURRENTLY ACTIVE IN THIS SECTION",
+      "applyButton": "Apply"
+    },
+    "jobs": [
+      {
+        "title": "Senior Full-Stack Engineer (React / Next.js / Go)",
+        "department": "Engineering",
+        "location": "Douala, Cameroon (Hybrid) / Remote",
+        "type": "Full-Time",
+        "description": "Architect and develop core components for Ntigi Shipping Tech APIs and high-performance carrier integration backends."
+      },
+      {
+        "title": "Lead Mobile Developer (React Native / iOS & Android)",
+        "department": "Engineering",
+        "location": "Remote (Global)",
+        "type": "Full-Time",
+        "description": "Own the mobile checkout experience and localized hub tracking maps inside the consumer shipping application."
+      },
+      {
+        "title": "Supply Chain Product Manager",
+        "department": "Product",
+        "location": "Douala, Cameroon / Hybrid",
+        "type": "Full-Time",
+        "description": "Define product requirements for our automated customs clearance systems and coordinate integrations with international freight carriers."
+      },
+      {
+        "title": "Logistics Integration Specialist",
+        "department": "Operations",
+        "location": "Yaounde, Cameroon / Hybrid",
+        "type": "Full-Time",
+        "description": "Help enterprise clients integrate Ntigi APIs into their warehouse systems and orchestrate carrier dispatch channels."
+      },
+      {
+        "title": "Global Brand & Marketing Manager",
+        "department": "Marketing",
+        "location": "London, UK / Hybrid",
+        "type": "Full-Time",
+        "description": "Craft and execute the communication strategy for NTIGI Global, coordinating campaigns across all core branches."
+      }
+    ]
+  },
+  "Contact": {
+    "hero": {
+      "h1_part1": "Get in Touch",
+      "h1_part2": "with Our Team",
+      "subtitle": "Reach out for pricing, API access, custom branch installations, technical support, or partnership discussions. Our team responds within one business day."
+    },
+    "reasons": [
+      {
+        "title": "Sales and Pricing",
+        "desc": "Get a custom pricing proposal based on your operation size, branch count, and shipment volume."
+      },
+      {
+        "title": "Technical Support",
+        "desc": "Support for setup, configuration, integrations, and troubleshooting across all NTIGI platforms."
+      },
+      {
+        "title": "Partnerships",
+        "desc": "Discuss agency network partnerships, integration partnerships, or reseller agreements."
+      },
+      {
+        "title": "General Enquiries",
+        "desc": "Questions about NTIGI's capabilities, deployment options, or team training programs."
+      }
+    ],
+    "officesSection": {
+      "title": "Corporate Locations",
+      "subtitle": "Three offices across Africa, Europe, and North America, covering all major logistics trade lanes."
+    },
+    "offices": [
+      {
+        "city": "Douala",
+        "country": "Cameroon",
+        "role": "Global Headquarters",
+        "address": "4 etage, Bonaberi, Douala",
+        "phone": "+237 233 44 55 66",
+        "email": "douala@ntigi.com",
+        "hours": "Mon to Fri: 8:00 AM to 5:00 PM (GMT+1)"
+      },
+      {
+        "city": "London",
+        "country": "United Kingdom",
+        "role": "European Operations Hub",
+        "address": "30 St Mary Axe, London, EC3A 8BF",
+        "phone": "+44 20 7946 0958",
+        "email": "london@ntigi.com",
+        "hours": "Mon to Fri: 9:00 AM to 6:00 PM (GMT)"
+      },
+      {
+        "city": "Chicago",
+        "country": "United States",
+        "role": "North American Headquarters",
+        "address": "233 S Wacker Drive, Chicago, IL 60606",
+        "phone": "+1 312 555 0199",
+        "email": "chicago@ntigi.com",
+        "hours": "Mon to Fri: 9:00 AM to 5:00 PM (CST)"
+      }
+    ],
+    "form": {
+      "heading": "Send Us a Message",
+      "subheading": "Fill in the form and our team will respond within one business day.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "workEmail": "Work Email",
+      "workEmailPlaceholder": "name@company.com",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company",
+      "subject": "Subject",
+      "subjectOptions": {
+        "general": "General Enquiry",
+        "sales": "Sales and Pricing",
+        "support": "Technical Support",
+        "api": "API Access Request",
+        "partnership": "Partnership",
+        "demo": "Request a Demo"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your branch size, requirements, or question...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message Sent",
+      "successDesc": "Your message has been received. An NTIGI team member will respond within one business day.",
+      "sendAnother": "Send Another Message"
+    },
+    "cta": {
+      "title": "Prefer to See It First?",
+      "subtitle": "Book a live demo and our team will walk you through NTIGI for your specific operation.",
+      "demoButton": "Request a Demo",
+      "pricingButton": "View Pricing"
+    }
+  },
+  "Docs": {
+    "hero": {
+      "h1_part1": "Resources & Support",
+      "h1_part2": "For NTIGI Platform",
+      "subtitle": "Video tutorials, documentation, and support resources to help you master the NTIGI logistics platform."
+    },
+    "videosSection": {
+      "title": "Video Tutorials",
+      "subtitle": "Watch and learn how to use NTIGI platform features"
+    },
+    "videoFallback": "Your browser does not support the video tag.",
+    "librarySection": {
+      "title": "Documentation Library",
+      "subtitle": "Comprehensive guides and technical documentation"
+    },
+    "faqSection": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about NTIGI platform"
+    },
+    "tutorials": [
+      {
+        "title": "Getting Started with NTIGI",
+        "description": "Complete walkthrough covering setup, first shipment, and tracking basics",
+        "duration": "15:30"
+      },
+      {
+        "title": "Offline Mode & Sync",
+        "description": "Working without internet and automatic data synchronization",
+        "duration": "8:45"
+      },
+      {
+        "title": "Multi-Branch Operations",
+        "description": "Managing routes, agencies, and inter-branch transfers",
+        "duration": "12:20"
+      },
+      {
+        "title": "Warehouse & Consolidation",
+        "description": "Manifest creation, voyage management, and cargo grouping",
+        "duration": "10:15"
+      }
+    ],
+    "docSections": [
+      {
+        "title": "Getting Started",
+        "items": [
+          "Quick start guide",
+          "Installation guide",
+          "First shipment walkthrough",
+          "User roles and permissions"
+        ]
+      },
+      {
+        "title": "Core Features",
+        "items": [
+          "Shipment creation and tracking",
+          "Client and customer management",
+          "Route and network configuration",
+          "Pricing and quotations"
+        ]
+      },
+      {
+        "title": "Advanced Topics",
+        "items": [
+          "Customs and compliance",
+          "Fleet and driver management",
+          "Real-time messaging system",
+          "Offline-first architecture"
+        ]
+      },
+      {
+        "title": "API Documentation",
+        "items": [
+          "REST API reference (30+ modules)",
+          "Authentication and JWT tokens",
+          "Webhooks and event notifications",
+          "SDK examples and code samples"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does NTIGI work offline?",
+        "a": "Yes. NTIGI has offline-first architecture. Create shipments, manage clients, and perform operations without internet. Data syncs automatically when reconnected."
+      },
+      {
+        "q": "What platforms are supported?",
+        "a": "Web (all modern browsers), Desktop (Windows 10/11), and Mobile (PWA for iOS & Android). All platforms sync in real-time."
+      },
+      {
+        "q": "How many users can the system handle?",
+        "a": "Built for enterprise scale: 10,000+ concurrent users, 100,000+ shipments per day, 1,000+ API requests per second."
+      },
+      {
+        "q": "What integrations are available?",
+        "a": "Payment gateways (Stripe, PayPal, Mobile Money), shipping carriers (DHL, FedEx, UPS), SMS (Twilio), Email (Resend), and cloud storage (Cloudinary)."
+      },
+      {
+        "q": "How is data security handled?",
+        "a": "AES-256 encryption at rest, TLS 1.3 in transit, JWT authentication, role-based access control, and complete audit trails."
+      }
+    ]
+  },
+  "Demo": {
+    "hero": {
+      "h1_part1": "Request a",
+      "h1_part2": "Live Demo",
+      "subtitle": "See how our offline-first cloud platform streamlines maritime voyages, customs compliance, and package dispatch workflows."
+    },
+    "success": {
+      "title": "Request Received!",
+      "desc": "Thank you for your interest in NTIGI. One of our logistics optimization specialists will reach out to schedule a live walkthrough of our web and mobile PWA platform.",
+      "backButton": "Return to Homepage"
+    },
+    "form": {
+      "heading": "Experience NTIGI",
+      "subheading": "Fill out the form below and our team will contact you to schedule a personalized demonstration.",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Doe",
+      "email": "Work Email",
+      "emailPlaceholder": "john.doe@logistics.com",
+      "company": "Company Name",
+      "companyPlaceholder": "Global Freight Forwarders",
+      "operationsArea": "Primary Operations Area",
+      "operationsAreaPlaceholder": "Select industry area...",
+      "operationsAreaOptions": {
+        "freight": "Ocean & Air Freight Forwarding",
+        "courier": "Courier & Last-Mile Delivery",
+        "warehouse": "Warehouse Management & Consolidation",
+        "other": "Other Logistics Services"
+      },
+      "notes": "Special Requirements / Notes",
+      "notesPlaceholder": "Tell us about your branch count, integration needs, or offline operations challenges...",
+      "submitButton": "Schedule My Live Demo"
+    }
+  },
   "Solutions": {
     "consolidation": {
       "capabilities": [
@@ -937,6 +1525,55 @@
       }
     },
     "ecommerce-fulfillment": {
+      "jsx": {
+        "h1_0_part1": "E-commerce",
+        "h1_0_part2": "Fulfillment",
+        "p_0": "Connect your online store to NTIGI via REST API. Process bulk orders, automate customer notifications, manage COD collections, and handle returns from one logistics platform.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Bulk",
+        "stat_label_0": "Order processing",
+        "stat_display_1": "API",
+        "stat_label_1": "Store integration",
+        "stat_display_2": "Auto",
+        "stat_label_2": "Notifications",
+        "stat_display_3": "Real-Time",
+        "stat_label_3": "GPS tracking",
+        "h2_0": "Everything Your E-commerce Operation Needs",
+        "p_1": "From order intake to delivery confirmation, NTIGI handles the full fulfillment lifecycle for e-commerce businesses of any size.",
+        "h2_1": "From Order Placed to Delivered",
+        "p_2": "A five-step fulfillment cycle where every action is automated, tracked, and visible to both your team and your customers.",
+        "h3_0": "REST API Integration",
+        "p_3": "Connect your e-commerce platform, marketplace, or custom store system directly to NTIGI. Orders flow in automatically and tracking data flows back to your storefront.",
+        "h3_1": "Automated Notification Events",
+        "p_4": "Every delivery event triggers an automatic notification to the customer via their preferred channel. No staff action required.",
+        "h3_2": "COD for Online Stores",
+        "p_5": "Many e-commerce customers in West Africa and other markets prefer cash on delivery. NTIGI tracks COD collection per driver, reconciles per order, and reports outstanding COD totals at any time.",
+        "p_5_desc": "COD orders tracked from dispatch through collection and reconciliation automatically.",
+        "h2_2": "The Platform Your Team Uses",
+        "p_6": "Bulk order management and the dashboard your agents and managers see every day.",
+        "caption_0": "Bulk order list all shipments, statuses, and tracking in one view",
+        "caption_1": "Operations dashboard volume, revenue, and delivery metrics live",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Online Retailers",
+        "p_7": "Process hundreds of orders daily with bulk creation, automatic label printing, and real-time tracking for every customer. Integrate your store via API and eliminate manual data entry.",
+        "h4_1": "Marketplace Sellers",
+        "p_8": "Fulfil orders from multiple marketplaces through a single NTIGI account. Separate client records per marketplace, combined reporting for your finance team.",
+        "h4_2": "Cross-Border E-commerce",
+        "p_9": "Ship internationally with customs documentation generated automatically. Multi-currency invoicing, duty calculations, and tracking from checkout to doorstep across borders.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Customer Portal",
+        "related_desc_0": "Your online shoppers track their orders, download invoices, and submit returns through a self-service portal branded to your operation.",
+        "related_title_1": "Returns Management",
+        "related_desc_1": "Handle customer returns at scale with automatic return labels, photo documentation, and refund processing.",
+        "related_title_2": "Proof of Delivery",
+        "related_desc_2": "Give customers delivery confirmation with signature, photo, and GPS coordinates delivered automatically after every drop.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Scale Your",
+        "h2_5_part2": "E-commerce Fulfilment?",
+        "p_10": "See how NTIGI connects to your online store and handles your full order-to-delivery lifecycle in a live walkthrough with our team."
+      },
       "capabilities": [
         {
           "title": "Bulk Shipment Creation",
@@ -1101,6 +1738,50 @@
       ]
     },
     "finance": {
+      "jsx": {
+        "h1_0_part1": "Finance",
+        "h1_0_part2": "& Billing",
+        "p_0": "Accept every payment method, auto-generate invoices, track commissions, manage outstanding balances, and produce financial reports, all built directly into the NTIGI logistics workflow.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "8+",
+        "stat_label_0": "Payment methods",
+        "stat_display_1": "Multi",
+        "stat_label_1": "Currency support",
+        "stat_display_2": "100%",
+        "stat_label_2": "Audit trail",
+        "stat_display_3": "Excel/PDF",
+        "stat_label_3": "Export formats",
+        "h2_0": "Complete Financial Control",
+        "p_1": "Every financial operation from payment collection to accounting exports, integrated into your logistics workflow.",
+        "h2_1": "From Booking to Settlement",
+        "p_2": "Finance is embedded in the shipment lifecycle. No separate billing system needed.",
+        "h3_0": "Payment Methods Accepted",
+        "p_3": "Every payment method your clients use is supported. Configure which methods are active per branch and per service level.",
+        "h3_1": "Financial Reports",
+        "p_4": "Every report you need, available instantly with custom date ranges and one-click export.",
+        "h3_2": "Accounting Integrations",
+        "p_5": "Connect your existing accounting tools or export to any platform using standard formats.",
+        "h2_2": "Who This Is Built For",
+        "h4_0": "Freight Forwarders",
+        "p_6": "Invoice in multiple currencies, track outstanding balances across international clients, and sync financials with QuickBooks or Xero at month end.",
+        "h4_1": "Courier Networks",
+        "p_7": "Reconcile COD collections across 20+ drivers daily, auto-calculate agent commissions, and view branch-level revenue performance in real time.",
+        "h4_2": "Finance Teams",
+        "p_8": "Set credit limits, receive automated overdue payment reminders, review P&L statements per period, and export any report for external audits.",
+        "h2_3": "Related Solutions",
+        "related_title_0": "International Forwarding",
+        "related_desc_0": "Manage cross-border shipments with multi-currency pricing and partner agency commission tracking.",
+        "related_title_1": "Client Management",
+        "related_desc_1": "Track client balances, credit limits, custom pricing tiers, and shipment history in one database.",
+        "related_title_2": "Customs & Compliance",
+        "related_desc_2": "Auto-calculate duties and taxes per HS code and destination for accurate international invoicing.",
+        "learn_more": "Learn more",
+        "h2_4_part1": "Ready to Take Control of",
+        "h2_4_part2": "Your Logistics Finances?",
+        "p_9": "See how NTIGI handles invoicing, payments, commissions, and accounting exports for your operation in a live demo."
+      },
       "capabilities": [
         {
           "title": "Multi-Method Payments",
@@ -1225,6 +1906,56 @@
       ]
     },
     "fleet-management": {
+      "jsx": {
+        "h1_0_part1": "Fleet and Driver",
+        "h1_0_part2": "Management",
+        "p_0": "Register and track every vehicle, manage driver profiles and license compliance, monitor GPS locations in real time, schedule maintenance, and measure performance across your entire delivery operation.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Real-Time",
+        "stat_label_0": "GPS fleet tracking",
+        "stat_display_1": "Full",
+        "stat_label_1": "Maintenance history",
+        "stat_display_2": "Mobile",
+        "stat_label_2": "PWA driver app",
+        "stat_display_3": "100%",
+        "stat_label_3": "POD evidence capture",
+        "h2_0": "Complete Vehicle Control",
+        "p_1": "Every vehicle in your operation registered, tracked, maintained, and reported from a single platform.",
+        "h2_1": "Full Driver Lifecycle Tracking",
+        "p_2": "From onboarding to daily performance: every driver record, license, route, and delivery outcome managed in one place.",
+        "h2_2": "From Registration to Daily Operations",
+        "p_3": "A clear five-step process for onboarding a new vehicle or driver and getting them operational on the first day.",
+        "h3_0": "What Every Vehicle Record Contains",
+        "p_4": "Each vehicle has a complete operational record. Every detail needed to dispatch, maintain, and report on that vehicle is in one place.",
+        "h3_1": "What Every Driver Record Contains",
+        "p_5": "Complete driver records from personal details and license compliance through to daily performance and delivery history.",
+        "h3_2": "Proactive Alerts",
+        "p_6": "NTIGI watches your fleet and driver compliance automatically and alerts you before problems occur.",
+        "h2_3": "Inside the Platform",
+        "p_7": "Fleet overview and shipment management in the same system your drivers use every day.",
+        "caption_0": "Fleet overview vehicle status and GPS positions",
+        "caption_1": "Driver delivery queue shipments assigned to route",
+        "h2_4": "Who This Is Built For",
+        "h4_0": "City Courier Companies",
+        "p_8": "Manage 10 to 100 drivers daily. Track every vehicle on a live map, assign shipments to drivers automatically, and review delivery performance at the end of each day.",
+        "h4_1": "Freight Transport Operators",
+        "p_9": "Track heavy vehicles on long inter-city routes. Monitor fuel consumption per trip, schedule servicing by mileage, and ensure license compliance for all commercial drivers.",
+        "h4_2": "Multi-Branch Logistics Networks",
+        "p_10": "Each branch manages its own fleet independently while head office sees network-wide performance. Compare vehicle utilization and driver productivity across all locations.",
+        "h2_5": "Related Solutions",
+        "related_title_0": "Route Optimization",
+        "related_desc_0": "Assign your registered vehicles and drivers to optimized routes with distance calculation, transit times, and real-time tracking.",
+        "related_title_1": "Proof of Delivery",
+        "related_desc_1": "Your drivers capture signatures, photos, and GPS confirmation at every stop using the same NTIGI mobile app.",
+        "related_title_2": "Multi-Branch Network",
+        "related_desc_2": "Manage fleets across multiple branches with branch-level data isolation and consolidated head-office reporting.",
+        "learn_more": "Learn more",
+        "h2_6_part1": "Ready to Take Control",
+        "h2_6_part2": "of Your Fleet?",
+        "p_11": "See how NTIGI manages your vehicles, drivers, and delivery performance in a live walkthrough with our team."
+      },
       "vehicleCapabilities": [
         {
           "title": "Vehicle Registration",
@@ -1382,6 +2113,52 @@
       ]
     },
     "international-forwarding": {
+      "jsx": {
+        "h1_0_part1": "International",
+        "h1_0_part2": "Forwarding",
+        "p_0": "Manage cross-border shipments, customs documentation, multi-currency invoicing, and partner agency networks from a single offline-first platform built for international freight forwarders.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "terminal_label_0": "NTIGI_OS // INTL_SHIPMENTS.sh",
+        "status_live": "LIVE",
+        "status_ready": "READY",
+        "h2_0": "Everything a Global Freight Forwarder Needs",
+        "p_1": "From booking to final delivery, every tool built into one platform that works even without internet.",
+        "h2_1": "How International Forwarding Works",
+        "p_2": "A clear five-step process from booking to settlement, fully trackable at every stage.",
+        "h3_0": "Customs & Compliance",
+        "p_3": "NTIGI handles every document and compliance check required for international shipment clearance automatically, at the point of booking.",
+        "h3_1": "Carrier Integrations",
+        "p_4": "Connect with global carriers for rate comparison, label generation, and tracking all inside NTIGI.",
+        "h3_2": "Offline-First Operation",
+        "p_5": "Create international shipments, issue documents, and update statuses even with no internet connection. Data syncs automatically the moment connectivity returns. Zero data loss, no duplicate entries.",
+        "p_5_note": "Critical for agents operating in West African port zones with intermittent connectivity.",
+        "h2_2": "See It in Action",
+        "p_6": "From auto-generating customs documents at booking to tracking a shipment live across borders all inside one screen.",
+        "terminal_label_1": "NTIGI // CUSTOMS_DOCS.sh",
+        "terminal_label_2": "NTIGI // SHIPMENT_BOOKING.sh",
+        "terminal_desc_1": "Auto-generated customs documentation at point of booking",
+        "terminal_desc_2": "Cross-border shipment creation with multi-leg route selection",
+        "h2_3": "Built for Multi-Branch Forwarders",
+        "h4_0": "Multiple Branches",
+        "p_7": "Operate separate branches with data isolation, branch-level permissions, and consolidated reporting at the top level. Each branch sees only what it needs to.",
+        "h4_1": "Partner Agencies",
+        "p_8": "Onboard partner agencies at origin and destination points. Track commissions, inter-agency settlements, and partner performance from one place.",
+        "h4_2": "Full Visibility",
+        "p_9": "Real-time KPI dashboards, route utilization reports, and delivery success rates. Export any report to Excel, PDF, or CSV at any time.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Customs & Compliance",
+        "related_desc_0": "Centralize global trade operations and automate compliance documentation at every border.",
+        "related_title_1": "Warehouse Management",
+        "related_desc_1": "Streamline goods-in to goods-out with consolidation, pallet tracking, and manifest generation.",
+        "related_title_2": "Finance & Billing",
+        "related_desc_2": "Process payments in multiple currencies, generate invoices, and manage agent commissions.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Streamline Your",
+        "h2_5_part2": "International Operations?",
+        "p_10": "Book a live walkthrough with our team. We will show you how NTIGI handles your exact forwarding workflow end to end."
+      },
       "capabilities": [
         {
           "title": "Multi-Country Route Management",
@@ -1495,6 +2272,55 @@
       ]
     },
     "inventory-control": {
+      "jsx": {
+        "h1_0_part1": "Inventory and",
+        "h1_0_part2": "Stock Control",
+        "p_0": "Track every package at item level across all your warehouse locations. Barcode scan to receive, assign shelf and bin positions, monitor stock levels in real time, and locate any package in seconds.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Item-Level",
+        "stat_label_0": "Stock tracking",
+        "stat_display_1": "Barcode",
+        "stat_label_1": "Scan to locate",
+        "stat_display_2": "Real-Time",
+        "stat_label_2": "Level updates",
+        "stat_display_3": "100%",
+        "stat_label_3": "Movement audit",
+        "h2_0": "Complete Visibility Over Every Package",
+        "p_1": "From the moment a package enters your warehouse to when it leaves, every detail is tracked and searchable.",
+        "h2_1": "From Dock to Dispatch",
+        "p_2": "A clear five-step workflow covering every stock movement from the moment goods arrive to when they leave.",
+        "h3_0": "What Each Stock Item Record Contains",
+        "p_3": "Every package in the system carries a full item-level record. Nothing is tracked at batch level only.",
+        "h3_1": "Search and Filter Capabilities",
+        "p_4": "Find any package across all your warehouses in seconds using multiple search and filter options.",
+        "h3_2": "Works Offline on the Warehouse Floor",
+        "p_5": "Warehouse staff use the NTIGI mobile PWA to scan barcodes, receive goods, and update stock anywhere in the building including dead zones with no signal. All actions queue and sync when connectivity returns.",
+        "p_5_desc": "Works on any Android or iOS device via the browser. No app store installation required.",
+        "h2_2": "Stock View Inside NTIGI",
+        "p_6": "Every item, every bin, every movement visible from one dashboard screen.",
+        "terminal_label_0": "NTIGI // INVENTORY_DASHBOARD.sh",
+        "terminal_desc_0": "Real-time stock levels, bin locations, movement history, and capacity per warehouse",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Multi-Warehouse Operators",
+        "p_7": "Manage stock across multiple warehouse locations from one dashboard. Each warehouse has independent bin maps and stock levels. Head office sees everything.",
+        "h4_1": "Transit Hubs",
+        "p_8": "High-volume receiving with barcode scanning at the dock. Sort incoming goods by destination, assign to consolidation batches, and track dwell time for every package.",
+        "h4_2": "Operations Managers",
+        "p_9": "Real-time visibility over stock levels, capacity utilization, and movement history without needing to walk the warehouse floor. Export reports for stakeholders on demand.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Warehouse Management",
+        "related_desc_0": "Configure warehouse locations, set up shelf maps, manage capacity, and run full receiving and dispatch operations.",
+        "related_title_1": "Consolidation and Manifests",
+        "related_desc_1": "Group stock items into consolidation batches, assign to containers, and generate voyage manifests for dispatch.",
+        "related_title_2": "Customs and Compliance",
+        "related_desc_2": "Run compliance screening and generate customs documentation for stock held under bond or awaiting export clearance.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready for Full Visibility",
+        "h2_5_part2": "Over Your Stock?",
+        "p_10": "See how NTIGI tracks every package at item level across all your warehouses in a live walkthrough with our team."
+      },
       "capabilities": [
         {
           "title": "Real-Time Stock Levels",
@@ -1602,6 +2428,50 @@
       ]
     },
     "multi-branch": {
+      "jsx": {
+        "h1_0_part1": "Multi-Branch",
+        "h1_0_part2": "Network",
+        "p_0": "Operate unlimited branches and partner agencies from a single platform. Full data isolation between branches, 200 permission control points, inter-branch transfers, settlements, and consolidated network-wide reporting.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "200+",
+        "stat_label_0": "Permission control points",
+        "stat_display_1": "Unlimited",
+        "stat_label_1": "Branches supported",
+        "stat_display_2": "100%",
+        "stat_label_2": "Data isolation",
+        "stat_display_3": "Real-Time",
+        "stat_label_3": "Network reporting",
+        "h2_0": "Run Your Entire Network from One Platform",
+        "p_1": "Every branch, every partner, every agent. Fully connected, fully isolated, fully visible from head office.",
+        "h2_1": "From Single Branch to Full Network",
+        "p_2": "Start with one branch and expand to a full multi-country network without changing platforms or migrating data.",
+        "h3_0": "Role-Based Access Control",
+        "p_3": "Every user in your network operates within their assigned role. Predefined roles cover all standard operations. Custom roles let you define exactly what each person can do.",
+        "h3_1": "Permission Categories",
+        "p_4": "200+ individual permission points span every area of the platform. Grant or restrict access at the finest level of detail.",
+        "h3_2": "Inter-Branch Settlements",
+        "p_5": "Every handoff between branches creates a traceable financial obligation. Settlements are tracked, reconciled, and reportable at any time.",
+        "h2_2": "Who This Is Built For",
+        "h4_0": "International Freight Forwarders",
+        "p_6": "Run branches across multiple countries with full data isolation. Head office sees everything. Each branch only sees its own. Commission settlements happen automatically.",
+        "h4_1": "Regional Courier Networks",
+        "p_7": "Manage city and town branches from one account. Agents at each location process their own shipments while operations managers see the full regional picture.",
+        "h4_2": "Agency Partnerships",
+        "p_8": "Onboard third-party agencies as partners in your network. Assign them specific routes, set commission rates, and track shipment handoffs with full financial audit trail.",
+        "h2_3": "Related Solutions",
+        "related_title_0": "International Forwarding",
+        "related_desc_0": "Manage cross-border shipments across your multi-branch network with multi-leg routing and partner agency coordination.",
+        "related_title_1": "Finance & Billing",
+        "related_desc_1": "Track inter-branch settlements, agent commissions, and branch-level financial performance in one place.",
+        "related_title_2": "Consolidation & Manifests",
+        "related_desc_2": "Group and transfer shipments between branches for consolidation with full manifest and voyage tracking.",
+        "learn_more": "Learn more",
+        "h2_4_part1": "Ready to Scale Your",
+        "h2_4_part2": "Logistics Network?",
+        "p_9": "See how NTIGI manages multi-branch operations, permissions, and inter-agency settlements for your specific network structure in a live walkthrough."
+      },
       "capabilities": [
         {
           "title": "Multi-Branch Operations",
@@ -1751,6 +2621,55 @@
       ]
     },
     "proof-of-delivery": {
+      "jsx": {
+        "h1_0_part1": "Proof of",
+        "h1_0_part2": "Delivery",
+        "p_0": "Capture signatures, photos, GPS coordinates, and delivery timestamps on every shipment. Protect your business from disputes and give customers real-time visibility from dispatch to doorstep.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "100%",
+        "stat_label_0": "Delivery evidence",
+        "stat_display_1": "Real-Time",
+        "stat_label_1": "GPS tracking",
+        "stat_display_2": "22+",
+        "stat_label_2": "Cargo handling tags",
+        "stat_display_3": "Mobile",
+        "stat_label_3": "PWA driver app",
+        "h2_0": "Complete Last-Mile Delivery Evidence",
+        "p_1": "Every delivery backed by a full evidence record. Every customer kept informed. Every driver equipped with the tools they need.",
+        "h2_1": "From Dispatch to Confirmed Delivery",
+        "p_2": "A five-step process that keeps drivers, managers, and customers aligned from the moment a package leaves the warehouse.",
+        "h3_0": "What Every POD Record Contains",
+        "p_3": "Each delivery confirmation generates a complete, tamper-proof evidence record stored against the shipment, retrievable any time by managers or clients.",
+        "h3_1": "Customer Notifications",
+        "p_4": "Customers stay informed at every step without your staff lifting a finger. All notifications are automated and sent via the customer's preferred channel.",
+        "h3_2": "Driver Mobile App",
+        "p_5": "Drivers use NTIGI's mobile PWA on any Android or iOS device. No app store download required. Open the browser, log in, and start delivering. The app works offline and syncs when connectivity returns.",
+        "p_5_note": "Critical for drivers in areas with poor signal coverage. All POD data is captured offline and synced automatically.",
+        "h2_2": "Inside the Driver App",
+        "p_6": "Every driver sees their queue, navigates stops, and submits POD from this screen on any smartphone, online or offline.",
+        "terminal_label_0": "NTIGI // DRIVER_APP.sh",
+        "terminal_desc_0": "Driver delivery queue scan, navigate, capture POD from any smartphone",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "Local Courier Services",
+        "p_7": "Track 20 to 50 drivers daily with live GPS. Capture signatures and photos at every drop. Resolve customer disputes with timestamped evidence within minutes.",
+        "h4_1": "E-commerce Fulfilment",
+        "p_8": "Give online shoppers the delivery experience they expect. Real-time tracking, automated notifications, and a photo confirmation they can access from their order page.",
+        "h4_2": "Freight Delivery Networks",
+        "p_9": "Manage multi-stop delivery runs for bulk freight. Each stop gets its own POD record, keeping clients, agents, and operations teams aligned with zero paperwork.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Route Optimization",
+        "related_desc_0": "Plan and optimize delivery routes so drivers spend less time navigating and more time delivering.",
+        "related_title_1": "Fleet & Driver Management",
+        "related_desc_1": "Manage vehicle assignments, driver profiles, license tracking, and performance metrics across your fleet.",
+        "related_title_2": "Finance & Billing",
+        "related_desc_2": "Collect COD payments at delivery, reconcile collections per driver, and auto-generate delivery receipts.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Protect Every",
+        "h2_5_part2": "Delivery You Make?",
+        "p_10": "See how NTIGI captures signatures, photos, and GPS evidence for every delivery in a live walkthrough with our team."
+      },
       "capabilities": [
         {
           "title": "Signature Capture",
@@ -1850,6 +2769,55 @@
       ]
     },
     "returns": {
+      "jsx": {
+        "h1_0_part1": "Returns",
+        "h1_0_part2": "Management",
+        "p_0": "Handle return shipments with the same tracking, documentation, and automation as outbound deliveries. From return label generation to refund processing, every step managed in NTIGI.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Full",
+        "stat_label_0": "Return lifecycle",
+        "stat_display_1": "Auto",
+        "stat_label_1": "Refund processing",
+        "stat_display_2": "Real-Time",
+        "stat_label_2": "GPS tracking",
+        "stat_display_3": "Photo",
+        "stat_label_3": "Condition evidence",
+        "h2_0": "Reverse Logistics Built into NTIGI",
+        "p_1": "Returns use the same platform, same workflows, and same tracking as outbound shipments. No separate system needed.",
+        "h2_1": "From Return Request to Refund",
+        "p_2": "A five-step return lifecycle where every action is tracked, documented, and communicated automatically.",
+        "h3_0": "What Every Return Record Contains",
+        "p_3": "Each return is a complete operational record linked to its original outbound shipment. Every party can see the full return history at any point.",
+        "h3_1": "Return Types Supported",
+        "p_4": "Every return scenario your operation handles is covered in NTIGI with the appropriate workflow and documentation.",
+        "h3_2": "Financial Reconciliation",
+        "p_5": "Returns are fully reconciled against the original invoice. Credit notes, refunds, and partial refunds all supported. Multi-currency returns handled automatically with PDF generation and email delivery.",
+        "p_5_note": "Return invoices and refund records are available in the customer portal the moment they are processed.",
+        "h2_2": "Returns Inside NTIGI",
+        "p_6": "Return shipments are created, tracked, and closed in the same shipment list your agents use every day.",
+        "terminal_label_0": "NTIGI // RETURNS_VIEW.sh",
+        "terminal_desc_0": "Return shipments tracked alongside outbound in the same workflow",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "E-commerce Fulfilment",
+        "p_7": "Handle online shopper returns at scale. Customers initiate returns through the portal, receive a label automatically, and track the return to refund confirmation.",
+        "h4_1": "Courier Services",
+        "p_8": "Manage refused deliveries and wrong-address returns in your daily driver runs. Returns are created, dispatched, and tracked using the same driver mobile app.",
+        "h4_2": "B2B Logistics",
+        "p_9": "Process bulk return shipments from business clients with credit notes issued automatically against their account. Full return volume reporting per client and per route.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Customer Portal",
+        "related_desc_0": "Customers submit return requests and track returns in real time through their self-service portal.",
+        "related_title_1": "Proof of Delivery",
+        "related_desc_1": "Drivers capture photos and signatures at return pickup to document package condition at collection.",
+        "related_title_2": "Finance and Billing",
+        "related_desc_2": "Return invoices, credit notes, and refund processing handled automatically and linked to the original transaction.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Handle Returns",
+        "h2_5_part2": "Without the Headache?",
+        "p_10": "See how NTIGI manages your entire return lifecycle from request to refund in a live walkthrough with our team."
+      },
       "capabilities": [
         {
           "title": "Return Shipment Creation",
@@ -1973,6 +2941,53 @@
       ]
     },
     "route-optimization": {
+      "jsx": {
+        "h1_0_part1": "Route",
+        "h1_0_part2": "Optimization",
+        "p_0": "Create and manage multi-leg routes with stop management, transit time estimation, zone-based pricing, real-time GPS tracking, and interactive map visualization.",
+        "Button_0": "Request a Demo",
+        "Button_1": "Explore Platform",
+        "Button_3": "Talk to Sales",
+        "stat_display_0": "Multi-Leg",
+        "stat_label_0": "Route support",
+        "stat_display_1": "Real-Time",
+        "stat_label_1": "GPS tracking",
+        "stat_display_2": "11+",
+        "stat_label_2": "Pricing rule types",
+        "stat_display_3": "100%",
+        "stat_label_3": "Offline capable",
+        "h2_0": "Full Route and Network Control",
+        "p_1": "Every aspect of your delivery network configured, priced, tracked, and reported from a single platform.",
+        "h2_1": "From Route Setup to Live Tracking",
+        "p_2": "A clear five-step process that takes a new corridor from definition to fully operational delivery route.",
+        "h3_0": "What Every Route Contains",
+        "p_3": "Each route is a complete operational record. Every piece of information agents need to book, price, and dispatch a shipment is attached to the route.",
+        "h3_1": "Maps and Location Features",
+        "p_4": "Powered by Leaflet with OpenStreetMap and Google Maps API for address resolution, distance calculation, and live tracking visualization.",
+        "h3_2": "Offline Route Access",
+        "p_5": "Route data syncs to the desktop and mobile apps during connectivity and remains available offline. Agents can book shipments on any route without an internet connection.",
+        "p_5_desc": "Works on web, Windows desktop app, and mobile PWA with full offline parity.",
+        "h2_2": "Every Pricing Model Your Route Needs",
+        "p_6": "Configure any combination of pricing rules per route. Mix weight tiers, zone rates, service levels, and custom contracts on the same corridor.",
+        "h2_3": "Who This Is Built For",
+        "h4_0": "City Courier Networks",
+        "p_7": "Define inner-city delivery zones with cluster mapping, assign drivers to zone routes, and track every vehicle on a live map throughout the delivery day.",
+        "h4_1": "Inter-City Freight Lines",
+        "p_8": "Create multi-leg routes spanning cities and borders with stop-by-stop transit times. Price each corridor separately and report on performance per line.",
+        "h4_2": "Agency Networks",
+        "p_9": "Assign partner agencies to specific route segments. Each agency handles their leg with full visibility into what is arriving, when, and what it should cost.",
+        "h2_4": "Related Solutions",
+        "related_title_0": "Fleet and Driver Management",
+        "related_desc_0": "Register vehicles, track maintenance, and assign drivers to the routes you have configured.",
+        "related_title_1": "Proof of Delivery",
+        "related_desc_1": "Capture signatures, photos, and GPS confirmation at every stop along your delivery routes.",
+        "related_title_2": "Finance and Billing",
+        "related_desc_2": "Apply the route pricing rules directly to invoices. Every charge calculated from the route rate card at booking time.",
+        "learn_more": "Learn more",
+        "h2_5_part1": "Ready to Build Your",
+        "h2_5_part2": "Delivery Network?",
+        "p_10": "See how NTIGI manages your route corridors, stop networks, and pricing structures in a live walkthrough with our team."
+      },
       "capabilities": [
         {
           "title": "Multi-Leg Route Creation",

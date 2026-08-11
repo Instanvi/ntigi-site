@@ -10,66 +10,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import {
   ArrowRight, Buildings, UsersThree, ShieldCheck, ArrowsLeftRight,
-  ChartLine, Globe, Lock, Bell, CheckCircle, CurrencyDollar,
+  ChartLine, Globe, Lock, CheckCircle, CurrencyDollar,
   Eye, Sliders, TreeStructure, Terminal,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
-const capabilities = [
-  { icon: Buildings, title: "Multi-Branch Operations", desc: "Run any number of branches from a single NTIGI account. Each branch operates independently with its own shipments, staff, clients, and financial records." },
-  { icon: Lock, title: "Branch-Level Data Isolation", desc: "Agents at Branch A cannot see Branch B data unless explicitly granted. Every record is scoped to its branch. No data leakage across your network." },
-  { icon: ArrowsLeftRight, title: "Inter-Branch Transfers", desc: "Transfer shipments between branches when routes change or consolidation is needed. Every transfer is logged with origin, destination, reason, and timestamp." },
-  { icon: CurrencyDollar, title: "Inter-Branch Settlements", desc: "Track financial obligations between branches. When Branch A hands off a shipment to Branch B, the settlement amount is calculated and recorded automatically." },
-  { icon: UsersThree, title: "Partner Agency Network", desc: "Onboard external partner agencies as part of your network. Assign them routes, set commission structures, and track their performance from head office." },
-  { icon: Sliders, title: "200+ Permission Controls", desc: "Assign granular permissions at the user level across 200+ control points. Restrict who can create shipments, view finances, generate reports, or modify settings per branch." },
-  { icon: TreeStructure, title: "Custom Role Creation", desc: "Create custom roles beyond Admin, Manager, Agent, and Driver. Define exactly what each role can see and do across features, branches, and data types." },
-  { icon: ChartLine, title: "Consolidated Reporting", desc: "View performance across all branches from a single dashboard. Compare revenue, shipment volumes, delivery success rates, and agent productivity network-wide." },
-];
-
-const workflow = [
-  { step: "01", title: "Create Branches", desc: "Add each branch with its own name, location, contact details, business hours, and currency settings. Each branch is fully independent from day one." },
-  { step: "02", title: "Assign Staff & Roles", desc: "Add staff to each branch and assign roles with specific permissions. A manager at one branch cannot access another unless explicitly configured." },
-  { step: "03", title: "Configure Permissions", desc: "Set granular permissions per role across 200+ control points. Financial access, shipment editing, report generation: every action is configurable." },
-  { step: "04", title: "Connect Partners", desc: "Onboard partner agencies for specific routes or regions. Configure commission rates, service agreements, and data visibility between your network and theirs." },
-  { step: "05", title: "Monitor from Head Office", desc: "Access consolidated reporting across all branches and partners. See where volume is growing, where settlements are outstanding, and where performance needs attention." },
-];
-
-const rbacRoles = [
-  { role: "Admin", desc: "Full access to all branches, settings, financials, and user management" },
-  { role: "Manager", desc: "Branch-level management with limited financial and config access" },
-  { role: "Agent", desc: "Shipment creation, client management, and own branch operations only" },
-  { role: "Driver", desc: "Delivery queue, route navigation, POD capture, and status updates" },
-  { role: "Customer", desc: "Own shipments, invoice downloads, tracking, and payment history" },
-  { role: "Custom Role", desc: "Any combination of the 200+ permissions, built to your workflow" },
-];
-
-const permissionCategories = [
-  "Shipment create, view, edit, delete",
-  "Client management and credit control",
-  "Financial access and report generation",
-  "System configuration and settings",
-  "User and role management",
-  "Manifest and voyage operations",
-  "Warehouse and inventory access",
-  "Branch transfer authorization",
-  "Partner agency management",
-  "Audit log access and export",
-];
-
-const settlementItems = [
-  { label: "Transfer Recording", desc: "Every inter-branch shipment handoff is logged automatically" },
-  { label: "Amount Calculation", desc: "Settlement amounts computed from agreed inter-branch rates" },
-  { label: "Outstanding Tracking", desc: "View all unsettled inter-branch obligations at any time" },
-  { label: "Settlement Reports", desc: "Export settlement history by branch, period, or partner" },
-  { label: "Commission Tracking", desc: "Agent and partner commissions calculated and tracked per shipment" },
-  { label: "Reconciliation Tools", desc: "Match payments to settlements and mark obligations as cleared" },
-];
-
-const stats = [
-  { value: 200, suffix: "+", label: "Permission control points" },
-  { value: 99, suffix: "+", label: "Branches supported" },
-  { value: 100, suffix: "%", label: "Data isolation" },
-  { value: 0, suffix: "ms", label: "Real-Time reporting" },
-];
+const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -105,7 +51,7 @@ function ConsoleFrame({
       initial={{ opacity: 0, y: 40, scale: 0.97 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.8, delay, ease: easeOutExpo }}
       className="relative w-full border border-border-custom bg-[var(--console-bg)] overflow-hidden group"
     >
       <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -133,173 +79,267 @@ function ConsoleFrame({
   );
 }
 
+/* ── Network Map Node Data ── */
+interface NetNode {
+  id: string;
+  x: number;
+  y: number;
+  label: string;
+  sub: string;
+  type: "hq" | "branch" | "sub" | "partner";
+}
+
+const nodes: NetNode[] = [
+  { id: "hq", x: 400, y: 70, label: "HQ: DOUALA_OFFICE", sub: "10,240 pkgs/day", type: "hq" },
+  { id: "yaounde", x: 180, y: 200, label: "YAOUNDE_OFFICE", sub: "4,890 pkgs/day", type: "branch" },
+  { id: "buea", x: 400, y: 200, label: "BUEA_OFFICE", sub: "2,150 pkgs/day", type: "branch" },
+  { id: "london", x: 620, y: 200, label: "LONDON_DEPOT", sub: "1,800 pkgs/day", type: "partner" },
+  { id: "yaoundeN", x: 100, y: 340, label: "YAOUNDE_NORTH", sub: "1,200 pkgs/day", type: "sub" },
+  { id: "bueaT", x: 320, y: 340, label: "BUEA_TOWN", sub: "950 pkgs/day", type: "sub" },
+  { id: "chicago", x: 700, y: 340, label: "CHICAGO_HUB", sub: "3,420 pkgs/day", type: "partner" },
+];
+
+const edges = [
+  { from: "hq", to: "yaounde", color: "#3b82f6", speed: 3 },
+  { from: "hq", to: "buea", color: "#3b82f6", speed: 2.5 },
+  { from: "hq", to: "london", color: "#a855f7", speed: 4 },
+  { from: "yaounde", to: "yaoundeN", color: "#10b981", speed: 2 },
+  { from: "buea", to: "bueaT", color: "#10b981", speed: 2 },
+  { from: "london", to: "chicago", color: "#a855f7", speed: 3 },
+];
+
+function NetworkMap() {
+  const [hovered, setHovered] = useState<string | null>(null);
+
+  const nodeColor = (type: NetNode["type"]) => {
+    switch (type) {
+      case "hq": return { fill: "rgba(59,130,246,0.12)", stroke: "rgba(59,130,246,0.5)", text: "#60a5fa", ping: "#3b82f6" };
+      case "branch": return { fill: "rgba(16,185,129,0.12)", stroke: "rgba(16,185,129,0.5)", text: "#34d399", ping: "#10b981" };
+      case "sub": return { fill: "rgba(16,185,129,0.05)", stroke: "rgba(16,185,129,0.25)", text: "#6ee7b7", ping: "#10b981" };
+      case "partner": return { fill: "rgba(168,85,247,0.12)", stroke: "rgba(168,85,247,0.5)", text: "#c084fc", ping: "#a855f7" };
+    }
+  };
+
+  return (
+    <ConsoleFrame label="NTIGI_OS // NETWORK_MAP.sh" status="LIVE" delay={0.25}>
+      <div className="relative w-full aspect-[16/10] bg-[var(--console-bg)] overflow-hidden">
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+
+        <svg viewBox="0 0 800 420" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            {edges.map((e, i) => (
+              <marker
+                key={`m-${i}`}
+                id={`arrow-${i}`}
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="5"
+                markerHeight="5"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 0 L 10 5 L 0 10 z" fill={e.color} opacity="0.6" />
+              </marker>
+            ))}
+          </defs>
+
+          {/* Connection lines */}
+          {edges.map((e, i) => {
+            const a = nodes.find((n) => n.id === e.from)!;
+            const b = nodes.find((n) => n.id === e.to)!;
+            const isActive = hovered === e.from || hovered === e.to || !hovered;
+            return (
+              <g key={i} opacity={isActive ? 1 : 0.15} className="transition-opacity duration-300">
+                <line
+                  x1={a.x} y1={a.y} x2={b.x} y2={b.y}
+                  stroke={e.color} strokeWidth="1.5" strokeOpacity="0.25"
+                />
+                <line
+                  x1={a.x} y1={a.y} x2={b.x} y2={b.y}
+                  stroke={e.color} strokeWidth="2" strokeOpacity="0.6"
+                  strokeDasharray="6 6" strokeLinecap="round"
+                  className="animate-dash"
+                  style={{ animationDuration: `${e.speed}s` }}
+                />
+              </g>
+            );
+          })}
+
+          {/* Nodes */}
+          {nodes.map((n) => {
+            const c = nodeColor(n.type);
+            const isHover = hovered === n.id;
+            return (
+              <g
+                key={n.id}
+                transform={`translate(${n.x}, ${n.y})`}
+                className="cursor-pointer"
+                onMouseEnter={() => setHovered(n.id)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                {/* Glow ring on hover */}
+                {isHover && (
+                  <circle r="28" fill="none" stroke={c.ping} strokeWidth="1" opacity="0.3">
+                    <animate attributeName="r" values="24;32;24" dur="2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                )}
+
+                {/* Ping dot */}
+                <circle r="4" fill={c.ping} opacity="0.9">
+                  <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Label background pill */}
+                <g transform="translate(0, -18)">
+                  <rect
+                    x={-(n.label.length * 3.2 + 24) / 2}
+                    y={-10}
+                    width={n.label.length * 3.2 + 24}
+                    height="20"
+                    rx="4"
+                    fill={c.fill}
+                    stroke={c.stroke}
+                    strokeWidth="1"
+                  />
+                  <text
+                    y="1"
+                    textAnchor="middle"
+                    fill={c.text}
+                    fontSize="9"
+                    fontFamily="monospace"
+                    fontWeight="600"
+                    letterSpacing="0.05em"
+                  >
+                    {n.label}
+                  </text>
+                </g>
+
+                {/* Sub-label */}
+                <text
+                  y="28"
+                  textAnchor="middle"
+                  fill="currentColor"
+                  fontSize="8"
+                  fontFamily="monospace"
+                  opacity={isHover ? 1 : 0.6}
+                  className="transition-opacity duration-200"
+                >
+                  {n.sub}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Footer status bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[var(--console-header)]/80 backdrop-blur-sm px-4 py-2 border-t border-border-custom flex items-center justify-between text-[10px] text-foreground/60">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-green-500 font-mono tracking-wider">ALL_NODES_ACTIVE</span>
+          </div>
+          <div className="flex items-center gap-4 font-mono">
+            <span>SYNC_RATE: 100%</span>
+            <span>LATENCY: 12ms</span>
+          </div>
+        </div>
+      </div>
+    </ConsoleFrame>
+  );
+}
+
 export default function MultiBranch() {
+  const t = useTranslations("Solutions.multi-branch");
+
+  const capabilities = [
+    { icon: Buildings, title: t("capabilities.0.title"), desc: t("capabilities.0.desc") },
+    { icon: Lock, title: t("capabilities.1.title"), desc: t("capabilities.1.desc") },
+    { icon: ArrowsLeftRight, title: t("capabilities.2.title"), desc: t("capabilities.2.desc") },
+    { icon: CurrencyDollar, title: t("capabilities.3.title"), desc: t("capabilities.3.desc") },
+    { icon: UsersThree, title: t("capabilities.4.title"), desc: t("capabilities.4.desc") },
+    { icon: Sliders, title: t("capabilities.5.title"), desc: t("capabilities.5.desc") },
+    { icon: TreeStructure, title: t("capabilities.6.title"), desc: t("capabilities.6.desc") },
+    { icon: ChartLine, title: t("capabilities.7.title"), desc: t("capabilities.7.desc") },
+  ];
+
+  const workflow = [
+    { step: "01", title: t("workflow.0.title"), desc: t("workflow.0.desc") },
+    { step: "02", title: t("workflow.1.title"), desc: t("workflow.1.desc") },
+    { step: "03", title: t("workflow.2.title"), desc: t("workflow.2.desc") },
+    { step: "04", title: t("workflow.3.title"), desc: t("workflow.3.desc") },
+    { step: "05", title: t("workflow.4.title"), desc: t("workflow.4.desc") },
+  ];
+
+  const rbacRoles = [
+    { role: t("rbacRoles.0.role"), desc: t("rbacRoles.0.desc") },
+    { role: t("rbacRoles.1.role"), desc: t("rbacRoles.1.desc") },
+    { role: t("rbacRoles.2.role"), desc: t("rbacRoles.2.desc") },
+    { role: t("rbacRoles.3.role"), desc: t("rbacRoles.3.desc") },
+    { role: t("rbacRoles.4.role"), desc: t("rbacRoles.4.desc") },
+    { role: t("rbacRoles.5.role"), desc: t("rbacRoles.5.desc") },
+  ];
+
+  const permissionCategories = [
+    t("permissionCategories.0"), t("permissionCategories.1"), t("permissionCategories.2"),
+    t("permissionCategories.3"), t("permissionCategories.4"), t("permissionCategories.5"),
+    t("permissionCategories.6"), t("permissionCategories.7"), t("permissionCategories.8"),
+    t("permissionCategories.9"),
+  ];
+
+  const settlementItems = [
+    { label: t("settlementItems.0.label"), desc: t("settlementItems.0.desc") },
+    { label: t("settlementItems.1.label"), desc: t("settlementItems.1.desc") },
+    { label: t("settlementItems.2.label"), desc: t("settlementItems.2.desc") },
+    { label: t("settlementItems.3.label"), desc: t("settlementItems.3.desc") },
+    { label: t("settlementItems.4.label"), desc: t("settlementItems.4.desc") },
+    { label: t("settlementItems.5.label"), desc: t("settlementItems.5.desc") },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
 
+        {/* HERO */}
         <section className="relative py-20 bg-[var(--console-header)] border-b border-border-custom overflow-hidden noise-overlay">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <AnimatedSection className="space-y-4">
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                  Multi-Branch<br /><span className="text-blue-500">Network</span>
+                  {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                 </h1>
                 <p className="text-md md:text-sm text-foreground/75 leading-relaxed font-sans normal-case max-w-2xl">
-                  Operate unlimited branches and partner agencies from a single platform. Full data isolation between branches, 200 permission control points, inter-branch transfers, settlements, and consolidated network-wide reporting.
+                  {t("jsx.p_0")}
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                  <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                  <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                  <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                 </div>
               </AnimatedSection>
-              
+
               <div className="hidden md:block">
-                <ConsoleFrame label="NTIGI_OS // NETWORK_MAP.sh" status="LIVE" delay={0.25}>
-                  <div className="relative w-full h-[280px] bg-[var(--console-bg)] overflow-hidden select-none">
-                    {/* Connection Lines */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                      {/* Line HQ -> Yaounde */}
-                      <line x1="50%" y1="18%" x2="22%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.4" />
-                      <line x1="50%" y1="18%" x2="22%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,5" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="50;0" dur="3s" repeatCount="indefinite" />
-                      </line>
-
-                      {/* Line HQ -> Buea */}
-                      <line x1="50%" y1="18%" x2="50%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.4" />
-                      <line x1="50%" y1="18%" x2="50%" y2="48%" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,5" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="50;0" dur="2.5s" repeatCount="indefinite" />
-                      </line>
-
-                      {/* Line HQ -> London (Partner) */}
-                      <line x1="50%" y1="18%" x2="78%" y2="48%" stroke="#a855f7" strokeWidth="1.5" strokeOpacity="0.4" />
-                      <line x1="50%" y1="18%" x2="78%" y2="48%" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="4,6" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="50;0" dur="4s" repeatCount="indefinite" />
-                      </line>
-
-                      {/* Line Yaounde -> Yaounde North */}
-                      <line x1="22%" y1="58%" x2="14%" y2="82%" stroke="#10b981" strokeWidth="1" strokeOpacity="0.3" />
-                      <line x1="22%" y1="58%" x2="14%" y2="82%" stroke="#10b981" strokeWidth="1" strokeDasharray="3,3" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="30;0" dur="2s" repeatCount="indefinite" />
-                      </line>
-
-                      {/* Line Buea -> Buea Town */}
-                      <line x1="50%" y1="58%" x2="42%" y2="82%" stroke="#10b981" strokeWidth="1" strokeOpacity="0.3" />
-                      <line x1="50%" y1="58%" x2="42%" y2="82%" stroke="#10b981" strokeWidth="1" strokeDasharray="3,3" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="30;0" dur="2s" repeatCount="indefinite" />
-                      </line>
-
-                      {/* Line London -> Chicago (Partner link) */}
-                      <line x1="78%" y1="58%" x2="86%" y2="82%" stroke="#a855f7" strokeWidth="1" strokeOpacity="0.3" />
-                      <line x1="78%" y1="58%" x2="86%" y2="82%" stroke="#a855f7" strokeWidth="1" strokeDasharray="4,4" strokeLinecap="round">
-                        <animate attributeName="stroke-dashoffset" values="40;0" dur="3s" repeatCount="indefinite" />
-                      </line>
-                    </svg>
-
-                    {/* Nodes overlay */}
-                    {/* HQ */}
-                    <div className="absolute top-[18%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1.5 px-2 py-1 bg-blue-500/10 border border-blue-500/30 text-[9px] font-mono rounded">
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                        </span>
-                        <span className="font-bold text-foreground">HQ: DOUALA_OFFICE</span>
-                      </div>
-                      <span className="text-[8px] text-foreground/45 font-mono mt-0.5">10,240 pkgs/day</span>
-                    </div>
-
-                    {/* YAOUNDE BRANCH */}
-                    <div className="absolute top-[50%] left-[22%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/10 border border-green-500/30 text-[9px] font-mono rounded">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                        </span>
-                        <span className="text-foreground font-medium">YAOUNDE_OFFICE</span>
-                      </div>
-                      <span className="text-[8px] text-foreground font-mono mt-0.5">4,890 pkgs/day</span>
-                    </div>
-
-                    {/* YAOUNDE NORTH SUB-BRANCH */}
-                    <div className="absolute top-[80%] left-[14%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/5 border border-emerald-500/20 text-[8px] font-mono rounded text-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
-                        <span>YAOUNDE_NORTH</span>
-                      </div>
-                      <span className="text-[7px] text-foreground font-mono mt-0.5">1,200 pkgs/day</span>
-                    </div>
-
-                    {/* BUEA BRANCH */}
-                    <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/10 border border-green-500/30 text-[9px] font-mono rounded">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                        </span>
-                        <span className="text-foreground font-medium">BUEA_OFFICE</span>
-                      </div>
-                      <span className="text-[8px] text-foreground font-mono mt-0.5">2,150 pkgs/day</span>
-                    </div>
-
-                    {/* BUEA TOWN SUB-BRANCH */}
-                    <div className="absolute top-[80%] left-[42%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1 px-1.5 py-0.5 bg-emerald-500/5 border border-emerald-500/20 text-[8px] font-mono rounded text-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50" />
-                        <span>BUEA_TOWN</span>
-                      </div>
-                      <span className="text-[7px] text-foreground font-mono mt-0.5">950 pkgs/day</span>
-                    </div>
-
-                    {/* LONDON DEPOT PARTNER */}
-                    <div className="absolute top-[50%] left-[78%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 text-[9px] font-mono rounded">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-500"></span>
-                        </span>
-                        <span className="text-purple-300 font-medium">LONDON_DEPOT</span>
-                      </div>
-                      <span className="text-[8px] text-foreground font-mono mt-0.5">1,800 pkgs/day</span>
-                    </div>
-
-                    {/* CHICAGO HUB PARTNER */}
-                    <div className="absolute top-[80%] left-[86%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                      <div className="flex items-center gap-1.5 px-2 py-0.5 bg-purple-500/10 border border-purple-500/30 text-[9px] font-mono rounded">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-500"></span>
-                        </span>
-                        <span className="text-purple-300 font-medium">CHICAGO_HUB</span>
-                      </div>
-                      <span className="text-[8px] text-foreground font-mono mt-0.5">3,420 pkgs/day</span>
-                    </div>
-
-                    {/* Footer Status Bar inside Console */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-[var(--console-bg)] px-4 py-1.5 border-t border-border-custom flex items-center justify-between text-[9px] text-foreground/60">
-                      <div className="flex items-center gap-1 text-green-500">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                        <span>All nodes active</span>
-                      </div>
-                      <span>Sync Rate: 100%</span>
-                    </div>
-                  </div>
-                </ConsoleFrame>
+                <NetworkMap />
               </div>
             </div>
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(38,48,113,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,48,113,0.04)_1px,transparent_1px)] bg-[size:30px_30px] -z-10" />
         </section>
 
+        {/* STATS BAR */}
         <section className="border-b border-border-custom bg-[var(--console-bg)]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-border-custom">
               {[
-                { display: "200+", label: "Permission control points" },
-                { display: "Unlimited", label: "Branches supported" },
-                { display: "100%", label: "Data isolation" },
-                { display: "Real-Time", label: "Network reporting" },
+                { display: t("jsx.stat_display_0"), label: t("jsx.stat_label_0") },
+                { display: t("jsx.stat_display_1"), label: t("jsx.stat_label_1") },
+                { display: t("jsx.stat_display_2"), label: t("jsx.stat_label_2") },
+                { display: t("jsx.stat_display_3"), label: t("jsx.stat_label_3") },
               ].map((stat, i) => (
                 <AnimatedSection key={i} delay={i * 0.1} className="p-6 border-r border-b md:border-b-0 border-border-custom text-center">
                   <div className="text-2xl font-bold text-blue-500 font-sans">{stat.display}</div>
@@ -310,11 +350,12 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* CAPABILITIES */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Run Your Entire Network from One Platform</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every branch, every partner, every agent. Fully connected, fully isolated, fully visible from head office.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {capabilities.map((item, index) => (
@@ -330,11 +371,12 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* WORKFLOW */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Single Branch to Full Network</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Start with one branch and expand to a full multi-country network without changing platforms or migrating data.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -351,14 +393,15 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* RBAC + PERMISSIONS + SETTLEMENTS */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
                 <UsersThree className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">Role-Based Access Control</h3>
+                <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_0")}</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every user in your network operates within their assigned role. Predefined roles cover all standard operations. Custom roles let you define exactly what each person can do.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_3")}</p>
               <div className="space-y-3 pt-1">
                 {rbacRoles.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -376,9 +419,9 @@ export default function MultiBranch() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Eye className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Permission Categories</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">200+ individual permission points span every area of the platform. Grant or restrict access at the finest level of detail.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
                 <div className="space-y-2 pt-1">
                   {permissionCategories.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="flex items-center gap-2">
@@ -391,9 +434,9 @@ export default function MultiBranch() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <CurrencyDollar className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Inter-Branch Settlements</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_2")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Every handoff between branches creates a traceable financial obligation. Settlements are tracked, reconciled, and reportable at any time.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="space-y-2 pt-1">
                   {settlementItems.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.07 }} className="flex items-start gap-2">
@@ -410,16 +453,17 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* USE CASES */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { icon: Globe, image: "/portview.jpg", title: "International Freight Forwarders", desc: "Run branches across multiple countries with full data isolation. Head office sees everything. Each branch only sees its own. Commission settlements happen automatically." },
-                { icon: Buildings, image: "/deliveryboy.jpg", title: "Regional Courier Networks", desc: "Manage city and town branches from one account. Agents at each location process their own shipments while operations managers see the full regional picture." },
-                { icon: Bell, image: "/handshake.jpg", title: "Agency Partnerships", desc: "Onboard third-party agencies as partners in your network. Assign them specific routes, set commission rates, and track shipment handoffs with full financial audit trail." },
+                { icon: Globe, image: "/portview.jpg", title: t("jsx.h4_0"), desc: t("jsx.p_6") },
+                { icon: Buildings, image: "/deliveryboy.jpg", title: t("jsx.h4_1"), desc: t("jsx.p_7") },
+                { icon: UsersThree, image: "/handshake.jpg", title: t("jsx.h4_2"), desc: t("jsx.p_8") },
               ].map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.12} className="border-r border-b border-border-custom overflow-hidden hover:bg-primary/[0.02] transition-all group">
                   <div className="relative h-44 overflow-hidden border-b border-border-custom">
@@ -441,23 +485,24 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* RELATED SOLUTIONS */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "International Forwarding", desc: "Manage cross-border shipments across your multi-branch network with multi-leg routing and partner agency coordination.", href: "/solutions/international-forwarding" },
-                { title: "Finance & Billing", desc: "Track inter-branch settlements, agent commissions, and branch-level financial performance in one place.", href: "/solutions/finance" },
-                { title: "Consolidation & Manifests", desc: "Group and transfer shipments between branches for consolidation with full manifest and voyage tracking.", href: "/solutions/consolidation" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/international-forwarding" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/finance" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/consolidation" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -466,16 +511,17 @@ export default function MultiBranch() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Scale Your<br /><span className="text-blue-500">Logistics Network?</span>
+                {t("jsx.h2_4_part1")}<br /><span className="text-blue-500">{t("jsx.h2_4_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI manages multi-branch operations, permissions, and inter-agency settlements for your specific network structure in a live walkthrough.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

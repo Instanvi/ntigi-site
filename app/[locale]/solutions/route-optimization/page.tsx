@@ -14,58 +14,9 @@ import {
   MapTrifold, Gauge, CheckCircle, DeviceMobile, Globe,
   ArrowsClockwise, UsersThree, Buildings, Terminal,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
-
-const capabilities = [
-  { icon: Path, title: "Multi-Leg Route Creation", desc: "Define routes with multiple stops, waypoints, and transit hubs. Each leg has its own distance, transit time, pricing, and available service levels." },
-  { icon: MapPin, title: "Stop & Location Management", desc: "Create and manage pickup and delivery locations with GPS coordinates, address validation, and coverage area mapping. Search and assign stops to any route." },
-  { icon: Clock, title: "Transit Time Estimation", desc: "Set and display expected transit times per route segment. Customers and agents see estimated arrival windows at booking time, not after." },
-  { icon: CurrencyDollar, title: "Pricing Per Route", desc: "Configure rate cards per route with weight-based, zone-based, and dimensional weight pricing. Apply service level surcharges, fuel fees, and seasonal rates." },
-  { icon: MapTrifold, title: "Interactive Map Visualization", desc: "View routes, stops, and active deliveries on interactive maps powered by Leaflet and OpenStreetMap. Visualize coverage areas and cluster delivery locations." },
-  { icon: Gauge, title: "Distance Calculation", desc: "Automatic distance and duration calculation between stops using Google Maps API. Distances inform pricing, transit time estimates, and fuel cost tracking." },
-  { icon: Truck, title: "Vehicle Assignment to Routes", desc: "Assign registered vehicles to specific routes based on capacity, type, and availability. Track which vehicle is running which route at any point in time." },
-  { icon: ChartLine, title: "Route Performance Analytics", desc: "Monitor shipment volumes per route, delivery success rates, average transit times, and revenue per corridor. Identify underperforming routes instantly." },
-];
-
-const workflow = [
-  { step: "01", title: "Define the Route", desc: "Create a route with origin, destination, and intermediate stops. Set the route name, carrier type, transit time, and which services are available on this corridor." },
-  { step: "02", title: "Configure Pricing", desc: "Set rate cards for the route: weight bands, zone pricing, package type rates, express surcharges, and any custom contract rates for specific clients." },
-  { step: "03", title: "Assign Vehicles", desc: "Link vehicles from your fleet to the route. The system tracks capacity and ensures the right vehicle type is matched to the route requirements." },
-  { step: "04", title: "Assign Shipments", desc: "Agents select the route at booking time. Shipments are grouped by route for dispatch. The system shows available capacity per run before assignment." },
-  { step: "05", title: "Track and Report", desc: "Monitor every active shipment on the route in real time. Report on route utilization, delivery success, and revenue contribution at any time." },
-];
-
-const routeAttributes = [
-  { label: "Origin and Destination", desc: "Full address with GPS coordinates for each route endpoint" },
-  { label: "Intermediate Stops", desc: "Configurable waypoints with sequence and transit time per leg" },
-  { label: "Route Scheduling", desc: "Set departure days, frequencies, and cutoff times per route" },
-  { label: "Service Levels", desc: "Standard, express, and overnight options per route corridor" },
-  { label: "Distance and Duration", desc: "Auto-calculated from Google Maps API at route creation" },
-  { label: "Coverage Area", desc: "Geographic mapping of pickup and delivery zones per route" },
-];
-
-const mapFeatures = [
-  "Interactive route visualization on OpenStreetMap",
-  "Real-time vehicle and driver location tracking",
-  "Delivery cluster mapping for dense urban areas",
-  "Geofencing for zone-based coverage rules",
-  "Address autocomplete powered by Google Maps",
-  "Geocoding and reverse geocoding for all stops",
-  "Route overlay showing full multi-leg path",
-  "Live shipment movement during transit",
-];
-
-const pricingRules = [
-  { name: "Weight-Based Pricing", desc: "Rate tiers by package weight with configurable bands" },
-  { name: "Zone-Based Pricing", desc: "Different rates based on origin and destination zones" },
-  { name: "Dimensional Weight", desc: "Volumetric weight calculation for oversized packages" },
-  { name: "Service Level Rates", desc: "Standard, express, and overnight pricing per corridor" },
-  { name: "Fuel Surcharge", desc: "Configurable fuel surcharge applied per route or globally" },
-  { name: "Seasonal Pricing", desc: "Adjust rates for peak seasons with time-bound rules" },
-  { name: "Custom Rate Contracts", desc: "Client-specific agreed rates override default pricing" },
-  { name: "Handling Fees", desc: "Additional fees for special cargo types or extra services" },
-];
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -86,13 +37,58 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function RouteOptimization() {
+  const t = useTranslations("Solutions.route-optimization");
+
+  const capabilities = [
+    { icon: Path, title: t("capabilities.0.title"), desc: t("capabilities.0.desc") },
+    { icon: MapPin, title: t("capabilities.1.title"), desc: t("capabilities.1.desc") },
+    { icon: Clock, title: t("capabilities.2.title"), desc: t("capabilities.2.desc") },
+    { icon: CurrencyDollar, title: t("capabilities.3.title"), desc: t("capabilities.3.desc") },
+    { icon: MapTrifold, title: t("capabilities.4.title"), desc: t("capabilities.4.desc") },
+    { icon: Gauge, title: t("capabilities.5.title"), desc: t("capabilities.5.desc") },
+    { icon: Truck, title: t("capabilities.6.title"), desc: t("capabilities.6.desc") },
+    { icon: ChartLine, title: t("capabilities.7.title"), desc: t("capabilities.7.desc") },
+  ];
+
+  const workflow = [
+    { step: "01", title: t("workflow.0.title"), desc: t("workflow.0.desc") },
+    { step: "02", title: t("workflow.1.title"), desc: t("workflow.1.desc") },
+    { step: "03", title: t("workflow.2.title"), desc: t("workflow.2.desc") },
+    { step: "04", title: t("workflow.3.title"), desc: t("workflow.3.desc") },
+    { step: "05", title: t("workflow.4.title"), desc: t("workflow.4.desc") },
+  ];
+
+  const routeAttributes = [
+    { label: t("routeAttributes.0.label"), desc: t("routeAttributes.0.desc") },
+    { label: t("routeAttributes.1.label"), desc: t("routeAttributes.1.desc") },
+    { label: t("routeAttributes.2.label"), desc: t("routeAttributes.2.desc") },
+    { label: t("routeAttributes.3.label"), desc: t("routeAttributes.3.desc") },
+    { label: t("routeAttributes.4.label"), desc: t("routeAttributes.4.desc") },
+    { label: t("routeAttributes.5.label"), desc: t("routeAttributes.5.desc") },
+  ];
+
+  const mapFeatures = [
+    t("mapFeatures.0"), t("mapFeatures.1"), t("mapFeatures.2"), t("mapFeatures.3"),
+    t("mapFeatures.4"), t("mapFeatures.5"), t("mapFeatures.6"), t("mapFeatures.7"),
+  ];
+
+  const pricingRules = [
+    { name: t("pricingRules.0.name"), desc: t("pricingRules.0.desc") },
+    { name: t("pricingRules.1.name"), desc: t("pricingRules.1.desc") },
+    { name: t("pricingRules.2.name"), desc: t("pricingRules.2.desc") },
+    { name: t("pricingRules.3.name"), desc: t("pricingRules.3.desc") },
+    { name: t("pricingRules.4.name"), desc: t("pricingRules.4.desc") },
+    { name: t("pricingRules.5.name"), desc: t("pricingRules.5.desc") },
+    { name: t("pricingRules.6.name"), desc: t("pricingRules.6.desc") },
+    { name: t("pricingRules.7.name"), desc: t("pricingRules.7.desc") },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
 
-        {/* HERO console frame header + screenshot background, text overlaid bottom-left.
-            Fixed min-h matches other hero sections (~420px content area). */}
+        {/* HERO */}
         <section className="relative border-b border-border-custom overflow-hidden noise-overlay">
           <FloatingShapes />
 
@@ -115,7 +111,7 @@ export default function RouteOptimization() {
             </div>
           </div>
 
-          {/* screenshot background + overlaid text fixed height matches other heroes */}
+          {/* screenshot background + overlaid text */}
           <div className="relative min-h-[420px] flex items-end">
             <Image
               src="/shipmentlistHome.png"
@@ -127,19 +123,18 @@ export default function RouteOptimization() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/65 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
 
-            {/* text panel sits at the bottom of the fixed-height container */}
             <div className="relative z-10 w-full">
               <div className="mx-auto max-w-7xl px-6 md:px-8 py-10">
                 <AnimatedSection className="max-w-xl space-y-4">
                   <h1 className="text-3xl md:text-5xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                    Route<br /><span className="text-blue-500">Optimization</span>
+                    {t("jsx.h1_0_part1")}<br /><span className="text-blue-500">{t("jsx.h1_0_part2")}</span>
                   </h1>
                   <p className="text-sm text-foreground/75 leading-relaxed font-sans normal-case">
-                    Create and manage multi-leg routes with stop management, transit time estimation, zone-based pricing, real-time GPS tracking, and interactive map visualization.
+                    {t("jsx.p_0")}
                   </p>
                   <div className="flex flex-wrap gap-3 pt-1">
-                    <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                    <Button variant="outline" href="/platform" size="lg">Explore Platform</Button>
+                    <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                    <Button variant="outline" href="/platform" size="lg">{t("jsx.Button_1")}</Button>
                   </div>
                 </AnimatedSection>
               </div>
@@ -152,10 +147,10 @@ export default function RouteOptimization() {
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t-2 border-t-blue-500/20 border-border-custom">
               {[
-                { display: "Multi-Leg", label: "Route support" },
-                { display: "Real-Time", label: "GPS tracking" },
-                { display: "11+", label: "Pricing rule types" },
-                { display: "100%", label: "Offline capable" },
+                { display: t("jsx.stat_display_0"), label: t("jsx.stat_label_0") },
+                { display: t("jsx.stat_display_1"), label: t("jsx.stat_label_1") },
+                { display: t("jsx.stat_display_2"), label: t("jsx.stat_label_2") },
+                { display: t("jsx.stat_display_3"), label: t("jsx.stat_label_3") },
               ].map((stat, i) => (
                 <AnimatedSection key={i} delay={i * 0.1} className="p-6 border-r border-b md:border-b-0 border-border-custom text-center">
                   <div className="text-2xl font-bold text-blue-500 font-sans">{stat.display}</div>
@@ -170,8 +165,8 @@ export default function RouteOptimization() {
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Full Route and Network Control</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Every aspect of your delivery network configured, priced, tracked, and reported from a single platform.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_0")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_1")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-primary/[0.01]">
               {capabilities.map((item, index) => (
@@ -191,8 +186,8 @@ export default function RouteOptimization() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">From Route Setup to Live Tracking</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">A clear five-step process that takes a new corridor from definition to fully operational delivery route.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_1")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_2")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-5 border-t border-l border-border-custom relative">
               <div className="hidden md:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 -z-10" />
@@ -219,9 +214,9 @@ export default function RouteOptimization() {
             <AnimatedSection direction="left" className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
               <div className="flex items-center gap-2 text-blue-500">
                 <Path className="w-5 h-5" />
-                <h3 className="text-md font-bold uppercase tracking-wider">What Every Route Contains</h3>
+                <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_0")}</h3>
               </div>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Each route is a complete operational record. Every piece of information agents need to book, price, and dispatch a shipment is attached to the route.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_3")}</p>
               <div className="space-y-3 pt-1">
                 {routeAttributes.map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="border border-border-custom p-3 hover:border-blue-500/40 transition-colors">
@@ -239,9 +234,9 @@ export default function RouteOptimization() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-4">
                 <div className="flex items-center gap-2 text-blue-500">
                   <Globe className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Maps and Location Features</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_1")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Powered by Leaflet with OpenStreetMap and Google Maps API for address resolution, distance calculation, and live tracking visualization.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_4")}</p>
                 <div className="space-y-2 pt-1">
                   {mapFeatures.map((item, i) => (
                     <motion.div key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.06 }} className="flex items-center gap-2">
@@ -254,24 +249,24 @@ export default function RouteOptimization() {
               <div className="bg-[var(--console-bg)] border border-border-custom rounded-none p-6 space-y-3">
                 <div className="flex items-center gap-2 text-blue-500">
                   <ArrowsClockwise className="w-5 h-5" />
-                  <h3 className="text-md font-bold uppercase tracking-wider">Offline Route Access</h3>
+                  <h3 className="text-md font-bold uppercase tracking-wider">{t("jsx.h3_2")}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Route data syncs to the desktop and mobile apps during connectivity and remains available offline. Agents can book shipments on any route without an internet connection.</p>
+                <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_5")}</p>
                 <div className="flex items-start gap-2 pt-1">
                   <DeviceMobile className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground/60 font-sans font-medium">Works on web, Windows desktop app, and mobile PWA with full offline parity.</span>
+                  <span className="text-sm text-foreground/60 font-sans font-medium">{t("jsx.p_5_desc")}</span>
                 </div>
               </div>
             </AnimatedSection>
           </div>
         </section>
 
-        {/* PRICING ENGINE 4-col grid, no badge */}
+        {/* PRICING ENGINE */}
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-12 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Every Pricing Model Your Route Needs</h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">Configure any combination of pricing rules per route. Mix weight tiers, zone rates, service levels, and custom contracts on the same corridor.</p>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_2")}</h2>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mt-3">{t("jsx.p_6")}</p>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-custom bg-background">
               {pricingRules.map((item, index) => (
@@ -287,11 +282,11 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* USE CASES real photo card headers */}
+        {/* USE CASES */}
         <section className="py-16 border-b border-border-custom">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10 max-w-2xl">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Who This Is Built For</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_3")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
 
@@ -306,8 +301,8 @@ export default function RouteOptimization() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">City Courier Networks</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Define inner-city delivery zones with cluster mapping, assign drivers to zone routes, and track every vehicle on a live map throughout the delivery day.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_0")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_7")}</p>
                 </div>
               </AnimatedSection>
 
@@ -322,8 +317,8 @@ export default function RouteOptimization() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Inter-City Freight Lines</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Create multi-leg routes spanning cities and borders with stop-by-stop transit times. Price each corridor separately and report on performance per line.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_1")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_8")}</p>
                 </div>
               </AnimatedSection>
 
@@ -338,8 +333,8 @@ export default function RouteOptimization() {
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">Agency Networks</h4>
-                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">Assign partner agencies to specific route segments. Each agency handles their leg with full visibility into what is arriving, when, and what it should cost.</p>
+                  <h4 className="text-md font-bold uppercase tracking-wider text-foreground">{t("jsx.h4_2")}</h4>
+                  <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_9")}</p>
                 </div>
               </AnimatedSection>
 
@@ -351,20 +346,20 @@ export default function RouteOptimization() {
         <section className="py-16 border-b border-border-custom bg-primary/[0.01]">
           <div className="mx-auto max-w-7xl px-6 md:px-8">
             <AnimatedSection className="text-left mb-10">
-              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">Related Solutions</h2>
+              <h2 className="text-2xl font-bold font-sans uppercase tracking-tight">{t("jsx.h2_4")}</h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-custom">
               {[
-                { title: "Fleet and Driver Management", desc: "Register vehicles, track maintenance, and assign drivers to the routes you have configured.", href: "/solutions/fleet-management" },
-                { title: "Proof of Delivery", desc: "Capture signatures, photos, and GPS confirmation at every stop along your delivery routes.", href: "/solutions/proof-of-delivery" },
-                { title: "Finance and Billing", desc: "Apply the route pricing rules directly to invoices. Every charge calculated from the route rate card at booking time.", href: "/solutions/finance" },
+                { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/fleet-management" },
+                { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/proof-of-delivery" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/finance" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
                     <h4 className="text-md font-bold uppercase tracking-wider text-foreground group-hover:text-blue-500 transition-colors mb-2">{sol.title}</h4>
                     <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium mb-4">{sol.desc}</p>
                     <div className="flex items-center gap-1 text-blue-500 text-xs font-bold uppercase tracking-wider">
-                      <span>Learn more</span><ArrowRight className="h-3 w-3" />
+                      <span>{t("jsx.learn_more")}</span><ArrowRight className="h-3 w-3" />
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -373,7 +368,7 @@ export default function RouteOptimization() {
           </div>
         </section>
 
-        {/* CTA animated gradient, no static grid */}
+        {/* CTA */}
         <section className="py-20 bg-[var(--console-header)] border-b border-border-custom relative overflow-hidden noise-overlay">
           <motion.div
             animate={{ opacity: [0.04, 0.1, 0.04], scale: [1, 1.08, 1] }}
@@ -388,12 +383,12 @@ export default function RouteOptimization() {
           <div className="mx-auto max-w-7xl px-6 md:px-8 relative z-10">
             <AnimatedSection className="max-w-2xl space-y-4">
               <h2 className="text-2xl md:text-3xl font-extrabold uppercase font-sans tracking-tight leading-none">
-                Ready to Build Your<br /><span className="text-blue-500">Delivery Network?</span>
+                {t("jsx.h2_5_part1")}<br /><span className="text-blue-500">{t("jsx.h2_5_part2")}</span>
               </h2>
-              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">See how NTIGI manages your route corridors, stop networks, and pricing structures in a live walkthrough with our team.</p>
+              <p className="text-sm text-foreground/70 font-sans leading-relaxed font-medium">{t("jsx.p_10")}</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" href="/demo" size="lg">Request a Demo</Button>
-                <Button variant="outline" href="/contact" size="lg">Talk to Sales</Button>
+                <Button variant="primary" href="/demo" size="lg">{t("jsx.Button_0")}</Button>
+                <Button variant="outline" href="/contact" size="lg">{t("jsx.Button_3")}</Button>
               </div>
             </AnimatedSection>
           </div>

@@ -522,7 +522,7 @@ export default function Consolidation() {
               {[
                 { title: t("jsx.related_title_0"), desc: t("jsx.related_desc_0"), href: "/solutions/international-forwarding" },
                 { title: t("jsx.related_title_1"), desc: t("jsx.related_desc_1"), href: "/solutions/customs-compliance" },
-                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/warehouse" },
+                { title: t("jsx.related_title_2"), desc: t("jsx.related_desc_2"), href: "/solutions/warehouse-management" },
               ].map((sol, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <Link href={sol.href} className="block p-6 border-r border-b border-border-custom hover:bg-primary/[0.04] hover:border-blue-500/30 transition-all group h-full">
