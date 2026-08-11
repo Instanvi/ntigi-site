@@ -4,7 +4,9 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Toaster } from "sonner";
 import "../globals.css";
+import "flag-icons/css/flag-icons.min.css";
 
 const customFont = localFont({
   src: "../../public/fonts/gyByhwUxId8gMEwcGFU.woff2",
@@ -50,6 +52,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300 selection:bg-[#263070] selection:text-white">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

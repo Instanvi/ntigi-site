@@ -8,14 +8,63 @@ import { CheckCircle } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/Button";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export default function RequestDemo() {
   const t = useTranslations("Demo");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    operationsArea: "",
+    notes: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "demo",
+          data: {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            company: formData.company,
+            operationsArea: formData.operationsArea,
+            notes: formData.notes,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Demo request sent successfully to support@instanvi.com!");
+        setSubmitted(true);
+        setFormData({ firstName: "", lastName: "", email: "", company: "", operationsArea: "", notes: "" });
+      } else {
+        toast.error(result.error || "Failed to send demo request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,24 +124,24 @@ export default function RequestDemo() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.firstName")}</label>
-                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.firstNamePlaceholder")} />
+                      <input required type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.firstNamePlaceholder")} />
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.lastName")}</label>
-                      <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.lastNamePlaceholder")} />
+                      <input required type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.lastNamePlaceholder")} />
                     </div>
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.email")}</label>
-                    <input required type="email" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.emailPlaceholder")} />
+                    <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.emailPlaceholder")} />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.company")}</label>
-                    <input required type="text" className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.companyPlaceholder")} />
+                    <input required type="text" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors" placeholder={t("form.companyPlaceholder")} />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.operationsArea")}</label>
-                    <select required className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors">
+                    <select required name="operationsArea" value={formData.operationsArea} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors">
                       <option value="">{t("form.operationsAreaPlaceholder")}</option>
                       <option value="freight">{t("form.operationsAreaOptions.freight")}</option>
                       <option value="courier">{t("form.operationsAreaOptions.courier")}</option>
@@ -102,9 +151,11 @@ export default function RequestDemo() {
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">{t("form.notes")}</label>
-                    <textarea className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder={t("form.notesPlaceholder")}></textarea>
+                    <textarea name="notes" value={formData.notes} onChange={handleChange} className="w-full px-4 py-3 border border-border-custom bg-background text-foreground rounded-none focus:outline-none focus:border-blue-500 transition-colors h-28 resize-none" placeholder={t("form.notesPlaceholder")}></textarea>
                   </div>
-                  <Button variant="secondary" className="w-full py-4 text-base font-bold">{t("form.submitButton")}</Button>
+                  <Button variant="secondary" type="submit" disabled={isSubmitting} className="w-full py-4 text-base font-bold">
+                    {isSubmitting ? t("form.submitting") : t("form.submitButton")}
+                  </Button>
                 </form>
               </AnimatedSection>
             )}

@@ -240,7 +240,12 @@
     "desc": "Lisez des briefings professionnels sur les règles d'expédition, la coordination des itinéraires et les mises à jour de la chaîne d'approvisionnement.",
     "seeAll": "Voir tous les articles",
     "loading": ">> CHARGEMENT_ACTUALITÉS",
-    "readArticle": "Lire l'article"
+    "readArticle": "Lire l'article",
+    "emptyState": {
+      "noPosts": "Aucun Article Disponible",
+      "checkBackLater": "Revenez bientôt pour des informations d'experts sur la logistique et le fret.",
+      "exploreBlog": "Explorer le Blog"
+    }
   },
   "CTA": {
     "badge": "COMMENCER",
@@ -511,7 +516,14 @@
       "compliance": "Conformité"
     },
     "noResults": "Aucune entrée ne correspond à vos critères de filtre",
-    "readArticle": "Lire l'article"
+    "readArticle": "Lire l'article",
+    "emptyState": {
+      "noResults": "Aucun Article Trouvé",
+      "noPosts": "Aucun Article de Blog Disponible",
+      "tryDifferentFilters": "Essayez d'ajuster vos termes de recherche ou vos filtres pour trouver du contenu pertinent.",
+      "checkBackLater": "Revenez bientôt pour des informations d'experts sur la logistique, les douanes et le fret international.",
+      "clearFilters": "Effacer Tous les Filtres"
+    }
   },
   "Company": {
     "hero": {
@@ -877,7 +889,8 @@
       },
       "notes": "Exigences Particulières / Remarques",
       "notesPlaceholder": "Parlez-nous du nombre de vos agences, de vos besoins d'intégration ou de vos défis liés aux opérations hors-ligne...",
-      "submitButton": "Planifier Ma Démo en Direct"
+      "submitButton": "Planifier Ma Démo en Direct",
+      "submitting": "Envoi en cours..."
     }
   },
   "Solutions": {
@@ -3290,6 +3303,9 @@
         "p_3": "Chaque emplacement d'entrepôt dans votre réseau dispose d'un tableau de bord complet et isolé pour les opérations locales et les rapports du siège social.",
         "h3_1": "Suivi et contrôle intégrés des stocks",
         "p_4": "Gardez un œil sur chaque colis grâce au suivi précis du statut des stocks, à la lecture mobile des codes-barres et à des outils de rapport instantanés.",
+        "h2_2_title": "Niveaux de stock et emplacements physiques",
+        "h2_2_desc": "Consultez le stock actuel de l'entrepôt, les expéditions réservées et les emplacements des bacs dans une vue consolidée. Trouvez n'importe quel colis par code-barres ou numéro de suivi instantanément.",
+        "status_live": "EN DIRECT",
         "h2_2": "Pour qui cela est conçu",
         "h4_0": "Gestionnaires d'entrepôt",
         "p_5": "Configurez la disposition des étagères, surveillez les taux d'occupation en poids et en volume, affectez le personnel et supervisez les flux de travail quotidiens de réception et d'expédition.",

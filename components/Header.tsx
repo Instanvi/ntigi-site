@@ -6,7 +6,6 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
 import Logo from "./Logo";
 import {
-  Globe,
   List,
   X,
   Sun,
@@ -49,6 +48,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [isDark, setIsDark] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -171,24 +171,40 @@ export default function Header() {
             {t("demo")}
           </Button>
 
-          {/* Language switcher */}
-          <div className="flex items-center gap-1 text-[11px] text-foreground/70">
-            <Globe className="h-3.5 w-3.5" />
+          {/* Language switcher with flags */}
+          <div className="relative">
             <button
-              onClick={() => switchLocale("en")}
-              className={`px-1 cursor-pointer transition-colors ${locale === "en" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
-              aria-label="Switch to English"
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              onMouseEnter={() => setIsLangOpen(true)}
+              className="flex items-center gap-2 px-3 py-1.5 bg-background/50 hover:bg-primary/5 border border-border-custom rounded-md text-[11px] font-bold text-foreground/70 transition-all cursor-pointer"
             >
-              EN
+              <span className={`fi fi-${locale === "en" ? "us" : "fr"} rounded-sm`} style={{ width: "1rem", height: "0.75rem", display: "inline-block", backgroundSize: "cover" }} />
+              <span>{locale.toUpperCase()}</span>
             </button>
-            <span className="text-foreground/30">|</span>
-            <button
-              onClick={() => switchLocale("fr")}
-              className={`px-1 cursor-pointer transition-colors ${locale === "fr" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
-              aria-label="Passer en français"
-            >
-              FR
-            </button>
+            {isLangOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)}></div>
+                <div
+                  onMouseLeave={() => setIsLangOpen(false)}
+                  className="absolute right-0 mt-1.5 w-32 bg-background border border-border-custom rounded-md shadow-glow z-50 p-1 animate-fade-in"
+                >
+                  <button
+                    onClick={() => { switchLocale("en"); setIsLangOpen(false); }}
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-[11px] font-semibold rounded-md text-left hover:bg-primary/5 transition-colors ${locale === "en" ? "text-blue-500 bg-primary/10" : "text-foreground/70"}`}
+                  >
+                    <span className="fi fi-us rounded-sm" style={{ width: "1rem", height: "0.75rem", display: "inline-block", backgroundSize: "cover" }} />
+                    <span>English</span>
+                  </button>
+                  <button
+                    onClick={() => { switchLocale("fr"); setIsLangOpen(false); }}
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-[11px] font-semibold rounded-md text-left hover:bg-primary/5 transition-colors ${locale === "fr" ? "text-blue-500 bg-primary/10" : "text-foreground/70"}`}
+                  >
+                    <span className="fi fi-fr rounded-sm" style={{ width: "1rem", height: "0.75rem", display: "inline-block", backgroundSize: "cover" }} />
+                    <span>Français</span>
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -324,21 +340,19 @@ export default function Header() {
           <div className="flex justify-between items-center py-3 border-b border-border-custom/50">
             <span className="text-xs text-foreground/60 uppercase font-bold tracking-wider">{t("theme")}</span>
             <div className="flex items-center gap-3">
-              {/* Language switcher mobile */}
-              <div className="flex items-center gap-1 text-[11px] text-foreground/70">
-                <Globe className="h-3.5 w-3.5" />
+              {/* Language switcher mobile with flags */}
+              <div className="flex items-center gap-1">
                 <button
-                  onClick={() => switchLocale("en")}
-                  className={`px-1 cursor-pointer transition-colors ${locale === "en" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+                  onClick={() => { switchLocale("en"); setIsOpen(false); }}
+                  className={`px-2 py-1 rounded-md border text-[10px] font-bold flex items-center gap-1 transition-all ${locale === "en" ? "bg-primary/20 text-blue-500 border-blue-300" : "bg-background border-border-custom text-foreground/70"}`}
                 >
-                  EN
+                  <span className="fi fi-us rounded-sm" style={{ width: "0.85rem", height: "0.64rem", display: "inline-block", backgroundSize: "cover" }} />
                 </button>
-                <span className="text-foreground/30">|</span>
                 <button
-                  onClick={() => switchLocale("fr")}
-                  className={`px-1 cursor-pointer transition-colors ${locale === "fr" ? "text-blue-500 font-bold" : "hover:text-foreground"}`}
+                  onClick={() => { switchLocale("fr"); setIsOpen(false); }}
+                  className={`px-2 py-1 rounded-md border text-[10px] font-bold flex items-center gap-1 transition-all ${locale === "fr" ? "bg-primary/20 text-blue-500 border-blue-300" : "bg-background border-border-custom text-foreground/70"}`}
                 >
-                  FR
+                  <span className="fi fi-fr rounded-sm" style={{ width: "0.85rem", height: "0.64rem", display: "inline-block", backgroundSize: "cover" }} />
                 </button>
               </div>
               <button

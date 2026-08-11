@@ -1,9 +1,9 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, MagnifyingGlass, Funnel } from "@phosphor-icons/react";
+import { ArrowRight, Calendar, Clock, MagnifyingGlass, Funnel, Article } from "@phosphor-icons/react";
 import AnimatedSection from "@/components/animations/AnimatedSection";
 import { useTranslations } from "next-intl";
 
@@ -21,14 +21,105 @@ export interface UnifiedBlogPost {
 
 interface BlogListingClientProps {
   posts: UnifiedBlogPost[];
+  initialLoading?: boolean;
 }
 
 const categories = ["all", "guides", "routes", "customs", "compliance"];
 
-export default function BlogListingClient({ posts }: BlogListingClientProps) {
+// Skeleton Loader Component
+function BlogCardSkeleton({ index }: { index: number }) {
+  const indexStr = (index + 1).toString().padStart(2, "0");
+  return (
+    <div className="group flex flex-col justify-between border-r border-b border-border-custom p-6 min-h-[420px] relative overflow-hidden bg-[var(--console-bg)] animate-pulse">
+      <div>
+        {/* Category + index skeleton */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="h-5 w-20 bg-primary/10 rounded-none" />
+          <span className="text-[10px] font-bold text-foreground/45 font-sans">{indexStr}</span>
+        </div>
+
+        {/* Thumbnail skeleton */}
+        <div className="relative aspect-[16/10] w-full bg-primary/5 rounded-none border border-border-custom mb-4" />
+
+        {/* Content skeleton */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <div className="h-3 w-16 bg-primary/10 rounded-none" />
+            <div className="h-3 w-16 bg-primary/10 rounded-none" />
+          </div>
+          <div className="h-4 w-4/5 bg-primary/10 rounded-none" />
+          <div className="h-4 w-3/5 bg-primary/10 rounded-none" />
+          <div className="space-y-1.5 pt-1">
+            <div className="h-3 w-full bg-primary/5 rounded-none" />
+            <div className="h-3 w-full bg-primary/5 rounded-none" />
+            <div className="h-3 w-3/4 bg-primary/5 rounded-none" />
+          </div>
+        </div>
+      </div>
+
+      {/* Read More skeleton */}
+      <div className="pt-4">
+        <div className="h-3 w-24 bg-blue-500/20 rounded-none" />
+      </div>
+    </div>
+  );
+}
+
+// Empty State Component
+function EmptyState({ searchQuery, selectedCategory, onReset }: { searchQuery: string; selectedCategory: string; onReset: () => void }) {
+  const t = useTranslations("BlogPage");
+  const hasFilters = searchQuery !== "" || selectedCategory !== "all";
+
+  return (
+    <div className="flex flex-col items-center justify-center py-20 px-6 border border-border-custom bg-[var(--console-bg)]">
+      <div className="flex flex-col items-center max-w-md text-center space-y-4">
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+          <Article className="w-8 h-8 text-blue-500" />
+        </div>
+        
+        <div className="space-y-2">
+          <h3 className="text-base font-bold text-foreground uppercase font-sans tracking-tight">
+            {hasFilters ? t("emptyState.noResults") : t("emptyState.noPosts")}
+          </h3>
+          <p className="text-sm text-foreground/60 font-sans leading-relaxed">
+            {hasFilters 
+              ? t("emptyState.tryDifferentFilters")
+              : t("emptyState.checkBackLater")
+            }
+          </p>
+        </div>
+
+        {hasFilters && (
+          <button
+            onClick={onReset}
+            className="mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider rounded-none transition-colors cursor-pointer border-none"
+          >
+            {t("emptyState.clearFilters")}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function BlogListingClient({ posts, initialLoading = false }: BlogListingClientProps) {
   const t = useTranslations("BlogPage");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(initialLoading);
+
+  // Simulate initial loading if posts are being fetched
+  useEffect(() => {
+    if (isLoading) {
+      const timer = setTimeout(() => setIsLoading(false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
+  const handleResetFilters = () => {
+    setSearchQuery("");
+    setSelectedCategory("all");
+  };
 
   const filteredPosts = posts.filter((post) => {
     const postCategory = post.category ? post.category.toLowerCase() : "";
@@ -119,11 +210,22 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
       {/* BLOG GRID */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
-          {filteredPosts.length === 0 ? (
-            <div className="text-center py-20 border border-border-custom bg-[var(--console-bg)] text-sm text-foreground/60 font-sans">
-              {t("noResults")}
+          {isLoading ? (
+            // Loading State with Skeleton Loaders
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-custom bg-primary/[0.01]">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <BlogCardSkeleton key={index} index={index} />
+              ))}
             </div>
+          ) : filteredPosts.length === 0 ? (
+            // Empty State
+            <EmptyState 
+              searchQuery={searchQuery} 
+              selectedCategory={selectedCategory}
+              onReset={handleResetFilters}
+            />
           ) : (
+            // Blog Posts Grid
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-custom bg-primary/[0.01]">
               {filteredPosts.map((post, index) => {
                 const indexStr = (index + 1).toString().padStart(2, "0");

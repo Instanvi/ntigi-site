@@ -12,6 +12,7 @@ import {
   ChatCircle, Users, Wrench, CurrencyDollar,
 } from "@phosphor-icons/react";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export default function ContactPage() {
   const t = useTranslations("Contact");
@@ -24,13 +25,43 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", phone: "", company: "", subject: "general", message: "" });
-    }, 1500);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          data: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: `${formData.subject} - ${formData.company}`,
+            message: formData.message,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Message sent successfully to support@instanvi.com!");
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", subject: "general", message: "" });
+      } else {
+        toast.error(result.error || "Failed to send message. Please try again.");
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again later.");
+      setStatus("error");
+    }
   };
 
   const offices = [

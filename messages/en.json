@@ -240,7 +240,12 @@
     "desc": "Read professional briefings on shipping rules, routes coordination, and supply chain updates.",
     "seeAll": "See all articles",
     "loading": ">> FETCHING_NEWS_FEEDS",
-    "readArticle": "Read article"
+    "readArticle": "Read article",
+    "emptyState": {
+      "noPosts": "No Articles Available",
+      "checkBackLater": "Check back soon for expert insights on logistics and freight.",
+      "exploreBlog": "Explore Blog"
+    }
   },
   "CTA": {
     "badge": "GET STARTED",
@@ -511,7 +516,14 @@
       "compliance": "Compliance"
     },
     "noResults": "No entries matching your filter criteria",
-    "readArticle": "Read article"
+    "readArticle": "Read article",
+    "emptyState": {
+      "noResults": "No Articles Found",
+      "noPosts": "No Blog Posts Available",
+      "tryDifferentFilters": "Try adjusting your search terms or filters to find relevant content.",
+      "checkBackLater": "Check back soon for expert insights on logistics, customs, and global freight.",
+      "clearFilters": "Clear All Filters"
+    }
   },
   "Company": {
     "hero": {
@@ -877,7 +889,8 @@
       },
       "notes": "Special Requirements / Notes",
       "notesPlaceholder": "Tell us about your branch count, integration needs, or offline operations challenges...",
-      "submitButton": "Schedule My Live Demo"
+      "submitButton": "Schedule My Live Demo",
+      "submitting": "Submitting..."
     }
   },
   "Solutions": {
@@ -3249,6 +3262,9 @@
         "p_3": "Each warehouse location in your network has a comprehensive, isolated dashboard for local operations and head-office reporting.",
         "h3_1": "Built-In Stock Tracking & Control",
         "p_4": "Keep tabs on every package with granular stock status tracking, mobile barcode scanning, and instant reporting tools.",
+        "h2_2_title": "Stock Levels and Physical Locations",
+        "h2_2_desc": "View current warehouse stock, reserved shipments, and bin locations in one consolidated view. Find any package by barcode or tracking number instantly.",
+        "status_live": "LIVE",
         "h2_2": "Who This Is Built For",
         "h4_0": "Warehouse Managers",
         "p_5": "Configure shelf layouts, monitor occupancy rates by weight and volume, assign staff, and oversee daily receiving and dispatch workflows.",
