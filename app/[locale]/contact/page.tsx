@@ -50,7 +50,7 @@ export default function ContactPage() {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Message sent successfully to support@instanvi.com!");
+        toast.success("Message sent successfully");
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", company: "", subject: "general", message: "" });
       } else {

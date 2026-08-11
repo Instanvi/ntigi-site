@@ -53,7 +53,7 @@ export default function RequestDemo() {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Demo request sent successfully to support@instanvi.com!");
+        toast.success("Demo request sent successfully");
         setSubmitted(true);
         setFormData({ firstName: "", lastName: "", email: "", company: "", operationsArea: "", notes: "" });
       } else {
