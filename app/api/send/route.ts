@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { data: emailData, error } = await resend.emails.send({
-      from: "Ntigi Mail <noreply@instanvi.com>",
-      to: ["support@instanvi.com"], 
+      from: "Ntigi Logistics <noreply@instanvi.com>",
+      to: ["hi@instanvi.com"], 
       subject: subject,
       react: emailComponent,
     });
