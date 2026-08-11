@@ -1,4 +1,5 @@
 ﻿"use client";
+"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,8 +18,6 @@ import {
 import { useTranslations } from "next-intl";
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
-
-  return (
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -117,6 +116,8 @@ export default function Finance() {
     t("reportTypes.0"), t("reportTypes.1"), t("reportTypes.2"), t("reportTypes.3"),
     t("reportTypes.4"), t("reportTypes.5"), t("reportTypes.6"), t("reportTypes.7"),
   ];
+
+  return (
     <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="flex-grow pt-16">
